@@ -53,6 +53,6 @@ Utility - Large collection of miscellaneous utilities, mostly for OT-based appli
 
 ## Learn More
 Here is a few suggestions
-  *Learn more about generic programing reading a [textbook](http://www.josuttis.com/tmplbook/).
-  *Learn about the C++ programming language from a [textbook](http://www.research.att.com/~bs/3rd.html ).
-  *Learn more about solving problems with C++ by reading a [textbook](http://www.acceleratedcpp.com/)
+  * Learn more about generic programing reading a [textbook](http://www.josuttis.com/tmplbook/).
+  * Learn about the C++ programming language from a [textbook](http://www.research.att.com/~bs/3rd.html ).
+  * Learn more about solving problems with C++ by reading a [textbook](http://www.acceleratedcpp.com/)
