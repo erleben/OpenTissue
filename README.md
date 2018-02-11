@@ -17,7 +17,7 @@ Free for commercial use, open source under the [http://opensource.org/licenses/z
   *[Unit Testing Guide](documentation/unit_testing.md)
   *[The Code Review Process](documenation/code_review.md)
 
-##Read More
+## Read More
   * Have a look at our [OpenTissue Gallery](https://www.youtube.com/playlist?list=PLNtAp--NfuirWaf0HhB9wUeromoXWvJlb)
   * Doxygen documentation (run doxygen on the source tree)
   * Demo applications (work as small tutorials/hands on examples)
@@ -38,14 +38,14 @@ Dynamics - Collection of methods for mathematically modeled simulations and phys
   *[Multibody Body Dynamics](documentation/retro.md)
   *[Damped Wave Equations](documentation/dwe.md)
 
-Kinematics- Methods for kinematic animations, including inverse kinematics, skinning, and key-framed character animation.
+Kinematics - Methods for kinematic animations, including inverse kinematics, skinning, and key-framed character animation.
   *[Character Animation](documentation/character.md)
 
-GPU- Collection of general purpose algorithms and methods performed on the GPU (GPGPU).
+GPU - Collection of general purpose algorithms and methods performed on the GPU (GPGPU).
   *[The Image and Texture Programming Guide](documentation/texture.md)
   *[Volume Visualization](documentation/volviz.md)
 
-Utility- Large collection of miscellaneous utilities, mostly for OT-based applications.
+Utility - Large collection of miscellaneous utilities, mostly for OT-based applications.
   *[Using the Demo Glut Application Framework](documentation/glut.md)
   *[The OpenGL Programming Guide](documentation/opengl.md)
   *[The Shader Programming Guide](documentation/shader.md)
