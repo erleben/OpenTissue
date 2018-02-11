@@ -1,0 +1,10 @@
+ADD_EXECUTABLE(unit_compute_inscribed_radius_length_quality_measure src/unit_compute_inscribed_radius_length_quality_measure.cpp)
+
+TARGET_LINK_LIBRARIES(unit_compute_inscribed_radius_length_quality_measure ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+INSTALL(
+  TARGETS unit_compute_inscribed_radius_length_quality_measure
+  RUNTIME DESTINATION  bin/units
+  )
+
+ADD_TEST( unit_compute_inscribed_radius_length_quality_measure unit_compute_inscribed_radius_length_quality_measure )

@@ -1,0 +1,110 @@
+void main(
+             in float3 local         : TEXCOORD0,
+            out float4 dist        : COLOR0,
+            out float  absDist     : DEPTH,
+  const uniform float3 triangle,
+  const uniform float3 nv0,
+  const uniform float3 nv1,
+  const uniform float3 nv2,
+  const uniform float3 ne0,
+  const uniform float3 ne1,
+  const uniform float3 ne2,
+  const uniform float  narrowband)
+{
+  //--- Extract vector component into temporaries in order to make code more readable
+  float a = triangle.x;
+  float b = triangle.y;
+  float h = triangle.z;
+
+  float r = local.x;
+  float s = local.y;
+  float t = local.z;
+
+  //--- Initialize helper normals
+  float3 nv = nv1;
+  float3 ne = ne1;
+
+  //--- Normalize to half-space r >= 0
+  if (r<0)
+  {
+    r = -r;
+    a =  b;
+    nv = nv0;
+    ne = ne2;
+  }
+
+  //--- Transform to a 2nd coordinate frame
+  float lensqr = (a*a + h*h);
+  float rprime = (a*r - h*s + h*h)/lensqr;
+  float sprime = (h*r + a*s - a*h)/lensqr;
+
+  float3 c;
+  float3 n;
+
+  if(rprime<0  && sprime>0)
+  {
+    //--- region VI
+    c = float3(0,h,0);
+    n = nv2;
+  }
+  else if(sprime>0 && rprime>=0 && rprime <= 1 )
+  {
+    //--- region V
+    c= float3(a,0,0);
+    n = ne;
+  }
+  else if(s>=0 && rprime > 1 )
+  {
+    //--- region IV
+    c= float3(a,0,0);
+    n = nv;
+  }
+  else if( s<0 && r>a)
+  {
+    //--- region III
+    c= float3(a,0,0);
+    n = nv;
+  }
+  else if( s<0 && r <= a)
+  {
+    //--- region II
+    c= float3(0,0,0);
+    n = ne0;
+  }
+  else
+  {
+    //--- region I
+    c = float3(0,0,0);
+    n = float3(0,0,1);
+  }
+
+//  float sign_tst = dot(n,(local-c));
+  float sign_val = sign(dot(n,(local-c)));
+
+  //--- Extract Components of the distance vector
+  rprime = max( max(-rprime,0),rprime-1);  // regions IV, V, VI
+  sprime = max(sprime,0);                  // regions I, V
+  r      = max(r-a,0);                     // regions II, III
+
+  //--- Compute the distance
+  if(s<0)
+  {
+    absDist = sqrt(r*r + s*s + t*t);
+  }
+  else
+  {
+    absDist = sqrt( (rprime*rprime + sprime*sprime)*lensqr + t*t);
+  }
+
+  //--- Place sign
+  dist = float4(sign_val*absDist,local);
+//  if(sign_tst<0)
+//  {
+//    dist = float4(-absDist,local);
+//  }
+//  else
+//  {
+//    dist = float4(absDist,local);
+//  }
+  absDist =   absDist/narrowband;  //--- z-buffer is clamped to 0..1, so we need to rescale values
+}

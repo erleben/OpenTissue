@@ -1,0 +1,72 @@
+/**
+  //--- KE 27-01-2005: A quick and dirty search on google:
+  //---
+  //---  http://scienceworld.wolfram.com/physics/UniversalGasConstant.html
+  //---  http://www.science.uwaterloo.ca/~cchieh/cact/c123/liquid.html
+  //---  http://www.thermexcel.com/english/tables/eau_atm.htm
+  //---
+  //--- in metric system  Newton, kilogram, meters, seconds... then
+  //---
+  //---  density = 1000 Kg/m^3     viscosity = 0.001 N s/ m^{-2}
+  //---  gas constant = 8,314510   J/(mol K)
+  //---
+  //--- Say we have a box of 2mx2mx2m=8m3, and one eight is filled
+  //--- with water 1x1x1 m3, then we have 1000Kg of water.
+  //--- Say we want to represent this water uniformly with 500 particles, then
+  //--- each particle should rougly represent 2 Kg of water (big particle:-)
+  //---
+  //--- Ideal gas behaves according to:
+  //---
+  //---   P V = n R T
+  //---
+  //--- T måles i K (Kelvin)
+  //--- n er antal mol
+  //--- R er gas konstanten
+  //--- P er trykket (N/m^2)
+  //--- V er volume (m^3)
+  //---
+  //--- Kraft måles i Newton, 1 N = 1 Kg m/s^2, så heraf ses at
+  //---
+  //---  P V ~  N/m^2 * m^3 = N m
+  //---
+  //--- højresiden er så
+  //---
+  //---    n R T = mol ( J/(mol K)) K = J
+  //---
+  //--- så heraf ser vi   J = N m og faktisk er
+  //---
+  //---    J = Kg m^2 / s^2   = N m ....aha det var dejligt:-)
+  //---
+  //--- Den molare volume af vand er
+  //---
+  //---    V_m  = 0.000055 m^3 / mol
+  //---
+  //--- Vands molare masse
+  //---
+  //---    m_m  =  0.018 Kg/mol
+  //---
+  //--- Givet rumfang V (m^3) af en mængde vand
+  //---
+  //---    V/V_m  = n  (mol)
+  //---
+  //--- Massen af V mængde vand er derfor
+  //---
+  //---    n * n_m  = M  (Kg)
+  //---
+  //--- Antallet af molekyler i n mol vand
+  //---
+  //---   n * Na  =  N molekyler     (hvor Na = 6.0221367 10^23 1/mol er Avogadros tal, angiver antal molekyler per mol)
+  //---
+  //--- Okay, så hvad er den gennemsnitlige afstand i mellem vand-molekylerne? Hmm et molekyle fylder
+  //---
+  //---   dV = V/N
+  //---
+  //--- Så en gennemsnnitlig radius er
+  //---
+  //---   r =  ^3sqrt{ dV }  / 2    // altså cubic-rodden
+  //---
+  //--- Hvad kan man så bruge det til????
+  //---
+  //---   Det giver vel en ide om hvilke strrelses ordner du skal op i for at simulere en givet mængde vand nogenlunde naturtro???
+  //---
+ */

@@ -1,0 +1,2271 @@
+<T4MESH nodes="438">
+  <TETRAHEDRON i="11" j="104" k="50" m="105"/>
+  <TETRAHEDRON i="206" j="421" k="327" m="383"/>
+  <TETRAHEDRON i="277" j="124" k="179" m="22"/>
+  <TETRAHEDRON i="33" j="296" k="230" m="99"/>
+  <TETRAHEDRON i="223" j="105" k="32" m="26"/>
+  <TETRAHEDRON i="302" j="388" k="38" m="78"/>
+  <TETRAHEDRON i="192" j="200" k="49" m="292"/>
+  <TETRAHEDRON i="153" j="81" k="152" m="16"/>
+  <TETRAHEDRON i="71" j="388" k="78" m="337"/>
+  <TETRAHEDRON i="200" j="226" k="108" m="49"/>
+  <TETRAHEDRON i="46" j="431" k="156" m="155"/>
+  <TETRAHEDRON i="52" j="157" k="175" m="120"/>
+  <TETRAHEDRON i="327" j="328" k="219" m="220"/>
+  <TETRAHEDRON i="52" j="176" k="35" m="157"/>
+  <TETRAHEDRON i="141" j="333" k="130" m="26"/>
+  <TETRAHEDRON i="388" j="244" k="190" m="302"/>
+  <TETRAHEDRON i="10" j="306" k="197" m="70"/>
+  <TETRAHEDRON i="3" j="180" k="233" m="112"/>
+  <TETRAHEDRON i="247" j="361" k="410" m="357"/>
+  <TETRAHEDRON i="214" j="387" k="295" m="96"/>
+  <TETRAHEDRON i="380" j="409" k="175" m="337"/>
+  <TETRAHEDRON i="275" j="337" k="232" m="216"/>
+  <TETRAHEDRON i="80" j="326" k="48" m="113"/>
+  <TETRAHEDRON i="360" j="369" k="368" m="252"/>
+  <TETRAHEDRON i="99" j="230" k="235" m="112"/>
+  <TETRAHEDRON i="119" j="398" k="314" m="47"/>
+  <TETRAHEDRON i="100" j="332" k="221" m="4"/>
+  <TETRAHEDRON i="64" j="303" k="7" m="72"/>
+  <TETRAHEDRON i="8" j="310" k="390" m="309"/>
+  <TETRAHEDRON i="303" j="385" k="192" m="25"/>
+  <TETRAHEDRON i="109" j="290" k="289" m="27"/>
+  <TETRAHEDRON i="272" j="385" k="228" m="42"/>
+  <TETRAHEDRON i="176" j="137" k="32" m="53"/>
+  <TETRAHEDRON i="112" j="232" k="37" m="216"/>
+  <TETRAHEDRON i="325" j="212" k="415" m="51"/>
+  <TETRAHEDRON i="314" j="393" k="21" m="203"/>
+  <TETRAHEDRON i="71" j="388" k="77" m="78"/>
+  <TETRAHEDRON i="185" j="195" k="230" m="37"/>
+  <TETRAHEDRON i="220" j="413" k="327" m="395"/>
+  <TETRAHEDRON i="221" j="331" k="102" m="106"/>
+  <TETRAHEDRON i="4" j="174" k="191" m="61"/>
+  <TETRAHEDRON i="262" j="263" k="368" m="258"/>
+  <TETRAHEDRON i="389" j="391" k="390" m="201"/>
+  <TETRAHEDRON i="188" j="297" k="299" m="187"/>
+  <TETRAHEDRON i="242" j="353" k="241" m="243"/>
+  <TETRAHEDRON i="394" j="410" k="220" m="23"/>
+  <TETRAHEDRON i="117" j="353" k="354" m="243"/>
+  <TETRAHEDRON i="119" j="244" k="118" m="21"/>
+  <TETRAHEDRON i="117" j="365" k="405" m="352"/>
+  <TETRAHEDRON i="305" j="69" k="73" m="79"/>
+  <TETRAHEDRON i="384" j="395" k="55" m="206"/>
+  <TETRAHEDRON i="50" j="398" k="156" m="386"/>
+  <TETRAHEDRON i="74" j="75" k="73" m="7"/>
+  <TETRAHEDRON i="212" j="381" k="123" m="278"/>
+  <TETRAHEDRON i="174" j="28" k="61" m="4"/>
+  <TETRAHEDRON i="227" j="385" k="81" m="228"/>
+  <TETRAHEDRON i="431" j="290" k="374" m="417"/>
+  <TETRAHEDRON i="129" j="140" k="134" m="135"/>
+  <TETRAHEDRON i="245" j="409" k="222" m="355"/>
+  <TETRAHEDRON i="66" j="98" k="6" m="30"/>
+  <TETRAHEDRON i="175" j="229" k="120" m="157"/>
+  <TETRAHEDRON i="244" j="314" k="21" m="119"/>
+  <TETRAHEDRON i="326" j="199" k="218" m="217"/>
+  <TETRAHEDRON i="370" j="411" k="369" m="371"/>
+  <TETRAHEDRON i="334" j="224" k="200" m="41"/>
+  <TETRAHEDRON i="314" j="398" k="155" m="47"/>
+  <TETRAHEDRON i="313" j="419" k="400" m="85"/>
+  <TETRAHEDRON i="221" j="53" k="4" m="52"/>
+  <TETRAHEDRON i="33" j="413" k="296" m="99"/>
+  <TETRAHEDRON i="278" j="381" k="276" m="0"/>
+  <TETRAHEDRON i="0" j="276" k="147" m="146"/>
+  <TETRAHEDRON i="365" j="408" k="405" m="351"/>
+  <TETRAHEDRON i="210" j="270" k="289" m="35"/>
+  <TETRAHEDRON i="411" j="370" k="369" m="368"/>
+  <TETRAHEDRON i="371" j="369" k="370" m="260"/>
+  <TETRAHEDRON i="12" j="263" k="264" m="262"/>
+  <TETRAHEDRON i="269" j="431" k="377" m="419"/>
+  <TETRAHEDRON i="172" j="378" k="133" m="271"/>
+  <TETRAHEDRON i="58" j="257" k="215" m="125"/>
+  <TETRAHEDRON i="39" j="103" k="28" m="222"/>
+  <TETRAHEDRON i="215" j="143" k="126" m="125"/>
+  <TETRAHEDRON i="148" j="278" k="276" m="147"/>
+  <TETRAHEDRON i="5" j="140" k="134" m="115"/>
+  <TETRAHEDRON i="221" j="4" k="32" m="104"/>
+  <TETRAHEDRON i="2" j="301" k="300" m="189"/>
+  <TETRAHEDRON i="403" j="116" k="242" m="353"/>
+  <TETRAHEDRON i="114" j="237" k="278" m="51"/>
+  <TETRAHEDRON i="187" j="298" k="183" m="45"/>
+  <TETRAHEDRON i="149" j="225" k="24" m="164"/>
+  <TETRAHEDRON i="32" j="333" k="130" m="137"/>
+  <TETRAHEDRON i="85" j="419" k="377" m="203"/>
+  <TETRAHEDRON i="410" j="423" k="220" m="23"/>
+  <TETRAHEDRON i="315" j="382" k="383" m="283"/>
+  <TETRAHEDRON i="36" j="53" k="4" m="32"/>
+  <TETRAHEDRON i="148" j="276" k="277" m="147"/>
+  <TETRAHEDRON i="191" j="200" k="83" m="84"/>
+  <TETRAHEDRON i="151" j="287" k="154" m="153"/>
+  <TETRAHEDRON i="232" j="233" k="275" m="180"/>
+  <TETRAHEDRON i="327" j="219" k="2" m="99"/>
+  <TETRAHEDRON i="93" j="387" k="92" m="48"/>
+  <TETRAHEDRON i="16" j="153" k="154" m="152"/>
+  <TETRAHEDRON i="230" j="235" k="326" m="113"/>
+  <TETRAHEDRON i="273" j="140" k="134" m="129"/>
+  <TETRAHEDRON i="140" j="31" k="40" m="115"/>
+  <TETRAHEDRON i="4" j="53" k="174" m="52"/>
+  <TETRAHEDRON i="114" j="236" k="210" m="147"/>
+  <TETRAHEDRON i="190" j="301" k="300" m="177"/>
+  <TETRAHEDRON i="180" j="257" k="293" m="179"/>
+  <TETRAHEDRON i="409" j="245" k="222" m="174"/>
+  <TETRAHEDRON i="102" j="332" k="47" m="221"/>
+  <TETRAHEDRON i="245" j="332" k="222" m="174"/>
+  <TETRAHEDRON i="138" j="399" k="272" m="334"/>
+  <TETRAHEDRON i="192" j="385" k="225" m="287"/>
+  <TETRAHEDRON i="9" j="285" k="286" m="284"/>
+  <TETRAHEDRON i="120" j="244" k="245" m="119"/>
+  <TETRAHEDRON i="2" j="189" k="300" m="76"/>
+  <TETRAHEDRON i="80" j="184" k="230" m="33"/>
+  <TETRAHEDRON i="180" j="294" k="293" m="3"/>
+  <TETRAHEDRON i="176" j="398" k="386" m="288"/>
+  <TETRAHEDRON i="20" j="379" k="144" m="145"/>
+  <TETRAHEDRON i="275" j="379" k="20" m="236"/>
+  <TETRAHEDRON i="237" j="145" k="31" m="115"/>
+  <TETRAHEDRON i="180" j="294" k="277" m="179"/>
+  <TETRAHEDRON i="109" j="291" k="255" m="210"/>
+  <TETRAHEDRON i="319" j="421" k="150" m="280"/>
+  <TETRAHEDRON i="327" j="364" k="330" m="99"/>
+  <TETRAHEDRON i="254" j="354" k="123" m="117"/>
+  <TETRAHEDRON i="35" j="289" k="176" m="110"/>
+  <TETRAHEDRON i="214" j="387" k="93" m="295"/>
+  <TETRAHEDRON i="4" j="191" k="174" m="53"/>
+  <TETRAHEDRON i="269" j="374" k="376" m="268"/>
+  <TETRAHEDRON i="82" j="84" k="200" m="49"/>
+  <TETRAHEDRON i="159" j="169" k="292" m="167"/>
+  <TETRAHEDRON i="112" j="37" k="232" m="99"/>
+  <TETRAHEDRON i="326" j="98" k="218" m="97"/>
+  <TETRAHEDRON i="112" j="97" k="216" m="37"/>
+  <TETRAHEDRON i="160" j="225" k="163" m="162"/>
+  <TETRAHEDRON i="163" j="200" k="161" m="162"/>
+  <TETRAHEDRON i="36" j="399" k="273" m="129"/>
+  <TETRAHEDRON i="192" j="226" k="108" m="64"/>
+  <TETRAHEDRON i="87" j="324" k="270" m="209"/>
+  <TETRAHEDRON i="192" j="168" k="287" m="167"/>
+  <TETRAHEDRON i="385" j="152" k="81" m="228"/>
+  <TETRAHEDRON i="156" j="431" k="386" m="398"/>
+  <TETRAHEDRON i="373" j="375" k="374" m="267"/>
+  <TETRAHEDRON i="385" j="153" k="152" m="287"/>
+  <TETRAHEDRON i="138" j="140" k="129" m="135"/>
+  <TETRAHEDRON i="363" j="430" k="57" m="416"/>
+  <TETRAHEDRON i="31" j="367" k="256" m="136"/>
+  <TETRAHEDRON i="415" j="172" k="414" m="271"/>
+  <TETRAHEDRON i="101" j="221" k="102" m="100"/>
+  <TETRAHEDRON i="101" j="332" k="4" m="28"/>
+  <TETRAHEDRON i="4" j="221" k="32" m="53"/>
+  <TETRAHEDRON i="100" j="332" k="4" m="101"/>
+  <TETRAHEDRON i="32" j="137" k="36" m="53"/>
+  <TETRAHEDRON i="143" j="274" k="34" m="125"/>
+  <TETRAHEDRON i="35" j="52" k="175" m="53"/>
+  <TETRAHEDRON i="32" j="221" k="176" m="53"/>
+  <TETRAHEDRON i="176" j="53" k="52" m="35"/>
+  <TETRAHEDRON i="208" j="322" k="317" m="207"/>
+  <TETRAHEDRON i="310" j="389" k="309" m="376"/>
+  <TETRAHEDRON i="208" j="317" k="321" m="207"/>
+  <TETRAHEDRON i="395" j="423" k="397" m="220"/>
+  <TETRAHEDRON i="56" j="382" k="315" m="282"/>
+  <TETRAHEDRON i="284" j="285" k="178" m="9"/>
+  <TETRAHEDRON i="177" j="315" k="282" m="56"/>
+  <TETRAHEDRON i="202" j="317" k="321" m="86"/>
+  <TETRAHEDRON i="281" j="382" k="286" m="285"/>
+  <TETRAHEDRON i="279" j="286" k="384" m="284"/>
+  <TETRAHEDRON i="35" j="109" k="157" m="289"/>
+  <TETRAHEDRON i="95" j="214" k="215" m="58"/>
+  <TETRAHEDRON i="293" j="295" k="370" m="181"/>
+  <TETRAHEDRON i="295" j="234" k="218" m="97"/>
+  <TETRAHEDRON i="305" j="73" k="71" m="74"/>
+  <TETRAHEDRON i="297" j="300" k="76" m="2"/>
+  <TETRAHEDRON i="45" j="188" k="298" m="177"/>
+  <TETRAHEDRON i="186" j="188" k="299" m="187"/>
+  <TETRAHEDRON i="299" j="305" k="59" m="77"/>
+  <TETRAHEDRON i="65" j="70" k="77" m="7"/>
+  <TETRAHEDRON i="28" j="409" k="61" m="62"/>
+  <TETRAHEDRON i="385" j="303" k="192" m="108"/>
+  <TETRAHEDRON i="64" j="63" k="72" m="68"/>
+  <TETRAHEDRON i="138" j="139" k="5" m="135"/>
+  <TETRAHEDRON i="71" j="77" k="388" m="76"/>
+  <TETRAHEDRON i="111" j="328" k="336" m="229"/>
+  <TETRAHEDRON i="76" j="193" k="60" m="77"/>
+  <TETRAHEDRON i="10" j="75" k="196" m="306"/>
+  <TETRAHEDRON i="198" j="304" k="193" m="77"/>
+  <TETRAHEDRON i="401" j="226" k="191" m="61"/>
+  <TETRAHEDRON i="401" j="64" k="61" m="63"/>
+  <TETRAHEDRON i="216" j="420" k="379" m="337"/>
+  <TETRAHEDRON i="273" j="401" k="108" m="191"/>
+  <TETRAHEDRON i="62" j="63" k="409" m="61"/>
+  <TETRAHEDRON i="193" j="388" k="302" m="78"/>
+  <TETRAHEDRON i="290" j="158" k="417" m="386"/>
+  <TETRAHEDRON i="192" j="226" k="64" m="49"/>
+  <TETRAHEDRON i="62" j="198" k="65" m="193"/>
+  <TETRAHEDRON i="62" j="409" k="63" m="78"/>
+  <TETRAHEDRON i="65" j="304" k="70" m="193"/>
+  <TETRAHEDRON i="74" j="401" k="63" m="72"/>
+  <TETRAHEDRON i="72" j="69" k="71" m="66"/>
+  <TETRAHEDRON i="67" j="192" k="169" m="168"/>
+  <TETRAHEDRON i="382" j="421" k="206" m="383"/>
+  <TETRAHEDRON i="303" j="401" k="108" m="335"/>
+  <TETRAHEDRON i="339" j="412" k="359" m="252"/>
+  <TETRAHEDRON i="65" j="198" k="63" m="68"/>
+  <TETRAHEDRON i="193" j="198" k="77" m="78"/>
+  <TETRAHEDRON i="41" j="82" k="83" m="200"/>
+  <TETRAHEDRON i="30" j="217" k="66" m="98"/>
+  <TETRAHEDRON i="77" j="306" k="75" m="7"/>
+  <TETRAHEDRON i="305" j="306" k="75" m="77"/>
+  <TETRAHEDRON i="401" j="78" k="71" m="198"/>
+  <TETRAHEDRON i="71" j="217" k="66" m="69"/>
+  <TETRAHEDRON i="217" j="305" k="29" m="79"/>
+  <TETRAHEDRON i="195" j="37" k="76" m="71"/>
+  <TETRAHEDRON i="37" j="388" k="71" m="337"/>
+  <TETRAHEDRON i="228" j="399" k="385" m="272"/>
+  <TETRAHEDRON i="18" j="162" k="161" m="82"/>
+  <TETRAHEDRON i="303" j="192" k="67" m="25"/>
+  <TETRAHEDRON i="7" j="68" k="64" m="72"/>
+  <TETRAHEDRON i="7" j="74" k="68" m="72"/>
+  <TETRAHEDRON i="7" j="73" k="74" m="72"/>
+  <TETRAHEDRON i="73" j="305" k="75" m="74"/>
+  <TETRAHEDRON i="71" j="198" k="78" m="77"/>
+  <TETRAHEDRON i="69" j="72" k="71" m="73"/>
+  <TETRAHEDRON i="72" j="63" k="74" m="68"/>
+  <TETRAHEDRON i="71" j="73" k="72" m="74"/>
+  <TETRAHEDRON i="197" j="196" k="10" m="186"/>
+  <TETRAHEDRON i="306" j="77" k="70" m="7"/>
+  <TETRAHEDRON i="74" j="401" k="72" m="71"/>
+  <TETRAHEDRON i="74" j="63" k="198" m="68"/>
+  <TETRAHEDRON i="79" j="217" k="69" m="29"/>
+  <TETRAHEDRON i="74" j="77" k="75" m="7"/>
+  <TETRAHEDRON i="69" j="305" k="73" m="71"/>
+  <TETRAHEDRON i="74" j="7" k="198" m="77"/>
+  <TETRAHEDRON i="299" j="306" k="196" m="77"/>
+  <TETRAHEDRON i="77" j="195" k="76" m="71"/>
+  <TETRAHEDRON i="69" j="305" k="71" m="217"/>
+  <TETRAHEDRON i="38" j="355" k="245" m="118"/>
+  <TETRAHEDRON i="65" j="198" k="7" m="77"/>
+  <TETRAHEDRON i="86" j="316" k="111" m="336"/>
+  <TETRAHEDRON i="299" j="305" k="196" m="59"/>
+  <TETRAHEDRON i="299" j="77" k="59" m="76"/>
+  <TETRAHEDRON i="10" j="197" k="306" m="196"/>
+  <TETRAHEDRON i="37" j="388" k="337" m="185"/>
+  <TETRAHEDRON i="193" j="194" k="65" m="62"/>
+  <TETRAHEDRON i="63" j="198" k="62" m="78"/>
+  <TETRAHEDRON i="71" j="198" k="77" m="74"/>
+  <TETRAHEDRON i="190" j="388" k="302" m="300"/>
+  <TETRAHEDRON i="255" j="275" k="291" m="88"/>
+  <TETRAHEDRON i="77" j="193" k="60" m="304"/>
+  <TETRAHEDRON i="37" j="420" k="216" m="337"/>
+  <TETRAHEDRON i="273" j="129" k="131" m="36"/>
+  <TETRAHEDRON i="385" j="225" k="152" m="42"/>
+  <TETRAHEDRON i="218" j="6" k="30" m="93"/>
+  <TETRAHEDRON i="30" j="218" k="217" m="98"/>
+  <TETRAHEDRON i="98" j="326" k="218" m="217"/>
+  <TETRAHEDRON i="195" j="230" k="217" m="80"/>
+  <TETRAHEDRON i="200" j="226" k="84" m="108"/>
+  <TETRAHEDRON i="82" j="200" k="84" m="83"/>
+  <TETRAHEDRON i="4" j="84" k="191" m="83"/>
+  <TETRAHEDRON i="4" j="83" k="82" m="84"/>
+  <TETRAHEDRON i="4" j="191" k="84" m="61"/>
+  <TETRAHEDRON i="312" j="400" k="85" m="313"/>
+  <TETRAHEDRON i="431" j="314" k="419" m="1"/>
+  <TETRAHEDRON i="202" j="400" k="312" m="313"/>
+  <TETRAHEDRON i="316" j="393" k="336" m="203"/>
+  <TETRAHEDRON i="321" j="400" k="86" m="392"/>
+  <TETRAHEDRON i="56" j="315" k="317" m="204"/>
+  <TETRAHEDRON i="110" j="289" k="270" m="35"/>
+  <TETRAHEDRON i="316" j="329" k="317" m="86"/>
+  <TETRAHEDRON i="158" j="289" k="290" m="27"/>
+  <TETRAHEDRON i="51" j="325" k="278" m="114"/>
+  <TETRAHEDRON i="381" j="43" k="243" m="242"/>
+  <TETRAHEDRON i="136" j="270" k="114" m="131"/>
+  <TETRAHEDRON i="229" j="111" k="328" m="88"/>
+  <TETRAHEDRON i="111" j="229" k="246" m="88"/>
+  <TETRAHEDRON i="175" j="291" k="229" m="157"/>
+  <TETRAHEDRON i="418" j="435" k="426" m="407"/>
+  <TETRAHEDRON i="412" j="338" k="364" m="339"/>
+  <TETRAHEDRON i="354" j="243" k="123" m="117"/>
+  <TETRAHEDRON i="250" j="359" k="360" m="249"/>
+  <TETRAHEDRON i="346" j="117" k="405" m="344"/>
+  <TETRAHEDRON i="213" j="360" k="250" m="90"/>
+  <TETRAHEDRON i="340" j="341" k="307" m="107"/>
+  <TETRAHEDRON i="146" j="362" k="339" m="122"/>
+  <TETRAHEDRON i="362" j="411" k="339" m="359"/>
+  <TETRAHEDRON i="90" j="360" k="372" m="264"/>
+  <TETRAHEDRON i="48" j="218" k="92" m="93"/>
+  <TETRAHEDRON i="6" j="218" k="98" m="97"/>
+  <TETRAHEDRON i="30" j="92" k="218" m="93"/>
+  <TETRAHEDRON i="6" j="94" k="218" m="215"/>
+  <TETRAHEDRON i="93" j="295" k="94" m="214"/>
+  <TETRAHEDRON i="95" j="215" k="214" m="94"/>
+  <TETRAHEDRON i="58" j="215" k="95" m="125"/>
+  <TETRAHEDRON i="96" j="182" k="295" m="181"/>
+  <TETRAHEDRON i="295" j="214" k="96" m="58"/>
+  <TETRAHEDRON i="15" j="214" k="93" m="94"/>
+  <TETRAHEDRON i="6" j="98" k="144" m="97"/>
+  <TETRAHEDRON i="37" j="66" k="217" m="98"/>
+  <TETRAHEDRON i="58" j="295" k="215" m="97"/>
+  <TETRAHEDRON i="144" j="257" k="215" m="97"/>
+  <TETRAHEDRON i="6" j="218" k="30" m="98"/>
+  <TETRAHEDRON i="48" j="92" k="218" m="199"/>
+  <TETRAHEDRON i="215" j="94" k="295" m="214"/>
+  <TETRAHEDRON i="273" j="236" k="131" m="115"/>
+  <TETRAHEDRON i="402" j="406" k="349" m="116"/>
+  <TETRAHEDRON i="37" j="97" k="216" m="98"/>
+  <TETRAHEDRON i="98" j="326" k="37" m="97"/>
+  <TETRAHEDRON i="33" j="230" k="296" m="184"/>
+  <TETRAHEDRON i="180" j="275" k="232" m="216"/>
+  <TETRAHEDRON i="98" j="326" k="217" m="37"/>
+  <TETRAHEDRON i="185" j="232" k="37" m="99"/>
+  <TETRAHEDRON i="328" j="330" k="219" m="220"/>
+  <TETRAHEDRON i="429" j="372" k="90" m="252"/>
+  <TETRAHEDRON i="423" j="395" k="397" m="422"/>
+  <TETRAHEDRON i="221" j="104" k="102" m="100"/>
+  <TETRAHEDRON i="102" j="332" k="221" m="101"/>
+  <TETRAHEDRON i="11" j="102" k="101" m="103"/>
+  <TETRAHEDRON i="4" j="221" k="100" m="104"/>
+  <TETRAHEDRON i="270" j="110" k="378" m="87"/>
+  <TETRAHEDRON i="103" j="332" k="102" m="101"/>
+  <TETRAHEDRON i="100" j="332" k="101" m="221"/>
+  <TETRAHEDRON i="11" j="100" k="101" m="102"/>
+  <TETRAHEDRON i="106" j="398" k="331" m="156"/>
+  <TETRAHEDRON i="11" j="221" k="104" m="102"/>
+  <TETRAHEDRON i="222" j="409" k="174" m="28"/>
+  <TETRAHEDRON i="105" j="221" k="104" m="50"/>
+  <TETRAHEDRON i="102" j="104" k="11" m="100"/>
+  <TETRAHEDRON i="11" j="221" k="102" m="106"/>
+  <TETRAHEDRON i="176" j="223" k="221" m="32"/>
+  <TETRAHEDRON i="1" j="109" k="290" m="157"/>
+  <TETRAHEDRON i="104" j="106" k="11" m="50"/>
+  <TETRAHEDRON i="345" j="406" k="348" m="116"/>
+  <TETRAHEDRON i="340" j="433" k="238" m="373"/>
+  <TETRAHEDRON i="353" j="405" k="406" m="347"/>
+  <TETRAHEDRON i="418" j="109" k="88" m="255"/>
+  <TETRAHEDRON i="374" j="375" k="419" m="267"/>
+  <TETRAHEDRON i="114" j="236" k="131" m="35"/>
+  <TETRAHEDRON i="97" j="326" k="112" m="234"/>
+  <TETRAHEDRON i="191" j="226" k="108" m="84"/>
+  <TETRAHEDRON i="200" j="224" k="83" m="41"/>
+  <TETRAHEDRON i="138" j="139" k="135" m="129"/>
+  <TETRAHEDRON i="138" j="5" k="139" m="121"/>
+  <TETRAHEDRON i="334" j="129" k="224" m="139"/>
+  <TETRAHEDRON i="64" j="303" k="192" m="67"/>
+  <TETRAHEDRON i="191" j="200" k="108" m="83"/>
+  <TETRAHEDRON i="40" j="420" k="142" m="335"/>
+  <TETRAHEDRON i="71" j="420" k="66" m="37"/>
+  <TETRAHEDRON i="273" j="36" k="191" m="108"/>
+  <TETRAHEDRON i="237" j="115" k="114" m="20"/>
+  <TETRAHEDRON i="88" j="418" k="229" m="109"/>
+  <TETRAHEDRON i="88" j="418" k="338" m="328"/>
+  <TETRAHEDRON i="255" j="291" k="275" m="236"/>
+  <TETRAHEDRON i="109" j="289" k="290" m="157"/>
+  <TETRAHEDRON i="35" j="114" k="270" m="131"/>
+  <TETRAHEDRON i="176" j="333" k="223" m="137"/>
+  <TETRAHEDRON i="219" j="88" k="328" m="111"/>
+  <TETRAHEDRON i="111" j="246" k="219" m="88"/>
+  <TETRAHEDRON i="2" j="301" k="189" m="111"/>
+  <TETRAHEDRON i="2" j="315" k="329" m="206"/>
+  <TETRAHEDRON i="3" j="99" k="235" m="112"/>
+  <TETRAHEDRON i="3" j="233" k="99" m="112"/>
+  <TETRAHEDRON i="146" j="233" k="275" m="88"/>
+  <TETRAHEDRON i="3" j="97" k="180" m="112"/>
+  <TETRAHEDRON i="199" j="326" k="48" m="80"/>
+  <TETRAHEDRON i="112" j="234" k="235" m="3"/>
+  <TETRAHEDRON i="80" j="326" k="113" m="230"/>
+  <TETRAHEDRON i="48" j="234" k="182" m="113"/>
+  <TETRAHEDRON i="48" j="326" k="218" m="234"/>
+  <TETRAHEDRON i="113" j="230" k="235" m="33"/>
+  <TETRAHEDRON i="115" j="136" k="131" m="134"/>
+  <TETRAHEDRON i="136" j="237" k="31" m="115"/>
+  <TETRAHEDRON i="325" j="378" k="87" m="136"/>
+  <TETRAHEDRON i="379" j="275" k="20" m="216"/>
+  <TETRAHEDRON i="136" j="237" k="115" m="114"/>
+  <TETRAHEDRON i="31" j="145" k="40" m="115"/>
+  <TETRAHEDRON i="246" j="275" k="232" m="88"/>
+  <TETRAHEDRON i="20" j="379" k="115" m="236"/>
+  <TETRAHEDRON i="20" j="114" k="236" m="115"/>
+  <TETRAHEDRON i="238" j="424" k="402" m="342"/>
+  <TETRAHEDRON i="146" j="275" k="255" m="88"/>
+  <TETRAHEDRON i="109" j="425" k="289" m="343"/>
+  <TETRAHEDRON i="425" j="424" k="109" m="27"/>
+  <TETRAHEDRON i="424" j="426" k="418" m="375"/>
+  <TETRAHEDRON i="402" j="407" k="238" m="349"/>
+  <TETRAHEDRON i="362" j="366" k="365" m="122"/>
+  <TETRAHEDRON i="117" j="354" k="365" m="254"/>
+  <TETRAHEDRON i="241" j="353" k="348" m="346"/>
+  <TETRAHEDRON i="118" j="245" k="244" m="119"/>
+  <TETRAHEDRON i="223" j="176" k="221" m="50"/>
+  <TETRAHEDRON i="193" j="77" k="388" m="78"/>
+  <TETRAHEDRON i="28" j="409" k="62" m="355"/>
+  <TETRAHEDRON i="304" j="306" k="197" m="77"/>
+  <TETRAHEDRON i="156" j="46" k="331" m="106"/>
+  <TETRAHEDRON i="47" j="118" k="119" m="245"/>
+  <TETRAHEDRON i="288" j="314" k="120" m="119"/>
+  <TETRAHEDRON i="288" j="431" k="314" m="155"/>
+  <TETRAHEDRON i="52" j="175" k="157" m="35"/>
+  <TETRAHEDRON i="175" j="229" k="246" m="120"/>
+  <TETRAHEDRON i="111" j="246" k="229" m="120"/>
+  <TETRAHEDRON i="393" j="314" k="21" m="244"/>
+  <TETRAHEDRON i="109" j="291" k="229" m="88"/>
+  <TETRAHEDRON i="334" j="166" k="165" m="225"/>
+  <TETRAHEDRON i="226" j="401" k="108" m="64"/>
+  <TETRAHEDRON i="48" j="234" k="295" m="182"/>
+  <TETRAHEDRON i="248" j="249" k="358" m="89"/>
+  <TETRAHEDRON i="117" j="405" k="365" m="253"/>
+  <TETRAHEDRON i="351" j="365" k="358" m="352"/>
+  <TETRAHEDRON i="39" j="62" k="193" m="355"/>
+  <TETRAHEDRON i="426" j="318" k="201" m="341"/>
+  <TETRAHEDRON i="3" j="97" k="112" m="234"/>
+  <TETRAHEDRON i="211" j="325" k="278" m="212"/>
+  <TETRAHEDRON i="66" j="401" k="71" m="72"/>
+  <TETRAHEDRON i="125" j="58" k="257" m="124"/>
+  <TETRAHEDRON i="31" j="274" k="145" m="256"/>
+  <TETRAHEDRON i="237" j="274" k="124" m="256"/>
+  <TETRAHEDRON i="142" j="420" k="98" m="335"/>
+  <TETRAHEDRON i="143" j="215" k="126" m="6"/>
+  <TETRAHEDRON i="125" j="143" k="126" m="34"/>
+  <TETRAHEDRON i="58" j="215" k="257" m="97"/>
+  <TETRAHEDRON i="126" j="215" k="125" m="95"/>
+  <TETRAHEDRON i="360" j="372" k="369" m="252"/>
+  <TETRAHEDRON i="44" j="370" k="369" m="260"/>
+  <TETRAHEDRON i="436" j="364" k="395" m="413"/>
+  <TETRAHEDRON i="363" j="416" k="261" m="372"/>
+  <TETRAHEDRON i="266" j="309" k="310" m="8"/>
+  <TETRAHEDRON i="137" j="270" k="131" m="35"/>
+  <TETRAHEDRON i="116" j="403" k="239" m="402"/>
+  <TETRAHEDRON i="35" j="380" k="131" m="137"/>
+  <TETRAHEDRON i="140" j="273" k="115" m="40"/>
+  <TETRAHEDRON i="36" j="334" k="108" m="273"/>
+  <TETRAHEDRON i="200" j="334" k="41" m="225"/>
+  <TETRAHEDRON i="191" j="226" k="84" m="61"/>
+  <TETRAHEDRON i="333" j="32" k="130" m="26"/>
+  <TETRAHEDRON i="132" j="134" k="5" m="135"/>
+  <TETRAHEDRON i="176" j="333" k="137" m="110"/>
+  <TETRAHEDRON i="14" j="172" k="133" m="271"/>
+  <TETRAHEDRON i="137" j="176" k="110" m="35"/>
+  <TETRAHEDRON i="134" j="273" k="131" m="115"/>
+  <TETRAHEDRON i="130" j="378" k="333" m="141"/>
+  <TETRAHEDRON i="130" j="36" k="131" m="129"/>
+  <TETRAHEDRON i="166" j="334" k="42" m="225"/>
+  <TETRAHEDRON i="132" j="378" k="133" m="134"/>
+  <TETRAHEDRON i="133" j="134" k="5" m="132"/>
+  <TETRAHEDRON i="130" j="129" k="131" m="132"/>
+  <TETRAHEDRON i="270" j="130" k="137" m="131"/>
+  <TETRAHEDRON i="216" j="420" k="144" m="379"/>
+  <TETRAHEDRON i="115" j="131" k="136" m="114"/>
+  <TETRAHEDRON i="166" j="334" k="121" m="42"/>
+  <TETRAHEDRON i="131" j="132" k="129" m="134"/>
+  <TETRAHEDRON i="415" j="171" k="325" m="367"/>
+  <TETRAHEDRON i="378" j="132" k="131" m="134"/>
+  <TETRAHEDRON i="129" j="134" k="132" m="135"/>
+  <TETRAHEDRON i="140" j="273" k="134" m="115"/>
+  <TETRAHEDRON i="138" j="399" k="334" m="140"/>
+  <TETRAHEDRON i="226" j="401" k="191" m="108"/>
+  <TETRAHEDRON i="5" j="115" k="31" m="140"/>
+  <TETRAHEDRON i="134" j="136" k="133" m="5"/>
+  <TETRAHEDRON i="5" j="115" k="134" m="136"/>
+  <TETRAHEDRON i="5" j="31" k="115" m="136"/>
+  <TETRAHEDRON i="136" j="325" k="367" m="51"/>
+  <TETRAHEDRON i="172" j="133" k="136" m="5"/>
+  <TETRAHEDRON i="32" j="333" k="137" m="223"/>
+  <TETRAHEDRON i="36" j="137" k="191" m="53"/>
+  <TETRAHEDRON i="36" j="273" k="137" m="131"/>
+  <TETRAHEDRON i="36" j="130" k="131" m="137"/>
+  <TETRAHEDRON i="137" j="32" k="36" m="130"/>
+  <TETRAHEDRON i="35" j="380" k="53" m="175"/>
+  <TETRAHEDRON i="326" j="37" k="97" m="112"/>
+  <TETRAHEDRON i="380" j="291" k="379" m="337"/>
+  <TETRAHEDRON i="3" j="146" k="294" m="339"/>
+  <TETRAHEDRON i="36" j="334" k="129" m="224"/>
+  <TETRAHEDRON i="334" j="165" k="41" m="225"/>
+  <TETRAHEDRON i="335" j="98" k="6" m="66"/>
+  <TETRAHEDRON i="5" j="134" k="140" m="135"/>
+  <TETRAHEDRON i="5" j="138" k="135" m="140"/>
+  <TETRAHEDRON i="140" j="334" k="138" m="129"/>
+  <TETRAHEDRON i="132" j="378" k="130" m="141"/>
+  <TETRAHEDRON i="130" j="378" k="131" m="270"/>
+  <TETRAHEDRON i="227" j="6" k="228" m="81"/>
+  <TETRAHEDRON i="125" j="145" k="144" m="143"/>
+  <TETRAHEDRON i="98" j="335" k="6" m="142"/>
+  <TETRAHEDRON i="6" j="144" k="98" m="142"/>
+  <TETRAHEDRON i="142" j="215" k="6" m="144"/>
+  <TETRAHEDRON i="153" j="385" k="25" m="287"/>
+  <TETRAHEDRON i="145" j="257" k="125" m="144"/>
+  <TETRAHEDRON i="31" j="274" k="143" m="145"/>
+  <TETRAHEDRON i="144" j="143" k="215" m="125"/>
+  <TETRAHEDRON i="143" j="274" k="125" m="145"/>
+  <TETRAHEDRON i="145" j="237" k="124" m="20"/>
+  <TETRAHEDRON i="144" j="215" k="257" m="125"/>
+  <TETRAHEDRON i="97" j="216" k="144" m="20"/>
+  <TETRAHEDRON i="143" j="40" k="144" m="142"/>
+  <TETRAHEDRON i="257" j="274" k="145" m="125"/>
+  <TETRAHEDRON i="237" j="274" k="145" m="124"/>
+  <TETRAHEDRON i="134" j="273" k="129" m="131"/>
+  <TETRAHEDRON i="401" j="63" k="409" m="78"/>
+  <TETRAHEDRON i="40" j="143" k="144" m="145"/>
+  <TETRAHEDRON i="145" j="31" k="40" m="143"/>
+  <TETRAHEDRON i="115" j="379" k="145" m="273"/>
+  <TETRAHEDRON i="401" j="409" k="337" m="78"/>
+  <TETRAHEDRON i="257" j="274" k="124" m="145"/>
+  <TETRAHEDRON i="257" j="274" k="125" m="124"/>
+  <TETRAHEDRON i="379" j="380" k="273" m="236"/>
+  <TETRAHEDRON i="354" j="362" k="254" m="276"/>
+  <TETRAHEDRON i="431" j="46" k="268" m="269"/>
+  <TETRAHEDRON i="3" j="233" k="180" m="146"/>
+  <TETRAHEDRON i="20" j="146" k="275" m="147"/>
+  <TETRAHEDRON i="146" j="277" k="276" m="147"/>
+  <TETRAHEDRON i="20" j="277" k="237" m="124"/>
+  <TETRAHEDRON i="20" j="114" k="237" m="147"/>
+  <TETRAHEDRON i="20" j="236" k="114" m="147"/>
+  <TETRAHEDRON i="20" j="275" k="236" m="147"/>
+  <TETRAHEDRON i="148" j="276" k="278" m="123"/>
+  <TETRAHEDRON i="148" j="277" k="237" m="147"/>
+  <TETRAHEDRON i="109" j="255" k="291" m="88"/>
+  <TETRAHEDRON i="148" j="278" k="237" m="51"/>
+  <TETRAHEDRON i="148" j="237" k="277" m="124"/>
+  <TETRAHEDRON i="154" j="225" k="149" m="152"/>
+  <TETRAHEDRON i="151" j="287" k="168" m="167"/>
+  <TETRAHEDRON i="296" j="183" k="280" m="33"/>
+  <TETRAHEDRON i="283" j="315" k="382" m="282"/>
+  <TETRAHEDRON i="99" j="232" k="233" m="330"/>
+  <TETRAHEDRON i="152" j="385" k="81" m="153"/>
+  <TETRAHEDRON i="176" j="398" k="288" m="52"/>
+  <TETRAHEDRON i="152" j="225" k="149" m="42"/>
+  <TETRAHEDRON i="152" j="287" k="153" m="154"/>
+  <TETRAHEDRON i="225" j="154" k="149" m="24"/>
+  <TETRAHEDRON i="81" j="385" k="25" m="153"/>
+  <TETRAHEDRON i="287" j="153" k="151" m="25"/>
+  <TETRAHEDRON i="16" j="154" k="153" m="151"/>
+  <TETRAHEDRON i="16" j="149" k="152" m="154"/>
+  <TETRAHEDRON i="136" j="270" k="87" m="114"/>
+  <TETRAHEDRON i="314" j="398" k="288" m="155"/>
+  <TETRAHEDRON i="35" j="176" k="289" m="157"/>
+  <TETRAHEDRON i="220" j="410" k="394" m="432"/>
+  <TETRAHEDRON i="290" j="417" k="158" m="265"/>
+  <TETRAHEDRON i="156" j="331" k="46" m="155"/>
+  <TETRAHEDRON i="332" j="398" k="221" m="52"/>
+  <TETRAHEDRON i="156" j="221" k="50" m="106"/>
+  <TETRAHEDRON i="1" j="157" k="229" m="109"/>
+  <TETRAHEDRON i="1" j="288" k="120" m="157"/>
+  <TETRAHEDRON i="288" j="290" k="157" m="1"/>
+  <TETRAHEDRON i="288" j="290" k="158" m="157"/>
+  <TETRAHEDRON i="109" j="229" k="291" m="157"/>
+  <TETRAHEDRON i="158" j="289" k="176" m="157"/>
+  <TETRAHEDRON i="142" j="399" k="272" m="40"/>
+  <TETRAHEDRON i="288" j="158" k="176" m="157"/>
+  <TETRAHEDRON i="158" j="176" k="289" m="110"/>
+  <TETRAHEDRON i="159" j="292" k="163" m="24"/>
+  <TETRAHEDRON i="225" j="160" k="165" m="41"/>
+  <TETRAHEDRON i="49" j="200" k="82" m="161"/>
+  <TETRAHEDRON i="49" j="292" k="200" m="161"/>
+  <TETRAHEDRON i="49" j="159" k="292" m="161"/>
+  <TETRAHEDRON i="18" j="162" k="163" m="161"/>
+  <TETRAHEDRON i="108" j="292" k="192" m="225"/>
+  <TETRAHEDRON i="82" j="200" k="162" m="161"/>
+  <TETRAHEDRON i="225" j="160" k="163" m="24"/>
+  <TETRAHEDRON i="18" j="163" k="162" m="160"/>
+  <TETRAHEDRON i="18" j="159" k="161" m="163"/>
+  <TETRAHEDRON i="17" j="166" k="149" m="164"/>
+  <TETRAHEDRON i="17" j="166" k="165" m="121"/>
+  <TETRAHEDRON i="17" j="160" k="165" m="164"/>
+  <TETRAHEDRON i="17" j="165" k="166" m="164"/>
+  <TETRAHEDRON i="225" j="166" k="149" m="42"/>
+  <TETRAHEDRON i="160" j="225" k="165" m="164"/>
+  <TETRAHEDRON i="165" j="334" k="139" m="121"/>
+  <TETRAHEDRON i="166" j="225" k="149" m="164"/>
+  <TETRAHEDRON i="166" j="225" k="164" m="165"/>
+  <TETRAHEDRON i="166" j="334" k="165" m="121"/>
+  <TETRAHEDRON i="19" j="169" k="159" m="167"/>
+  <TETRAHEDRON i="19" j="169" k="168" m="67"/>
+  <TETRAHEDRON i="19" j="151" k="168" m="167"/>
+  <TETRAHEDRON i="19" j="168" k="169" m="167"/>
+  <TETRAHEDRON i="192" j="287" k="168" m="25"/>
+  <TETRAHEDRON i="151" j="168" k="287" m="25"/>
+  <TETRAHEDRON i="192" j="168" k="67" m="25"/>
+  <TETRAHEDRON i="159" j="292" k="169" m="49"/>
+  <TETRAHEDRON i="167" j="169" k="192" m="168"/>
+  <TETRAHEDRON i="367" j="31" k="170" m="171"/>
+  <TETRAHEDRON i="31" j="171" k="136" m="5"/>
+  <TETRAHEDRON i="31" j="367" k="170" m="256"/>
+  <TETRAHEDRON i="136" j="171" k="172" m="5"/>
+  <TETRAHEDRON i="173" j="212" k="325" m="211"/>
+  <TETRAHEDRON i="325" j="136" k="87" m="114"/>
+  <TETRAHEDRON i="136" j="171" k="325" m="172"/>
+  <TETRAHEDRON i="325" j="271" k="173" m="87"/>
+  <TETRAHEDRON i="172" j="414" k="14" m="171"/>
+  <TETRAHEDRON i="245" j="174" k="38" m="52"/>
+  <TETRAHEDRON i="52" j="175" k="174" m="38"/>
+  <TETRAHEDRON i="175" j="409" k="174" m="38"/>
+  <TETRAHEDRON i="38" j="355" k="118" m="78"/>
+  <TETRAHEDRON i="4" j="332" k="174" m="28"/>
+  <TETRAHEDRON i="52" j="174" k="175" m="53"/>
+  <TETRAHEDRON i="53" j="380" k="137" m="191"/>
+  <TETRAHEDRON i="409" j="28" k="61" m="174"/>
+  <TETRAHEDRON i="38" j="120" k="52" m="175"/>
+  <TETRAHEDRON i="229" j="246" k="291" m="175"/>
+  <TETRAHEDRON i="330" j="338" k="88" m="233"/>
+  <TETRAHEDRON i="379" j="20" k="115" m="145"/>
+  <TETRAHEDRON i="175" j="191" k="53" m="174"/>
+  <TETRAHEDRON i="37" j="337" k="216" m="232"/>
+  <TETRAHEDRON i="380" j="401" k="337" m="273"/>
+  <TETRAHEDRON i="420" j="37" k="216" m="98"/>
+  <TETRAHEDRON i="32" j="333" k="223" m="26"/>
+  <TETRAHEDRON i="176" j="386" k="50" m="158"/>
+  <TETRAHEDRON i="110" j="270" k="289" m="209"/>
+  <TETRAHEDRON i="137" j="176" k="35" m="53"/>
+  <TETRAHEDRON i="104" j="223" k="32" m="221"/>
+  <TETRAHEDRON i="158" j="176" k="110" m="50"/>
+  <TETRAHEDRON i="204" j="56" k="315" m="177"/>
+  <TETRAHEDRON i="178" j="322" k="208" m="207"/>
+  <TETRAHEDRON i="58" j="257" k="124" m="179"/>
+  <TETRAHEDRON i="58" j="293" k="257" m="179"/>
+  <TETRAHEDRON i="44" j="370" k="260" m="182"/>
+  <TETRAHEDRON i="22" j="294" k="277" m="146"/>
+  <TETRAHEDRON i="58" j="257" k="293" m="97"/>
+  <TETRAHEDRON i="180" j="277" k="294" m="146"/>
+  <TETRAHEDRON i="180" j="232" k="112" m="216"/>
+  <TETRAHEDRON i="97" j="216" k="180" m="112"/>
+  <TETRAHEDRON i="180" j="293" k="257" m="97"/>
+  <TETRAHEDRON i="275" j="180" k="146" m="20"/>
+  <TETRAHEDRON i="58" j="293" k="179" m="181"/>
+  <TETRAHEDRON i="58" j="295" k="293" m="181"/>
+  <TETRAHEDRON i="58" j="96" k="295" m="181"/>
+  <TETRAHEDRON i="58" j="293" k="295" m="97"/>
+  <TETRAHEDRON i="260" j="113" k="235" m="231"/>
+  <TETRAHEDRON i="294" j="370" k="293" m="3"/>
+  <TETRAHEDRON i="44" j="96" k="181" m="182"/>
+  <TETRAHEDRON i="182" j="370" k="295" m="181"/>
+  <TETRAHEDRON i="280" j="383" k="183" m="296"/>
+  <TETRAHEDRON i="33" j="184" k="296" m="183"/>
+  <TETRAHEDRON i="230" j="195" k="217" m="37"/>
+  <TETRAHEDRON i="59" j="297" k="195" m="184"/>
+  <TETRAHEDRON i="59" j="183" k="297" m="184"/>
+  <TETRAHEDRON i="185" j="296" k="230" m="184"/>
+  <TETRAHEDRON i="185" j="297" k="195" m="76"/>
+  <TETRAHEDRON i="185" j="195" k="297" m="184"/>
+  <TETRAHEDRON i="2" j="189" k="76" m="185"/>
+  <TETRAHEDRON i="232" j="219" k="246" m="88"/>
+  <TETRAHEDRON i="99" j="219" k="232" m="330"/>
+  <TETRAHEDRON i="185" j="230" k="296" m="99"/>
+  <TETRAHEDRON i="388" j="37" k="71" m="76"/>
+  <TETRAHEDRON i="2" j="189" k="219" m="111"/>
+  <TETRAHEDRON i="196" j="299" k="59" m="186"/>
+  <TETRAHEDRON i="299" j="306" k="197" m="196"/>
+  <TETRAHEDRON i="59" j="297" k="183" m="187"/>
+  <TETRAHEDRON i="59" j="299" k="297" m="187"/>
+  <TETRAHEDRON i="59" j="186" k="299" m="187"/>
+  <TETRAHEDRON i="297" j="300" k="298" m="188"/>
+  <TETRAHEDRON i="59" j="297" k="299" m="76"/>
+  <TETRAHEDRON i="45" j="298" k="188" m="187"/>
+  <TETRAHEDRON i="45" j="186" k="187" m="188"/>
+  <TETRAHEDRON i="177" j="300" k="298" m="2"/>
+  <TETRAHEDRON i="297" j="299" k="300" m="188"/>
+  <TETRAHEDRON i="111" j="219" k="246" m="189"/>
+  <TETRAHEDRON i="111" j="244" k="301" m="189"/>
+  <TETRAHEDRON i="47" j="332" k="222" m="245"/>
+  <TETRAHEDRON i="190" j="301" k="244" m="189"/>
+  <TETRAHEDRON i="246" j="388" k="232" m="337"/>
+  <TETRAHEDRON i="364" j="330" k="338" m="220"/>
+  <TETRAHEDRON i="2" j="300" k="301" m="177"/>
+  <TETRAHEDRON i="244" j="388" k="190" m="189"/>
+  <TETRAHEDRON i="190" j="300" k="301" m="189"/>
+  <TETRAHEDRON i="64" j="401" k="303" m="72"/>
+  <TETRAHEDRON i="36" j="4" k="53" m="191"/>
+  <TETRAHEDRON i="36" j="83" k="4" m="191"/>
+  <TETRAHEDRON i="191" j="224" k="83" m="108"/>
+  <TETRAHEDRON i="36" j="273" k="191" m="137"/>
+  <TETRAHEDRON i="49" j="67" k="64" m="192"/>
+  <TETRAHEDRON i="140" j="399" k="273" m="40"/>
+  <TETRAHEDRON i="67" j="169" k="192" m="49"/>
+  <TETRAHEDRON i="192" j="169" k="292" m="49"/>
+  <TETRAHEDRON i="192" j="292" k="169" m="167"/>
+  <TETRAHEDRON i="180" j="293" k="294" m="179"/>
+  <TETRAHEDRON i="192" j="226" k="49" m="108"/>
+  <TETRAHEDRON i="192" j="401" k="108" m="303"/>
+  <TETRAHEDRON i="193" j="65" k="194" m="70"/>
+  <TETRAHEDRON i="78" j="355" k="118" m="193"/>
+  <TETRAHEDRON i="78" j="355" k="193" m="62"/>
+  <TETRAHEDRON i="39" j="193" k="62" m="194"/>
+  <TETRAHEDRON i="193" j="388" k="77" m="76"/>
+  <TETRAHEDRON i="77" j="195" k="59" m="76"/>
+  <TETRAHEDRON i="59" j="195" k="297" m="76"/>
+  <TETRAHEDRON i="59" j="80" k="184" m="195"/>
+  <TETRAHEDRON i="77" j="305" k="74" m="75"/>
+  <TETRAHEDRON i="77" j="305" k="59" m="195"/>
+  <TETRAHEDRON i="185" j="195" k="37" m="76"/>
+  <TETRAHEDRON i="305" j="195" k="80" m="59"/>
+  <TETRAHEDRON i="305" j="306" k="196" m="75"/>
+  <TETRAHEDRON i="69" j="305" k="217" m="79"/>
+  <TETRAHEDRON i="304" j="306" k="77" m="70"/>
+  <TETRAHEDRON i="304" j="306" k="70" m="197"/>
+  <TETRAHEDRON i="60" j="299" k="300" m="76"/>
+  <TETRAHEDRON i="186" j="299" k="197" m="196"/>
+  <TETRAHEDRON i="299" j="304" k="77" m="60"/>
+  <TETRAHEDRON i="77" j="299" k="60" m="76"/>
+  <TETRAHEDRON i="305" j="306" k="77" m="196"/>
+  <TETRAHEDRON i="65" j="7" k="198" m="68"/>
+  <TETRAHEDRON i="198" j="63" k="62" m="65"/>
+  <TETRAHEDRON i="78" j="401" k="71" m="337"/>
+  <TETRAHEDRON i="74" j="198" k="7" m="68"/>
+  <TETRAHEDRON i="29" j="30" k="92" m="199"/>
+  <TETRAHEDRON i="226" j="401" k="64" m="61"/>
+  <TETRAHEDRON i="65" j="304" k="193" m="198"/>
+  <TETRAHEDRON i="62" j="198" k="193" m="78"/>
+  <TETRAHEDRON i="217" j="29" k="30" m="69"/>
+  <TETRAHEDRON i="30" j="218" k="92" m="199"/>
+  <TETRAHEDRON i="82" j="162" k="200" m="41"/>
+  <TETRAHEDRON i="29" j="217" k="30" m="199"/>
+  <TETRAHEDRON i="225" j="292" k="163" m="200"/>
+  <TETRAHEDRON i="200" j="334" k="225" m="108"/>
+  <TETRAHEDRON i="129" j="399" k="273" m="140"/>
+  <TETRAHEDRON i="192" j="200" k="108" m="49"/>
+  <TETRAHEDRON i="191" j="200" k="84" m="108"/>
+  <TETRAHEDRON i="163" j="225" k="200" m="162"/>
+  <TETRAHEDRON i="202" j="317" k="316" m="204"/>
+  <TETRAHEDRON i="205" j="321" k="392" m="311"/>
+  <TETRAHEDRON i="238" j="373" k="265" m="128"/>
+  <TETRAHEDRON i="203" j="316" k="21" m="313"/>
+  <TETRAHEDRON i="313" j="419" k="85" m="203"/>
+  <TETRAHEDRON i="314" j="393" k="1" m="120"/>
+  <TETRAHEDRON i="119" j="393" k="120" m="244"/>
+  <TETRAHEDRON i="119" j="398" k="288" m="314"/>
+  <TETRAHEDRON i="177" j="315" k="301" m="2"/>
+  <TETRAHEDRON i="21" j="301" k="316" m="111"/>
+  <TETRAHEDRON i="21" j="202" k="316" m="204"/>
+  <TETRAHEDRON i="316" j="317" k="329" m="315"/>
+  <TETRAHEDRON i="318" j="392" k="201" m="205"/>
+  <TETRAHEDRON i="424" j="425" k="343" m="403"/>
+  <TETRAHEDRON i="317" j="322" k="323" m="206"/>
+  <TETRAHEDRON i="396" j="397" k="395" m="323"/>
+  <TETRAHEDRON i="319" j="384" k="279" m="150"/>
+  <TETRAHEDRON i="286" j="322" k="384" m="284"/>
+  <TETRAHEDRON i="206" j="329" k="317" m="315"/>
+  <TETRAHEDRON i="323" j="422" k="55" m="397"/>
+  <TETRAHEDRON i="395" j="320" k="422" m="363"/>
+  <TETRAHEDRON i="202" j="321" k="317" m="207"/>
+  <TETRAHEDRON i="54" j="208" k="321" m="207"/>
+  <TETRAHEDRON i="54" j="178" k="208" m="207"/>
+  <TETRAHEDRON i="317" j="323" k="321" m="86"/>
+  <TETRAHEDRON i="205" j="321" k="323" m="86"/>
+  <TETRAHEDRON i="55" j="322" k="323" m="208"/>
+  <TETRAHEDRON i="178" j="208" k="322" m="55"/>
+  <TETRAHEDRON i="323" j="208" k="205" m="55"/>
+  <TETRAHEDRON i="55" j="323" k="322" m="206"/>
+  <TETRAHEDRON i="239" j="324" k="211" m="209"/>
+  <TETRAHEDRON i="86" j="426" k="394" m="392"/>
+  <TETRAHEDRON i="289" j="158" k="404" m="27"/>
+  <TETRAHEDRON i="210" j="324" k="270" m="114"/>
+  <TETRAHEDRON i="425" j="210" k="0" m="324"/>
+  <TETRAHEDRON i="270" j="425" k="324" m="210"/>
+  <TETRAHEDRON i="0" j="147" k="114" m="210"/>
+  <TETRAHEDRON i="0" j="210" k="255" m="147"/>
+  <TETRAHEDRON i="344" j="352" k="405" m="351"/>
+  <TETRAHEDRON i="236" j="255" k="210" m="147"/>
+  <TETRAHEDRON i="87" j="324" k="209" m="211"/>
+  <TETRAHEDRON i="87" j="325" k="324" m="211"/>
+  <TETRAHEDRON i="87" j="173" k="325" m="211"/>
+  <TETRAHEDRON i="43" j="242" k="241" m="243"/>
+  <TETRAHEDRON i="87" j="324" k="325" m="114"/>
+  <TETRAHEDRON i="43" j="381" k="123" m="212"/>
+  <TETRAHEDRON i="43" j="173" k="211" m="212"/>
+  <TETRAHEDRON i="278" j="212" k="51" m="123"/>
+  <TETRAHEDRON i="278" j="324" k="325" m="211"/>
+  <TETRAHEDRON i="360" j="263" k="213" m="91"/>
+  <TETRAHEDRON i="15" j="94" k="95" m="214"/>
+  <TETRAHEDRON i="214" j="387" k="15" m="93"/>
+  <TETRAHEDRON i="218" j="295" k="97" m="215"/>
+  <TETRAHEDRON i="58" j="215" k="295" m="214"/>
+  <TETRAHEDRON i="6" j="95" k="94" m="215"/>
+  <TETRAHEDRON i="97" j="144" k="216" m="98"/>
+  <TETRAHEDRON i="144" j="215" k="6" m="97"/>
+  <TETRAHEDRON i="6" j="215" k="218" m="97"/>
+  <TETRAHEDRON i="126" j="215" k="95" m="6"/>
+  <TETRAHEDRON i="6" j="143" k="215" m="142"/>
+  <TETRAHEDRON i="2" j="327" k="383" m="206"/>
+  <TETRAHEDRON i="144" j="215" k="143" m="142"/>
+  <TETRAHEDRON i="97" j="180" k="216" m="20"/>
+  <TETRAHEDRON i="275" j="216" k="180" m="20"/>
+  <TETRAHEDRON i="337" j="246" k="275" m="232"/>
+  <TETRAHEDRON i="291" j="380" k="379" m="236"/>
+  <TETRAHEDRON i="146" j="255" k="275" m="147"/>
+  <TETRAHEDRON i="146" j="275" k="233" m="180"/>
+  <TETRAHEDRON i="127" j="436" k="416" m="434"/>
+  <TETRAHEDRON i="30" j="66" k="217" m="69"/>
+  <TETRAHEDRON i="71" j="217" k="195" m="37"/>
+  <TETRAHEDRON i="217" j="71" k="66" m="37"/>
+  <TETRAHEDRON i="327" j="396" k="206" m="329"/>
+  <TETRAHEDRON i="29" j="217" k="199" m="80"/>
+  <TETRAHEDRON i="217" j="305" k="195" m="80"/>
+  <TETRAHEDRON i="218" j="387" k="295" m="93"/>
+  <TETRAHEDRON i="2" j="327" k="329" m="219"/>
+  <TETRAHEDRON i="6" j="218" k="94" m="93"/>
+  <TETRAHEDRON i="218" j="30" k="217" m="199"/>
+  <TETRAHEDRON i="199" j="326" k="218" m="48"/>
+  <TETRAHEDRON i="2" j="185" k="99" m="219"/>
+  <TETRAHEDRON i="2" j="219" k="189" m="185"/>
+  <TETRAHEDRON i="111" j="329" k="328" m="219"/>
+  <TETRAHEDRON i="328" j="330" k="88" m="219"/>
+  <TETRAHEDRON i="23" j="432" k="394" m="410"/>
+  <TETRAHEDRON i="318" j="435" k="23" m="428"/>
+  <TETRAHEDRON i="429" j="423" k="395" m="220"/>
+  <TETRAHEDRON i="431" j="46" k="156" m="417"/>
+  <TETRAHEDRON i="397" j="323" k="205" m="55"/>
+  <TETRAHEDRON i="327" j="330" k="219" m="99"/>
+  <TETRAHEDRON i="3" j="364" k="99" m="233"/>
+  <TETRAHEDRON i="282" j="56" k="382" m="281"/>
+  <TETRAHEDRON i="330" j="364" k="338" m="233"/>
+  <TETRAHEDRON i="333" j="270" k="137" m="110"/>
+  <TETRAHEDRON i="4" j="332" k="52" m="174"/>
+  <TETRAHEDRON i="53" j="221" k="176" m="52"/>
+  <TETRAHEDRON i="221" j="106" k="104" m="50"/>
+  <TETRAHEDRON i="176" j="398" k="221" m="50"/>
+  <TETRAHEDRON i="104" j="223" k="105" m="32"/>
+  <TETRAHEDRON i="11" j="221" k="106" m="104"/>
+  <TETRAHEDRON i="398" j="176" k="386" m="50"/>
+  <TETRAHEDRON i="245" j="355" k="222" m="118"/>
+  <TETRAHEDRON i="247" j="408" k="410" m="122"/>
+  <TETRAHEDRON i="47" j="332" k="103" m="222"/>
+  <TETRAHEDRON i="221" j="223" k="50" m="105"/>
+  <TETRAHEDRON i="176" j="223" k="110" m="50"/>
+  <TETRAHEDRON i="137" j="223" k="176" m="32"/>
+  <TETRAHEDRON i="104" j="223" k="221" m="105"/>
+  <TETRAHEDRON i="191" j="224" k="36" m="83"/>
+  <TETRAHEDRON i="200" j="224" k="108" m="83"/>
+  <TETRAHEDRON i="191" j="224" k="108" m="36"/>
+  <TETRAHEDRON i="42" j="334" k="138" m="272"/>
+  <TETRAHEDRON i="108" j="292" k="200" m="192"/>
+  <TETRAHEDRON i="119" j="288" k="245" m="120"/>
+  <TETRAHEDRON i="42" j="334" k="121" m="138"/>
+  <TETRAHEDRON i="334" j="36" k="108" m="224"/>
+  <TETRAHEDRON i="225" j="162" k="160" m="41"/>
+  <TETRAHEDRON i="165" j="334" k="41" m="139"/>
+  <TETRAHEDRON i="50" j="398" k="221" m="156"/>
+  <TETRAHEDRON i="108" j="399" k="335" m="273"/>
+  <TETRAHEDRON i="224" j="334" k="200" m="108"/>
+  <TETRAHEDRON i="162" j="225" k="200" m="41"/>
+  <TETRAHEDRON i="200" j="226" k="49" m="84"/>
+  <TETRAHEDRON i="160" j="225" k="164" m="24"/>
+  <TETRAHEDRON i="385" j="399" k="334" m="272"/>
+  <TETRAHEDRON i="6" j="335" k="66" m="227"/>
+  <TETRAHEDRON i="227" j="228" k="6" m="142"/>
+  <TETRAHEDRON i="71" j="420" k="401" m="66"/>
+  <TETRAHEDRON i="142" j="399" k="335" m="272"/>
+  <TETRAHEDRON i="303" j="385" k="335" m="108"/>
+  <TETRAHEDRON i="228" j="335" k="142" m="227"/>
+  <TETRAHEDRON i="52" j="157" k="120" m="288"/>
+  <TETRAHEDRON i="1" j="229" k="157" m="120"/>
+  <TETRAHEDRON i="1" j="336" k="375" m="229"/>
+  <TETRAHEDRON i="1" j="393" k="336" m="229"/>
+  <TETRAHEDRON i="1" j="120" k="393" m="229"/>
+  <TETRAHEDRON i="85" j="419" k="267" m="376"/>
+  <TETRAHEDRON i="229" j="291" k="246" m="88"/>
+  <TETRAHEDRON i="37" j="99" k="112" m="230"/>
+  <TETRAHEDRON i="185" j="230" k="195" m="184"/>
+  <TETRAHEDRON i="80" j="195" k="230" m="184"/>
+  <TETRAHEDRON i="37" j="326" k="217" m="230"/>
+  <TETRAHEDRON i="185" j="230" k="99" m="37"/>
+  <TETRAHEDRON i="113" j="230" k="33" m="80"/>
+  <TETRAHEDRON i="12" j="262" k="264" m="261"/>
+  <TETRAHEDRON i="220" j="413" k="395" m="364"/>
+  <TETRAHEDRON i="370" j="44" k="369" m="368"/>
+  <TETRAHEDRON i="99" j="232" k="219" m="185"/>
+  <TETRAHEDRON i="232" j="246" k="219" m="189"/>
+  <TETRAHEDRON i="246" j="291" k="275" m="88"/>
+  <TETRAHEDRON i="291" j="380" k="175" m="337"/>
+  <TETRAHEDRON i="232" j="275" k="233" m="88"/>
+  <TETRAHEDRON i="189" j="219" k="232" m="185"/>
+  <TETRAHEDRON i="99" j="233" k="232" m="112"/>
+  <TETRAHEDRON i="180" j="232" k="233" m="112"/>
+  <TETRAHEDRON i="338" j="339" k="146" m="233"/>
+  <TETRAHEDRON i="128" j="389" k="307" m="340"/>
+  <TETRAHEDRON i="293" j="370" k="295" m="234"/>
+  <TETRAHEDRON i="113" j="260" k="235" m="234"/>
+  <TETRAHEDRON i="234" j="326" k="235" m="113"/>
+  <TETRAHEDRON i="234" j="295" k="218" m="48"/>
+  <TETRAHEDRON i="234" j="295" k="293" m="97"/>
+  <TETRAHEDRON i="234" j="113" k="260" m="182"/>
+  <TETRAHEDRON i="99" j="235" k="230" m="33"/>
+  <TETRAHEDRON i="33" j="413" k="99" m="235"/>
+  <TETRAHEDRON i="33" j="113" k="231" m="235"/>
+  <TETRAHEDRON i="338" j="364" k="339" m="233"/>
+  <TETRAHEDRON i="114" j="131" k="236" m="115"/>
+  <TETRAHEDRON i="114" j="210" k="236" m="35"/>
+  <TETRAHEDRON i="236" j="255" k="291" m="210"/>
+  <TETRAHEDRON i="275" j="337" k="291" m="246"/>
+  <TETRAHEDRON i="281" j="283" k="382" m="282"/>
+  <TETRAHEDRON i="278" j="276" k="381" m="123"/>
+  <TETRAHEDRON i="379" j="20" k="144" m="216"/>
+  <TETRAHEDRON i="136" j="256" k="31" m="237"/>
+  <TETRAHEDRON i="237" j="256" k="124" m="51"/>
+  <TETRAHEDRON i="148" j="237" k="278" m="147"/>
+  <TETRAHEDRON i="114" j="278" k="237" m="147"/>
+  <TETRAHEDRON i="136" j="237" k="114" m="51"/>
+  <TETRAHEDRON i="145" j="237" k="20" m="115"/>
+  <TETRAHEDRON i="270" j="425" k="209" m="324"/>
+  <TETRAHEDRON i="148" j="237" k="124" m="51"/>
+  <TETRAHEDRON i="435" j="418" k="426" m="432"/>
+  <TETRAHEDRON i="3" j="233" k="146" m="339"/>
+  <TETRAHEDRON i="211" j="381" k="43" m="212"/>
+  <TETRAHEDRON i="403" j="407" k="406" m="253"/>
+  <TETRAHEDRON i="342" j="425" k="239" m="27"/>
+  <TETRAHEDRON i="247" j="410" k="408" m="356"/>
+  <TETRAHEDRON i="418" j="424" k="375" m="109"/>
+  <TETRAHEDRON i="428" j="433" k="426" m="407"/>
+  <TETRAHEDRON i="347" j="406" k="353" m="348"/>
+  <TETRAHEDRON i="211" j="381" k="239" m="242"/>
+  <TETRAHEDRON i="381" j="211" k="43" m="242"/>
+  <TETRAHEDRON i="118" j="244" k="245" m="38"/>
+  <TETRAHEDRON i="43" j="381" k="243" m="123"/>
+  <TETRAHEDRON i="116" j="403" k="242" m="239"/>
+  <TETRAHEDRON i="381" j="403" k="242" m="354"/>
+  <TETRAHEDRON i="244" j="388" k="189" m="38"/>
+  <TETRAHEDRON i="38" j="111" k="189" m="244"/>
+  <TETRAHEDRON i="120" j="245" k="244" m="38"/>
+  <TETRAHEDRON i="190" j="244" k="21" m="118"/>
+  <TETRAHEDRON i="38" j="302" k="118" m="244"/>
+  <TETRAHEDRON i="205" j="394" k="392" m="86"/>
+  <TETRAHEDRON i="120" j="244" k="111" m="38"/>
+  <TETRAHEDRON i="332" j="398" k="52" m="47"/>
+  <TETRAHEDRON i="119" j="398" k="245" m="288"/>
+  <TETRAHEDRON i="222" j="245" k="118" m="47"/>
+  <TETRAHEDRON i="38" j="111" k="120" m="246"/>
+  <TETRAHEDRON i="120" j="245" k="38" m="52"/>
+  <TETRAHEDRON i="36" j="399" k="334" m="273"/>
+  <TETRAHEDRON i="38" j="189" k="111" m="246"/>
+  <TETRAHEDRON i="388" j="246" k="232" m="189"/>
+  <TETRAHEDRON i="337" j="38" k="388" m="78"/>
+  <TETRAHEDRON i="38" j="120" k="175" m="246"/>
+  <TETRAHEDRON i="291" j="337" k="175" m="246"/>
+  <TETRAHEDRON i="247" j="358" k="408" m="122"/>
+  <TETRAHEDRON i="89" j="250" k="358" m="247"/>
+  <TETRAHEDRON i="247" j="410" k="361" m="122"/>
+  <TETRAHEDRON i="248" j="365" k="362" m="254"/>
+  <TETRAHEDRON i="248" j="362" k="359" m="251"/>
+  <TETRAHEDRON i="248" j="358" k="359" m="122"/>
+  <TETRAHEDRON i="122" j="359" k="361" m="358"/>
+  <TETRAHEDRON i="91" j="213" k="360" m="249"/>
+  <TETRAHEDRON i="90" j="360" k="361" m="252"/>
+  <TETRAHEDRON i="89" j="358" k="250" m="249"/>
+  <TETRAHEDRON i="89" j="213" k="249" m="250"/>
+  <TETRAHEDRON i="247" j="358" k="361" m="250"/>
+  <TETRAHEDRON i="259" j="293" k="181" m="179"/>
+  <TETRAHEDRON i="362" j="411" k="359" m="251"/>
+  <TETRAHEDRON i="248" j="359" k="362" m="122"/>
+  <TETRAHEDRON i="146" j="339" k="362" m="294"/>
+  <TETRAHEDRON i="411" j="360" k="368" m="252"/>
+  <TETRAHEDRON i="262" j="372" k="360" m="264"/>
+  <TETRAHEDRON i="127" j="436" k="371" m="372"/>
+  <TETRAHEDRON i="410" j="412" k="357" m="361"/>
+  <TETRAHEDRON i="411" j="251" k="91" m="359"/>
+  <TETRAHEDRON i="359" j="360" k="361" m="250"/>
+  <TETRAHEDRON i="127" j="371" k="434" m="260"/>
+  <TETRAHEDRON i="117" j="352" k="248" m="365"/>
+  <TETRAHEDRON i="99" j="364" k="235" m="413"/>
+  <TETRAHEDRON i="250" j="359" k="249" m="358"/>
+  <TETRAHEDRON i="329" j="396" k="317" m="86"/>
+  <TETRAHEDRON i="347" j="353" k="405" m="346"/>
+  <TETRAHEDRON i="406" j="407" k="402" m="349"/>
+  <TETRAHEDRON i="123" j="276" k="354" m="254"/>
+  <TETRAHEDRON i="289" j="425" k="404" m="209"/>
+  <TETRAHEDRON i="362" j="365" k="366" m="354"/>
+  <TETRAHEDRON i="406" j="435" k="253" m="407"/>
+  <TETRAHEDRON i="353" j="403" k="253" m="354"/>
+  <TETRAHEDRON i="436" j="364" k="252" m="429"/>
+  <TETRAHEDRON i="248" j="362" k="365" m="122"/>
+  <TETRAHEDRON i="253" j="366" k="365" m="354"/>
+  <TETRAHEDRON i="146" j="362" k="366" m="276"/>
+  <TETRAHEDRON i="426" j="428" k="318" m="341"/>
+  <TETRAHEDRON i="0" j="255" k="210" m="343"/>
+  <TETRAHEDRON i="0" j="146" k="147" m="255"/>
+  <TETRAHEDRON i="171" j="415" k="170" m="367"/>
+  <TETRAHEDRON i="366" j="338" k="146" m="255"/>
+  <TETRAHEDRON i="407" j="437" k="435" m="253"/>
+  <TETRAHEDRON i="34" j="31" k="170" m="256"/>
+  <TETRAHEDRON i="124" j="277" k="257" m="20"/>
+  <TETRAHEDRON i="369" j="372" k="262" m="127"/>
+  <TETRAHEDRON i="237" j="367" k="256" m="51"/>
+  <TETRAHEDRON i="145" j="256" k="237" m="31"/>
+  <TETRAHEDRON i="237" j="367" k="51" m="136"/>
+  <TETRAHEDRON i="180" j="257" k="20" m="97"/>
+  <TETRAHEDRON i="257" j="145" k="124" m="20"/>
+  <TETRAHEDRON i="180" j="257" k="277" m="20"/>
+  <TETRAHEDRON i="144" j="257" k="97" m="20"/>
+  <TETRAHEDRON i="145" j="257" k="144" m="20"/>
+  <TETRAHEDRON i="294" j="370" k="259" m="293"/>
+  <TETRAHEDRON i="44" j="370" k="181" m="259"/>
+  <TETRAHEDRON i="213" j="250" k="360" m="249"/>
+  <TETRAHEDRON i="293" j="370" k="259" m="181"/>
+  <TETRAHEDRON i="368" j="411" k="259" m="91"/>
+  <TETRAHEDRON i="364" j="436" k="395" m="429"/>
+  <TETRAHEDRON i="360" j="369" k="262" m="368"/>
+  <TETRAHEDRON i="234" j="371" k="235" m="3"/>
+  <TETRAHEDRON i="268" j="374" k="265" m="417"/>
+  <TETRAHEDRON i="127" j="261" k="372" m="262"/>
+  <TETRAHEDRON i="368" j="262" k="360" m="263"/>
+  <TETRAHEDRON i="360" j="368" k="263" m="91"/>
+  <TETRAHEDRON i="12" j="262" k="258" m="263"/>
+  <TETRAHEDRON i="12" j="264" k="263" m="213"/>
+  <TETRAHEDRON i="213" j="360" k="264" m="263"/>
+  <TETRAHEDRON i="360" j="411" k="368" m="91"/>
+  <TETRAHEDRON i="261" j="264" k="372" m="262"/>
+  <TETRAHEDRON i="262" j="360" k="263" m="264"/>
+  <TETRAHEDRON i="369" j="371" k="252" m="127"/>
+  <TETRAHEDRON i="290" j="431" k="374" m="1"/>
+  <TETRAHEDRON i="128" j="265" k="268" m="374"/>
+  <TETRAHEDRON i="27" j="424" k="265" m="342"/>
+  <TETRAHEDRON i="266" j="269" k="376" m="268"/>
+  <TETRAHEDRON i="393" j="419" k="1" m="336"/>
+  <TETRAHEDRON i="321" j="391" k="392" m="311"/>
+  <TETRAHEDRON i="253" j="437" k="122" m="366"/>
+  <TETRAHEDRON i="336" j="419" k="375" m="267"/>
+  <TETRAHEDRON i="56" j="202" k="204" m="317"/>
+  <TETRAHEDRON i="349" j="433" k="350" m="407"/>
+  <TETRAHEDRON i="318" j="426" k="201" m="392"/>
+  <TETRAHEDRON i="328" j="375" k="336" m="229"/>
+  <TETRAHEDRON i="128" j="376" k="374" m="268"/>
+  <TETRAHEDRON i="128" j="266" k="376" m="268"/>
+  <TETRAHEDRON i="376" j="419" k="267" m="374"/>
+  <TETRAHEDRON i="314" j="431" k="419" m="377"/>
+  <TETRAHEDRON i="46" j="431" k="268" m="417"/>
+  <TETRAHEDRON i="46" j="266" k="268" m="269"/>
+  <TETRAHEDRON i="109" j="229" k="1" m="375"/>
+  <TETRAHEDRON i="87" j="270" k="324" m="114"/>
+  <TETRAHEDRON i="87" j="110" k="209" m="270"/>
+  <TETRAHEDRON i="136" j="378" k="134" m="133"/>
+  <TETRAHEDRON i="136" j="378" k="87" m="270"/>
+  <TETRAHEDRON i="210" j="270" k="35" m="114"/>
+  <TETRAHEDRON i="137" j="270" k="35" m="110"/>
+  <TETRAHEDRON i="270" j="378" k="110" m="333"/>
+  <TETRAHEDRON i="172" j="378" k="136" m="133"/>
+  <TETRAHEDRON i="378" j="132" k="130" m="131"/>
+  <TETRAHEDRON i="325" j="378" k="271" m="87"/>
+  <TETRAHEDRON i="172" j="325" k="136" m="271"/>
+  <TETRAHEDRON i="272" j="335" k="142" m="228"/>
+  <TETRAHEDRON i="401" j="78" k="198" m="63"/>
+  <TETRAHEDRON i="41" j="334" k="224" m="139"/>
+  <TETRAHEDRON i="274" j="31" k="143" m="34"/>
+  <TETRAHEDRON i="237" j="274" k="256" m="145"/>
+  <TETRAHEDRON i="338" j="412" k="364" m="220"/>
+  <TETRAHEDRON i="31" j="274" k="256" m="34"/>
+  <TETRAHEDRON i="275" j="379" k="337" m="216"/>
+  <TETRAHEDRON i="380" j="409" k="337" m="191"/>
+  <TETRAHEDRON i="74" j="401" k="71" m="198"/>
+  <TETRAHEDRON i="399" j="420" k="273" m="40"/>
+  <TETRAHEDRON i="40" j="273" k="115" m="145"/>
+  <TETRAHEDRON i="236" j="275" k="255" m="147"/>
+  <TETRAHEDRON i="291" j="379" k="337" m="275"/>
+  <TETRAHEDRON i="146" j="276" k="277" m="22"/>
+  <TETRAHEDRON i="22" j="276" k="362" m="146"/>
+  <TETRAHEDRON i="22" j="123" k="254" m="276"/>
+  <TETRAHEDRON i="148" j="277" k="276" m="22"/>
+  <TETRAHEDRON i="146" j="366" k="362" m="122"/>
+  <TETRAHEDRON i="148" j="276" k="123" m="22"/>
+  <TETRAHEDRON i="354" j="362" k="365" m="254"/>
+  <TETRAHEDRON i="20" j="146" k="147" m="277"/>
+  <TETRAHEDRON i="180" j="277" k="257" m="179"/>
+  <TETRAHEDRON i="124" j="257" k="277" m="179"/>
+  <TETRAHEDRON i="20" j="237" k="277" m="147"/>
+  <TETRAHEDRON i="180" j="277" k="146" m="20"/>
+  <TETRAHEDRON i="148" j="277" k="22" m="124"/>
+  <TETRAHEDRON i="0" j="276" k="278" m="147"/>
+  <TETRAHEDRON i="0" j="114" k="147" m="278"/>
+  <TETRAHEDRON i="381" j="425" k="239" m="403"/>
+  <TETRAHEDRON i="54" j="202" k="207" m="321"/>
+  <TETRAHEDRON i="148" j="278" k="51" m="123"/>
+  <TETRAHEDRON i="278" j="325" k="324" m="114"/>
+  <TETRAHEDRON i="324" j="381" k="278" m="0"/>
+  <TETRAHEDRON i="429" j="364" k="220" m="395"/>
+  <TETRAHEDRON i="323" j="422" k="397" m="395"/>
+  <TETRAHEDRON i="117" j="248" k="254" m="365"/>
+  <TETRAHEDRON i="33" j="413" k="231" m="280"/>
+  <TETRAHEDRON i="296" j="421" k="280" m="383"/>
+  <TETRAHEDRON i="45" j="283" k="281" m="282"/>
+  <TETRAHEDRON i="45" j="283" k="298" m="183"/>
+  <TETRAHEDRON i="45" j="177" k="298" m="282"/>
+  <TETRAHEDRON i="56" j="315" k="382" m="206"/>
+  <TETRAHEDRON i="45" j="298" k="283" m="282"/>
+  <TETRAHEDRON i="281" j="382" k="283" m="150"/>
+  <TETRAHEDRON i="183" j="298" k="383" m="283"/>
+  <TETRAHEDRON i="421" j="382" k="384" m="150"/>
+  <TETRAHEDRON i="283" j="315" k="282" m="298"/>
+  <TETRAHEDRON i="55" j="322" k="178" m="284"/>
+  <TETRAHEDRON i="55" j="384" k="322" m="284"/>
+  <TETRAHEDRON i="55" j="279" k="384" m="284"/>
+  <TETRAHEDRON i="286" j="322" k="284" m="285"/>
+  <TETRAHEDRON i="55" j="322" k="384" m="206"/>
+  <TETRAHEDRON i="322" j="382" k="384" m="206"/>
+  <TETRAHEDRON i="178" j="322" k="285" m="284"/>
+  <TETRAHEDRON i="382" j="285" k="281" m="56"/>
+  <TETRAHEDRON i="56" j="322" k="382" m="285"/>
+  <TETRAHEDRON i="9" j="286" k="285" m="281"/>
+  <TETRAHEDRON i="9" j="279" k="284" m="286"/>
+  <TETRAHEDRON i="286" j="382" k="322" m="285"/>
+  <TETRAHEDRON i="151" j="154" k="287" m="24"/>
+  <TETRAHEDRON i="225" j="287" k="154" m="24"/>
+  <TETRAHEDRON i="108" j="292" k="225" m="200"/>
+  <TETRAHEDRON i="167" j="292" k="287" m="192"/>
+  <TETRAHEDRON i="24" j="151" k="167" m="287"/>
+  <TETRAHEDRON i="192" j="385" k="287" m="25"/>
+  <TETRAHEDRON i="292" j="225" k="163" m="24"/>
+  <TETRAHEDRON i="152" j="287" k="154" m="225"/>
+  <TETRAHEDRON i="225" j="385" k="152" m="287"/>
+  <TETRAHEDRON i="270" j="425" k="289" m="209"/>
+  <TETRAHEDRON i="245" j="288" k="52" m="120"/>
+  <TETRAHEDRON i="290" j="431" k="288" m="386"/>
+  <TETRAHEDRON i="176" j="288" k="157" m="52"/>
+  <TETRAHEDRON i="398" j="47" k="221" m="331"/>
+  <TETRAHEDRON i="425" j="27" k="289" m="404"/>
+  <TETRAHEDRON i="210" j="289" k="109" m="35"/>
+  <TETRAHEDRON i="289" j="404" k="158" m="110"/>
+  <TETRAHEDRON i="27" j="424" k="109" m="290"/>
+  <TETRAHEDRON i="27" j="158" k="265" m="290"/>
+  <TETRAHEDRON i="158" j="290" k="289" m="157"/>
+  <TETRAHEDRON i="1" j="375" k="374" m="290"/>
+  <TETRAHEDRON i="290" j="386" k="288" m="158"/>
+  <TETRAHEDRON i="35" j="157" k="109" m="291"/>
+  <TETRAHEDRON i="431" j="156" k="386" m="417"/>
+  <TETRAHEDRON i="35" j="175" k="157" m="291"/>
+  <TETRAHEDRON i="291" j="380" k="35" m="175"/>
+  <TETRAHEDRON i="35" j="210" k="236" m="291"/>
+  <TETRAHEDRON i="35" j="109" k="210" m="291"/>
+  <TETRAHEDRON i="159" j="163" k="292" m="161"/>
+  <TETRAHEDRON i="24" j="167" k="159" m="292"/>
+  <TETRAHEDRON i="167" j="287" k="292" m="24"/>
+  <TETRAHEDRON i="225" j="292" k="287" m="24"/>
+  <TETRAHEDRON i="200" j="292" k="163" m="161"/>
+  <TETRAHEDRON i="292" j="192" k="225" m="287"/>
+  <TETRAHEDRON i="412" j="432" k="220" m="338"/>
+  <TETRAHEDRON i="234" j="293" k="3" m="97"/>
+  <TETRAHEDRON i="180" j="293" k="97" m="3"/>
+  <TETRAHEDRON i="179" j="294" k="259" m="293"/>
+  <TETRAHEDRON i="364" j="412" k="339" m="252"/>
+  <TETRAHEDRON i="22" j="277" k="294" m="179"/>
+  <TETRAHEDRON i="22" j="251" k="179" m="294"/>
+  <TETRAHEDRON i="22" j="294" k="362" m="251"/>
+  <TETRAHEDRON i="180" j="294" k="3" m="146"/>
+  <TETRAHEDRON i="362" j="411" k="294" m="339"/>
+  <TETRAHEDRON i="294" j="179" k="259" m="251"/>
+  <TETRAHEDRON i="96" j="295" k="182" m="387"/>
+  <TETRAHEDRON i="185" j="296" k="2" m="99"/>
+  <TETRAHEDRON i="93" j="94" k="295" m="218"/>
+  <TETRAHEDRON i="215" j="295" k="94" m="218"/>
+  <TETRAHEDRON i="383" j="296" k="2" m="183"/>
+  <TETRAHEDRON i="183" j="297" k="296" m="2"/>
+  <TETRAHEDRON i="185" j="296" k="297" m="2"/>
+  <TETRAHEDRON i="327" j="296" k="99" m="2"/>
+  <TETRAHEDRON i="185" j="297" k="296" m="184"/>
+  <TETRAHEDRON i="183" j="296" k="297" m="184"/>
+  <TETRAHEDRON i="183" j="297" k="298" m="187"/>
+  <TETRAHEDRON i="297" j="298" k="300" m="2"/>
+  <TETRAHEDRON i="185" j="297" k="76" m="2"/>
+  <TETRAHEDRON i="188" j="298" k="297" m="187"/>
+  <TETRAHEDRON i="183" j="298" k="297" m="2"/>
+  <TETRAHEDRON i="183" j="383" k="298" m="2"/>
+  <TETRAHEDRON i="177" j="315" k="298" m="282"/>
+  <TETRAHEDRON i="177" j="298" k="300" m="188"/>
+  <TETRAHEDRON i="2" j="383" k="315" m="206"/>
+  <TETRAHEDRON i="60" j="300" k="299" m="188"/>
+  <TETRAHEDRON i="186" j="299" k="188" m="60"/>
+  <TETRAHEDRON i="186" j="197" k="299" m="60"/>
+  <TETRAHEDRON i="60" j="188" k="177" m="300"/>
+  <TETRAHEDRON i="299" j="304" k="60" m="197"/>
+  <TETRAHEDRON i="300" j="302" k="190" m="60"/>
+  <TETRAHEDRON i="190" j="300" k="60" m="177"/>
+  <TETRAHEDRON i="297" j="300" k="299" m="76"/>
+  <TETRAHEDRON i="64" j="7" k="303" m="67"/>
+  <TETRAHEDRON i="111" j="301" k="244" m="21"/>
+  <TETRAHEDRON i="21" j="316" k="301" m="204"/>
+  <TETRAHEDRON i="21" j="177" k="204" m="301"/>
+  <TETRAHEDRON i="190" j="244" k="301" m="21"/>
+  <TETRAHEDRON i="111" j="329" k="316" m="86"/>
+  <TETRAHEDRON i="190" j="301" k="177" m="21"/>
+  <TETRAHEDRON i="315" j="316" k="317" m="204"/>
+  <TETRAHEDRON i="118" j="78" k="193" m="302"/>
+  <TETRAHEDRON i="244" j="302" k="118" m="190"/>
+  <TETRAHEDRON i="302" j="76" k="193" m="60"/>
+  <TETRAHEDRON i="38" j="302" k="78" m="118"/>
+  <TETRAHEDRON i="8" j="390" k="310" m="308"/>
+  <TETRAHEDRON i="60" j="388" k="76" m="300"/>
+  <TETRAHEDRON i="66" j="401" k="303" m="335"/>
+  <TETRAHEDRON i="299" j="304" k="197" m="77"/>
+  <TETRAHEDRON i="77" j="304" k="65" m="198"/>
+  <TETRAHEDRON i="304" j="77" k="65" m="70"/>
+  <TETRAHEDRON i="73" j="305" k="79" m="75"/>
+  <TETRAHEDRON i="217" j="29" k="305" m="80"/>
+  <TETRAHEDRON i="77" j="305" k="71" m="74"/>
+  <TETRAHEDRON i="305" j="71" k="217" m="195"/>
+  <TETRAHEDRON i="305" j="77" k="71" m="195"/>
+  <TETRAHEDRON i="299" j="305" k="77" m="196"/>
+  <TETRAHEDRON i="299" j="306" k="77" m="197"/>
+  <TETRAHEDRON i="307" j="389" k="390" m="201"/>
+  <TETRAHEDRON i="308" j="312" k="391" m="85"/>
+  <TETRAHEDRON i="128" j="376" k="266" m="309"/>
+  <TETRAHEDRON i="128" j="376" k="389" m="267"/>
+  <TETRAHEDRON i="128" j="307" k="389" m="309"/>
+  <TETRAHEDRON i="308" j="390" k="391" m="201"/>
+  <TETRAHEDRON i="128" j="389" k="376" m="309"/>
+  <TETRAHEDRON i="310" j="389" k="390" m="309"/>
+  <TETRAHEDRON i="266" j="376" k="310" m="309"/>
+  <TETRAHEDRON i="391" j="310" k="308" m="85"/>
+  <TETRAHEDRON i="85" j="376" k="391" m="310"/>
+  <TETRAHEDRON i="308" j="391" k="312" m="311"/>
+  <TETRAHEDRON i="201" j="392" k="391" m="311"/>
+  <TETRAHEDRON i="201" j="205" k="392" m="311"/>
+  <TETRAHEDRON i="202" j="400" k="86" m="321"/>
+  <TETRAHEDRON i="400" j="312" k="85" m="391"/>
+  <TETRAHEDRON i="54" j="311" k="308" m="312"/>
+  <TETRAHEDRON i="54" j="312" k="321" m="311"/>
+  <TETRAHEDRON i="321" j="391" k="311" m="312"/>
+  <TETRAHEDRON i="380" j="401" k="273" m="191"/>
+  <TETRAHEDRON i="85" j="419" k="400" m="267"/>
+  <TETRAHEDRON i="316" j="21" k="313" m="202"/>
+  <TETRAHEDRON i="420" j="216" k="144" m="98"/>
+  <TETRAHEDRON i="316" j="393" k="21" m="111"/>
+  <TETRAHEDRON i="86" j="323" k="205" m="394"/>
+  <TETRAHEDRON i="314" j="288" k="120" m="1"/>
+  <TETRAHEDRON i="177" j="301" k="315" m="204"/>
+  <TETRAHEDRON i="119" j="393" k="314" m="120"/>
+  <TETRAHEDRON i="177" j="298" k="315" m="2"/>
+  <TETRAHEDRON i="2" j="315" k="383" m="298"/>
+  <TETRAHEDRON i="315" j="316" k="204" m="301"/>
+  <TETRAHEDRON i="329" j="317" k="396" m="206"/>
+  <TETRAHEDRON i="283" j="383" k="315" m="298"/>
+  <TETRAHEDRON i="111" j="316" k="329" m="301"/>
+  <TETRAHEDRON i="202" j="316" k="317" m="86"/>
+  <TETRAHEDRON i="316" j="400" k="202" m="313"/>
+  <TETRAHEDRON i="313" j="419" k="316" m="400"/>
+  <TETRAHEDRON i="314" j="419" k="393" m="203"/>
+  <TETRAHEDRON i="336" j="400" k="267" m="86"/>
+  <TETRAHEDRON i="315" j="329" k="316" m="301"/>
+  <TETRAHEDRON i="56" j="207" k="202" m="317"/>
+  <TETRAHEDRON i="56" j="322" k="317" m="206"/>
+  <TETRAHEDRON i="56" j="317" k="315" m="206"/>
+  <TETRAHEDRON i="317" j="323" k="322" m="208"/>
+  <TETRAHEDRON i="349" j="433" k="427" m="350"/>
+  <TETRAHEDRON i="240" j="247" k="351" m="408"/>
+  <TETRAHEDRON i="428" j="435" k="407" m="426"/>
+  <TETRAHEDRON i="23" j="205" k="394" m="318"/>
+  <TETRAHEDRON i="384" j="421" k="395" m="206"/>
+  <TETRAHEDRON i="410" j="429" k="357" m="412"/>
+  <TETRAHEDRON i="421" j="206" k="327" m="395"/>
+  <TETRAHEDRON i="395" j="57" k="320" m="363"/>
+  <TETRAHEDRON i="364" j="235" k="3" m="99"/>
+  <TETRAHEDRON i="57" j="395" k="320" m="319"/>
+  <TETRAHEDRON i="57" j="279" k="319" m="320"/>
+  <TETRAHEDRON i="395" j="436" k="280" m="430"/>
+  <TETRAHEDRON i="384" j="320" k="279" m="55"/>
+  <TETRAHEDRON i="54" j="321" k="312" m="202"/>
+  <TETRAHEDRON i="54" j="205" k="311" m="321"/>
+  <TETRAHEDRON i="54" j="321" k="208" m="205"/>
+  <TETRAHEDRON i="419" j="313" k="316" m="203"/>
+  <TETRAHEDRON i="56" j="317" k="322" m="207"/>
+  <TETRAHEDRON i="56" j="178" k="207" m="322"/>
+  <TETRAHEDRON i="178" j="285" k="322" m="56"/>
+  <TETRAHEDRON i="56" j="382" k="322" m="206"/>
+  <TETRAHEDRON i="322" j="384" k="382" m="286"/>
+  <TETRAHEDRON i="205" j="323" k="321" m="208"/>
+  <TETRAHEDRON i="323" j="396" k="317" m="206"/>
+  <TETRAHEDRON i="394" j="396" k="86" m="323"/>
+  <TETRAHEDRON i="220" j="397" k="396" m="394"/>
+  <TETRAHEDRON i="317" j="321" k="323" m="208"/>
+  <TETRAHEDRON i="280" j="436" k="413" m="231"/>
+  <TETRAHEDRON i="205" j="397" k="394" m="323"/>
+  <TETRAHEDRON i="51" j="278" k="325" m="212"/>
+  <TETRAHEDRON i="278" j="324" k="0" m="114"/>
+  <TETRAHEDRON i="210" j="324" k="114" m="0"/>
+  <TETRAHEDRON i="353" j="381" k="243" m="242"/>
+  <TETRAHEDRON i="324" j="381" k="211" m="278"/>
+  <TETRAHEDRON i="325" j="415" k="212" m="173"/>
+  <TETRAHEDRON i="383" j="280" k="183" m="150"/>
+  <TETRAHEDRON i="136" j="325" k="51" m="114"/>
+  <TETRAHEDRON i="172" j="415" k="325" m="271"/>
+  <TETRAHEDRON i="394" j="423" k="23" m="220"/>
+  <TETRAHEDRON i="230" j="326" k="235" m="112"/>
+  <TETRAHEDRON i="234" j="235" k="326" m="112"/>
+  <TETRAHEDRON i="199" j="326" k="80" m="217"/>
+  <TETRAHEDRON i="48" j="326" k="234" m="113"/>
+  <TETRAHEDRON i="97" j="326" k="234" m="218"/>
+  <TETRAHEDRON i="37" j="326" k="230" m="112"/>
+  <TETRAHEDRON i="80" j="326" k="230" m="217"/>
+  <TETRAHEDRON i="2" j="383" k="327" m="296"/>
+  <TETRAHEDRON i="327" j="328" k="329" m="219"/>
+  <TETRAHEDRON i="364" j="327" k="330" m="220"/>
+  <TETRAHEDRON i="430" j="363" k="429" m="416"/>
+  <TETRAHEDRON i="382" j="421" k="383" m="150"/>
+  <TETRAHEDRON i="111" j="328" k="329" m="86"/>
+  <TETRAHEDRON i="111" j="336" k="328" m="86"/>
+  <TETRAHEDRON i="395" j="384" k="55" m="320"/>
+  <TETRAHEDRON i="423" j="429" k="363" m="357"/>
+  <TETRAHEDRON i="328" j="426" k="336" m="418"/>
+  <TETRAHEDRON i="328" j="396" k="329" m="86"/>
+  <TETRAHEDRON i="426" j="375" k="373" m="267"/>
+  <TETRAHEDRON i="128" j="373" k="374" m="267"/>
+  <TETRAHEDRON i="418" j="88" k="229" m="328"/>
+  <TETRAHEDRON i="2" j="111" k="219" m="329"/>
+  <TETRAHEDRON i="2" j="301" k="111" m="329"/>
+  <TETRAHEDRON i="2" j="329" k="315" m="301"/>
+  <TETRAHEDRON i="2" j="329" k="327" m="206"/>
+  <TETRAHEDRON i="328" j="396" k="327" m="329"/>
+  <TETRAHEDRON i="88" j="232" k="219" m="330"/>
+  <TETRAHEDRON i="88" j="233" k="232" m="330"/>
+  <TETRAHEDRON i="338" j="330" k="328" m="220"/>
+  <TETRAHEDRON i="327" j="330" k="220" m="219"/>
+  <TETRAHEDRON i="330" j="338" k="328" m="88"/>
+  <TETRAHEDRON i="221" j="102" k="331" m="47"/>
+  <TETRAHEDRON i="398" j="119" k="245" m="47"/>
+  <TETRAHEDRON i="245" j="398" k="47" m="52"/>
+  <TETRAHEDRON i="386" j="431" k="288" m="398"/>
+  <TETRAHEDRON i="332" j="103" k="102" m="47"/>
+  <TETRAHEDRON i="174" j="222" k="28" m="332"/>
+  <TETRAHEDRON i="332" j="4" k="52" m="221"/>
+  <TETRAHEDRON i="270" j="333" k="137" m="130"/>
+  <TETRAHEDRON i="103" j="332" k="28" m="222"/>
+  <TETRAHEDRON i="103" j="332" k="101" m="28"/>
+  <TETRAHEDRON i="332" j="47" k="52" m="245"/>
+  <TETRAHEDRON i="52" j="332" k="245" m="174"/>
+  <TETRAHEDRON i="176" j="333" k="110" m="223"/>
+  <TETRAHEDRON i="228" j="399" k="272" m="335"/>
+  <TETRAHEDRON i="129" j="334" k="138" m="139"/>
+  <TETRAHEDRON i="121" j="334" k="139" m="138"/>
+  <TETRAHEDRON i="334" j="385" k="272" m="42"/>
+  <TETRAHEDRON i="146" j="338" k="233" m="88"/>
+  <TETRAHEDRON i="273" j="401" k="335" m="108"/>
+  <TETRAHEDRON i="402" j="403" k="239" m="342"/>
+  <TETRAHEDRON i="334" j="385" k="225" m="108"/>
+  <TETRAHEDRON i="40" j="379" k="273" m="145"/>
+  <TETRAHEDRON i="6" j="335" k="227" m="142"/>
+  <TETRAHEDRON i="303" j="335" k="227" m="66"/>
+  <TETRAHEDRON i="227" j="385" k="303" m="25"/>
+  <TETRAHEDRON i="222" j="409" k="28" m="355"/>
+  <TETRAHEDRON i="228" j="399" k="335" m="385"/>
+  <TETRAHEDRON i="145" j="420" k="379" m="144"/>
+  <TETRAHEDRON i="192" j="401" k="303" m="64"/>
+  <TETRAHEDRON i="421" j="319" k="384" m="395"/>
+  <TETRAHEDRON i="336" j="418" k="375" m="328"/>
+  <TETRAHEDRON i="401" j="74" k="63" m="198"/>
+  <TETRAHEDRON i="393" j="419" k="336" m="203"/>
+  <TETRAHEDRON i="273" j="420" k="337" m="379"/>
+  <TETRAHEDRON i="337" j="409" k="38" m="78"/>
+  <TETRAHEDRON i="339" j="338" k="146" m="122"/>
+  <TETRAHEDRON i="71" j="420" k="37" m="337"/>
+  <TETRAHEDRON i="337" j="380" k="273" m="379"/>
+  <TETRAHEDRON i="64" j="401" k="72" m="63"/>
+  <TETRAHEDRON i="232" j="388" k="189" m="185"/>
+  <TETRAHEDRON i="339" j="412" k="338" m="122"/>
+  <TETRAHEDRON i="175" j="409" k="38" m="337"/>
+  <TETRAHEDRON i="255" j="338" k="146" m="88"/>
+  <TETRAHEDRON i="185" j="337" k="37" m="232"/>
+  <TETRAHEDRON i="38" j="337" k="246" m="175"/>
+  <TETRAHEDRON i="294" j="411" k="3" m="339"/>
+  <TETRAHEDRON i="339" j="364" k="3" m="233"/>
+  <TETRAHEDRON i="338" j="366" k="146" m="122"/>
+  <TETRAHEDRON i="413" j="33" k="296" m="280"/>
+  <TETRAHEDRON i="373" j="340" k="128" m="238"/>
+  <TETRAHEDRON i="341" j="389" k="307" m="201"/>
+  <TETRAHEDRON i="128" j="373" k="389" m="340"/>
+  <TETRAHEDRON i="389" j="341" k="307" m="340"/>
+  <TETRAHEDRON i="201" j="426" k="267" m="392"/>
+  <TETRAHEDRON i="428" j="433" k="407" m="350"/>
+  <TETRAHEDRON i="373" j="424" k="290" m="375"/>
+  <TETRAHEDRON i="426" j="424" k="418" m="407"/>
+  <TETRAHEDRON i="343" j="437" k="424" m="403"/>
+  <TETRAHEDRON i="109" j="425" k="27" m="289"/>
+  <TETRAHEDRON i="435" j="240" k="253" m="408"/>
+  <TETRAHEDRON i="109" j="210" k="255" m="343"/>
+  <TETRAHEDRON i="0" j="425" k="403" m="343"/>
+  <TETRAHEDRON i="13" j="347" k="344" m="346"/>
+  <TETRAHEDRON i="209" j="289" k="110" m="404"/>
+  <TETRAHEDRON i="210" j="425" k="0" m="343"/>
+  <TETRAHEDRON i="289" j="343" k="210" m="109"/>
+  <TETRAHEDRON i="349" j="116" k="406" m="345"/>
+  <TETRAHEDRON i="116" j="353" k="406" m="348"/>
+  <TETRAHEDRON i="241" j="348" k="353" m="116"/>
+  <TETRAHEDRON i="117" j="353" k="405" m="253"/>
+  <TETRAHEDRON i="13" j="347" k="348" m="345"/>
+  <TETRAHEDRON i="344" j="405" k="347" m="240"/>
+  <TETRAHEDRON i="345" j="348" k="406" m="347"/>
+  <TETRAHEDRON i="240" j="405" k="406" m="253"/>
+  <TETRAHEDRON i="347" j="353" k="346" m="348"/>
+  <TETRAHEDRON i="13" j="346" k="241" m="348"/>
+  <TETRAHEDRON i="13" j="348" k="347" m="346"/>
+  <TETRAHEDRON i="116" j="406" k="353" m="253"/>
+  <TETRAHEDRON i="403" j="406" k="402" m="116"/>
+  <TETRAHEDRON i="191" j="409" k="401" m="61"/>
+  <TETRAHEDRON i="427" j="407" k="349" m="238"/>
+  <TETRAHEDRON i="349" j="345" k="350" m="107"/>
+  <TETRAHEDRON i="23" j="247" k="356" m="410"/>
+  <TETRAHEDRON i="407" j="403" k="406" m="402"/>
+  <TETRAHEDRON i="318" j="435" k="428" m="426"/>
+  <TETRAHEDRON i="344" j="405" k="352" m="117"/>
+  <TETRAHEDRON i="89" j="352" k="358" m="248"/>
+  <TETRAHEDRON i="89" j="247" k="358" m="351"/>
+  <TETRAHEDRON i="122" j="365" k="408" m="253"/>
+  <TETRAHEDRON i="365" j="405" k="408" m="253"/>
+  <TETRAHEDRON i="89" j="358" k="352" m="351"/>
+  <TETRAHEDRON i="89" j="344" k="351" m="352"/>
+  <TETRAHEDRON i="248" j="358" k="365" m="352"/>
+  <TETRAHEDRON i="351" j="405" k="365" m="352"/>
+  <TETRAHEDRON i="117" j="243" k="241" m="353"/>
+  <TETRAHEDRON i="117" j="354" k="353" m="253"/>
+  <TETRAHEDRON i="117" j="405" k="353" m="346"/>
+  <TETRAHEDRON i="117" j="241" k="346" m="353"/>
+  <TETRAHEDRON i="353" j="242" k="241" m="116"/>
+  <TETRAHEDRON i="353" j="381" k="242" m="354"/>
+  <TETRAHEDRON i="403" j="381" k="242" m="239"/>
+  <TETRAHEDRON i="353" j="381" k="354" m="243"/>
+  <TETRAHEDRON i="354" j="403" k="366" m="0"/>
+  <TETRAHEDRON i="354" j="276" k="381" m="0"/>
+  <TETRAHEDRON i="403" j="354" k="366" m="253"/>
+  <TETRAHEDRON i="253" j="365" k="366" m="122"/>
+  <TETRAHEDRON i="28" j="355" k="39" m="222"/>
+  <TETRAHEDRON i="343" j="437" k="255" m="418"/>
+  <TETRAHEDRON i="355" j="38" k="409" m="78"/>
+  <TETRAHEDRON i="28" j="355" k="62" m="39"/>
+  <TETRAHEDRON i="336" j="375" k="419" m="1"/>
+  <TETRAHEDRON i="410" j="429" k="412" m="220"/>
+  <TETRAHEDRON i="357" j="429" k="90" m="361"/>
+  <TETRAHEDRON i="248" j="359" k="358" m="249"/>
+  <TETRAHEDRON i="248" j="365" k="358" m="122"/>
+  <TETRAHEDRON i="247" j="408" k="358" m="351"/>
+  <TETRAHEDRON i="247" j="361" k="358" m="122"/>
+  <TETRAHEDRON i="122" j="408" k="365" m="358"/>
+  <TETRAHEDRON i="361" j="359" k="412" m="252"/>
+  <TETRAHEDRON i="91" j="248" k="249" m="359"/>
+  <TETRAHEDRON i="91" j="251" k="248" m="359"/>
+  <TETRAHEDRON i="360" j="411" k="359" m="252"/>
+  <TETRAHEDRON i="91" j="360" k="359" m="249"/>
+  <TETRAHEDRON i="339" j="362" k="359" m="122"/>
+  <TETRAHEDRON i="251" j="411" k="91" m="259"/>
+  <TETRAHEDRON i="250" j="361" k="359" m="358"/>
+  <TETRAHEDRON i="213" j="264" k="360" m="90"/>
+  <TETRAHEDRON i="90" j="372" k="360" m="252"/>
+  <TETRAHEDRON i="359" j="361" k="360" m="252"/>
+  <TETRAHEDRON i="372" j="360" k="369" m="262"/>
+  <TETRAHEDRON i="90" j="250" k="247" m="361"/>
+  <TETRAHEDRON i="90" j="361" k="360" m="250"/>
+  <TETRAHEDRON i="90" j="429" k="252" m="361"/>
+  <TETRAHEDRON i="90" j="247" k="357" m="361"/>
+  <TETRAHEDRON i="361" j="412" k="359" m="122"/>
+  <TETRAHEDRON i="22" j="248" k="251" m="362"/>
+  <TETRAHEDRON i="22" j="254" k="248" m="362"/>
+  <TETRAHEDRON i="22" j="362" k="276" m="254"/>
+  <TETRAHEDRON i="22" j="362" k="294" m="146"/>
+  <TETRAHEDRON i="354" j="366" k="362" m="276"/>
+  <TETRAHEDRON i="323" j="422" k="395" m="55"/>
+  <TETRAHEDRON i="416" j="372" k="127" m="261"/>
+  <TETRAHEDRON i="323" j="317" k="396" m="86"/>
+  <TETRAHEDRON i="410" j="429" k="220" m="357"/>
+  <TETRAHEDRON i="395" j="57" k="430" m="319"/>
+  <TETRAHEDRON i="364" j="371" k="3" m="235"/>
+  <TETRAHEDRON i="364" j="429" k="412" m="252"/>
+  <TETRAHEDRON i="364" j="429" k="220" m="412"/>
+  <TETRAHEDRON i="330" j="364" k="233" m="99"/>
+  <TETRAHEDRON i="327" j="413" k="364" m="99"/>
+  <TETRAHEDRON i="364" j="436" k="252" m="371"/>
+  <TETRAHEDRON i="117" j="365" k="354" m="253"/>
+  <TETRAHEDRON i="351" j="365" k="408" m="358"/>
+  <TETRAHEDRON i="0" j="146" k="255" m="366"/>
+  <TETRAHEDRON i="0" j="276" k="146" m="366"/>
+  <TETRAHEDRON i="0" j="366" k="354" m="276"/>
+  <TETRAHEDRON i="343" j="366" k="0" m="255"/>
+  <TETRAHEDRON i="269" j="419" k="376" m="374"/>
+  <TETRAHEDRON i="366" j="403" k="343" m="0"/>
+  <TETRAHEDRON i="368" j="370" k="44" m="259"/>
+  <TETRAHEDRON i="136" j="367" k="325" m="171"/>
+  <TETRAHEDRON i="31" j="367" k="136" m="171"/>
+  <TETRAHEDRON i="237" j="367" k="136" m="256"/>
+  <TETRAHEDRON i="271" j="415" k="173" m="414"/>
+  <TETRAHEDRON i="369" j="411" k="368" m="252"/>
+  <TETRAHEDRON i="368" j="369" k="262" m="258"/>
+  <TETRAHEDRON i="368" j="44" k="369" m="258"/>
+  <TETRAHEDRON i="369" j="411" k="252" m="371"/>
+  <TETRAHEDRON i="370" j="293" k="3" m="234"/>
+  <TETRAHEDRON i="260" j="234" k="182" m="370"/>
+  <TETRAHEDRON i="235" j="370" k="234" m="260"/>
+  <TETRAHEDRON i="370" j="44" k="181" m="182"/>
+  <TETRAHEDRON i="182" j="295" k="370" m="234"/>
+  <TETRAHEDRON i="261" j="372" k="264" m="90"/>
+  <TETRAHEDRON i="234" j="371" k="3" m="370"/>
+  <TETRAHEDRON i="370" j="411" k="371" m="3"/>
+  <TETRAHEDRON i="235" j="371" k="370" m="260"/>
+  <TETRAHEDRON i="235" j="260" k="231" m="371"/>
+  <TETRAHEDRON i="339" j="371" k="364" m="252"/>
+  <TETRAHEDRON i="339" j="371" k="3" m="364"/>
+  <TETRAHEDRON i="372" j="436" k="252" m="429"/>
+  <TETRAHEDRON i="234" j="371" k="370" m="235"/>
+  <TETRAHEDRON i="369" j="371" k="127" m="260"/>
+  <TETRAHEDRON i="368" j="411" k="370" m="259"/>
+  <TETRAHEDRON i="90" j="363" k="261" m="372"/>
+  <TETRAHEDRON i="372" j="429" k="90" m="363"/>
+  <TETRAHEDRON i="369" j="372" k="127" m="252"/>
+  <TETRAHEDRON i="128" j="374" k="373" m="265"/>
+  <TETRAHEDRON i="128" j="389" k="373" m="267"/>
+  <TETRAHEDRON i="371" j="372" k="252" m="127"/>
+  <TETRAHEDRON i="8" j="307" k="309" m="390"/>
+  <TETRAHEDRON i="318" j="432" k="394" m="23"/>
+  <TETRAHEDRON i="424" j="426" k="373" m="407"/>
+  <TETRAHEDRON i="290" j="373" k="374" m="265"/>
+  <TETRAHEDRON i="389" j="426" k="201" m="341"/>
+  <TETRAHEDRON i="407" j="406" k="240" m="350"/>
+  <TETRAHEDRON i="424" j="426" k="375" m="373"/>
+  <TETRAHEDRON i="128" j="374" k="376" m="267"/>
+  <TETRAHEDRON i="238" j="424" k="265" m="373"/>
+  <TETRAHEDRON i="373" j="374" k="375" m="290"/>
+  <TETRAHEDRON i="86" j="432" k="394" m="426"/>
+  <TETRAHEDRON i="218" j="387" k="48" m="295"/>
+  <TETRAHEDRON i="410" j="437" k="435" m="432"/>
+  <TETRAHEDRON i="316" j="419" k="203" m="336"/>
+  <TETRAHEDRON i="229" j="418" k="375" m="109"/>
+  <TETRAHEDRON i="410" j="437" k="338" m="122"/>
+  <TETRAHEDRON i="424" j="425" k="109" m="343"/>
+  <TETRAHEDRON i="109" j="1" k="290" m="375"/>
+  <TETRAHEDRON i="240" j="356" k="247" m="408"/>
+  <TETRAHEDRON i="381" j="425" k="324" m="239"/>
+  <TETRAHEDRON i="229" j="418" k="328" m="375"/>
+  <TETRAHEDRON i="432" j="437" k="418" m="338"/>
+  <TETRAHEDRON i="266" j="376" k="269" m="85"/>
+  <TETRAHEDRON i="266" j="310" k="376" m="85"/>
+  <TETRAHEDRON i="85" j="391" k="376" m="267"/>
+  <TETRAHEDRON i="400" j="419" k="336" m="267"/>
+  <TETRAHEDRON i="267" j="391" k="389" m="201"/>
+  <TETRAHEDRON i="420" j="40" k="142" m="144"/>
+  <TETRAHEDRON i="432" j="437" k="435" m="418"/>
+  <TETRAHEDRON i="419" j="85" k="269" m="376"/>
+  <TETRAHEDRON i="269" j="431" k="46" m="377"/>
+  <TETRAHEDRON i="150" j="382" k="384" m="286"/>
+  <TETRAHEDRON i="132" j="378" k="141" m="133"/>
+  <TETRAHEDRON i="136" j="378" k="131" m="134"/>
+  <TETRAHEDRON i="378" j="130" k="333" m="270"/>
+  <TETRAHEDRON i="378" j="136" k="131" m="270"/>
+  <TETRAHEDRON i="172" j="378" k="271" m="136"/>
+  <TETRAHEDRON i="325" j="378" k="136" m="271"/>
+  <TETRAHEDRON i="291" j="379" k="275" m="236"/>
+  <TETRAHEDRON i="399" j="420" k="40" m="335"/>
+  <TETRAHEDRON i="115" j="379" k="273" m="236"/>
+  <TETRAHEDRON i="420" j="273" k="40" m="379"/>
+  <TETRAHEDRON i="40" j="420" k="379" m="145"/>
+  <TETRAHEDRON i="380" j="35" k="53" m="137"/>
+  <TETRAHEDRON i="131" j="380" k="273" m="137"/>
+  <TETRAHEDRON i="191" j="380" k="137" m="273"/>
+  <TETRAHEDRON i="381" j="211" k="239" m="324"/>
+  <TETRAHEDRON i="380" j="35" k="131" m="236"/>
+  <TETRAHEDRON i="131" j="380" k="236" m="273"/>
+  <TETRAHEDRON i="53" j="380" k="191" m="175"/>
+  <TETRAHEDRON i="380" j="291" k="35" m="236"/>
+  <TETRAHEDRON i="354" j="381" k="276" m="123"/>
+  <TETRAHEDRON i="211" j="381" k="212" m="278"/>
+  <TETRAHEDRON i="281" j="286" k="382" m="150"/>
+  <TETRAHEDRON i="243" j="381" k="354" m="123"/>
+  <TETRAHEDRON i="315" j="383" k="382" m="206"/>
+  <TETRAHEDRON i="150" j="283" k="183" m="383"/>
+  <TETRAHEDRON i="150" j="383" k="382" m="283"/>
+  <TETRAHEDRON i="382" j="421" k="384" m="206"/>
+  <TETRAHEDRON i="279" j="384" k="286" m="150"/>
+  <TETRAHEDRON i="413" j="421" k="395" m="280"/>
+  <TETRAHEDRON i="385" j="227" k="303" m="335"/>
+  <TETRAHEDRON i="422" j="429" k="363" m="423"/>
+  <TETRAHEDRON i="384" j="319" k="279" m="320"/>
+  <TETRAHEDRON i="319" j="421" k="384" m="150"/>
+  <TETRAHEDRON i="334" j="385" k="42" m="225"/>
+  <TETRAHEDRON i="176" j="386" k="158" m="288"/>
+  <TETRAHEDRON i="385" j="192" k="225" m="108"/>
+  <TETRAHEDRON i="385" j="399" k="335" m="108"/>
+  <TETRAHEDRON i="385" j="227" k="81" m="25"/>
+  <TETRAHEDRON i="93" j="92" k="387" m="15"/>
+  <TETRAHEDRON i="152" j="385" k="42" m="228"/>
+  <TETRAHEDRON i="431" j="290" k="288" m="1"/>
+  <TETRAHEDRON i="335" j="385" k="227" m="228"/>
+  <TETRAHEDRON i="48" j="182" k="295" m="387"/>
+  <TETRAHEDRON i="387" j="214" k="15" m="96"/>
+  <TETRAHEDRON i="218" j="387" k="93" m="48"/>
+  <TETRAHEDRON i="300" j="388" k="76" m="189"/>
+  <TETRAHEDRON i="185" j="388" k="189" m="76"/>
+  <TETRAHEDRON i="246" j="388" k="38" m="189"/>
+  <TETRAHEDRON i="193" j="388" k="76" m="302"/>
+  <TETRAHEDRON i="60" j="388" k="302" m="76"/>
+  <TETRAHEDRON i="267" j="389" k="391" m="376"/>
+  <TETRAHEDRON i="307" j="390" k="389" m="309"/>
+  <TETRAHEDRON i="244" j="388" k="38" m="302"/>
+  <TETRAHEDRON i="246" j="388" k="337" m="38"/>
+  <TETRAHEDRON i="190" j="388" k="300" m="189"/>
+  <TETRAHEDRON i="60" j="388" k="300" m="302"/>
+  <TETRAHEDRON i="37" j="388" k="185" m="76"/>
+  <TETRAHEDRON i="232" j="388" k="185" m="337"/>
+  <TETRAHEDRON i="389" j="433" k="341" m="340"/>
+  <TETRAHEDRON i="310" j="391" k="389" m="376"/>
+  <TETRAHEDRON i="389" j="426" k="373" m="267"/>
+  <TETRAHEDRON i="308" j="391" k="390" m="310"/>
+  <TETRAHEDRON i="389" j="390" k="391" m="310"/>
+  <TETRAHEDRON i="201" j="391" k="392" m="267"/>
+  <TETRAHEDRON i="201" j="308" k="311" m="391"/>
+  <TETRAHEDRON i="401" j="66" k="303" m="72"/>
+  <TETRAHEDRON i="111" j="229" k="336" m="393"/>
+  <TETRAHEDRON i="205" j="392" k="321" m="86"/>
+  <TETRAHEDRON i="205" j="392" k="394" m="318"/>
+  <TETRAHEDRON i="267" j="426" k="86" m="392"/>
+  <TETRAHEDRON i="107" j="433" k="427" m="340"/>
+  <TETRAHEDRON i="268" j="431" k="374" m="417"/>
+  <TETRAHEDRON i="336" j="426" k="375" m="418"/>
+  <TETRAHEDRON i="391" j="400" k="321" m="392"/>
+  <TETRAHEDRON i="111" j="120" k="229" m="393"/>
+  <TETRAHEDRON i="21" j="393" k="244" m="111"/>
+  <TETRAHEDRON i="316" j="393" k="111" m="336"/>
+  <TETRAHEDRON i="244" j="393" k="120" m="111"/>
+  <TETRAHEDRON i="119" j="393" k="244" m="314"/>
+  <TETRAHEDRON i="393" j="316" k="21" m="203"/>
+  <TETRAHEDRON i="396" j="397" k="323" m="394"/>
+  <TETRAHEDRON i="426" j="328" k="336" m="86"/>
+  <TETRAHEDRON i="396" j="395" k="327" m="206"/>
+  <TETRAHEDRON i="394" j="396" k="328" m="86"/>
+  <TETRAHEDRON i="220" j="413" k="364" m="327"/>
+  <TETRAHEDRON i="395" j="396" k="327" m="220"/>
+  <TETRAHEDRON i="397" j="220" k="396" m="395"/>
+  <TETRAHEDRON i="384" j="395" k="319" m="320"/>
+  <TETRAHEDRON i="436" j="371" k="372" m="252"/>
+  <TETRAHEDRON i="435" j="23" k="410" m="432"/>
+  <TETRAHEDRON i="55" j="395" k="323" m="206"/>
+  <TETRAHEDRON i="396" j="432" k="394" m="328"/>
+  <TETRAHEDRON i="395" j="396" k="323" m="206"/>
+  <TETRAHEDRON i="396" j="328" k="327" m="220"/>
+  <TETRAHEDRON i="205" j="394" k="397" m="23"/>
+  <TETRAHEDRON i="106" j="398" k="221" m="331"/>
+  <TETRAHEDRON i="398" j="155" k="47" m="331"/>
+  <TETRAHEDRON i="318" j="432" k="426" m="394"/>
+  <TETRAHEDRON i="106" j="398" k="156" m="221"/>
+  <TETRAHEDRON i="332" j="398" k="47" m="221"/>
+  <TETRAHEDRON i="331" j="431" k="155" m="156"/>
+  <TETRAHEDRON i="245" j="398" k="52" m="288"/>
+  <TETRAHEDRON i="399" j="420" k="335" m="273"/>
+  <TETRAHEDRON i="398" j="176" k="221" m="52"/>
+  <TETRAHEDRON i="108" j="399" k="273" m="334"/>
+  <TETRAHEDRON i="142" j="399" k="40" m="335"/>
+  <TETRAHEDRON i="399" j="138" k="272" m="40"/>
+  <TETRAHEDRON i="129" j="399" k="140" m="334"/>
+  <TETRAHEDRON i="138" j="399" k="140" m="40"/>
+  <TETRAHEDRON i="399" j="385" k="334" m="108"/>
+  <TETRAHEDRON i="36" j="399" k="129" m="334"/>
+  <TETRAHEDRON i="86" j="267" k="392" m="400"/>
+  <TETRAHEDRON i="312" j="400" k="321" m="391"/>
+  <TETRAHEDRON i="400" j="316" k="202" m="86"/>
+  <TETRAHEDRON i="391" j="400" k="392" m="267"/>
+  <TETRAHEDRON i="400" j="202" k="312" m="321"/>
+  <TETRAHEDRON i="316" j="419" k="336" m="400"/>
+  <TETRAHEDRON i="316" j="400" k="336" m="86"/>
+  <TETRAHEDRON i="85" j="400" k="391" m="267"/>
+  <TETRAHEDRON i="420" j="71" k="401" m="337"/>
+  <TETRAHEDRON i="380" j="409" k="191" m="175"/>
+  <TETRAHEDRON i="401" j="409" k="63" m="61"/>
+  <TETRAHEDRON i="209" j="425" k="239" m="324"/>
+  <TETRAHEDRON i="380" j="401" k="191" m="337"/>
+  <TETRAHEDRON i="191" j="409" k="61" m="174"/>
+  <TETRAHEDRON i="192" j="401" k="64" m="108"/>
+  <TETRAHEDRON i="273" j="420" k="335" m="401"/>
+  <TETRAHEDRON i="37" j="420" k="66" m="98"/>
+  <TETRAHEDRON i="27" j="425" k="239" m="404"/>
+  <TETRAHEDRON i="403" j="116" k="353" m="253"/>
+  <TETRAHEDRON i="343" j="418" k="255" m="109"/>
+  <TETRAHEDRON i="424" j="437" k="418" m="407"/>
+  <TETRAHEDRON i="342" j="425" k="403" m="239"/>
+  <TETRAHEDRON i="424" j="238" k="265" m="342"/>
+  <TETRAHEDRON i="342" j="425" k="424" m="403"/>
+  <TETRAHEDRON i="425" j="342" k="424" m="27"/>
+  <TETRAHEDRON i="381" j="425" k="0" m="324"/>
+  <TETRAHEDRON i="381" j="403" k="354" m="0"/>
+  <TETRAHEDRON i="350" j="435" k="240" m="407"/>
+  <TETRAHEDRON i="240" j="408" k="405" m="253"/>
+  <TETRAHEDRON i="209" j="425" k="404" m="239"/>
+  <TETRAHEDRON i="242" j="403" k="353" m="354"/>
+  <TETRAHEDRON i="426" j="389" k="201" m="267"/>
+  <TETRAHEDRON i="344" j="347" k="405" m="346"/>
+  <TETRAHEDRON i="240" j="351" k="344" m="405"/>
+  <TETRAHEDRON i="240" j="405" k="408" m="351"/>
+  <TETRAHEDRON i="353" j="406" k="405" m="253"/>
+  <TETRAHEDRON i="240" j="347" k="345" m="406"/>
+  <TETRAHEDRON i="240" j="406" k="405" m="347"/>
+  <TETRAHEDRON i="406" j="345" k="350" m="349"/>
+  <TETRAHEDRON i="345" j="406" k="350" m="240"/>
+  <TETRAHEDRON i="403" j="406" k="116" m="253"/>
+  <TETRAHEDRON i="406" j="435" k="407" m="240"/>
+  <TETRAHEDRON i="406" j="407" k="349" m="350"/>
+  <TETRAHEDRON i="424" j="238" k="402" m="407"/>
+  <TETRAHEDRON i="238" j="433" k="427" m="407"/>
+  <TETRAHEDRON i="426" j="433" k="373" m="407"/>
+  <TETRAHEDRON i="314" j="419" k="203" m="377"/>
+  <TETRAHEDRON i="336" j="426" k="86" m="267"/>
+  <TETRAHEDRON i="245" j="409" k="38" m="174"/>
+  <TETRAHEDRON i="240" j="435" k="356" m="408"/>
+  <TETRAHEDRON i="338" j="432" k="328" m="418"/>
+  <TETRAHEDRON i="350" j="427" k="349" m="107"/>
+  <TETRAHEDRON i="433" j="428" k="426" m="341"/>
+  <TETRAHEDRON i="355" j="409" k="62" m="78"/>
+  <TETRAHEDRON i="409" j="191" k="175" m="174"/>
+  <TETRAHEDRON i="409" j="337" k="191" m="401"/>
+  <TETRAHEDRON i="245" j="409" k="355" m="38"/>
+  <TETRAHEDRON i="23" j="357" k="247" m="410"/>
+  <TETRAHEDRON i="410" j="423" k="23" m="357"/>
+  <TETRAHEDRON i="359" j="339" k="252" m="411"/>
+  <TETRAHEDRON i="435" j="23" k="428" m="356"/>
+  <TETRAHEDRON i="412" j="432" k="410" m="220"/>
+  <TETRAHEDRON i="406" j="435" k="240" m="253"/>
+  <TETRAHEDRON i="294" j="411" k="251" m="259"/>
+  <TETRAHEDRON i="338" j="412" k="410" m="122"/>
+  <TETRAHEDRON i="294" j="411" k="370" m="3"/>
+  <TETRAHEDRON i="429" j="357" k="90" m="363"/>
+  <TETRAHEDRON i="371" j="411" k="252" m="339"/>
+  <TETRAHEDRON i="411" j="362" k="294" m="251"/>
+  <TETRAHEDRON i="360" j="411" k="91" m="359"/>
+  <TETRAHEDRON i="411" j="294" k="370" m="259"/>
+  <TETRAHEDRON i="3" j="411" k="371" m="339"/>
+  <TETRAHEDRON i="410" j="412" k="361" m="122"/>
+  <TETRAHEDRON i="339" j="359" k="412" m="122"/>
+  <TETRAHEDRON i="407" j="437" k="418" m="435"/>
+  <TETRAHEDRON i="371" j="413" k="231" m="235"/>
+  <TETRAHEDRON i="413" j="33" k="231" m="235"/>
+  <TETRAHEDRON i="371" j="413" k="235" m="364"/>
+  <TETRAHEDRON i="296" j="413" k="327" m="99"/>
+  <TETRAHEDRON i="327" j="421" k="296" m="383"/>
+  <TETRAHEDRON i="255" j="437" k="338" m="418"/>
+  <TETRAHEDRON i="436" j="127" k="371" m="434"/>
+  <TETRAHEDRON i="171" j="170" k="415" m="14"/>
+  <TETRAHEDRON i="415" j="271" k="173" m="325"/>
+  <TETRAHEDRON i="172" j="414" k="271" m="14"/>
+  <TETRAHEDRON i="172" j="415" k="414" m="171"/>
+  <TETRAHEDRON i="172" j="415" k="171" m="325"/>
+  <TETRAHEDRON i="367" j="51" k="325" m="415"/>
+  <TETRAHEDRON i="171" j="14" k="415" m="414"/>
+  <TETRAHEDRON i="46" j="431" k="155" m="377"/>
+  <TETRAHEDRON i="416" j="363" k="261" m="57"/>
+  <TETRAHEDRON i="290" j="417" k="265" m="374"/>
+  <TETRAHEDRON i="142" j="420" k="144" m="98"/>
+  <TETRAHEDRON i="433" j="426" k="389" m="341"/>
+  <TETRAHEDRON i="88" j="418" k="255" m="338"/>
+  <TETRAHEDRON i="433" j="340" k="238" m="427"/>
+  <TETRAHEDRON i="437" j="343" k="424" m="418"/>
+  <TETRAHEDRON i="350" j="433" k="107" m="341"/>
+  <TETRAHEDRON i="374" j="419" k="375" m="1"/>
+  <TETRAHEDRON i="396" j="432" k="220" m="394"/>
+  <TETRAHEDRON i="374" j="431" k="269" m="419"/>
+  <TETRAHEDRON i="419" j="314" k="393" m="1"/>
+  <TETRAHEDRON i="85" j="419" k="269" m="377"/>
+  <TETRAHEDRON i="66" j="420" k="401" m="335"/>
+  <TETRAHEDRON i="66" j="420" k="335" m="98"/>
+  <TETRAHEDRON i="150" j="383" k="280" m="421"/>
+  <TETRAHEDRON i="144" j="420" k="40" m="145"/>
+  <TETRAHEDRON i="420" j="273" k="337" m="401"/>
+  <TETRAHEDRON i="395" j="55" k="422" m="320"/>
+  <TETRAHEDRON i="296" j="421" k="413" m="280"/>
+  <TETRAHEDRON i="421" j="430" k="319" m="395"/>
+  <TETRAHEDRON i="421" j="327" k="296" m="413"/>
+  <TETRAHEDRON i="413" j="421" k="327" m="395"/>
+  <TETRAHEDRON i="402" j="424" k="403" m="342"/>
+  <TETRAHEDRON i="394" j="423" k="397" m="23"/>
+  <TETRAHEDRON i="410" j="423" k="357" m="220"/>
+  <TETRAHEDRON i="394" j="423" k="220" m="397"/>
+  <TETRAHEDRON i="422" j="429" k="395" m="363"/>
+  <TETRAHEDRON i="265" j="424" k="290" m="373"/>
+  <TETRAHEDRON i="437" j="407" k="403" m="253"/>
+  <TETRAHEDRON i="238" j="424" k="373" m="407"/>
+  <TETRAHEDRON i="402" j="424" k="407" m="403"/>
+  <TETRAHEDRON i="290" j="424" k="109" m="375"/>
+  <TETRAHEDRON i="343" j="424" k="418" m="109"/>
+  <TETRAHEDRON i="424" j="27" k="265" m="290"/>
+  <TETRAHEDRON i="425" j="210" k="289" m="343"/>
+  <TETRAHEDRON i="392" j="394" k="318" m="426"/>
+  <TETRAHEDRON i="425" j="381" k="0" m="403"/>
+  <TETRAHEDRON i="425" j="270" k="289" m="210"/>
+  <TETRAHEDRON i="426" j="336" k="375" m="267"/>
+  <TETRAHEDRON i="86" j="432" k="328" m="394"/>
+  <TETRAHEDRON i="432" j="426" k="328" m="418"/>
+  <TETRAHEDRON i="318" j="435" k="426" m="23"/>
+  <TETRAHEDRON i="350" j="435" k="428" m="240"/>
+  <TETRAHEDRON i="426" j="433" k="389" m="373"/>
+  <TETRAHEDRON i="350" j="435" k="407" m="428"/>
+  <TETRAHEDRON i="421" j="430" k="280" m="319"/>
+  <TETRAHEDRON i="361" j="429" k="252" m="412"/>
+  <TETRAHEDRON i="357" j="429" k="361" m="412"/>
+  <TETRAHEDRON i="422" j="429" k="423" m="395"/>
+  <TETRAHEDRON i="423" j="429" k="357" m="220"/>
+  <TETRAHEDRON i="416" j="429" k="372" m="363"/>
+  <TETRAHEDRON i="363" j="430" k="429" m="395"/>
+  <TETRAHEDRON i="421" j="430" k="395" m="280"/>
+  <TETRAHEDRON i="331" j="431" k="156" m="398"/>
+  <TETRAHEDRON i="363" j="430" k="395" m="57"/>
+  <TETRAHEDRON i="395" j="436" k="430" m="429"/>
+  <TETRAHEDRON i="288" j="431" k="155" m="398"/>
+  <TETRAHEDRON i="331" j="431" k="398" m="155"/>
+  <TETRAHEDRON i="432" j="338" k="328" m="220"/>
+  <TETRAHEDRON i="433" j="350" k="107" m="427"/>
+  <TETRAHEDRON i="431" j="288" k="314" m="1"/>
+  <TETRAHEDRON i="268" j="431" k="269" m="374"/>
+  <TETRAHEDRON i="314" j="431" k="377" m="155"/>
+  <TETRAHEDRON i="374" j="431" k="419" m="1"/>
+  <TETRAHEDRON i="290" j="431" k="386" m="417"/>
+  <TETRAHEDRON i="389" j="433" k="340" m="373"/>
+  <TETRAHEDRON i="412" j="432" k="338" m="410"/>
+  <TETRAHEDRON i="396" j="432" k="328" m="220"/>
+  <TETRAHEDRON i="437" j="410" k="408" m="122"/>
+  <TETRAHEDRON i="86" j="432" k="426" m="328"/>
+  <TETRAHEDRON i="23" j="435" k="410" m="356"/>
+  <TETRAHEDRON i="318" j="432" k="23" m="426"/>
+  <TETRAHEDRON i="428" j="433" k="350" m="341"/>
+  <TETRAHEDRON i="238" j="433" k="407" m="373"/>
+  <TETRAHEDRON i="231" j="371" k="260" m="434"/>
+  <TETRAHEDRON i="349" j="433" k="407" m="427"/>
+  <TETRAHEDRON i="107" j="433" k="340" m="341"/>
+  <TETRAHEDRON i="231" j="436" k="434" m="430"/>
+  <TETRAHEDRON i="364" j="436" k="371" m="413"/>
+  <TETRAHEDRON i="372" j="436" k="429" m="416"/>
+  <TETRAHEDRON i="231" j="436" k="371" m="434"/>
+  <TETRAHEDRON i="410" j="437" k="408" m="435"/>
+  <TETRAHEDRON i="416" j="436" k="430" m="434"/>
+  <TETRAHEDRON i="410" j="435" k="408" m="356"/>
+  <TETRAHEDRON i="435" j="240" k="356" m="428"/>
+  <TETRAHEDRON i="122" j="437" k="338" m="366"/>
+  <TETRAHEDRON i="23" j="435" k="426" m="432"/>
+  <TETRAHEDRON i="436" j="395" k="280" m="413"/>
+  <TETRAHEDRON i="408" j="437" k="253" m="435"/>
+  <TETRAHEDRON i="436" j="231" k="371" m="413"/>
+  <TETRAHEDRON i="416" j="436" k="429" m="430"/>
+  <TETRAHEDRON i="127" j="436" k="372" m="416"/>
+  <TETRAHEDRON i="280" j="436" k="231" m="430"/>
+  <TETRAHEDRON i="437" j="343" k="255" m="366"/>
+  <TETRAHEDRON i="255" j="437" k="366" m="338"/>
+  <TETRAHEDRON i="403" j="437" k="253" m="366"/>
+  <TETRAHEDRON i="437" j="410" k="338" m="432"/>
+  <TETRAHEDRON i="407" j="437" k="403" m="424"/>
+  <TETRAHEDRON i="408" j="437" k="122" m="253"/>
+  <TETRAHEDRON i="343" j="437" k="403" m="366"/>
+  <POINT idx="0" coord="[0.5,0,-0.5]"/>
+  <POINT idx="1" coord="[-0.5,0,-0.5]"/>
+  <POINT idx="2" coord="[-0.5,0,0.5]"/>
+  <POINT idx="3" coord="[0.5,0,0.5]"/>
+  <POINT idx="4" coord="[-0.5,1,-0.5]"/>
+  <POINT idx="5" coord="[0.5,1,-0.5]"/>
+  <POINT idx="6" coord="[0.5,1,0.5]"/>
+  <POINT idx="7" coord="[-0.5,1,0.5]"/>
+  <POINT idx="8" coord="[-1,-1,-1]"/>
+  <POINT idx="9" coord="[-1,-1,1]"/>
+  <POINT idx="10" coord="[-1,1,1]"/>
+  <POINT idx="11" coord="[-1,1,-1]"/>
+  <POINT idx="12" coord="[1,-1,1]"/>
+  <POINT idx="13" coord="[1,-1,-1]"/>
+  <POINT idx="14" coord="[1,1,-1]"/>
+  <POINT idx="15" coord="[1,1,1]"/>
+  <POINT idx="16" coord="[0.5,2,0.5]"/>
+  <POINT idx="17" coord="[0.5,2,-0.5]"/>
+  <POINT idx="18" coord="[-0.5,2,-0.5]"/>
+  <POINT idx="19" coord="[-0.5,2,0.5]"/>
+  <POINT idx="20" coord="[0.5,0.5,0]"/>
+  <POINT idx="21" coord="[-1,0,0]"/>
+  <POINT idx="22" coord="[1,0,0]"/>
+  <POINT idx="23" coord="[0,-1,0]"/>
+  <POINT idx="24" coord="[0,2,0]"/>
+  <POINT idx="25" coord="[0,1.5,0.5]"/>
+  <POINT idx="26" coord="[0,1,-1]"/>
+  <POINT idx="27" coord="[0,0,-1]"/>
+  <POINT idx="28" coord="[-0.75,1,-0.25]"/>
+  <POINT idx="29" coord="[0,1,1]"/>
+  <POINT idx="30" coord="[0.25,1,0.75]"/>
+  <POINT idx="31" coord="[0.75,1,-0.25]"/>
+  <POINT idx="32" coord="[-0.25,1,-0.75]"/>
+  <POINT idx="33" coord="[0,0,1]"/>
+  <POINT idx="34" coord="[1,1,0]"/>
+  <POINT idx="35" coord="[0,0.5,-0.5]"/>
+  <POINT idx="36" coord="[0,1,-0.5]"/>
+  <POINT idx="37" coord="[0,0.5,0.5]"/>
+  <POINT idx="38" coord="[-0.5,0.5,0]"/>
+  <POINT idx="39" coord="[-1,1,0]"/>
+  <POINT idx="40" coord="[0.5,1,0]"/>
+  <POINT idx="41" coord="[0,1.5,-0.5]"/>
+  <POINT idx="42" coord="[0.5,1.5,0]"/>
+  <POINT idx="43" coord="[1,0,-1]"/>
+  <POINT idx="44" coord="[1,0,1]"/>
+  <POINT idx="45" coord="[-1,0,1]"/>
+  <POINT idx="46" coord="[-1,0,-1]"/>
+  <POINT idx="47" coord="[-1,0.5,-0.5]"/>
+  <POINT idx="48" coord="[0.5,0.5,1]"/>
+  <POINT idx="49" coord="[-0.5,1.5,0]"/>
+  <POINT idx="50" coord="[-0.5,0.5,-1]"/>
+  <POINT idx="51" coord="[1,0.5,-0.5]"/>
+  <POINT idx="52" coord="[-0.5,0.5,-0.5]"/>
+  <POINT idx="53" coord="[-0.25,0.75,-0.5]"/>
+  <POINT idx="54" coord="[-1,-1,0]"/>
+  <POINT idx="55" coord="[-0.5,-1,0.5]"/>
+  <POINT idx="56" coord="[-1,-0.5,0.5]"/>
+  <POINT idx="57" coord="[0,-1,1]"/>
+  <POINT idx="58" coord="[1,0.5,0.5]"/>
+  <POINT idx="59" coord="[-0.5,0.5,1]"/>
+  <POINT idx="60" coord="[-1,0.5,0.5]"/>
+  <POINT idx="61" coord="[-0.5,1,0]"/>
+  <POINT idx="62" coord="[-0.625,1,0.125]"/>
+  <POINT idx="63" coord="[-0.5,1,0.25]"/>
+  <POINT idx="64" coord="[-0.5,1.25,0.25]"/>
+  <POINT idx="65" coord="[-0.5625,1,0.3125]"/>
+  <POINT idx="66" coord="[0,1,0.5]"/>
+  <POINT idx="67" coord="[-0.5,1.5,0.5]"/>
+  <POINT idx="68" coord="[-0.5,1,0.375]"/>
+  <POINT idx="69" coord="[-0.125,1,0.625]"/>
+  <POINT idx="70" coord="[-1,1,0.5]"/>
+  <POINT idx="71" coord="[-0.25,0.75,0.5]"/>
+  <POINT idx="72" coord="[-0.25,1,0.5]"/>
+  <POINT idx="73" coord="[-0.3125,1,0.5625]"/>
+  <POINT idx="74" coord="[-0.375,0.875,0.5]"/>
+  <POINT idx="75" coord="[-0.5,1,1]"/>
+  <POINT idx="76" coord="[-0.5,0.5,0.5]"/>
+  <POINT idx="77" coord="[-0.5,0.75,0.5]"/>
+  <POINT idx="78" coord="[-0.5,0.70833333333299997,0.208333333333]"/>
+  <POINT idx="79" coord="[-0.25,1,1]"/>
+  <POINT idx="80" coord="[0,0.5,1]"/>
+  <POINT idx="81" coord="[0.5,1.5,0.5]"/>
+  <POINT idx="82" coord="[-0.5,1.5,-0.5]"/>
+  <POINT idx="83" coord="[-0.25,1.25,-0.5]"/>
+  <POINT idx="84" coord="[-0.5,1.25,-0.25]"/>
+  <POINT idx="85" coord="[-1,-0.5,-0.5]"/>
+  <POINT idx="86" coord="[-0.5,-0.5,0]"/>
+  <POINT idx="87" coord="[0.5,0.5,-1]"/>
+  <POINT idx="88" coord="[0,0,0]"/>
+  <POINT idx="89" coord="[1,-1,0]"/>
+  <POINT idx="90" coord="[0.5,-1,0.5]"/>
+  <POINT idx="91" coord="[1,-0.5,0.5]"/>
+  <POINT idx="92" coord="[0.5,1,1]"/>
+  <POINT idx="93" coord="[0.625,1,0.875]"/>
+  <POINT idx="94" coord="[0.75,1,0.75]"/>
+  <POINT idx="95" coord="[1,1,0.5]"/>
+  <POINT idx="96" coord="[1,0.5,1]"/>
+  <POINT idx="97" coord="[0.5,0.5,0.5]"/>
+  <POINT idx="98" coord="[0.25,0.75,0.5]"/>
+  <POINT idx="99" coord="[0,0,0.5]"/>
+  <POINT idx="100" coord="[-0.75,1,-0.75]"/>
+  <POINT idx="101" coord="[-0.875,1,-0.625]"/>
+  <POINT idx="102" coord="[-1,0.75,-0.75]"/>
+  <POINT idx="103" coord="[-1,1,-0.5]"/>
+  <POINT idx="104" coord="[-0.625,1,-0.875]"/>
+  <POINT idx="105" coord="[-0.5,1,-1]"/>
+  <POINT idx="106" coord="[-1,0.5,-1]"/>
+  <POINT idx="107" coord="[0,-1,-1]"/>
+  <POINT idx="108" coord="[0,1.25,0]"/>
+  <POINT idx="109" coord="[0,0,-0.5]"/>
+  <POINT idx="110" coord="[0,0.5,-1]"/>
+  <POINT idx="111" coord="[-0.5,0,0]"/>
+  <POINT idx="112" coord="[0.25,0.25,0.5]"/>
+  <POINT idx="113" coord="[0.25,0.25,1]"/>
+  <POINT idx="114" coord="[0.5,0.5,-0.5]"/>
+  <POINT idx="115" coord="[0.5,0.75,-0.25]"/>
+  <POINT idx="116" coord="[0.5,-0.5,-1]"/>
+  <POINT idx="117" coord="[1,-0.5,-0.5]"/>
+  <POINT idx="118" coord="[-1,0.5,0]"/>
+  <POINT idx="119" coord="[-1,0.25,-0.25]"/>
+  <POINT idx="120" coord="[-0.5,0.25,-0.25]"/>
+  <POINT idx="121" coord="[0.5,1.5,-0.5]"/>
+  <POINT idx="122" coord="[0.5,-0.5,0]"/>
+  <POINT idx="123" coord="[1,0,-0.5]"/>
+  <POINT idx="124" coord="[1,0.5,0]"/>
+  <POINT idx="125" coord="[1,0.75,0.25]"/>
+  <POINT idx="126" coord="[1,1,0.25]"/>
+  <POINT idx="127" coord="[0.5,-0.5,1]"/>
+  <POINT idx="128" coord="[-0.5,-0.5,-1]"/>
+  <POINT idx="129" coord="[0.25,1,-0.5]"/>
+  <POINT idx="130" coord="[0.125,1,-0.625]"/>
+  <POINT idx="131" coord="[0.25,0.75,-0.5]"/>
+  <POINT idx="132" coord="[0.3125,1,-0.5625]"/>
+  <POINT idx="133" coord="[0.5,1,-1]"/>
+  <POINT idx="134" coord="[0.375,0.875,-0.5]"/>
+  <POINT idx="135" coord="[0.375,1,-0.5]"/>
+  <POINT idx="136" coord="[0.5,0.75,-0.5]"/>
+  <POINT idx="137" coord="[0,0.75,-0.5]"/>
+  <POINT idx="138" coord="[0.5,1.25,-0.25]"/>
+  <POINT idx="139" coord="[0.25,1.3125,-0.5]"/>
+  <POINT idx="140" coord="[0.5,1,-0.25]"/>
+  <POINT idx="141" coord="[0.25,1,-1]"/>
+  <POINT idx="142" coord="[0.5,1,0.25]"/>
+  <POINT idx="143" coord="[0.625,1,0.125]"/>
+  <POINT idx="144" coord="[0.5,0.75,0.25]"/>
+  <POINT idx="145" coord="[0.5,0.75,0]"/>
+  <POINT idx="146" coord="[0.5,0,0]"/>
+  <POINT idx="147" coord="[0.5,0.25,-0.25]"/>
+  <POINT idx="148" coord="[1,0.25,-0.25]"/>
+  <POINT idx="149" coord="[0.5,2,0]"/>
+  <POINT idx="150" coord="[-0.5,-0.5,1]"/>
+  <POINT idx="151" coord="[0,2,0.5]"/>
+  <POINT idx="152" coord="[0.5,1.75,0.25]"/>
+  <POINT idx="153" coord="[0.25,1.75,0.5]"/>
+  <POINT idx="154" coord="[0.25,2,0.25]"/>
+  <POINT idx="155" coord="[-1,0.125,-0.625]"/>
+  <POINT idx="156" coord="[-0.75,0.25,-1]"/>
+  <POINT idx="157" coord="[-0.25,0.25,-0.5]"/>
+  <POINT idx="158" coord="[-0.25,0.25,-1]"/>
+  <POINT idx="159" coord="[-0.5,2,0]"/>
+  <POINT idx="160" coord="[0,2,-0.5]"/>
+  <POINT idx="161" coord="[-0.5,1.75,-0.25]"/>
+  <POINT idx="162" coord="[-0.25,1.75,-0.5]"/>
+  <POINT idx="163" coord="[-0.25,2,-0.25]"/>
+  <POINT idx="164" coord="[0.25,2,-0.25]"/>
+  <POINT idx="165" coord="[0.25,1.75,-0.5]"/>
+  <POINT idx="166" coord="[0.5,1.75,-0.25]"/>
+  <POINT idx="167" coord="[-0.25,2,0.25]"/>
+  <POINT idx="168" coord="[-0.25,1.75,0.5]"/>
+  <POINT idx="169" coord="[-0.5,1.75,0.25]"/>
+  <POINT idx="170" coord="[1,1,-0.5]"/>
+  <POINT idx="171" coord="[0.875,1,-0.625]"/>
+  <POINT idx="172" coord="[0.75,1,-0.75]"/>
+  <POINT idx="173" coord="[1,0.5,-1]"/>
+  <POINT idx="174" coord="[-0.5,0.75,-0.25]"/>
+  <POINT idx="175" coord="[-0.25,0.5,-0.25]"/>
+  <POINT idx="176" coord="[-0.25,0.5,-0.75]"/>
+  <POINT idx="177" coord="[-1,0,0.5]"/>
+  <POINT idx="178" coord="[-1,-1,0.5]"/>
+  <POINT idx="179" coord="[1,0.25,0.25]"/>
+  <POINT idx="180" coord="[0.5,0.25,0.25]"/>
+  <POINT idx="181" coord="[1,0.25,0.75]"/>
+  <POINT idx="182" coord="[0.75,0.25,1]"/>
+  <POINT idx="183" coord="[-0.5,0,1]"/>
+  <POINT idx="184" coord="[-0.25,0.25,1]"/>
+  <POINT idx="185" coord="[-0.25,0.25,0.5]"/>
+  <POINT idx="186" coord="[-1,0.5,1]"/>
+  <POINT idx="187" coord="[-0.75,0.25,1]"/>
+  <POINT idx="188" coord="[-1,0.25,0.75]"/>
+  <POINT idx="189" coord="[-0.5,0.25,0.25]"/>
+  <POINT idx="190" coord="[-1,0.25,0.25]"/>
+  <POINT idx="191" coord="[-0.25,1,-0.25]"/>
+  <POINT idx="192" coord="[-0.25,1.5,0.25]"/>
+  <POINT idx="193" coord="[-1,0.75,0.25]"/>
+  <POINT idx="194" coord="[-1,1,0.25]"/>
+  <POINT idx="195" coord="[-0.25,0.5,0.75]"/>
+  <POINT idx="196" coord="[-0.75,0.75,1]"/>
+  <POINT idx="197" coord="[-1,0.75,0.75]"/>
+  <POINT idx="198" coord="[-0.5,0.82638888888899997,0.340277777778]"/>
+  <POINT idx="199" coord="[0.25,0.75,1]"/>
+  <POINT idx="200" coord="[-0.25,1.5,-0.25]"/>
+  <POINT idx="201" coord="[-0.5,-1,-0.5]"/>
+  <POINT idx="202" coord="[-1,-0.5,0]"/>
+  <POINT idx="203" coord="[-1,-0.145833333333,-0.35416666666699997]"/>
+  <POINT idx="204" coord="[-1,-0.25,0.25]"/>
+  <POINT idx="205" coord="[-0.5,-1,0]"/>
+  <POINT idx="206" coord="[-0.5,-0.5,0.5]"/>
+  <POINT idx="207" coord="[-1,-0.75,0.25]"/>
+  <POINT idx="208" coord="[-0.75,-1,0.25]"/>
+  <POINT idx="209" coord="[0.25,0.25,-1]"/>
+  <POINT idx="210" coord="[0.25,0.25,-0.5]"/>
+  <POINT idx="211" coord="[0.75,0.25,-1]"/>
+  <POINT idx="212" coord="[1,0.25,-0.75]"/>
+  <POINT idx="213" coord="[1,-1,0.5]"/>
+  <POINT idx="214" coord="[1,0.75,0.75]"/>
+  <POINT idx="215" coord="[0.75,0.75,0.5]"/>
+  <POINT idx="216" coord="[0.25,0.5,0.25]"/>
+  <POINT idx="217" coord="[0.025000000000000001,0.72499999999999998,0.75]"/>
+  <POINT idx="218" coord="[0.47499999999999998,0.72499999999999998,0.75]"/>
+  <POINT idx="219" coord="[-0.25,0,0.25]"/>
+  <POINT idx="220" coord="[0,-0.5,0.25]"/>
+  <POINT idx="221" coord="[-0.66666666666700003,0.66666666666700003,-0.75]"/>
+  <POINT idx="222" coord="[-1,0.75,-0.25]"/>
+  <POINT idx="223" coord="[-0.25,0.75,-1]"/>
+  <POINT idx="224" coord="[0,1.25,-0.5]"/>
+  <POINT idx="225" coord="[0.125,1.625,-0.125]"/>
+  <POINT idx="226" coord="[-0.5,1.25,0]"/>
+  <POINT idx="227" coord="[0.25,1.25,0.5]"/>
+  <POINT idx="228" coord="[0.5,1.3125,0.25]"/>
+  <POINT idx="229" coord="[-0.25,0,-0.25]"/>
+  <POINT idx="230" coord="[0,0.25,0.75]"/>
+  <POINT idx="231" coord="[0.25,-0.25,1]"/>
+  <POINT idx="232" coord="[0,0.25,0.25]"/>
+  <POINT idx="233" coord="[0.25,0,0.25]"/>
+  <POINT idx="234" coord="[0.5,0.25,0.75]"/>
+  <POINT idx="235" coord="[0.25,0,0.75]"/>
+  <POINT idx="236" coord="[0.25,0.5,-0.25]"/>
+  <POINT idx="237" coord="[0.75,0.5,-0.25]"/>
+  <POINT idx="238" coord="[0,-0.5,-1]"/>
+  <POINT idx="239" coord="[0.375,-0.125,-1]"/>
+  <POINT idx="240" coord="[0.5,-1,-0.5]"/>
+  <POINT idx="241" coord="[1,-0.5,-1]"/>
+  <POINT idx="242" coord="[0.71875,-0.21875,-1]"/>
+  <POINT idx="243" coord="[1,-0.25,-0.75]"/>
+  <POINT idx="244" coord="[-0.75,0.25,0]"/>
+  <POINT idx="245" coord="[-0.75,0.5,-0.25]"/>
+  <POINT idx="246" coord="[-0.25,0.25,0]"/>
+  <POINT idx="247" coord="[0.5,-1,0]"/>
+  <POINT idx="248" coord="[1,-0.5,0]"/>
+  <POINT idx="249" coord="[1,-0.75,0.25]"/>
+  <POINT idx="250" coord="[0.75,-1,0.25]"/>
+  <POINT idx="251" coord="[1,-0.25,0.25]"/>
+  <POINT idx="252" coord="[0.5,-0.5,0.5]"/>
+  <POINT idx="253" coord="[0.5,-0.5,-0.5]"/>
+  <POINT idx="254" coord="[1,-0.25,-0.25]"/>
+  <POINT idx="255" coord="[0.25,0,-0.25]"/>
+  <POINT idx="256" coord="[1,0.75,-0.25]"/>
+  <POINT idx="257" coord="[0.75,0.5,0.25]"/>
+  <POINT idx="258" coord="[1,-0.5,1]"/>
+  <POINT idx="259" coord="[1,-0.125,0.625]"/>
+  <POINT idx="260" coord="[0.625,-0.125,1]"/>
+  <POINT idx="261" coord="[0.5,-1,1]"/>
+  <POINT idx="262" coord="[0.75,-0.75,1]"/>
+  <POINT idx="263" coord="[1,-0.75,0.75]"/>
+  <POINT idx="264" coord="[0.75,-1,0.75]"/>
+  <POINT idx="265" coord="[-0.25,-0.25,-1]"/>
+  <POINT idx="266" coord="[-1,-0.5,-1]"/>
+  <POINT idx="267" coord="[-0.5,-0.5,-0.5]"/>
+  <POINT idx="268" coord="[-0.75,-0.25,-1]"/>
+  <POINT idx="269" coord="[-1,-0.25,-0.75]"/>
+  <POINT idx="270" coord="[0.25,0.5,-0.75]"/>
+  <POINT idx="271" coord="[0.75,0.75,-1]"/>
+  <POINT idx="272" coord="[0.5,1.25,0]"/>
+  <POINT idx="273" coord="[0.125,0.875,-0.125]"/>
+  <POINT idx="274" coord="[1,0.75,0]"/>
+  <POINT idx="275" coord="[0.25,0.25,0]"/>
+  <POINT idx="276" coord="[0.75,0,-0.25]"/>
+  <POINT idx="277" coord="[0.75,0.25,0]"/>
+  <POINT idx="278" coord="[0.75,0.25,-0.5]"/>
+  <POINT idx="279" coord="[-0.5,-1,1]"/>
+  <POINT idx="280" coord="[-0.125,-0.375,1]"/>
+  <POINT idx="281" coord="[-1,-0.5,1]"/>
+  <POINT idx="282" coord="[-1,-0.25,0.75]"/>
+  <POINT idx="283" coord="[-0.75,-0.25,1]"/>
+  <POINT idx="284" coord="[-0.75,-1,0.75]"/>
+  <POINT idx="285" coord="[-1,-0.75,0.75]"/>
+  <POINT idx="286" coord="[-0.75,-0.75,1]"/>
+  <POINT idx="287" coord="[0,1.75,0.25]"/>
+  <POINT idx="288" coord="[-0.5,0.25,-0.5]"/>
+  <POINT idx="289" coord="[0,0.25,-0.75]"/>
+  <POINT idx="290" coord="[-0.25,0,-0.75]"/>
+  <POINT idx="291" coord="[0,0.25,-0.25]"/>
+  <POINT idx="292" coord="[-0.25,1.75,0]"/>
+  <POINT idx="293" coord="[0.75,0.25,0.5]"/>
+  <POINT idx="294" coord="[0.75,0,0.25]"/>
+  <POINT idx="295" coord="[0.75,0.5,0.75]"/>
+  <POINT idx="296" coord="[-0.25,0,0.75]"/>
+  <POINT idx="297" coord="[-0.5,0.25,0.75]"/>
+  <POINT idx="298" coord="[-0.75,0,0.75]"/>
+  <POINT idx="299" coord="[-0.75,0.5,0.75]"/>
+  <POINT idx="300" coord="[-0.75,0.25,0.5]"/>
+  <POINT idx="301" coord="[-0.75,0,0.25]"/>
+  <POINT idx="302" coord="[-1,0.5,0.25]"/>
+  <POINT idx="303" coord="[-0.125,1.25,0.5]"/>
+  <POINT idx="304" coord="[-1,0.75,0.5]"/>
+  <POINT idx="305" coord="[-0.375,0.75,1]"/>
+  <POINT idx="306" coord="[-0.75,1,0.75]"/>
+  <POINT idx="307" coord="[-0.5,-1,-1]"/>
+  <POINT idx="308" coord="[-1,-1,-0.5]"/>
+  <POINT idx="309" coord="[-0.75,-0.75,-1]"/>
+  <POINT idx="310" coord="[-1,-0.75,-0.75]"/>
+  <POINT idx="311" coord="[-0.75,-1,-0.25]"/>
+  <POINT idx="312" coord="[-1,-0.75,-0.25]"/>
+  <POINT idx="313" coord="[-1,-0.39583333333300003,-0.25]"/>
+  <POINT idx="314" coord="[-1,0.078125,-0.40104166666699997]"/>
+  <POINT idx="315" coord="[-0.75,-0.25,0.5]"/>
+  <POINT idx="316" coord="[-0.75,-0.25,0]"/>
+  <POINT idx="317" coord="[-0.75,-0.5,0.25]"/>
+  <POINT idx="318" coord="[-0.25,-1,-0.25]"/>
+  <POINT idx="319" coord="[-0.21875,-0.71875,1]"/>
+  <POINT idx="320" coord="[-0.25,-1,0.75]"/>
+  <POINT idx="321" coord="[-0.75,-0.75,0]"/>
+  <POINT idx="322" coord="[-0.75,-0.75,0.5]"/>
+  <POINT idx="323" coord="[-0.5,-0.75,0.25]"/>
+  <POINT idx="324" coord="[0.5,0.25,-0.75]"/>
+  <POINT idx="325" coord="[0.75,0.5,-0.75]"/>
+  <POINT idx="326" coord="[0.25,0.47499999999999998,0.75]"/>
+  <POINT idx="327" coord="[-0.25,-0.25,0.5]"/>
+  <POINT idx="328" coord="[-0.25,-0.25,0]"/>
+  <POINT idx="329" coord="[-0.5,-0.25,0.25]"/>
+  <POINT idx="330" coord="[0,0,0.25]"/>
+  <POINT idx="331" coord="[-1,0.375,-0.75]"/>
+  <POINT idx="332" coord="[-0.75,0.75,-0.45138888888899997]"/>
+  <POINT idx="333" coord="[0,0.75,-1]"/>
+  <POINT idx="334" coord="[0.21339285714299999,1.34196428571,-0.19821428571399999]"/>
+  <POINT idx="335" coord="[0.17499999999999999,1.075,0.22500000000000001]"/>
+  <POINT idx="336" coord="[-0.5,-0.25,-0.25]"/>
+  <POINT idx="337" coord="[-0.11553030303,0.61553030303,0.11553030303]"/>
+  <POINT idx="338" coord="[0.208333333333,-0.29166666666699997,0.041666666666699999]"/>
+  <POINT idx="339" coord="[0.5,-0.25,0.25]"/>
+  <POINT idx="340" coord="[-0.25,-0.75,-1]"/>
+  <POINT idx="341" coord="[-0.125,-1,-0.625]"/>
+  <POINT idx="342" coord="[0.125,-0.25,-1]"/>
+  <POINT idx="343" coord="[0.25,0,-0.5]"/>
+  <POINT idx="344" coord="[1,-1,-0.5]"/>
+  <POINT idx="345" coord="[0.5,-1,-1]"/>
+  <POINT idx="346" coord="[1,-0.75,-0.75]"/>
+  <POINT idx="347" coord="[0.75,-1,-0.75]"/>
+  <POINT idx="348" coord="[0.75,-0.75,-1]"/>
+  <POINT idx="349" coord="[0.25,-0.75,-1]"/>
+  <POINT idx="350" coord="[0.21875,-1,-0.71875]"/>
+  <POINT idx="351" coord="[0.75,-1,-0.25]"/>
+  <POINT idx="352" coord="[1,-0.75,-0.25]"/>
+  <POINT idx="353" coord="[0.75,-0.5,-0.75]"/>
+  <POINT idx="354" coord="[0.75,-0.25,-0.5]"/>
+  <POINT idx="355" coord="[-1,0.75,0]"/>
+  <POINT idx="356" coord="[0.25,-1,-0.25]"/>
+  <POINT idx="357" coord="[0.25,-1,0.25]"/>
+  <POINT idx="358" coord="[0.75,-0.75,0]"/>
+  <POINT idx="359" coord="[0.75,-0.5,0.25]"/>
+  <POINT idx="360" coord="[0.75,-0.75,0.5]"/>
+  <POINT idx="361" coord="[0.5,-0.75,0.25]"/>
+  <POINT idx="362" coord="[0.75,-0.25,0]"/>
+  <POINT idx="363" coord="[0.125,-1,0.625]"/>
+  <POINT idx="364" coord="[0.208333333333,-0.29166666666699997,0.45833333333300003]"/>
+  <POINT idx="365" coord="[0.75,-0.5,-0.25]"/>
+  <POINT idx="366" coord="[0.5,-0.25,-0.25]"/>
+  <POINT idx="367" coord="[1,0.75,-0.5]"/>
+  <POINT idx="368" coord="[1,-0.375,0.75]"/>
+  <POINT idx="369" coord="[0.75,-0.375,1]"/>
+  <POINT idx="370" coord="[0.75,0.041666666666699999,0.75]"/>
+  <POINT idx="371" coord="[0.47499999999999998,-0.25,0.72499999999999998]"/>
+  <POINT idx="372" coord="[0.5,-0.75,0.75]"/>
+  <POINT idx="373" coord="[-0.25,-0.5,-0.75]"/>
+  <POINT idx="374" coord="[-0.5,-0.25,-0.75]"/>
+  <POINT idx="375" coord="[-0.25,-0.25,-0.5]"/>
+  <POINT idx="376" coord="[-0.75,-0.5,-0.75]"/>
+  <POINT idx="377" coord="[-1,-0.098958333333299994,-0.578125]"/>
+  <POINT idx="378" coord="[0.375,0.75,-1]"/>
+  <POINT idx="379" coord="[0.234375,0.640625,0]"/>
+  <POINT idx="380" coord="[-2.77555756156e-017,0.640625,-0.234375]"/>
+  <POINT idx="381" coord="[0.75,0,-0.736328125]"/>
+  <POINT idx="382" coord="[-0.75,-0.5,0.75]"/>
+  <POINT idx="383" coord="[-0.5,-0.25,0.75]"/>
+  <POINT idx="384" coord="[-0.5,-0.75,0.75]"/>
+  <POINT idx="385" coord="[0.198803191489,1.4727393617,0.17952127659600001]"/>
+  <POINT idx="386" coord="[-0.5,0.25,-1]"/>
+  <POINT idx="387" coord="[0.75,0.5,1]"/>
+  <POINT idx="388" coord="[-0.5,0.48263888888899997,0.26736111111100003]"/>
+  <POINT idx="389" coord="[-0.5,-0.75,-0.75]"/>
+  <POINT idx="390" coord="[-0.75,-1,-0.75]"/>
+  <POINT idx="391" coord="[-0.75,-0.75,-0.5]"/>
+  <POINT idx="392" coord="[-0.5,-0.75,-0.25]"/>
+  <POINT idx="393" coord="[-0.5,0,-0.25]"/>
+  <POINT idx="394" coord="[-0.25,-0.75,0]"/>
+  <POINT idx="395" coord="[-0.132172131148,-0.63575819672099998,0.61065573770500003]"/>
+  <POINT idx="396" coord="[-0.3125,-0.5,0.25]"/>
+  <POINT idx="397" coord="[-0.25,-1,0.25]"/>
+  <POINT idx="398" coord="[-0.69252873563200001,0.35991379310299998,-0.71623563218399999]"/>
+  <POINT idx="399" coord="[0.247523481376,1.11234345749,-0.042413901620300003]"/>
+  <POINT idx="400" coord="[-0.698350694444,-0.5,-0.25]"/>
+  <POINT idx="401" coord="[-0.15795796823700001,0.96822460295699997,0.15230866648399999]"/>
+  <POINT idx="402" coord="[0.25,-0.46875,-1]"/>
+  <POINT idx="403" coord="[0.375,-0.25,-0.6875]"/>
+  <POINT idx="404" coord="[0.125,0.125,-1]"/>
+  <POINT idx="405" coord="[0.75,-0.75,-0.5]"/>
+  <POINT idx="406" coord="[0.5,-0.75,-0.75]"/>
+  <POINT idx="407" coord="[0.137152777778,-0.61284722222200005,-0.63715277777799995]"/>
+  <POINT idx="408" coord="[0.5,-0.75,-0.25]"/>
+  <POINT idx="409" coord="[-0.5,0.76736111111100003,-0.017361111111099999]"/>
+  <POINT idx="410" coord="[0.25,-0.75,0]"/>
+  <POINT idx="411" coord="[0.734375,-0.265625,0.484375]"/>
+  <POINT idx="412" coord="[0.3125,-0.5,0.25]"/>
+  <POINT idx="413" coord="[0.0025000000000000001,-0.2525,0.71750000000000003]"/>
+  <POINT idx="414" coord="[1,0.75,-1]"/>
+  <POINT idx="415" coord="[1,0.625,-0.75]"/>
+  <POINT idx="416" coord="[0.25,-0.75,1]"/>
+  <POINT idx="417" coord="[-0.625,0,-1]"/>
+  <POINT idx="418" coord="[0.0048076923076899999,-0.259615384615,-0.25]"/>
+  <POINT idx="419" coord="[-0.716417100694,-0.25,-0.5]"/>
+  <POINT idx="420" coord="[0.107165851334,0.78075501493599997,0.235528876379]"/>
+  <POINT idx="421" coord="[-0.30263274831100001,-0.46710175506599999,0.78289824493399995]"/>
+  <POINT idx="422" coord="[-0.125,-1,0.5]"/>
+  <POINT idx="423" coord="[0,-1,0.25]"/>
+  <POINT idx="424" coord="[0.0383064516129,-0.288306451613,-0.67439516128999999]"/>
+  <POINT idx="425" coord="[0.296875,0.046875,-0.78125]"/>
+  <POINT idx="426" coord="[-0.169270833333,-0.68142361111100003,-0.43142361111100003]"/>
+  <POINT idx="427" coord="[0,-0.75,-1]"/>
+  <POINT idx="428" coord="[0.100446428571,-1,-0.475446428571]"/>
+  <POINT idx="429" coord="[0.20234232773300001,-0.67602405725000003,0.52793075420000002]"/>
+  <POINT idx="430" coord="[0.024553571428599999,-0.60044642857099995,1]"/>
+  <POINT idx="431" coord="[-0.71470894520100003,0.054216455495600002,-0.71194776370000001]"/>
+  <POINT idx="432" coord="[4.7704895589399999e-017,-0.54537649850100001,-0.079623501498500004]"/>
+  <POINT idx="433" coord="[-0.097976253531099997,-0.73919050141200005,-0.73378575211899999]"/>
+  <POINT idx="434" coord="[0.375,-0.375,1]"/>
+  <POINT idx="435" coord="[0.18336030814199999,-0.68336030814199999,-0.31753530453599998]"/>
+  <POINT idx="436" coord="[0.198397600679,-0.48557933259699998,0.77151876284499998]"/>
+  <POINT idx="437" coord="[0.25547820334499999,-0.413137087643,-0.223184237747]"/>
+</T4MESH>

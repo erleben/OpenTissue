@@ -1,0 +1,13 @@
+INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+
+ADD_EXECUTABLE(unit_bfgs src/unit_bfgs.cpp)
+
+TARGET_LINK_LIBRARIES(unit_bfgs ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+INSTALL(
+  TARGETS unit_bfgs
+  RUNTIME DESTINATION  bin/units
+  )
+
+ADD_TEST( unit_bfgs unit_bfgs )
+

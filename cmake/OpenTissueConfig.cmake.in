@@ -1,0 +1,19 @@
+#-------------------------------------------------------------------------------
+#
+# Try to find OpenTissue, runtime libraries, and include paths.
+# Once done this will define
+#
+# OPENTISSUE_FOUND        : System has OpenTissue and it can be used. 
+# OPENTISSUE_INCLUDE_DIRS : Directories need to find header-files used by OpenTissue and OpenTissue itself
+# OPENTISSUE_LIBRARY_DIRS : Directories where the compiler can find static libraries of third-party software used by OpenTissue.
+# OPENTISSUE_LIBS         : Full paths to all libraries of third-party software used by OpenTissue.
+# OPENTISSUE_FLAGS        : OpenTissue compiler flags that should be used for any application using OpenTissue.
+#
+# Boost_unit_test_framework_LIBRARY : OpenTissue uses the Boost unit-test framework. This tells where the libs are for the linker
+#
+
+SET( OPENTISSUE_FOUND 1 )
+SET(OPENTISSUE_INCLUDE_DIRS "@OPENTISSUE_INCLUDE_DIRS@")
+SET(OPENTISSUE_LIBRARY_DIRS "@OPENTISSUE_LIBRARY_DIRS@")
+SET(OPENTISSUE_LIBS "@OPENTISSUE_LIBS@")
+SET(OPENTISSUE_FLAGS "@OPENTISSUE_FLAGS@")

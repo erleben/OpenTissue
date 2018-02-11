@@ -1,0 +1,11 @@
+SUBDIRS( grid )
+SUBDIRS( heap )
+SUBDIRS( polymesh )
+SUBDIRS( polymesh_compute_voronoi )
+SUBDIRS( polymesh_is_point_inside )
+SUBDIRS( trimesh )
+SUBDIRS( t4mesh_compute_mesh_quality )
+SUBDIRS( t4mesh_t4mesh )
+SUBDIRS( t4mesh_xml )
+SUBDIRS( t4mesh_mel )
+

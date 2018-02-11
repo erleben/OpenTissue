@@ -1,0 +1,62 @@
+void main(
+             in float3 local     : TEXCOORD0,
+             in float3 triangle  : TEXCOORD1,
+            out float4 dist      : COLOR0,
+            out float  absDist   : DEPTH,
+  const uniform float  narrowband)
+{
+  //--- Extract vector component into temporaries in order to make code more readable
+  float a = triangle.x;
+  float b = triangle.y;
+  float h = triangle.z;
+
+  float r = local.x;
+  float s = local.y;
+  float t = local.z;
+
+  //--- Normalize to half-space r >= 0
+  if (r<0)
+  {
+    r = -r;
+    a =  b;
+  }
+
+  //--- Transform to a 2nd coordinate frame
+  float lensqr = (a*a + h*h);
+  float rprime = (a*r + h*h - h*s)/lensqr;
+  float sprime = (a*s + h*r - h*a)/lensqr;
+
+  //--- region I
+  float3 c = float3(0,0,0);
+
+  if( s<0 )
+  {
+    //--- region III or II
+    c.x = a;
+  }
+  else
+  if(sprime>0)
+  {
+    if(rprime<0)
+    {
+      //--- region VI
+      c.y = h;
+    }
+    else
+    {
+      //--- region IV or V
+      c.x = a;
+    }
+  }
+
+  //--- Extract Components of the distance vector
+  rprime = max( max(-rprime,0),rprime-1);  // regions IV, V, VI
+  sprime = max(sprime,0);                  // regions I, V
+  r      = max(r-a,0);                     // regions II, III
+
+  //--- Compute the distance
+  float tmp = (s<0)?(r*r + s*s):((rprime*rprime + sprime*sprime)*lensqr);
+  absDist = sqrt( tmp + t*t);
+  dist = float4(absDist,local);
+  absDist /= narrowband;  //--- z-buffer is clamped to 0..1, so we need to rescale values
+}

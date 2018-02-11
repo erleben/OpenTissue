@@ -1,0 +1,10 @@
+ADD_EXECUTABLE(unit_compute_minimum_sine_dihedral_angle_quality_measure src/unit_comp_min_sine_dihedral_angle_measure.cpp)
+
+TARGET_LINK_LIBRARIES(unit_compute_minimum_sine_dihedral_angle_quality_measure ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+INSTALL(
+  TARGETS unit_compute_minimum_sine_dihedral_angle_quality_measure
+  RUNTIME DESTINATION  bin/units
+  )
+
+ADD_TEST( unit_compute_minimum_sine_dihedral_angle_quality_measure unit_compute_minimum_sine_dihedral_angle_quality_measure )

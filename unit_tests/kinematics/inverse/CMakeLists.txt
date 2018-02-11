@@ -1,0 +1,7 @@
+SUBDIRS( chain )
+SUBDIRS( jacobian_assembly )
+SUBDIRS( nonlinear_solver )
+SUBDIRS( joint_parameters )
+SUBDIRS( compute_weighted_diff )
+SUBDIRS( set_default_joints )
+SUBDIRS( ik_io )

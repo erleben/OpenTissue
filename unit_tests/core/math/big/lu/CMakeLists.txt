@@ -1,0 +1,13 @@
+INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+
+ADD_EXECUTABLE(unit_lu src/unit_lu.cpp)
+
+TARGET_LINK_LIBRARIES(unit_lu ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+INSTALL(
+  TARGETS unit_lu
+  RUNTIME DESTINATION  bin/units
+  )
+
+ADD_TEST( unit_lu unit_lu )
+

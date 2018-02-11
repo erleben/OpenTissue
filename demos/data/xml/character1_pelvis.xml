@@ -1,0 +1,679 @@
+<mesh vertices="121" faces="200" texcoords="0" material="3">
+    <vertex idx="0" influences="1" p="[-1.97163,10.3588,111.663]" n="[-0.231766,0.937503,-0.259562]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="1" influences="1" p="[0.00158563,10.4144,111.672]" n="[0.000101187,0.971168,-0.238396]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="2" influences="1" p="[0.00168383,-5.70301,108.629]" n="[-1.75576e-007,-0.988444,0.151587]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="3" influences="2" p="[-2.86296,1.94014,93.2924]" n="[-0.123651,0.0202335,-0.992119]">
+        <influence bone="2" weight="0.665315" />
+        <influence bone="33" weight="0.334685" />
+    </vertex>
+    <vertex idx="4" influences="3" p="[-3.83225,0.429174,94.5071]" n="[-0.785222,-0.149212,-0.600967]">
+        <influence bone="2" weight="0.645392" />
+        <influence bone="33" weight="0.322696" />
+        <influence bone="1" weight="0.0319117" />
+    </vertex>
+    <vertex idx="5" influences="3" p="[-5.11303,-2.05524,97.6509]" n="[-0.731402,-0.514179,-0.447963]">
+        <influence bone="2" weight="0.333333" />
+        <influence bone="33" weight="0.333333" />
+        <influence bone="1" weight="0.333333" />
+    </vertex>
+    <vertex idx="6" influences="3" p="[-8.90723,-3.37562,104.328]" n="[-0.54333,-0.83679,-0.0676392]">
+        <influence bone="2" weight="0.425727" />
+        <influence bone="33" weight="0.380948" />
+        <influence bone="1" weight="0.193326" />
+    </vertex>
+    <vertex idx="7" influences="3" p="[-6.39194,-2.78104,100.889]" n="[-0.509941,-0.753547,-0.414882]">
+        <influence bone="2" weight="0.333333" />
+        <influence bone="33" weight="0.333333" />
+        <influence bone="1" weight="0.333333" />
+    </vertex>
+    <vertex idx="8" influences="1" p="[-4.31234,-5.88407,110.129]" n="[-0.205727,-0.972477,0.109387]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="9" influences="1" p="[-8.06349,-3.68024,111.37]" n="[-0.7232,-0.68112,0.114271]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="10" influences="1" p="[-9.93399,-0.472149,111.507]" n="[-0.750462,-0.535142,0.387853]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="11" influences="1" p="[-5.84334,8.76825,113.349]" n="[-0.160051,0.879677,0.447831]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="12" influences="2" p="[-13.948,9.57444,103.71]" n="[-0.790254,0.501004,0.352837]">
+        <influence bone="2" weight="0.50002" />
+        <influence bone="33" weight="0.49998" />
+    </vertex>
+    <vertex idx="13" influences="2" p="[-13.7263,11.2188,101.273]" n="[-0.688943,0.699647,0.189344]">
+        <influence bone="33" weight="0.5" />
+        <influence bone="2" weight="0.5" />
+    </vertex>
+    <vertex idx="14" influences="2" p="[-12.3954,13.2299,97.2821]" n="[-0.410454,0.907301,-0.0912804]">
+        <influence bone="33" weight="0.617649" />
+        <influence bone="2" weight="0.382351" />
+    </vertex>
+    <vertex idx="15" influences="2" p="[-9.22804,13.5612,94.6718]" n="[-0.0476232,0.894573,-0.444377]">
+        <influence bone="33" weight="0.922838" />
+        <influence bone="2" weight="0.0771621" />
+    </vertex>
+    <vertex idx="16" influences="2" p="[-13.9896,6.76178,106.215]" n="[-0.793232,0.283011,0.539155]">
+        <influence bone="2" weight="0.591705" />
+        <influence bone="33" weight="0.408295" />
+    </vertex>
+    <vertex idx="17" influences="1" p="[-12.9751,1.8912,108.524]" n="[-0.823252,-0.120948,0.554642]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="18" influences="2" p="[-11.7478,-1.91042,106.49]" n="[-0.5557,-0.762079,0.332316]">
+        <influence bone="2" weight="0.863618" />
+        <influence bone="33" weight="0.136382" />
+    </vertex>
+    <vertex idx="19" influences="1" p="[-10.7237,2.49967,111.827]" n="[-0.814186,0.0251103,0.580062]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="20" influences="1" p="[-8.61253,7.01949,113.208]" n="[-0.670395,0.355192,0.651467]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="21" influences="2" p="[-4.66779,11.2309,91.2896]" n="[0.443194,0.782154,-0.437967]">
+        <influence bone="33" weight="0.685909" />
+        <influence bone="2" weight="0.314091" />
+    </vertex>
+    <vertex idx="22" influences="2" p="[-2.76986,8.85144,91.1928]" n="[0.761292,0.356987,-0.54129]">
+        <influence bone="33" weight="0.542525" />
+        <influence bone="2" weight="0.457475" />
+    </vertex>
+    <vertex idx="23" influences="1" p="[1.97489,10.3585,111.663]" n="[0.231848,0.937492,-0.259529]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="24" influences="2" p="[2.86803,1.94135,93.2926]" n="[0.12367,0.020207,-0.992118]">
+        <influence bone="2" weight="0.665313" />
+        <influence bone="29" weight="0.334687" />
+    </vertex>
+    <vertex idx="25" influences="3" p="[3.83714,0.430095,94.5074]" n="[0.785295,-0.149216,-0.600871]">
+        <influence bone="2" weight="0.645437" />
+        <influence bone="29" weight="0.322718" />
+        <influence bone="1" weight="0.0318448" />
+    </vertex>
+    <vertex idx="26" influences="3" p="[5.11755,-2.05401,97.6511]" n="[0.73107,-0.514746,-0.447854]">
+        <influence bone="2" weight="0.333333" />
+        <influence bone="29" weight="0.333333" />
+        <influence bone="1" weight="0.333333" />
+    </vertex>
+    <vertex idx="27" influences="3" p="[8.91254,-3.37331,104.328]" n="[0.545789,-0.835154,-0.0680562]">
+        <influence bone="2" weight="0.433851" />
+        <influence bone="29" weight="0.369681" />
+        <influence bone="1" weight="0.196468" />
+    </vertex>
+    <vertex idx="28" influences="3" p="[6.39607,-2.77975,100.889]" n="[0.510473,-0.753136,-0.414975]">
+        <influence bone="2" weight="0.333333" />
+        <influence bone="29" weight="0.333333" />
+        <influence bone="1" weight="0.333333" />
+    </vertex>
+    <vertex idx="29" influences="1" p="[4.3166,-5.88402,110.129]" n="[0.205733,-0.972475,0.109394]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="30" influences="1" p="[8.06773,-3.6802,111.37]" n="[0.723222,-0.6811,0.11425]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="31" influences="1" p="[9.9382,-0.472101,111.507]" n="[0.751157,-0.533983,0.388105]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="32" influences="1" p="[5.84764,8.76775,113.349]" n="[0.160016,0.879664,0.447867]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="33" influences="2" p="[13.9501,9.57339,103.709]" n="[0.796426,0.497246,0.344169]">
+        <influence bone="2" weight="0.500019" />
+        <influence bone="29" weight="0.499981" />
+    </vertex>
+    <vertex idx="34" influences="2" p="[13.7286,11.2172,101.272]" n="[0.689321,0.699366,0.189008]">
+        <influence bone="29" weight="0.5" />
+        <influence bone="2" weight="0.5" />
+    </vertex>
+    <vertex idx="35" influences="2" p="[12.3981,13.2273,97.2816]" n="[0.410851,0.90706,-0.0918937]">
+        <influence bone="29" weight="0.595735" />
+        <influence bone="2" weight="0.404265" />
+    </vertex>
+    <vertex idx="36" influences="2" p="[9.23201,13.5566,94.6718]" n="[0.0481612,0.894245,-0.444978]">
+        <influence bone="29" weight="0.923149" />
+        <influence bone="2" weight="0.076851" />
+    </vertex>
+    <vertex idx="37" influences="2" p="[13.9919,6.76195,106.214]" n="[0.800546,0.271185,0.534401]">
+        <influence bone="2" weight="0.591587" />
+        <influence bone="29" weight="0.408413" />
+    </vertex>
+    <vertex idx="38" influences="1" p="[12.9793,1.89111,108.524]" n="[0.823105,-0.120075,0.55505]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="39" influences="2" p="[11.7935,-1.86476,106.506]" n="[0.559202,-0.759511,0.33232]">
+        <influence bone="2" weight="0.988424" />
+        <influence bone="29" weight="0.0115762" />
+    </vertex>
+    <vertex idx="40" influences="1" p="[10.7279,2.49982,111.827]" n="[0.81419,0.025117,0.580054]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="41" influences="1" p="[8.61679,7.0191,113.208]" n="[0.670402,0.355182,0.651465]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="42" influences="2" p="[4.67378,11.2281,91.2899]" n="[-0.442787,0.782173,-0.438342]">
+        <influence bone="29" weight="0.686303" />
+        <influence bone="2" weight="0.313697" />
+    </vertex>
+    <vertex idx="43" influences="2" p="[2.77597,8.85,91.1931]" n="[-0.761079,0.357008,-0.541575]">
+        <influence bone="29" weight="0.542358" />
+        <influence bone="2" weight="0.457642" />
+    </vertex>
+    <vertex idx="44" influences="2" p="[-1.85069,13.8305,98.0805]" n="[0.649974,0.739485,-0.175202]">
+        <influence bone="2" weight="0.666667" />
+        <influence bone="1" weight="0.333333" />
+    </vertex>
+    <vertex idx="45" influences="2" p="[1.85484,13.8305,98.0804]" n="[-0.650077,0.739377,-0.175274]">
+        <influence bone="2" weight="0.666667" />
+        <influence bone="1" weight="0.333333" />
+    </vertex>
+    <vertex idx="46" influences="3" p="[-0.97368,7.41833,93.9003]" n="[0.649579,0.385551,-0.655284]">
+        <influence bone="2" weight="0.698838" />
+        <influence bone="33" weight="0.290756" />
+        <influence bone="1" weight="0.0104068" />
+    </vertex>
+    <vertex idx="47" influences="1" p="[4.62934,13.1827,107.04]" n="[-0.37633,0.744371,0.551622]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="48" influences="1" p="[-4.62516,13.1827,107.04]" n="[0.376331,0.744376,0.551615]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="49" influences="3" p="[2.26035,10.4298,106.227]" n="[-0.56212,0.788904,0.248295]">
+        <influence bone="2" weight="0.706139" />
+        <influence bone="1" weight="0.270307" />
+        <influence bone="29" weight="0.0235534" />
+    </vertex>
+    <vertex idx="50" influences="3" p="[-2.25602,10.4299,106.227]" n="[0.562114,0.788906,0.248303]">
+        <influence bone="2" weight="0.706491" />
+        <influence bone="1" weight="0.270394" />
+        <influence bone="33" weight="0.0231153" />
+    </vertex>
+    <vertex idx="51" influences="2" p="[9.35164,14.9698,100.901]" n="[0.323523,0.942415,0.0847735]">
+        <influence bone="2" weight="0.920799" />
+        <influence bone="1" weight="0.0792013" />
+    </vertex>
+    <vertex idx="52" influences="2" p="[-9.34751,14.9697,100.901]" n="[-0.323301,0.942475,0.0849525]">
+        <influence bone="2" weight="0.92009" />
+        <influence bone="1" weight="0.0799099" />
+    </vertex>
+    <vertex idx="53" influences="3" p="[0.981332,7.42211,93.9014]" n="[-0.650753,0.38454,-0.654713]">
+        <influence bone="2" weight="0.692938" />
+        <influence bone="29" weight="0.296751" />
+        <influence bone="1" weight="0.0103105" />
+    </vertex>
+    <vertex idx="54" influences="4" p="[0.00481687,7.63582,100.828]" n="[-0.0019895,0.997342,0.07283]">
+        <influence bone="2" weight="0.535486" />
+        <influence bone="1" weight="0.267734" />
+        <influence bone="29" weight="0.102364" />
+        <influence bone="33" weight="0.0944152" />
+    </vertex>
+    <vertex idx="55" influences="1" p="[-7.23926,-5.19165,106.308]" n="[-0.572513,-0.806466,-0.14779]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="56" influences="1" p="[7.24347,-5.19169,106.308]" n="[0.572545,-0.806417,-0.147933]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="57" influences="1" p="[4.14605,14.0076,95.2605]" n="[-0.255789,0.839971,-0.47856]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="58" influences="1" p="[-4.14192,14.0076,95.2605]" n="[0.256159,0.840107,-0.478124]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="59" influences="2" p="[1.70605,12.8915,103.741]" n="[-0.690578,0.64168,0.333689]">
+        <influence bone="2" weight="0.536389" />
+        <influence bone="1" weight="0.463611" />
+    </vertex>
+    <vertex idx="60" influences="2" p="[-1.70191,12.8914,103.741]" n="[0.690514,0.641749,0.33369]">
+        <influence bone="2" weight="0.536408" />
+        <influence bone="1" weight="0.463592" />
+    </vertex>
+    <vertex idx="61" influences="2" p="[0.288172,11.5568,100.774]" n="[-0.912276,0.404292,0.0655736]">
+        <influence bone="2" weight="0.666667" />
+        <influence bone="1" weight="0.333333" />
+    </vertex>
+    <vertex idx="62" influences="2" p="[-0.284038,11.5568,100.774]" n="[0.912025,0.404838,0.0657051]">
+        <influence bone="2" weight="0.666667" />
+        <influence bone="1" weight="0.333333" />
+    </vertex>
+    <vertex idx="63" influences="3" p="[-2.32718,-4.25429,95.8409]" n="[-0.48919,-0.765111,-0.418686]">
+        <influence bone="2" weight="0.730581" />
+        <influence bone="33" weight="0.148811" />
+        <influence bone="1" weight="0.120608" />
+    </vertex>
+    <vertex idx="64" influences="3" p="[2.32567,-4.2497,95.8389]" n="[0.48976,-0.76516,-0.417931]">
+        <influence bone="2" weight="0.747966" />
+        <influence bone="29" weight="0.128666" />
+        <influence bone="1" weight="0.123367" />
+    </vertex>
+    <vertex idx="65" influences="1" p="[0.00157902,9.8696,109.452]" n="[6.52164e-005,0.991496,-0.130136]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="66" influences="3" p="[0.00367353,2.25955,92.0775]" n="[8.56249e-005,0.131304,-0.991342]">
+        <influence bone="29" weight="0.33616" />
+        <influence bone="33" weight="0.335962" />
+        <influence bone="2" weight="0.327878" />
+    </vertex>
+    <vertex idx="67" influences="1" p="[11.0526,13.1386,104.447]" n="[0.5816,0.748778,0.31792]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="68" influences="1" p="[-11.0484,13.1385,104.447]" n="[-0.581182,0.748353,0.319679]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="69" influences="2" p="[4.40587,14.9625,100.916]" n="[-0.325527,0.942195,0.0793813]">
+        <influence bone="2" weight="0.5" />
+        <influence bone="1" weight="0.5" />
+    </vertex>
+    <vertex idx="70" influences="2" p="[-4.40171,14.9625,100.916]" n="[0.325519,0.942197,0.0793839]">
+        <influence bone="2" weight="0.5" />
+        <influence bone="1" weight="0.5" />
+    </vertex>
+    <vertex idx="71" influences="2" p="[0.00207229,-5.35152,96.8142]" n="[0.000332977,-0.928719,-0.370785]">
+        <influence bone="2" weight="0.689524" />
+        <influence bone="1" weight="0.310476" />
+    </vertex>
+    <vertex idx="72" influences="1" p="[9.44388,10.0832,110.487]" n="[0.508304,0.591877,0.625547]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="73" influences="3" p="[0.00611634,-1.53632,92.5343]" n="[0.000293791,-0.360647,-0.932702]">
+        <influence bone="2" weight="0.83426" />
+        <influence bone="29" weight="0.0917759" />
+        <influence bone="33" weight="0.0739642" />
+    </vertex>
+    <vertex idx="74" influences="1" p="[-9.43968,10.0833,110.487]" n="[-0.509516,0.59345,0.623065]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="75" influences="1" p="[-4.01992,9.22279,110.356]" n="[0.146331,0.956221,0.253435]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="76" influences="1" p="[4.02433,9.22218,110.357]" n="[-0.146323,0.95621,0.253478]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="77" influences="1" p="[-8.80013,13.1177,107.018]" n="[-0.294326,0.804014,0.516656]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="78" influences="1" p="[8.80431,13.1177,107.018]" n="[0.294577,0.804008,0.516523]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="79" influences="2" p="[-6.38721,14.5368,104.605]" n="[0.0249758,0.95285,0.302411]">
+        <influence bone="2" weight="0.801471" />
+        <influence bone="1" weight="0.198529" />
+    </vertex>
+    <vertex idx="80" influences="2" p="[6.39138,14.5368,104.605]" n="[-0.024983,0.952849,0.302415]">
+        <influence bone="2" weight="0.801919" />
+        <influence bone="1" weight="0.198081" />
+    </vertex>
+    <vertex idx="81" influences="2" p="[1.99558,-6.46532,104.084]" n="[0.14151,-0.988503,-0.0532566]">
+        <influence bone="2" weight="0.539835" />
+        <influence bone="1" weight="0.460165" />
+    </vertex>
+    <vertex idx="82" influences="2" p="[-1.99143,-6.46529,104.084]" n="[-0.141144,-0.988565,-0.0530803]">
+        <influence bone="2" weight="0.539808" />
+        <influence bone="1" weight="0.460192" />
+    </vertex>
+    <vertex idx="83" influences="4" p="[0.00527124,6.96643,96.1047]" n="[-0.00164058,0.876363,-0.481648]">
+        <influence bone="2" weight="0.507122" />
+        <influence bone="1" weight="0.253561" />
+        <influence bone="29" weight="0.123097" />
+        <influence bone="33" weight="0.11622" />
+    </vertex>
+    <vertex idx="84" influences="2" p="[1.87244,11.3781,94.1505]" n="[-0.758569,0.462933,-0.458548]">
+        <influence bone="2" weight="0.983547" />
+        <influence bone="29" weight="0.0164533" />
+    </vertex>
+    <vertex idx="85" influences="2" p="[-1.86786,11.3779,94.1504]" n="[0.758525,0.463215,-0.458336]">
+        <influence bone="2" weight="0.984713" />
+        <influence bone="33" weight="0.0152871" />
+    </vertex>
+    <vertex idx="86" influences="2" p="[6.96415,14.9627,97.7953]" n="[0.0254103,0.980851,-0.193094]">
+        <influence bone="2" weight="0.772956" />
+        <influence bone="1" weight="0.227044" />
+    </vertex>
+    <vertex idx="87" influences="2" p="[-6.96001,14.9627,97.7953]" n="[-0.0251685,0.980931,-0.192718]">
+        <influence bone="2" weight="0.772322" />
+        <influence bone="1" weight="0.227678" />
+    </vertex>
+    <vertex idx="88" influences="4" p="[0.527327,8.82137,104.009]" n="[-0.675997,0.735629,-0.0433369]">
+        <influence bone="2" weight="0.657071" />
+        <influence bone="1" weight="0.268813" />
+        <influence bone="29" weight="0.0586406" />
+        <influence bone="33" weight="0.0154756" />
+    </vertex>
+    <vertex idx="89" influences="1" p="[-6.92488,10.6073,110.473]" n="[0.0848552,0.796719,0.598363]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="90" influences="4" p="[-0.522529,8.82149,104.01]" n="[0.675592,0.736013,-0.0431358]">
+        <influence bone="2" weight="0.659012" />
+        <influence bone="1" weight="0.269363" />
+        <influence bone="33" weight="0.0551531" />
+        <influence bone="29" weight="0.0164718" />
+    </vertex>
+    <vertex idx="91" influences="1" p="[6.92911,10.6073,110.473]" n="[-0.0848697,0.796702,0.598384]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="92" influences="3" p="[0.00354894,6.56393,92.7945]" n="[-0.000938352,0.75222,-0.658912]">
+        <influence bone="2" weight="0.642899" />
+        <influence bone="29" weight="0.179294" />
+        <influence bone="33" weight="0.177806" />
+    </vertex>
+    <vertex idx="93" influences="1" p="[12.4973,10.0542,106.342]" n="[0.737198,0.471781,0.483696]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="94" influences="2" p="[2.86041,-1.9813,94.0373]" n="[0.661876,-0.391239,-0.639415]">
+        <influence bone="2" weight="0.666667" />
+        <influence bone="29" weight="0.333333" />
+    </vertex>
+    <vertex idx="95" influences="2" p="[-2.85531,-1.98261,94.0369]" n="[-0.661502,-0.391011,-0.639942]">
+        <influence bone="2" weight="0.666667" />
+        <influence bone="33" weight="0.333333" />
+    </vertex>
+    <vertex idx="96" influences="1" p="[-8.96788,-2.77885,107.958]" n="[-0.677678,-0.717523,0.160979]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="97" influences="1" p="[8.97184,-2.7789,107.958]" n="[0.679293,-0.716146,0.160303]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="98" influences="2" p="[1.65508,8.56795,92.4724]" n="[-0.779428,0.197259,-0.594627]">
+        <influence bone="2" weight="0.610647" />
+        <influence bone="29" weight="0.389353" />
+    </vertex>
+    <vertex idx="99" influences="2" p="[-1.64948,8.56922,92.472]" n="[0.779254,0.197421,-0.5948]">
+        <influence bone="2" weight="0.610677" />
+        <influence bone="33" weight="0.389323" />
+    </vertex>
+    <vertex idx="100" influences="2" p="[-12.3491,10.2448,106.285]" n="[-0.732954,0.477756,0.48428]">
+        <influence bone="2" weight="0.609826" />
+        <influence bone="33" weight="0.390174" />
+    </vertex>
+    <vertex idx="101" influences="2" p="[4.45555,12.2248,93.2888]" n="[-0.412699,0.694238,-0.589672]">
+        <influence bone="2" weight="0.579867" />
+        <influence bone="29" weight="0.420133" />
+    </vertex>
+    <vertex idx="102" influences="2" p="[-4.45023,12.227,93.2887]" n="[0.413139,0.694361,-0.589219]">
+        <influence bone="2" weight="0.583408" />
+        <influence bone="33" weight="0.416592" />
+    </vertex>
+    <vertex idx="103" influences="2" p="[0.00192683,9.53216,105.933]" n="[-8.88541e-005,0.955362,-0.295437]">
+        <influence bone="2" weight="0.750155" />
+        <influence bone="1" weight="0.249845" />
+    </vertex>
+    <vertex idx="104" influences="2" p="[1.02777,-3.31981,93.7379]" n="[0.243748,-0.654945,-0.715286]">
+        <influence bone="2" weight="0.966241" />
+        <influence bone="29" weight="0.0337592" />
+    </vertex>
+    <vertex idx="105" influences="2" p="[-1.01962,-3.31687,93.7368]" n="[-0.242907,-0.654829,-0.715678]">
+        <influence bone="2" weight="0.97602" />
+        <influence bone="33" weight="0.0239802" />
+    </vertex>
+    <vertex idx="106" influences="2" p="[-1.44401,-1.02108,92.6221]" n="[-0.385324,-0.3404,-0.857702]">
+        <influence bone="2" weight="0.596235" />
+        <influence bone="33" weight="0.403765" />
+    </vertex>
+    <vertex idx="107" influences="2" p="[1.44972,-1.0196,92.6224]" n="[0.386034,-0.340046,-0.857524]">
+        <influence bone="2" weight="0.596217" />
+        <influence bone="29" weight="0.403783" />
+    </vertex>
+    <vertex idx="108" influences="4" p="[-0.149154,8.76728,98.0904]" n="[0.816838,0.526056,-0.23673]">
+        <influence bone="2" weight="0.621188" />
+        <influence bone="1" weight="0.310594" />
+        <influence bone="33" weight="0.0432302" />
+        <influence bone="29" weight="0.0249884" />
+    </vertex>
+    <vertex idx="109" influences="4" p="[0.156193,8.76831,98.0907]" n="[-0.817995,0.524458,-0.236278]">
+        <influence bone="2" weight="0.619737" />
+        <influence bone="1" weight="0.309868" />
+        <influence bone="29" weight="0.0480255" />
+        <influence bone="33" weight="0.0223696" />
+    </vertex>
+    <vertex idx="110" influences="2" p="[-1.16424,0.457022,92.1381]" n="[-0.21977,-0.0678312,-0.973191]">
+        <influence bone="2" weight="0.574471" />
+        <influence bone="33" weight="0.425529" />
+    </vertex>
+    <vertex idx="111" influences="2" p="[1.17042,0.458452,92.1384]" n="[0.220186,-0.0679309,-0.97309]">
+        <influence bone="2" weight="0.574431" />
+        <influence bone="29" weight="0.425569" />
+    </vertex>
+    <vertex idx="112" influences="2" p="[2.47645,0.319296,92.9026]" n="[0.630456,-0.12284,-0.766444]">
+        <influence bone="2" weight="0.6411" />
+        <influence bone="29" weight="0.3589" />
+    </vertex>
+    <vertex idx="113" influences="2" p="[-2.47116,0.318128,92.9023]" n="[-0.630313,-0.122806,-0.766566]">
+        <influence bone="2" weight="0.641127" />
+        <influence bone="33" weight="0.358873" />
+    </vertex>
+    <vertex idx="114" influences="1" p="[-11.3629,6.51813,109.692]" n="[-0.785727,0.232389,0.573262]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="115" influences="1" p="[11.3671,6.51814,109.692]" n="[0.785161,0.22755,0.575971]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="116" influences="2" p="[0.0017688,-6.4831,104.227]" n="[-1.10959e-005,-0.999929,0.011954]">
+        <influence bone="1" weight="0.765835" />
+        <influence bone="2" weight="0.234165" />
+    </vertex>
+    <vertex idx="117" influences="3" p="[0.00419274,-0.292315,92.4059]" n="[0.000143934,-0.115162,-0.993347]">
+        <influence bone="2" weight="0.590688" />
+        <influence bone="29" weight="0.20783" />
+        <influence bone="33" weight="0.201482" />
+    </vertex>
+    <vertex idx="118" influences="4" p="[0.00256385,8.93612,104.364]" n="[-0.000359295,0.936687,-0.350168]">
+        <influence bone="2" weight="0.671048" />
+        <influence bone="1" weight="0.264089" />
+        <influence bone="29" weight="0.0334523" />
+        <influence bone="33" weight="0.0314106" />
+    </vertex>
+    <vertex idx="119" influences="1" p="[0.0020752,-3.31094,93.7334]" n="[-0.000624936,-0.710357,-0.703842]">
+        <influence bone="2" weight="1" />
+    </vertex>
+    <vertex idx="120" influences="4" p="[0.00350358,8.76714,98.0903]" n="[-0.00316677,0.985174,-0.171531]">
+        <influence bone="2" weight="0.621755" />
+        <influence bone="1" weight="0.310878" />
+        <influence bone="29" weight="0.0355083" />
+        <influence bone="33" weight="0.0318585" />
+    </vertex>
+    <face vertices="113 95 4" />
+    <face vertices="4 95 5" />
+    <face vertices="8 9 55" />
+    <face vertices="9 10 96" />
+    <face vertices="12 68 13" />
+    <face vertices="100 68 12" />
+    <face vertices="16 100 12" />
+    <face vertices="87 58 15" />
+    <face vertices="17 114 16" />
+    <face vertices="79 70 52" />
+    <face vertices="10 17 18" />
+    <face vertices="10 19 17" />
+    <face vertices="77 79 68" />
+    <face vertices="17 19 114" />
+    <face vertices="5 55 7" />
+    <face vertices="10 18 96" />
+    <face vertices="65 75 0" />
+    <face vertices="2 8 82" />
+    <face vertices="106 113 110" />
+    <face vertices="99 46 3" />
+    <face vertices="118 88 54" />
+    <face vertices="2 116 81" />
+    <face vertices="112 25 94" />
+    <face vertices="25 26 94" />
+    <face vertices="29 56 30" />
+    <face vertices="30 97 31" />
+    <face vertices="33 34 67" />
+    <face vertices="93 33 67" />
+    <face vertices="37 33 93" />
+    <face vertices="86 36 57" />
+    <face vertices="38 37 115" />
+    <face vertices="80 51 69" />
+    <face vertices="31 39 38" />
+    <face vertices="31 38 40" />
+    <face vertices="78 67 80" />
+    <face vertices="38 115 40" />
+    <face vertices="26 28 56" />
+    <face vertices="31 97 39" />
+    <face vertices="65 23 76" />
+    <face vertices="49 103 65" />
+    <face vertices="2 81 29" />
+    <face vertices="107 111 112" />
+    <face vertices="36 42 101" />
+    <face vertices="101 42 43" />
+    <face vertices="98 24 53" />
+    <face vertices="73 104 119" />
+    <face vertices="102 22 21" />
+    <face vertices="15 102 21" />
+    <face vertices="98 53 84" />
+    <face vertices="61 45 109" />
+    <face vertices="99 85 46" />
+    <face vertices="62 108 44" />
+    <face vertices="65 76 49" />
+    <face vertices="91 47 76" />
+    <face vertices="65 50 75" />
+    <face vertices="89 75 48" />
+    <face vertices="61 54 88" />
+    <face vertices="76 47 49" />
+    <face vertices="62 90 54" />
+    <face vertices="75 50 48" />
+    <face vertices="35 51 34" />
+    <face vertices="35 36 86" />
+    <face vertices="14 13 52" />
+    <face vertices="14 87 15" />
+    <face vertices="24 66 53" />
+    <face vertices="84 53 109" />
+    <face vertices="61 109 54" />
+    <face vertices="62 54 108" />
+    <face vertices="96 18 6" />
+    <face vertices="6 7 55" />
+    <face vertices="97 27 39" />
+    <face vertices="27 56 28" />
+    <face vertices="101 98 84" />
+    <face vertices="86 57 45" />
+    <face vertices="102 85 99" />
+    <face vertices="87 44 58" />
+    <face vertices="47 59 49" />
+    <face vertices="80 69 59" />
+    <face vertices="48 50 60" />
+    <face vertices="79 60 70" />
+    <face vertices="59 61 88" />
+    <face vertices="59 69 61" />
+    <face vertices="60 90 62" />
+    <face vertices="60 62 70" />
+    <face vertices="71 81 116" />
+    <face vertices="5 63 55" />
+    <face vertices="26 56 64" />
+    <face vertices="64 81 71" />
+    <face vertices="65 1 23" />
+    <face vertices="65 0 1" />
+    <face vertices="53 66 92" />
+    <face vertices="3 46 66" />
+    <face vertices="67 51 80" />
+    <face vertices="67 34 51" />
+    <face vertices="68 79 52" />
+    <face vertices="68 52 13" />
+    <face vertices="69 45 61" />
+    <face vertices="69 86 45" />
+    <face vertices="70 62 44" />
+    <face vertices="70 44 87" />
+    <face vertices="119 104 71" />
+    <face vertices="63 71 82" />
+    <face vertices="41 72 32" />
+    <face vertices="37 93 115" />
+    <face vertices="111 107 73" />
+    <face vertices="110 73 106" />
+    <face vertices="20 11 74" />
+    <face vertices="16 114 100" />
+    <face vertices="75 89 11" />
+    <face vertices="0 75 11" />
+    <face vertices="76 32 91" />
+    <face vertices="23 32 76" />
+    <face vertices="89 74 11" />
+    <face vertices="100 77 68" />
+    <face vertices="91 32 72" />
+    <face vertices="93 67 78" />
+    <face vertices="77 48 79" />
+    <face vertices="48 60 79" />
+    <face vertices="78 80 47" />
+    <face vertices="47 80 59" />
+    <face vertices="29 81 56" />
+    <face vertices="64 56 81" />
+    <face vertices="8 55 82" />
+    <face vertices="63 82 55" />
+    <face vertices="83 53 92" />
+    <face vertices="85 108 46" />
+    <face vertices="45 84 109" />
+    <face vertices="45 57 84" />
+    <face vertices="44 108 85" />
+    <face vertices="44 85 58" />
+    <face vertices="51 86 69" />
+    <face vertices="51 35 86" />
+    <face vertices="52 70 87" />
+    <face vertices="52 87 14" />
+    <face vertices="103 49 88" />
+    <face vertices="49 59 88" />
+    <face vertices="89 48 77" />
+    <face vertices="77 74 89" />
+    <face vertices="50 65 103" />
+    <face vertices="50 90 60" />
+    <face vertices="91 78 47" />
+    <face vertices="78 91 72" />
+    <face vertices="46 92 66" />
+    <face vertices="83 92 46" />
+    <face vertices="93 72 115" />
+    <face vertices="72 93 78" />
+    <face vertices="94 26 64" />
+    <face vertices="107 104 73" />
+    <face vertices="95 63 5" />
+    <face vertices="106 73 105" />
+    <face vertices="55 96 6" />
+    <face vertices="55 9 96" />
+    <face vertices="56 27 97" />
+    <face vertices="56 97 30" />
+    <face vertices="98 101 43" />
+    <face vertices="24 98 43" />
+    <face vertices="99 22 102" />
+    <face vertices="3 22 99" />
+    <face vertices="100 114 74" />
+    <face vertices="74 77 100" />
+    <face vertices="36 101 57" />
+    <face vertices="57 101 84" />
+    <face vertices="15 58 102" />
+    <face vertices="58 85 102" />
+    <face vertices="103 90 50" />
+    <face vertices="118 54 90" />
+    <face vertices="104 64 71" />
+    <face vertices="94 64 104" />
+    <face vertices="105 71 63" />
+    <face vertices="95 105 63" />
+    <face vertices="106 105 95" />
+    <face vertices="113 106 95" />
+    <face vertices="107 94 104" />
+    <face vertices="112 94 107" />
+    <face vertices="53 83 109" />
+    <face vertices="46 108 83" />
+    <face vertices="120 109 83" />
+    <face vertices="54 109 120" />
+    <face vertices="117 73 110" />
+    <face vertices="66 110 3" />
+    <face vertices="117 111 73" />
+    <face vertices="66 24 111" />
+    <face vertices="112 111 24" />
+    <face vertices="24 25 112" />
+    <face vertices="113 3 110" />
+    <face vertices="3 113 4" />
+    <face vertices="74 114 20" />
+    <face vertices="20 114 19" />
+    <face vertices="72 41 115" />
+    <face vertices="41 40 115" />
+    <face vertices="71 116 82" />
+    <face vertices="2 82 116" />
+    <face vertices="117 66 111" />
+    <face vertices="117 110 66" />
+    <face vertices="103 88 118" />
+    <face vertices="103 118 90" />
+    <face vertices="73 119 105" />
+    <face vertices="119 71 105" />
+    <face vertices="120 83 108" />
+    <face vertices="54 120 108" />
+</mesh>

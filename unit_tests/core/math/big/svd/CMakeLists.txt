@@ -1,0 +1,13 @@
+INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+
+ADD_EXECUTABLE(unit_svd src/unit_svd.cpp)
+
+TARGET_LINK_LIBRARIES(unit_svd ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+INSTALL(
+  TARGETS unit_svd
+  RUNTIME DESTINATION  bin/units
+  )
+
+ADD_TEST( unit_svd unit_svd )
+

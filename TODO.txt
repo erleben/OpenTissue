@@ -1,0 +1,42 @@
+[ISSUE] Remove index_vector from Grid. It is rather ugly... Also value traits
+are missing in a lot of the routines. Code coverage is pretty bad. Thus there is
+no way of telling which routines are actually working.
+
+[ISSUE]  utility/image_analysis: Should use math_types and value_traits, but it
+does not! Besides the library is not used anywhere in the code. Thus we have no
+way of knowing if it still works?
+
+[ISSUE] Should we drop core/containers/hash_map?
+
+[ISSUE] core/geometry/t4_gpu_scan: Should we add a namespace?
+
+[ISSUE] core/geometry/t4_cpu_scan: Should we add a namespace?
+
+[ISSUE] Use value traits in FEM library, replace unsigned int with size_t
+wherever appropriate.
+
+[ISSUE] core/math/math_polar_decomposition.h introduces its own sub namespace polar_decomposition
+
+[ISSUES] Following drawbacks of the MBD library has been reported:
+
+- State information in rigid bodies and nodes are not cleared when reusing rigid
+bodies from a previous configuration. This causes unwanted effects in caching
+(and like non-zero velocities eventhough no velocities are set on
+initialization).
+
+- Use value traits everywhere
+
+- Maybe move joint stuff from bodies into edges
+
+- Refactor bodygroup to only include bodies and edges. Thus create a two-stage
+contact and constraint iterator on a body group, which in the outer-stage
+iterates over edges, and in the inner state iterates over contacts or
+constraints.
+
+- STL Heaps suck, their performance is really bad, it would be nice to replace
+them with something else. See in sequential collision resolvers
+
+- The util folder contains drawing and mel support! This really do not belong in
+a general purpose MBD simulator framework, maybe we should kill it?
+
+

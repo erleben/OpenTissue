@@ -1,0 +1,6 @@
+<material
+ambient="128 128 128 0"
+diffuse="224 224 224 0"
+specular="255 255 255 0"
+shininess="50"
+/>

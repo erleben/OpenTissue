@@ -1,0 +1,5 @@
+SUBDIRS( gjk )
+SUBDIRS( continuous )
+SUBDIRS( vclip )
+SUBDIRS( bvh )
+SUBDIRS( ray_aabb )

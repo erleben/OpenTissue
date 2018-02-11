@@ -1,0 +1,17 @@
+SUBDIRS( simplex )
+SUBDIRS( sign_dist2tri )
+SUBDIRS( sign_dist2edge_face_vp )
+SUBDIRS( sign_dist2vert_edge_vp )
+SUBDIRS( reduce_edge )
+SUBDIRS( reduce_triangle )
+SUBDIRS( reduce_tetrahedron )
+SUBDIRS( constants )
+SUBDIRS( voronoi_policy )
+SUBDIRS( closest_points )
+SUBDIRS( outside_triangle )
+SUBDIRS( outside_edge_face )
+SUBDIRS( outside_vertex_edge )
+SUBDIRS( support_functors )
+SUBDIRS( old_gjk )
+
+

@@ -1,0 +1,23 @@
+SUBDIRS( 
+  prod
+  prod_add
+  prod_sub
+  residual
+  prod_add_rhs
+  prod_sub_rhs
+  prod_trans
+  prod_row
+  read_dlm
+  forward_gauss_seidel
+  backward_gauss_seidel
+  symmetric_gauss_seidel
+  jacobi
+  svd
+  conjugate_gradient
+  lu
+  cholesky
+  gmres
+  shur_system
+  mgs
+  pseudoinverse
+)

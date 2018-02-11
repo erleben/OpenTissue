@@ -1,0 +1,106 @@
+///
+/// GPU implementation of quaternion-to-matrix
+///
+float3x3 toMatrix( float4 quat )
+{
+    // Convert a quaternion to a 3x3 matrix
+    
+    float3 row0 = float3( 0, 0, 0 );
+    float3 row1 = float3( 0, 0, 0 );
+    float3 row2 = float3( 0, 0, 0 );
+    
+    // Compute row0
+    row0.x = 1 - 2 * ( (quat.y*quat.y ) + (quat.z*quat.z ));
+    row1.y = 1 - 2 * ( (quat.x*quat.x ) + (quat.z*quat.z ));
+    row2.z = 1 - 2 * ( (quat.y*quat.y ) + (quat.x*quat.x ));
+    
+    // Compute row1
+    row1.x = 2 * (  (quat.x*quat.y) + (quat.w*quat.z));
+    row0.y = 2 * (  (quat.x*quat.y) - (quat.w*quat.z));
+    row2.x = 2 * ( -(quat.w*quat.y) + (quat.x*quat.z));
+    
+    // Compute row2
+    row0.z = 2 * (  (quat.w*quat.y) + (quat.x*quat.z));
+    row2.y = 2 * (  (quat.z*quat.y) + (quat.w*quat.x));
+    row1.z = 2 * (  (quat.z*quat.y) - (quat.w*quat.x));
+    
+    return float3x3( row0, row1, row2 );
+}
+
+float4 computeLight( float4 normal, float4x4 ModelViewIT )
+{
+    // Lightning computation
+    float3 nnorm = normalize( mul( ModelViewIT, normal ).xyz );
+    float3 nlv = normalize( float3( 1.0, 1.0, 1.0 ) );
+    float3 eyeVec = float3(0.0, 0.0, 1.0 );
+    float3 halfVec = normalize( nlv + eyeVec );
+    
+    float diffuse = dot( nnorm, nlv );
+    float specular = dot( nnorm, halfVec );
+    
+    float4 lightning = lit( diffuse, specular ,32 );
+
+	float4 ambientMaterial = glstate.material.ambient;
+	float4 diffuseMaterial = glstate.material.diffuse;
+	float4 specularMaterial = glstate.material.specular;
+
+    float4 rgba = lightning.y * diffuseMaterial +
+				  lightning.z * specularMaterial + ambientMaterial;
+    rgba.a = 1.0;
+    return rgba;
+}
+
+struct vertex_input
+{
+  float4 position   : POSITION;
+  float3 normal     : NORMAL;
+  float4 weight     : COLOR0;   // Well, color/tex0 was not a fist choice, but the only thing supported
+  float4 boneIdx    : TEXCOORD0;// by hardware buffers atm through pointer commands...
+};
+
+struct vertex_output
+{
+  float4 position : POSITION;
+  float4 color    : COLOR;
+};
+
+vertex_output main(
+       vertex_input         IN              ///< Input vertex
+     , uniform float3x3     bones[40]       ///< All bone transforms, max 40!  
+     , uniform float4x4     ModelViewIT     ///< Inverse transpose of the modelview matrix
+     , uniform float4x4     ModelViewProj   ///< Modelview projection matrix
+     )
+{
+    vertex_output OUT;
+    
+    float4 weight = IN.weight;
+    float4 boneIdx = IN.boneIdx;
+    float3 pos = float3( IN.position.x, IN.position.y, IN.position.z );
+    IN.position.w = 1;
+    float3 nor = float3( IN.normal.x, IN.normal.y, IN.normal.z );
+    
+    // Compute translation part and normal
+    float3 transPt = float3( 0, 0, 0 );
+    float3 wNormal = float3( 0, 0, 0 );
+	for( float i=0; i<4; i=i+1 )
+	{
+		float3x3 coordsysi = bones[boneIdx[i]];
+		float3x3 roti = toMatrix( float4( coordsysi[0][0], coordsysi[0][1], 
+			                              coordsysi[0][2], coordsysi[1][0] ) );
+		float3 posi = float3( coordsysi[2][0], coordsysi[2][1], coordsysi[2][2] );
+
+		transPt += weight[i] * (mul( roti, pos ) + posi );
+		wNormal += weight[i] * mul( roti, nor );
+	}
+	  
+    float4 fixPosition = float4( transPt, 1 );
+    float4 fixNormal = float4( wNormal, 1 );
+
+    // Apply modelview matrix
+    OUT.position = mul( ModelViewProj, fixPosition );
+    
+    // Lightning computation
+	OUT.color = computeLight( fixNormal, ModelViewIT );
+    
+    return OUT;
+} // end of main
