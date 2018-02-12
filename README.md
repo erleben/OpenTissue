@@ -4,14 +4,11 @@ OpenTissue is a collection of generic algorithms and data structures for rapid d
 Free for commercial use, open source under the [http://opensource.org/licenses/zlib-license.php ZLib License].
 
 ## Getting Started/Installing
-  * [Installing OpenTissue](documenation/installing_opentissue.md)
   * [Easy Boost Bindings](documentation/boost_bindings.md)
-  * [Using CMake](documentation/use_cmake.md)
-  * [Using OpenTissue in your Application](documentation/using_opentissue_in_your_application.md)
-  * [Getting the demo application data files](documentation/getting_data.md)
+  * [Using OpenTissue in your Application](documentation/using_opentissue.md)
 
 ## For Developers
-  * [Code Standards](documentation/code_standard.md)
+  * [Code Standards](documentation/code_standards.md)
   * [Good Practice for Development](documentation/good_practice.md)
   * [Design Patterns in OpenTissue](documenation/design_patterns.md)
   * [Unit Testing Guide](documentation/unit_testing.md)
@@ -30,7 +27,7 @@ Core- Atomic building blocks that are commonly used throughout all OpenTissue co
   * [The Tetrahedra Mesh Programming Guide](documentation/t4meh.md)
 
 Collision - Methods for detecting collisions between motion-independent objects and creating contact information.
-  * [Optimal Spatial Hashing](documentation/spacehash.md)
+  * [Optimal Spatial Hashing](documentation/hashing.md)
   * [Bounding Volume Hierarchy Data Structure](documentation/bvh.md)
   * [Signed Distance Field Collision Library](documentation/sdf.md)
 
@@ -46,9 +43,9 @@ GPU - Collection of general purpose algorithms and methods performed on the GPU 
   * [Volume Visualization](documentation/volviz.md)
 
 Utility - Large collection of miscellaneous utilities, mostly for OT-based applications.
-  * [Using the Demo Glut Application Framework](documentation/glut.md)
-  * [The OpenGL Programming Guide](documentation/opengl.md)
-  * [The Shader Programming Guide](documentation/shader.md)
+  * [Using the Demo Glut Application Framework](documentation/using_demo_framework.md)
+  * [The OpenGL Programming Guide](documentation/using_opengl.md)
+  * [The Shader Programming Guide](documentation/using_shaders.md)
   * [Utility Programming Guide](documentation/utility.md)
 
 ## Learn More
