@@ -1,6 +1,4 @@
-__TOC__
-
-==OpenTissue Code Review==
+# OpenTissue Code Review
 
 It has been decided, that all code which should be part of either the
 development-branch, or the release-branch should be subjected to a
@@ -15,8 +13,7 @@ should be performed.
 In the following the two different reviews will be described, and in
 the end, the different roles will be presented.
 
-==OpenTissue Light Code Review==
-
+# OpenTissue Light Code Review
 The purpose of the light review is to make the code ready for
 submission into the development branch.
 
@@ -36,7 +33,7 @@ In the light review there is only one person to do the review. This
 person is designated [[Code_Review_Process#Reviewer|The Reviewer]], and the person who wrote the code
 is designated [[Code_Review_Process#Author|The Author]].
 The Author can ask either the OpenTissue-board or a person knowing OpenTissue to  be the reviewer, and the reviewer must
-then review the code. For this purpose the reviewer uses the [[Media:Light_review_ver_1_1.pdf| light review report sheet]]
+then review the code. 
 
 If the reviewer finds things that do not conform to OpenTissue in
 accordance to the report sheet, or if the reviewer finds a bug or
@@ -50,7 +47,7 @@ When the code is ready for submission to the development branch, the
 reviewer completes the report sheet, and submits it to the OpenTissue
 board.
 
-==OpenTissue Full Code Review==
+# OpenTissue Full Code Review
 
 The Full Code Review is divided into two parts.
 The first part is a documentation/code-cleanup review.
@@ -60,7 +57,7 @@ workload for the reviewers and at the same time separate things that
 can be hard to do in a single review.
 In the following, the two parts of the review is described.
 
-===The code-cleanup review===
+## The code-cleanup review
 
 The first review that should be done is the code-cleanup review.
 The purpose of this review is to make sure, that the look and feel of
@@ -109,7 +106,7 @@ Note, that the disagreement is hold internally between
 OT-reviewers. This is done, because there is no reason to confuse the
 programmer
 
-===The bug-fix review===
+## The bug-fix review
 
 After the code-cleanup review, the source should be easy to read and
 understand.
@@ -150,7 +147,7 @@ If a disagreement about the standard arises, the OT-board should also
 be notified, because, clearly, the standards are ambiguous, and the
 OT-board should take steps to fix the description in the standard.
 
-==The work flow==
+# The work flow
 
 It is expected that an iteration of each part of the full review
 process takes no longer than three weeks.
@@ -161,7 +158,7 @@ It is the moderators responsibility that this deadline is kept.
 Of course it may happen (e.g. during holidays) that this deadline can
 not be kept.
 
-==Roles==
+# Roles
 
 There are a couple of different roles, which will be described in the
 following:
@@ -171,7 +168,7 @@ following:
 It should be noted, that during a light review, the moderator and the
 reviewer will be the same person.
 
-===Author===
+## Author
 The Author is the one who has written the code. It is the authors
 responsibility to - in the first place - write good code which conform
 to the OpenTissue standards.
@@ -183,7 +180,7 @@ All changes to the code found during the review must be written into
 the code by the author - that is - it is only the author who changes
 the functionality of the code.
 
-===Moderator===
+## Moderator
 The Moderator is the one who is responsible for the review-process.
 It is the moderator who finds reviewers, and gives the code to the
 reviewers. It is the responsibility of the moderator that deadlines
@@ -197,7 +194,7 @@ When code are ready to be submitted to either the next review or into
 a branch it is the moderators job to compose a report to the
 OpenTissue board.
 
-===Reviewer===
+## Reviewer
 The Reviewer is the one who reads and comments on the code.
 During the cleanup-process it is the responsibility of the reviewer to
 make sure that the code becomes understandable.

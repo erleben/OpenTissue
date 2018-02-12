@@ -1,14 +1,14 @@
-= Introduction =
+# Introduction
 
 On this page one can read about all the code standards that are used in the OpenTissue project. The OpenTissue Board is responsible for defining the code standards. The page is intended to aid new Developers conform with the OpenTissue code standards. The sole purpose of this page is not just to tell what the code standards are, but also to explain why the code standards are as they are. When dealing with issues such as style and layout it is often a subjective meaning what is better or more nice looking. Please keep in mind that all statements on this page is the collective opinion of the OpenTissue Board.
 
 The element of good style. Here is a few links
 
-#[http://www.research.att.com/~bs/bs_faq2.html  Bjarne Stroustrup's C++ Style and Technique FAQ]
-#[http://www.icce.rug.nl/documents/  C++ Annotations]
-#[http://www.parashift.com/c++-faq-lite/index.html and more...]
+- [Bjarne Stroustrup's C++ Style and Technique FAQ](http://www.research.att.com/~bs/bs_faq2.html)
+- [C++ Annotations](http://www.icce.rug.nl/documents/)
+- [and more ](http://www.parashift.com/c++-faq-lite/index.html)
 
-== Definitions by OpenTissue Board ==
+## Definitions by OpenTissue Board
 
 Here we explain a few words that keeps poping up, and how we define them:
 
@@ -16,9 +16,9 @@ Here we explain a few words that keeps poping up, and how we define them:
 * <b>Compliance Test :</b> Compliance testing tries to determine if the code adheres to the coding standards of the software project.
 * <b>Generic Code :</b> In a sense: "Once written never re-written". However this is a limited view. By generic code we also imply a certain level of type invariance, convenience and high user ability of the code. The code should therefore be easy to alter, change and modify without having to make changes to actual source.
 
-= Formating and Naming Conventions =
+# Formating and Naming Conventions
 
-== Typedef Alignment ==
+## Typedef Alignment
 
 In order to ensure a consists look and feel we have decided upon a specific formating for large blocks of typedefs. We believe this also enhances readability of the code.
 
@@ -37,7 +37,7 @@ typedef          char const *              const_string_type
 </pre>
 
 
-== Typedef Placement ==
+## Typedef Placement
 
 In order to ensure a consists look and feel we have decided upon a specific formating for large blocks of typedefs. We believe this also enhances readability of the code.
 
@@ -72,7 +72,7 @@ point_type q = *p;
 }
 </pre>
 
-== Const Placement ==
+## Const Placement
 
 In OpenTissue we use the convention
 
@@ -86,13 +86,13 @@ rather than
 const int &
 </pre>
 
-#[http://www.research.att.com/~bs/bs_faq2.html#constplacement Bjarne Stroustrup's saying on the matter]
+- [Bjarne Stroustrup's saying on the matter](http://www.research.att.com/~bs/bs_faq2.html#constplacement)
 
 However
 
-#[http://docs.linux.cz/programming/c++/www.icce.rug.nl/documents/cplusplus/cplusplus03.html#l36 const ]
-#[http://docs.linux.cz/programming/c++/www.icce.rug.nl/documents/cplusplus/cplusplus06.html#ConstFunctions const functions]
-#[http://www.parashift.com/c++-faq-lite/const-correctness.html#faq-18.5 const correctness]
+- [const ](http://docs.linux.cz/programming/c++/www.icce.rug.nl/documents/cplusplus/cplusplus03.html#l36)
+- [const functions](http://docs.linux.cz/programming/c++/www.icce.rug.nl/documents/cplusplus/cplusplus06.html#ConstFunctions)
+- [const correctness](http://www.parashift.com/c++-faq-lite/const-correctness.html#faq-18.5)
 
 The reason for this convention is firstly of all to be consistent to make all OpenTissue code have the same style, look and feel. Secondly we currently believe this convention is better for readability and understanding of the code. Here is some more illusive examples
 
@@ -108,30 +108,30 @@ int * const
 
 is a constant pointer to an integer. With our choice of convention one only have to remember that the const keyword tells something about the token immediately to the left of it.
 
-== No Tabs ==
+## No Tabs
 
 To ensure portability on multiple platforms and support for multiple integrated development environments no tabulator characters are allowed in any OpenTissue code.
 
 Instead all indentation should be done using exactly two white-spaces (blanks) for each indent.
 
-== Curly Brace Formating ==
+## Curly Brace Formating
 
 In order to ensure a consists look and feel we have decided upon a specific formating for curly braces.
 
 * Curly braces should in general appear as the sole character on a single line
 * One can deviate from the above rule if and only if the written code conforms nicely to a one-liner, that is all code can be written in a readable manner on a single line.
-* New "blocks" of code should be indented with exactly two white-space characters.
+* New "blocks of code should be indented with exactly two white-space characters.
 
 Here is some illustrative examples
 
 <pre>
-void foo()
-{
-if ( true )
-{
-...
-}
-else
+    void foo()
+    {
+      if ( true )
+      {
+        ...
+      }
+      else
 {
 ...
 }
