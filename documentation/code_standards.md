@@ -10,9 +10,9 @@ The element of good style. Here is a few links
 
 ## Definitions by OpenTissue Board
 
-Here we explain a few words that keeps poping up, and how we define them:
+Here we explain a few words that keeps popping up, and how we define them:
 
-* <b>Code Standard :</b> Naming conventions, formating, documentation.
+* <b>Code Standard :</b> Naming conventions, formatting, documentation.
 * <b>Compliance Test :</b> Compliance testing tries to determine if the code adheres to the coding standards of the software project.
 * <b>Generic Code :</b> In a sense: "Once written never re-written". However this is a limited view. By generic code we also imply a certain level of type invariance, convenience and high user ability of the code. The code should therefore be easy to alter, change and modify without having to make changes to actual source.
 
@@ -20,7 +20,7 @@ Here we explain a few words that keeps poping up, and how we define them:
 
 ## Typedef Alignment
 
-In order to ensure a consists look and feel we have decided upon a specific formating for large blocks of typedefs. We believe this also enhances readability of the code.
+In order to ensure a consists look and feel we have decided upon a specific formatting for large blocks of typedefs. We believe this also enhances readability of the code.
 
 * A typedef should appear as a one-liner, that is all the code should be written on a single line of code.
 * Several lines of contiguous typedefs must be aligned in columns using white spaces.
@@ -39,38 +39,37 @@ typedef          char const *              const_string_type
 
 ## Typedef Placement
 
-In order to ensure a consists look and feel we have decided upon a specific formating for large blocks of typedefs. We believe this also enhances readability of the code.
+In order to ensure a consists look and feel we have decided upon a specific formatting for large blocks of typedefs. We believe this also enhances readability of the code.
 
 * All typedefs should appear in the top-most position and preferably be collected in contiguous blocks of logic coherence
 
 Here is a small example
 
-<pre>
-template<typename math_types>
-class MyCalculator
-{
-public:
+    template<typename math_types>
+    class MyCalculator
+    {
+      public:
 
-typedef typename math_types::real_type     real_type;
-typedef typename math_types::vector3_type  vector3_type;
-typedef typename math_types::size_type     size_type;
+      typedef typename math_types::real_type     real_type;
+      typedef typename math_types::vector3_type  vector3_type;
+      typedef typename math_types::size_type     size_type;
 
-...
-};
+      ...
+    };
 
-template<typename point_container>
-void do_iterate(point_container const & points)
-{
-typedef typename point_container::const_iterator  point_iterator;
-typedef typename point_container::value_type      point_type;
+    template<typename point_container>
+    void do_iterate(point_container const & points)
+    {
+      typedef typename point_container::const_iterator  point_iterator;
+      typedef typename point_container::value_type      point_type;
 
-for( point_iterator p = points.begin(); p != points.end(); ++p)
-{
-point_type q = *p;
-...
-}
-}
-</pre>
+      for( point_iterator p = points.begin(); p != points.end(); ++p)
+      {
+        point_type q = * p;
+        ...
+      }
+    }
+
 
 ## Const Placement
 
@@ -116,7 +115,7 @@ Instead all indentation should be done using exactly two white-spaces (blanks) f
 
 ## Curly Brace Formating
 
-In order to ensure a consists look and feel we have decided upon a specific formating for curly braces.
+In order to ensure a consists look and feel we have decided upon a specific formatting for curly braces.
 
 * Curly braces should in general appear as the sole character on a single line
 * One can deviate from the above rule if and only if the written code conforms nicely to a one-liner, that is all code can be written in a readable manner on a single line.
@@ -124,7 +123,6 @@ In order to ensure a consists look and feel we have decided upon a specific form
 
 Here is some illustrative examples
 
-<pre>
     void foo()
     {
       if ( true )
@@ -132,31 +130,30 @@ Here is some illustrative examples
         ...
       }
       else
-{
-...
-}
+      {
+        ...
+      }
 
-for(int i=0;i<10;++i)
-{
-...
-}
-}
+      for(int i=0;i<10;++i)
+      {
+        ...
+      }
+    }
 
-class Foo
-{
-public:
+    class Foo
+    {
+      public:
 
-Foo()
-{}
+      Foo()
+      {}
 
-void run()
-{
-...
-}
-};
-</pre>
+      void run()
+      {
+        ...
+      }
+    };
 
-== Initializer List Alignment ==
+## Initializer List Alignment
 
 OpenTissue uses a specific format for writing an initializer list. The reason is to ensure consistency of code, also to have the same look-and-feel everywhere. Also we believe that it enhances clarity of the code and it is easier to edit the code.
 
@@ -165,28 +162,27 @@ There should be exactly one whitespace between the separator and the following l
 
 Here is a small example
 
-<pre>
-class MyClass
-{
-public:
+    class MyClass
+    {
+      public:
 
-int m_one;
-int m_two;
-int m_four;
-int m_three;
+      int m_one;
+      int m_two;
+      int m_four;
+      int m_three;
 
-MyClass()
-: m_one(1)
-, m_two(2)
-, m_four(4)
-, m_three(3)
-{}
-};
-</pre>
+      MyClass()
+          : m_one(1)
+          , m_two(2)
+          , m_four(4)
+          , m_three(3)
+      {}
+
+    };
 
 Note that the items must appear in the same order as they are declared in the class. If not this will generate compiler warnings on some compilers.
 
-== Template typename/class keyword ==
+## Template typename/class keyword
 
 In templates we prefer the keyword ''typename'' over the keyword ''class''.
 
@@ -200,10 +196,9 @@ template< template< typename T> class T2>
 class SomeClass {
 ...
 };
-
 </pre>
 
-== Template Parameter Alignment ==
+## Template Parameter Alignment
 
 OpenTissue uses a specific format for writing an list of template parameters. The reason is to ensure consistency of code, also to have the same look-and-feel everywhere. We also believe that this standard enhances clarity of the code and makes it is easier to edit the code.
 
@@ -214,9 +209,9 @@ Here is a small example
 
 <pre>
 template <
-typename first_type
-, typename second_type
-, typename third_type
+    typename first_type
+  , typename second_type
+  , typename third_type
 >
 class MyClass
 {
@@ -227,9 +222,9 @@ public:
 
 Of course the same rule applies to template functions.
 
-== Namespace Formating ==
+## Namespace Formatting
 
-In order to ensure a consists look and feel we have decided upon a specific formating for name spaces.
+In order to ensure a consists look and feel we have decided upon a specific formatting for name spaces.
 
 * The OpenTissue name space is the topmost name space and all other name spaces must be placed inside the OpenTissue name space
 * The OpenTissue name space must always be written with uppercase O and T and the remaining letters in lowercase.
@@ -242,21 +237,21 @@ Here is an example illustrating all of the above rules
 <pre>
 namespace OpenTissue
 {
-namespace math
-{
-}// namespace math
+  namespace math
+  {
+  }// namespace math
 
-namespace my_funny_place
-{
+  namespace my_funny_place
+  {
 
-} namespace my_funny_place
+  } namespace my_funny_place
 } // namespace OpenTissue
 
 </pre>
 
-== Classes, Members and Function Naming Conventions ==
+## Classes, Members and Function Naming Conventions
 
-In order to ensure a consists look and feel we have decided upon a specific formating for name spaces.
+In order to ensure a consists look and feel we have decided upon a specific formatting for name spaces.
 
 * The first letter in each word of a class name must be written with uppercase. The remaining letters must be written in lowercase.
 * If the class name consists of several words then these are simply concatenated.
@@ -272,11 +267,11 @@ class MyClass
 {
 public:
 
-int m_my_member;
+  int m_my_member;
 
 public:
 
-void my_method () {}
+  void my_method () {}
 
 };
 
@@ -284,7 +279,7 @@ void my_function () {}
 </pre>
 
 
-== Include Guards and Copyright Notice Placement ==
+## Include Guards and Copyright Notice Placement
 
 Every library file of OpenTissue should comply with a layout like this
 
@@ -311,7 +306,7 @@ Furthermore notice that every header file must end with a single empty line. Thi
 
 The copyright notice should be written exactly as shown above.
 
-== Use Configuration Header File ==
+## Use Configuration Header File
 
 Every include header in the OpenTissue library must include our global configuration header file, OpenTissue/configuration.hpp, This include should be placed immediately after the copyright notice. As shown below
 
@@ -333,28 +328,26 @@ Every include header in the OpenTissue library must include our global configura
 
 The configuration file will setup pragma directives needed by specific compilers. The header file also defined any other pre-directives. Such as defines that make sure that windows min max macros are not defined inside OpenTissue library code in case OpenTissue is used on a windows platform. Other platform/compiler specific tasks may be performed in this header file.
 
-== Template Parameter Naming  Convention ==
+## Template Parameter Naming  Convention
 
-If template parameter names are ``spelled out'' then we use the
+If template parameter names are "spelled out" then we use the
 convention to use lower case letters for the template parameter
 names. Individual words should be separated with an underscore.
 
 Here is an example of a free template function that can add two
 floating point numbers.
 
-<pre>
-template<typename real_type>
-inline real_type add( real_type const & a, real_type const & b)
-{
-return real_type(a + b);
-}
-</pre>
+    template<typename real_type>
+    inline real_type add( real_type const & a, real_type const & b)
+    {
+      return real_type(a + b);
+    }
 
 Template parameters should have meaning full names indicating what
 they are used for. In the above example the name clearly hints at
 a floating point type.
 
-A trailing string like ``_type'' in the above example should be
+A trailing string like "_type" in the above example should be
 used to indicate what kind of template parameter one is dealing
 with. In OpenTissue we often use the strings shown in the table below.
 
@@ -379,35 +372,33 @@ is that the trailing string should be information and descriptive
 in order to enhance readability and understandability of the code
 when the code is read by others.
 
-== Expose Template Parameter Names  ==
+## Expose Template Parameter Names
 
 If a template argument should be used elsewhere in the code then
 the template argument should immediately be typedef'ed inside the
-class with the ``real'' name one want to use and refer to later
+class with the "real" name one want to use and refer to later
 on in the code. This is in order to support multiple platforms.
 In some compilers one can not see the template class arguments
 elsewhere. Using our little trick we circumvent this problem.
 
 Here is an example of a class that needs a math type binder argument.
 
-<pre>
-template <typename math_types_>
-class MyClass
-{
-public:
+    template <typename math_types_>
+    class MyClass
+    {
+      public:
 
-typedef          math_types_               math_types;
+      typedef          math_types_               math_types;
 
-... a bunch of other stuff ...
-};
-</pre>
+      ... a bunch of other stuff ...
+    };
 
 The little implementation trick ensures that descendants of the
 class can know about the math types or some algorithm can know
 about the math types regardless of the platform and compiler one
 is using.
 
-== Short Template Parameter Names ==
+## Short Template Parameter Names
 
 In order to enhance readability of code and not have exceedingly
 long lines in compiler output. It can sometimes be convenient to
@@ -415,25 +406,22 @@ use shorter names for the template parameters.
 
 Here is a code example
 
-<pre>
+    template<typename T>
+    class Foo
+    {
+      public:
 
-templaet<typename T>
-class Foo
-{
-public:
+      typedef T real_type;
 
-typedef T real_type;
+      public:
 
-public:
+      T add(T const & a, T const & b) { ... }
+      T sub(T const & a, T const & b) { ... }
+      T mul(T const & a, T const & b) { ... }
+      T div(T const & a, T const & b) { ... }
+      ....
 
-T add(T const & a, T const & b) { ... }
-T sub(T const & a, T const & b) { ... }
-T mul(T const & a, T const & b) { ... }
-T div(T const & a, T const & b) { ... }
-....
-
-};
-</pre>
+    };
 
 Observe that the name T is used internally inside the class. Also
 T is exposed with a typedef clarifying what T is supposed to be.
@@ -441,10 +429,9 @@ T is exposed with a typedef clarifying what T is supposed to be.
 In an implementation strategy like this is chosen then the short
 template parameter names should be written in upper-case.
 Preferably only one or two characters, like T, P, V, C, or
-whatever that is a nice ``short'' for the real template paramter
-name.
+whatever that is a nice "short" for the real template parameter name.
 
-== Folder, File and Name space Naming Conventions ==
+## Folder, File and Name space Naming Conventions
 
 WIP. More is to be said about this!
 
@@ -477,6 +464,9 @@ function/class names should NOT be prefixed with any string values. Thus
 
 We decided upon these rules for the following reasons:
 
-1) No two files must have the same name. Some compilers may run into problems with identical file names.
-2) Prefixing inhibits the ability to do static polymorphism.
-3) There should be a clear connection between the filename of a header file and the content in the header file.
+
+* 1) No two files must have the same name. Some compilers may run into problems with identical file names.
+
+* 2) Prefixing inhibits the ability to do static polymorphism.
+
+* 3) There should be a clear connection between the filename of a header file and the content in the header file.

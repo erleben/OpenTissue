@@ -1,6 +1,6 @@
-= Design Patterns =
+# Design Patterns
 
-== Strategy Design Pattern ==
+## Strategy Design Pattern
 
 Strive towards a clean separation between data-structures and
 algorithms. In principle it means that one should be able to
@@ -9,39 +9,37 @@ structure.
 
 Here is a small example illustrating the idea. Say we want to
 create a particle system. The particle system needs a container
-of particles. So first we create a ``data'' class called
+of particles. So first we create a data class called
 particle. The particle class is nothing more than a place holder
 of physical properties. It may look something like this:
 
-<pre>
-template <typename math_types_>
-class Particle
-{
-public:
+    template <typename math_types_>
+    class Particle
+    {
+    public:
 
-typedef          math_types_               math_types;
-typedef typename math_types::value_traits  value_traits;
-typedef typename math_types::real_type     real_type;
-typedef typename math_types::vector3_type  vector3_type;
+      typedef          math_types_               math_types;
+      typedef typename math_types::value_traits  value_traits;
+      typedef typename math_types::real_type     real_type;
+      typedef typename math_types::vector3_type  vector3_type;
 
-public:
+    public:
 
-vector3_type m_position;  ///< The position of the particle.
-vector3_type m_velocity;  ///< The velocity of the particle.
-vector3_type m_force;     ///< The total force applied to the particle.
-real_type    m_mass;      ///< The total mass of the particle.
+      vector3_type m_position;  ///< The position of the particle.
+      vector3_type m_velocity;  ///< The velocity of the particle.
+      vector3_type m_force;     ///< The total force applied to the particle.
+      real_type    m_mass;      ///< The total mass of the particle.
 
-public:
+    public:
 
-Particle()
-: m_position(value_traits::zero(),value_traits::zero(),value_traits::zero())
-, m_velocity(value_traits::zero(),value_traits::zero(),value_traits::zero())
-, m_force(value_traits::zero(),value_traits::zero(),value_traits::zero())
-, m_mass(value_traits::one())
-{}
+      Particle()
+          : m_position(value_traits::zero(),value_traits::zero(),value_traits::zero())
+          , m_velocity(value_traits::zero(),value_traits::zero(),value_traits::zero())
+          , m_force(value_traits::zero(),value_traits::zero(),value_traits::zero())
+          , m_mass(value_traits::one())
+      {}
 
-};
-</pre>
+    };
 
 Notice that the particle class expects a math type binder
 argument (read about the type binder design pattern elsewhere).
@@ -57,36 +55,35 @@ section about template parameter naming).
 A particle system is not much fun if we only have a single
 particle. So next we need a particle container class.
 
-<pre>
-template <typename P>
-class ParticleContainer
-{
-public:
 
-typedef P            particle_type;
-typedef std::list<P> particle_container;
+    template <typename P>
+    class ParticleContainer
+    {
+    public:
 
-typedef typename particle_container::iterator       particle_iterator;
-typedef typename particle_container::const_iterator const_particle_iterator;
+      typedef P            particle_type;
+      typedef std::list<P> particle_container;
 
-public:
+      typedef typename particle_container::iterator       particle_iterator;
+      typedef typename particle_container::const_iterator const_particle_iterator;
 
-particle_container m_particles;  // All the particles in the system
+    public:
 
-public:
+      particle_container m_particles;  // All the particles in the system
 
-particle_iterator begin(){ return m_particles.begin(); }
-particle_iterator end()  { return m_particles.end();   }
-const_particle_iterator begin() const { return m_particles.begin(); }
-const_particle_iterator end()   const { return m_particles.end();   }
+    public:
 
-public:
+      particle_iterator begin(){ return m_particles.begin(); }
+      particle_iterator end()  { return m_particles.end();   }
+      const_particle_iterator begin() const { return m_particles.begin(); }
+      const_particle_iterator end()   const { return m_particles.end();   }
 
-ParticleContainer()
-{}
+    public:
 
-};
-</pre>
+      ParticleContainer()
+      {}
+
+    };
 
 Two important choices were made here. The particle type is given
 as a template argument. This will make it more easy to create a
@@ -100,28 +97,25 @@ focus on the algorithms. We need some sort of simulator that can
 work on the data in order to compute the trajectories of the
 particles as time progresses.
 
-<pre>
-template<typename particle_container, typename T >
-inline void simulate( particle_container & particles, T const & time_step )
-{
-typedef typename particle_container::particle_type     particle_type;
-typedef typename particle_type::math_types             math_types;
-typedef typename particle_container::particle_iterator particle_iterator;
-typedef typename math_types::real_type                 real_type;
-typedef typename math_types::value_traits              value_traits;
+    template<typename particle_container, typename T >
+    inline void simulate( particle_container & particles, T const & time_step )
+    {
+      typedef typename particle_container::particle_type     particle_type;
+      typedef typename particle_type::math_types             math_types;
+      typedef typename particle_container::particle_iterator particle_iterator;
+      typedef typename math_types::real_type                 real_type;
+      typedef typename math_types::value_traits              value_traits;
 
+      real_type const dt   = boost::numeric_cast<real_type>(time_step);
+      real_type const dtt2 = dt*dt/value_traits::two();
 
-real_type const dt   = boost::numeric_cast<real_type>(time_step);
-real_type const dtt2 = dt*dt/value_traits::two();
-
-particle_iterator p   = particles.begin();
-particle_iterator end = particles.end();
-for(;p!=end;++p)
-{
-p->position += p->velocity*dt + (p->m_force/p->m_mass)*dtt2;
-}
-};
-</pre>
+      particle_iterator p   = particles.begin();
+      particle_iterator end = particles.end();
+      for(;p!=end;++p)
+      {
+        p->position += p->velocity * dt + (p->m_force/p->m_mass) * dtt2;
+      }
+    };
 
 This is one way of making the data structure completely unaware
 of the algorithms. In this simplistic examples that were created
@@ -132,9 +126,9 @@ container. Of course one could also have implemented the
 algorithm in other ways.
 
 The important thing to notice is that we have tried to make a
-clean break between ``storage of data'' and ``working on data''.
+clean break between storage of data and working on data.
 
-==Back-door Gateway Design Pattern==
+## Back-door Gateway Design Pattern
 
 <b>The problem:</b> We want to prevent end users from changing sensitive data in
 our data structure, and at the same time we want to allow others to develop new
@@ -142,37 +136,35 @@ operations working on the sensitive data in our data structure.
 
 <b>Example:</b> Imagine end users are allowed to read data, but not allowed to
 write data. This would be implemented as:
-<pre>
-class MyInt
-{
-private:
-int m_value;
-public:
-MyInt(void):m_value(2){};
-public:
-int get_value(void) {  return m_value; };
-};
-</pre>
+
+    class MyInt
+    {
+    private:
+      int m_value;
+    public:
+      MyInt(void):m_value(2){};
+    public:
+      int get_value(void) {  return m_value; };
+    };
 
 To implement a functor that should have write access one would have to make it a
 friend, that is
-<pre>
-class MyInt
-{
-public:
-friend class IntTweakifierFunctor
-...
-};
 
-class IntTweakifierFunctor
-{
-public:
-void operator()(MyInt & i)
-{
-i.m_value = i.get_value()+1)*3;
-};
-};
-</pre>
+    class MyInt
+    {
+    public:
+      friend class IntTweakifierFunctor
+      ...
+    };
+
+    class IntTweakifierFunctor
+    {
+    public:
+      void operator()(MyInt & i)
+      {
+        i.m_value = i.get_value()+1) * 3;
+      };
+    };
 
 The problem lies in that either one must anticipate all possible names for
 future functors and make these friends, or users who are creating new functors
@@ -185,37 +177,37 @@ same time we want to protect sensitive data from end users.
 <b>Solution:</b> The solution is to introduce a core_access class. This class
 exposes sensitive data to those users implementing functors. Here is how to
 implement it:
-<pre>
-class int_core_access
-{
-public:
-template < typename Int,typename value >
-static void set_value(Int i,value v)
-{
-i.set_Value(v);
-};
-};
 
-class MyInt
-{
-private:
-int m_value;
-public:
-int get_value(void) {  return m_value; };
-private:
-friend class int_core_access;
-void set_Value(int value) {  m_value = value; };
-};
+    class int_core_access
+    {
+    public:
+      template < typename Int,typename value >
+      static void set_value(Int i,value v)
+      {
+        i.set_Value(v);
+      };
+    };
 
-class IntTweakifierFunctor
-{
-public:
-void operator()(MyInt & i)
-{
-int_core_access::set_value(i, ((i.get_value()+1)*3)  );
-};
-};
-</pre>
+    class MyInt
+    {
+    private:
+      int m_value;
+    public:
+      int get_value(void) {  return m_value; };
+    private:
+      friend class int_core_access;
+      void set_Value(int value) {  m_value = value; };
+    };
+
+    class IntTweakifierFunctor
+    {
+    public:
+      void operator()(MyInt & i)
+      {
+        int_core_access::set_value(i, ((i.get_value()+1) * 3)  );
+      };
+    };
+
 
 <b>Observe:</b> IntTweakifierFunctor is not a friend of MyInt, MyInt do not
 expose the writing access to end users, but int_core_access is a friend of
@@ -227,13 +219,11 @@ create new operations on it. The developer of the data structure can clearly
 design what is sensitive data, what data is allowed to be exposed to functors
 developers, and what data is prohibited from end users.
 
-Example program <a href="main.cpp">main.cpp</a>
+This design pattern was inspired by [The Boost Iterator Library](http://www.boost.org/libs/iterator/doc/index.html).
 
-This design pattern was inspired by [http://www.boost.org/libs/iterator/doc/index.html The Boost Iterator Library].
+## Typebinder Design Pattern
 
-== Typebinder Design Pattern ==
-
-=== Part 1 ===
+### Part 1
 <b>The problem:</b> We want template classes to know about each other without
 making their types explicit.
 
@@ -245,54 +235,57 @@ template< typename node_type >
 class Edge
 {
 public:
-node_type * m_A;
-node_type * m_B;
+  node_type * m_A;
+  node_type * m_B;
 };
 
 template< typename edge_type >
 class Node
 {
 public:
-std::list<edge_type *> m_edges;
+  std::list<edge_type * > m_edges;
 };
 
 Node<Edge> * A = new...
 Edge<Node> * E = new...
 E->m_A = A;
 </pre>
+
 However, this will not work due to the cyclic dependence of the template types.
 
 <b>Solution:</b>
 To circumvent this problem we use a type binder design pattern. That is we create
 a type binder struct, as follows
-<pre>
-template<
-template< typename > class node_class,
-template< typename > class edge_class
->
-struct GraphTypes
-{
-typedef GraphTypes<node_class,edge_class> types;
 
-typedef edge_class<types> edge_type;
-typedef node_class<types> node_type;
-};
-</pre>
+
+    template<
+      template< typename > class node_class,
+      template< typename > class edge_class
+      >
+    struct GraphTypes
+    {
+      typedef GraphTypes<node_class,edge_class> types;
+
+      typedef edge_class<types> edge_type;
+      typedef node_class<types> node_type;
+    };
+
+
 Next we re-implement the node and edge classes as follows
 <pre>
 template< typename types >
 class Edge
 {
 public:
-types::node_type * m_A;
-types::node_type * m_B;
+  types::node_type * m_A;
+  types::node_type * m_B;
 };
 
 template< typename types >
 class Node
 {
 public:
-std::list<types::edge_type *> m_edges;
+  std::list<types::edge_type * > m_edges;
 };
 </pre>
 When using it we would write
@@ -303,10 +296,11 @@ graph_type::edge_type * E = new....
 E->m_A = A;
 ..
 </pre>
-This design pattern was inspired by discussions with former master student <a
-href="nowhere">Jonas Meyer</a>.
 
-=== Part 2 ===
+This design pattern was inspired by discussions with former master student Jonas Meyer.
+
+### Part 2
+
 <b>The problem:</b> Continuing the graph example, the main idea, is that edge
 and node should have traits specified by algorithms (i.e. policies) working on
 them This should work even if one swaps an algorithm, which needs completely
@@ -316,12 +310,13 @@ different traits.
 template class, which can bind all types together. Thus we call it a TypeBinder
 
 The Node and the edge class and any algorithm class' take one template type,
-named Types, which is supposed to be an ``instantiation'' of the TypeBinder.
+named Types, which is supposed to be an instantiation of the TypeBinder.
 This allows any of these classes to use all types defined in the type binder.
 
 Furthermore every algorithm class must implement an inner node and edge traits
 class. The TypeBinder assumes this, and will concatenate all traits into one
 huge traits class.
+
 <pre>
 template<typename types>
 class Edge : public types::edge_traits
@@ -337,57 +332,57 @@ template<typename types>
 class Algo1
 {
 public:
-class node__traits
-{
-public:
-typename types::edge_type * m_e1;
-};
-class edge_traits
-{
-public:
-typename types::node_type * m_n1;
-};
+  class node__traits
+  {
+  public:
+    typename types::edge_type * m_e1;
+  };
+  class edge_traits
+  {
+  public:
+    typename types::node_type * m_n1;
+  };
 };
 
 template<typename types>
 class Algo2
 {
 public:
-class node_traits
-{
-public:
-typename types::edge_type * m_e2;
-};
-class edge_traits
-{
-public:
-typename types::node_type * m_n2;
-};
+  class node_traits
+  {
+  public:
+    typename types::edge_type * m_e2;
+  };
+  class edge_traits
+  {
+  public:
+    typename types::node_type * m_n2;
+  };
 };
 
 template<
-template< typename > class node_class,
-template< typename > class edge_class,
-template< typename > class algo1_class,
-template< typename > class algo2_class
+  template< typename > class node_class,
+  template< typename > class edge_class,
+  template< typename > class algo1_class,
+  template< typename > class algo2_class
 >
 class TypeBinder
 {
 public:
 
-typedef TypeBinder<node_class,edge_class,algo1_class,algo2_class> types;
-typedef node_class<types> node_type;
-typedef edge_class<types> edge_type;
-typedef Algo1<types> algo1_type;
-typedef Algo2<types> algo2_type;
-class NodeTraitsClass : public algo1_type::node_traits,public algo2_type::node_traits
-{
-};
-class EdgeTraitsClass : public algo1_type::edge_traits,public algo2_type::edge_traits
-{
-};
-typedef EdgeTraitsClass edge_traits;
-typedef NodeTraitsClass node_traits;
+  typedef TypeBinder<node_class,edge_class,algo1_class,algo2_class> types;
+  typedef node_class<types> node_type;
+  typedef edge_class<types> edge_type;
+  typedef Algo1<types> algo1_type;
+  typedef Algo2<types> algo2_type;
+  class NodeTraitsClass : public algo1_type::node_traits,public algo2_type::node_traits
+  {
+  };
+  class EdgeTraitsClass : public algo1_type::edge_traits,public algo2_type::edge_traits
+  {
+  };
+  typedef EdgeTraitsClass edge_traits;
+  typedef NodeTraitsClass node_traits;
 };
 
 typedef TypeBinder<Node,Edge,Algo1,Algo2>::edge_type edge_type;
@@ -395,17 +390,17 @@ typedef TypeBinder<Node,Edge,Algo1,Algo2>::node_type node_type;
 
 void test(void)
 {
-node_type node;
-edge_type edge;
-node.m_e1 = &edge;
+  node_type node;
+  edge_type edge;
+  node.m_e1 = &edge;
 
-node.m_e2 = &edge;
-edge.m_n1 = &node;
-edge.m_n2 = &node;
+  node.m_e2 = &edge;
+  edge.m_n1 = &node;
+  edge.m_n2 = &node;
 };
 </pre>
 
-== Static Member initialized in Header (SMIIH) Design Pattern ==
+## Static Member initialized in Header (SMIIH) Design Pattern
 
 OpenTissue is a header-only library and as such it is not very problematic to write something like
 
@@ -413,7 +408,7 @@ OpenTissue is a header-only library and as such it is not very problematic to wr
 class SomeClass
 {
 public:
-static int const N = 0;
+  static int const N = 0;
 };
 </pre>
 
@@ -423,8 +418,8 @@ In this case the compiler knows how to initialize the static member (the const p
 class SomeOtherClass
 {
 public:
-static double const N;
-static SomeClass M;
+  static double const N;
+  static SomeClass M;
 };
 </pre>
 
@@ -434,8 +429,8 @@ Here we get into trouble. The compiler do not know how to initialize the static 
 class SomeOtherClass
 {
 public:
-static double const N = 0.0;
-static SomeClass M = SomeClass();
+  static double const N = 0.0;
+  static SomeClass M = SomeClass();
 };
 </pre>
 
@@ -445,17 +440,17 @@ The only way to do this is to initialize the members in a source-file. However O
 class SomeOtherClass
 {
 public:
-static double const & N()
-{
-static double const value = 0.0;
-return value;
-}
+  static double const & N()
+  {
+    static double const value = 0.0;
+    return value;
+  }
 
-static SomeClass & M()
-{
-static SomeClass value();
-return value;
-}
+  static SomeClass & M()
+  {
+    static SomeClass value();
+    return value;
+  }
 };
 </pre>
 
@@ -472,7 +467,7 @@ SomeOtherClass::N();
 </pre>
 
 
-== Value Traits Design Patterns ==
+## Value Traits Design Patterns
 
 As an example imagine we have some template class with some real type member that must be initialized to the value one. One may then immediately write down
 
@@ -482,11 +477,11 @@ class Fancy
 {
 public:
 
-real_type m_x;
+  real_type m_x;
 
-Fancy()
-: m_x(1.0)
-{}
+  Fancy()
+    : m_x(1.0)
+  {}
 };
 </pre>
 
@@ -498,11 +493,11 @@ class Fancy
 {
 public:
 
-real_type m_x;
+  real_type m_x;
 
-Fancy()
-: m_x(static_cast<real_type>(1.0))
-{}
+  Fancy()
+    : m_x(static_cast<real_type>(1.0))
+    {}
 };
 </pre>
 
@@ -535,11 +530,11 @@ class Fancy
 {
 public:
 
-real_type m_x;
+  real_type m_x;
 
-Fancy()
-: m_x(one<real_type>())
-{}
+  Fancy()
+    : m_x(one<real_type>())
+  {}
 };
 </pre>
 
@@ -553,14 +548,14 @@ template<>
 class Values<int>
 {
 public:
-static int one(){return 1;}
+  static int one(){return 1;}
 };
 
 template<>
 class Values<float>
 {
 public:
-static float one(){return 1.0f;}
+  static float one(){return 1.0f;}
 };
 
 ... more specializations here ...
@@ -574,11 +569,11 @@ class Fancy
 {
 public:
 
-real_type m_x;
+  real_type m_x;
 
-Fancy()
-: m_x(Values<real_type>::one())
-{}
+  Fancy()
+    : m_x(Values<real_type>::one())
+  {}
 };
 </pre>
 
@@ -590,11 +585,11 @@ class Fancy
 {
 public:
 
-real_type m_x;
+  real_type m_x;
 
-Fancy()
-: m_x(value_traits::one())
-{}
+  Fancy()
+    : m_x(value_traits::one())
+  {}
 };
 </pre>
 
@@ -604,7 +599,7 @@ Now the end-user can actually make his own value trait class and pass this along
 real_type N = one<real_type>();
 </pre>
 
-== Tag Dispatching Design Pattern ==
+## Tag Dispatching Design Pattern
 
 <b>Problem :</b> In some cases the end-user should be able to use different versions of an algorithm or method.
 
@@ -614,7 +609,7 @@ real_type N = one<real_type>();
 template<typename matrix_type>
 inline typename matrix_type::value_type norm(matrix_type const & A)
 {
-...
+  ...
 }
 </pre>
 
@@ -680,7 +675,7 @@ That is basically it. In some cases one would like to add an mechanism for hidin
 template<typename matrix_type>
 inline typename matrix_type::value_type norm(matrix_type const & A )
 {
-return norm(A, matrix_type::norm_tag_type() );
+  return norm(A, matrix_type::norm_tag_type() );
 }
 </pre>
 
