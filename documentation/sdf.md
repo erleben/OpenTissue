@@ -4,14 +4,12 @@ The signed distance field (sdf) collision library is based on a double
 representation of the object geometries. To use this library one would need to
 include the header file
 
-<pre>
-#include &lt;OpenTissue/collision/signed_distance_field/sdf.h&gt;
-</pre>
+    #include <OpenTissue/collision/signed_distance_field/sdf.h>
 
 This header file will include all other parts of this collision library and
 hence forth one can use all the functionality in the library.
 
-This library has an accompanion demo application located in
+This library has an accompanied demo application located in
 
 <pre>
 demos/opengl/sdf_collision
@@ -55,23 +53,19 @@ disk).
 
 A typical initialization of the signed distance geometry type would look like:
 
-<pre>
-#include <OpenTissue/utility/get_environment_variable.h>
-#include <OpenTissue/mesh/mesh.h>
+    #include <OpenTissue/utility/get_environment_variable.h>
+    #include <OpenTissue/mesh/mesh.h>
 
-...
+    ...
 
-sdf_geometry_type geometry;
-string datapath = get_environment_variable( "DATATISSUE" );
-string meshfile = datapath + "/obj/pointy_tmp.obj";
-mesh_type mesh;
-mesh_obj_read( meshfile, mesh );
-double edge_resolution = 0.01;
-bool face_sampling = true;
-sdf_semiauto_init_geometry(mesh,edge_resolution,face_sampling,geometry);
-</pre>
-
-
+    sdf_geometry_type geometry;
+    string datapath = get_environment_variable( "DATATISSUE" );
+    string meshfile = datapath + "/obj/pointy_tmp.obj";
+    mesh_type mesh;
+    mesh_obj_read( meshfile, mesh );
+    double edge_resolution = 0.01;
+    bool face_sampling = true;
+    sdf_semiauto_init_geometry(mesh,edge_resolution,face_sampling,geometry);
 
 
 <h2>Collision Queries</h2>
@@ -82,7 +76,7 @@ would have to specify the world coordinate position of the two geometries, this
 is done using a coordinate system type like:
 
 <pre>
-typedef OpenTissue::coordsys&lt;real_type&gt;   coordsys_type;
+typedef OpenTissue::coordsys<real_type>   coordsys_type;
 
 coordsys_type wcsA;
 coordsys_type wcsB;
@@ -116,12 +110,12 @@ The contact point container could be declared as
 class contact_point_type
 {
 public:
-vector3_type  m_n;        ///&lt; The contact normal.
-vector3_type  m_p;        ///&lt; The contact point.
-real_type     m_distance; ///&lt; The penetration depth/separation distance measure.
+vector3_type  m_n;        ///< The contact normal.
+vector3_type  m_p;        ///< The contact point.
+real_type     m_distance; ///< The penetration depth/separation distance measure.
 };
 
-typedef std::vector&lt; contact_point_type &gt; contact_point_container;
+typedef std::vector< contact_point_type > contact_point_container;
 
 contact_point_container m_contacts;
 </pre>

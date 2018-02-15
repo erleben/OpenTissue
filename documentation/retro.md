@@ -1,4 +1,4 @@
-== Creating a Multibody Dynamics Simulator ==
+## Creating a Multibody Dynamics Simulator
 
 Before one can start simulating one needs to bind together the types of
 algorithms and methods that one wants to use in the simulator.
@@ -11,24 +11,26 @@ This process consists of three steps
 </ul>
 
 First we need to get access to all the types defined in the multibody dynamics engine. This can be done by included the single all-header-in-one file
-<pre>
-#include <OpenTissue/dynamics/mbd/mbd.h>
-</pre>
+
+    #include <OpenTissue/dynamics/mbd/mbd.h>
+
 Now we have access to a bundle of types. Next we can start defining a collision detection engine
-<pre>
-template<typename types>
-class MyCollisionDetection
-: public OpenTissue::mbd::CollisionDetection<
-types
-, OpenTissue::mbd::SpatialHashing
-, OpenTissue::mbd::GeometryDispatcher
-, OpenTissue::mbd::SingleGroupAnalysis
->
-{};
-</pre>
+
+    template<typename types>
+    class MyCollisionDetection
+      : public OpenTissue::mbd::CollisionDetection<
+        types
+        , OpenTissue::mbd::SpatialHashing
+        , OpenTissue::mbd::GeometryDispatcher
+        , OpenTissue::mbd::SingleGroupAnalysis
+      >
+      {};
+
+
 In this definition we have chosen a spatial hashing algorithm to deal with broad phase collision detection, we use a geometry dispatcher in place of the narrow phase module. The dispatcher needs to be initialized later on with collision handlers for specific narrow phase collision detection algorithms. We also specified a collision analyzer that merges all collision information into one single collection, named a group.
 
 For the next step we define our stepper
+
 <pre>
 template< typename types  >
 class MyStepper
@@ -38,7 +40,9 @@ types
 >
 {};
 </pre>
-Here we have applied a traditional dynamics stepper using a projected Gauss-Seidel method for solving the underlyning complementarity problem formulation. Finally we glue it all together in a type-binder, like this
+
+Here we have applied a traditional dynamics stepper using a projected Gauss-Seidel method for solving the underlying complementarity problem formulation. Finally we glue it all together in a type-binder, like this
+
 <pre>
 typedef OpenTissue::mbd::Types<
 OpenTissue::mbd::optimized_ublas_math_policy<double>
@@ -48,7 +52,9 @@ OpenTissue::mbd::optimized_ublas_math_policy<double>
 , OpenTissue::mbd::ExplicitFixedStepSimulator
 > types;
 </pre>
-This took care of the prelimiary steps, now we can start using the simulator types. For instance by creating a simulator object.
+
+This took care of the preliminary steps, now we can start using the simulator types. For instance by creating a simulator object.
+
 <pre>
 typedef types::simulator_type                          simulator_type;
 
@@ -62,7 +68,7 @@ OpenTissue::mbd::setup_default_geometry_dispatcher(m_simulator);
 </pre>
 
 
-== ABC of Setting up a Scene ==
+## ABC of Setting up a Scene
 
 When setting up a scene, one needs a simulator, a configuration and a material library. The first knows how to move objects around in the world. The second describes the objects that needs to be moved and the last defines parameters for how objects interact in the world. The three components are declared like this
 
@@ -112,13 +118,11 @@ m_simulator.init(m_configuration);
 
 Now one is ready to start simulating by invoking the run method on the simulator.
 
-== Creating a new Geometry Type ==
+## Creating a new Geometry Type
 
-In OpenTissue all collision geometry types should be inherited from the GeometryInterface interface. This is defined in the headerfil
+In OpenTissue all collision geometry types should be inherited from the GeometryInterface interface. This is defined in the headerfile
 
-<pre>
-#include <OpenTissue/collision/collision_geometry_interface.h>
-</pre>
+    #include <OpenTissue/collision/collision_geometry_interface.h>
 
 For the purpose of illustration we will here show how to create the imaginary geometry type, Bogus. A typical way to do this would look like this
 
@@ -168,7 +172,7 @@ m_simulator.get_collision_detection()->get_narrow_phase()->bind( &BogusBogusHand
 One would need to implement collision handlers for every other type of geometry that Bogus should be
 able to collide with (boxes, spheres etc..) and bind these collision handlers to the geometry dispatcher.
 
-== Creating a new Complementarity Solver ==
+## Creating a new Complementarity Solver
 
 One needs to do two things in order to create a new complementarity solver type.
 
@@ -177,7 +181,7 @@ One needs to do two things in order to create a new complementarity solver type.
 <li>Create the solver</li>
 </ol>
 
-===  Creating the Math Policy ===
+###  Creating the Math Policy
 
 The math policy should be placed in this folder
 
@@ -192,12 +196,12 @@ OpenTissue/dynamics/mbd/math/mbd_default_math_policy.h
 OpenTissue/dynamics/mbd/math/mbd_optimized_ublas_math_policy.h
 </pre>
 
-If one just needs sparse uBLAS kind of matrix stuff then it would probably be easier to specialize the default math policy by creating an inherited class from the default math policy. Let the inherited class be extended with whatever interface one needs for the new solver type. This would most likely boild down to adding a sub-system solver method! This might be neat if one decides to swap the internal workings of the solver later on. Then simply create another derived class with the same sub-system interface but with different internal workings.
+If one just needs sparse uBLAS kind of matrix stuff then it would probably be easier to specialize the default math policy by creating an inherited class from the default math policy. Let the inherited class be extended with whatever interface one needs for the new solver type. This would most likely boils down to adding a sub-system solver method! This might be neat if one decides to swap the internal workings of the solver later on. Then simply create another derived class with the same sub-system interface but with different internal workings.
 
 The multibody dynamics engine relies heavily on static polymorphism, so the math policy interface is completely unbounded. However, many main parts of the engine uses the math policy for basic manipulations. One will get compiler errors if one forgets a method in ones math policy. Deriving a math policy from one of the existing classes avoids this problem.
 
 
-=== Creating the Solver ===
+### Creating the Solver
 
 To help assist users in implementing new solvers a virtual base class has been provided. So in order to create a new solver type one should just make a public derived class from this interface
 
