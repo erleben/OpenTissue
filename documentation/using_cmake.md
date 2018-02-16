@@ -1,31 +1,31 @@
-= Install CMake =
+# Install CMake
 
-[http://www.cmake.org/HTML/Download.html link Download] CMake and install it onto your system. The installation is pretty straightforward, if you get into trouble have a look at the [http://www.cmake.org/HTML/Install.html link guide]. Note that if you are running Gentoo it is probably easiest to use Gentoo-Portage to install CMake onto your system.
+[Download](http://www.cmake.org/HTML/Download.html) CMake and install it onto your system. The installation is pretty straightforward, if you get into trouble have a look at the [guide](http://www.cmake.org/HTML/Install.html). Note that if you are running Gentoo it is probably easiest to use Gentoo-Portage to install CMake onto your system.
 
 
-= Running CMake on Windows =
+# Running CMake on Windows
 
 Here follows a quick step-by-step specific for OpenTissue. In the example we are running windows and want Visual Studio 2005 project files.
 
-== Step 1 ==
+## Step 1
 
 * First you open the CMake program (you probably got an icon on your desktop, so just double click on this icon)
 * Specify the path for the OpenTissue source code. This is the folder location on your hard drive where you choice to check-out OpenTissue from the subversion repository.
 * Specify a path where you want the ''binaries'' to be. This folder will contain the generated Visual Studio project files. I (kenny) prefer out-of-source tree build and like to put everything into a build sub folder.
 
-== Step 2 ==
+## Step 2
 
 
 * Next click on the configure button. CMake now ask you want type of generator you want. This is where you pick what kind of ''makefiles'' you want in the build-folder you specified in the previous step. I simply selected the Visual Studio 8 2005 generator and click the OK-button.
 
-== Step 3 ==
+## Step 3
 
 * Next CMake might ask you if it should create the build folder you specified. Just accept this
 * Now you have to wait a while. While you wait CMake will examine all the CMakeList.txt files in your source-tree. In the end you will presented with the results of CMakes efforts.
 
 Now you should see a lot of Cache values marked with a red-color.
 
-== Step 4 ==
+## Step 4
 
 The red color simply mean that CMake asks you to decide whether you want to override/set any of the shown values. A quick look through the cache values reveal that the Boost_INCLUDE_DIR cache value is completely wrong but all other values looks good. For convenience I have made a quick explanation of some of the most magical cache values in the table below. If you do not care about what they are used for simply skip the table.
 
@@ -41,7 +41,7 @@ CMAKE_BACKWARDS_COMPATIBILITY</td><td>simply says what version of CMake that is 
 * Specify where your boost installment is located on your system. NOTE use forward slashes when you write the path, although not important this will save you from other problems in the future.
 
 
-== Step 5 ==
+## Step 5
 
 * Press the configure button once more, and wait while CMake process everything a second time around.
 
@@ -49,12 +49,12 @@ Now all the cache values should be colored in gray, this implies that everything
 
 * Finally press the OK-button. Now CMake will create the content of the build folder and automatically close the CMake application.
 
-== After CMake ==
+## After CMake
 
 After having run CMake you simple go to the build folder you specified and look for the file ''OpenTissue.sln'', double click on this file and you are up and running, ready to code:-)
 
 
-== Behind the Scenes ==
+## Behind the Scenes
 
 Currently there are some outstanding CMake quirks, in particular when it comes to using Visual Studio. Below is a brief description of some of the issues. Hopefully CMake will solve some of these issues in the future or we will find better workarounds. As of writing (May 2007) these quirks are the price we pay for having a cross-platform make tool.
 
@@ -123,7 +123,7 @@ When developers need to create new stuff, it will basically consist of extending
 
 
 
-= Running CMake on Linux =
+# Running CMake on Linux
 
 The first thing you should do is to go to the folder containing the source tree. That is the folder location where you placed the OpenTissue source code. Next you have to decide where the build-tree should be placed. The build-tree is the folder where CMake will generate the resulting makefiles for you.
 
@@ -161,7 +161,7 @@ At the bottom of the screen several options is listed. First you need to run the
 
 * Press c-key
 
-At this point you should look through all the cache values that are displayed to see if they make sense. CMake make hints to you by displaying star ('*') in front of cache values that CMake things you should have a closer look at. Below of here there is a table explaining the most common cache values that you will see on your screen. All of these can be ignored.
+At this point you should look through all the cache values that are displayed to see if they make sense. CMake make hints to you by displaying star * in front of cache values that CMake things you should have a closer look at. Below of here there is a table explaining the most common cache values that you will see on your screen. All of these can be ignored.
 
 * Edit <VAR>-NOTFOUND cache values
 
@@ -229,7 +229,7 @@ SUBDIRS(XXX)
 That is it. Now you just generate your makefiles with CMake as usual and the new demo will appear as a project/target.
 
 
-= Create a New Unit-Test with CMake =
+# Create a New Unit-Test with CMake
 
 The steps are nearly identical to the way how you would add a new demo application.
 

@@ -1,5 +1,5 @@
-==The OpenGL Programming Guide==
-===Working with OpenGL in OpenTissue===
+# The OpenGL Programming Guide
+## Working with OpenGL in OpenTissue
 OpenGL is the default graphics library used in OpenTissue. However, you are not
 required or bound to use OpenGL if you decide to use OpenTissue. A clean
 separation of the OpenGL visualization have been sought.
@@ -28,48 +28,49 @@ There is also support for more advanced OpenGL features, such as handling of
 * Picking, Camera to object space conversion, Material and Color utilities
 
 A single OpenGL wrapper file is provided in the header file
-<pre>
-#include<OpenTissue/utility/gl_util.h>
-</pre>
+
+    #include<OpenTissue/utility/gl_util.h>
+
 This header file will automatically include all OpenGL utilities located in the folder
+
 <pre>
 OpenTissue/utility/GL
 </pre>
 
 If only OpenGL support is wanted and none of the OpenTissue utilities is
 required one can simply include the header file
-<pre>
-#include<OpenTissue/utility/GL/gl.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/gl.h>
 
 OpenTissue handles OpenGL extensions by using GLEW. This requires that header
 files are included in the correct order. It is therefore very important,
 whenever you use OpenGL, to include either
-<pre>
-#include<OpenTissue/utility/gl_util.h>
-</pre>
+
+    #include<OpenTissue/utility/gl_util.h>
+
 or
+
 <pre>
 OpenTissue/utility/GL
 </pre>
 
 As the very first header file. If you are using Cg you can simply use the header file
-<pre>
-#include<OpenTissue/utility/cg_util.h>
-</pre>
+
+    #include<OpenTissue/utility/cg_util.h>
+
 Instead. This is explained in more detail in <a href="shader_programming.html">The Shader Programming Guide</a>.
 
-===OpenGL Matrix Utilities===
+## OpenGL Matrix Utilities
 In some applications it is convenient to extract 4-by-4 OpenGL matrices stored
 in column major form and work directly with this brute representation.
 OpenTissue provides a small collection of functions for doing so, these are
 defined in the header file
-<pre>
-#include<OpenTissue/utility/GL/gl_matrix_util.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/gl_matrix_util.h>
 
 A typical example usage is to extract model view and projection matrices and
 manipulate these, for instance
+
 <pre>
 GLfloat model2eye_matrix[16];
 GLfloat eye2model_matrix[16];
@@ -79,20 +80,18 @@ invert( model2eye_matrix, eye2model_matrix );
 
 Having obtained the inverted model view transformation matrix, it can be used
 directly to transform vertices by writing
-<pre>
-vector3_type V[N];
-for(unsigned int i=0;i<N;++i)
-V[i] = xform( model2eye_matrix, V[i]);
-</pre>
+
+    vector3_type V[N];
+    for(unsigned int i=0;i<N;++i)
+      V[i] = xform( model2eye_matrix, V[i]);
 
 Other functions include matrix multiplication (see mul), matrix transpose (see
 transpose), and orthonormalization (see orthonormalize).
 
-===Material, Color Picking and Error Checking===
+## Material, Color Picking and Error Checking
 A easy to use OpenGL material wrapper is defined in the header file
-<pre>
-#include<OpenTissue/utility/GL/gl_material.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/gl_material.h>
 
 During initialization a material can be defined by writing
 <pre>
@@ -110,6 +109,7 @@ mat.shininess( 10 );
 </pre>
 
 When rendering the material can be applied by writing
+
 <pre>
 mat.use();
 ... render ...
@@ -118,10 +118,11 @@ mat.use();
 In case you really do not care about whether OpenGL materials are used or
 not, a more simple utility is provided to set the color. It is defined in the
 header file
-<pre>
-#include<OpenTissue/utility/GL/gl_color_picker.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/gl_color_picker.h>
+
 And you use it by writing
+
 <pre>
 glColorPicker( 1.0, 0.0, 0.0, 1.0);
 ... render ...
@@ -133,10 +134,11 @@ default to one.
 
 It may happen that you need to check whether some OpenGL error occurred. For this
 purpose a convenience utility is provided in the header file
-<pre>
-#include<OpenTissue/utility/GL/check_gl_errors.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/check_gl_errors.h>
+
 And you use it by writing
+
 <pre>
 ... some OpenGL stuff that might go wrong ...
 check_gl_errors("Here I am");
@@ -151,9 +153,9 @@ If one have a set of x- and y screen coordinates and want to find the correspond
 x, y, and z- coordinates of the world point currently visible at the pixel at
 the specified screen coordinates, then one can use the utility in the header
 file
-<pre>
-#include<OpenTissue/utility/GL/gl_screen2object.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/gl_screen2object.h>
+
 The utility is used as follows
 <pre>
 int sx = 5,
@@ -165,84 +167,88 @@ std::cout << "pixel at (" << sx << "," << sy << ")corresponds to point (" << ox 
 </pre>
 
 Finally there is a picking tool available in the header file
-<pre>
-#include<OpenTissue/utility/GL/gl_picking.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/gl_picking.h>
 
 We refer the reader to the header file for details.
 
-===Creating an OpenGL based Application using OpenTissue===
+## Creating an OpenGL based Application using OpenTissue
 A typical small application class may look like this
+
 <pre>
 class Application
 {
 public:
-Application(){}
-~Application(){ }
+  Application(){}
+  ~Application(){ }
 public:
-void display()
-void init()
+  void display()
+  void init()
 protected:
-typedef MyTypes                   types;
-typedef types::real_type          real_type;
+  typedef MyTypes                   types;
+  typedef types::real_type          real_type;
 protected:
-OpenTissue::glCamera<types>        m_camera;
-bool                               m_zoom_mode;
-bool                               m_pan_mode;
-bool                               m_trackball_mode;
-real_type                          m_begin_x;
-real_type                          m_begin_y;
+  OpenTissue::glCamera<types>        m_camera;
+  bool                               m_zoom_mode;
+  bool                               m_pan_mode;
+  bool                               m_trackball_mode;
+  real_type                          m_begin_x;
+  real_type                          m_begin_y;
 public:
-void mouse_down(real_type sx,real_type sy,bool shift,bool left,bool middle,bool right)
-void mouse_up(real_type sx,real_type sy,bool shift,bool left,bool middle,bool right)
-void mouse_move(real_type sx,real_type sy)
+  void mouse_down(real_type sx,real_type sy,bool shift,bool left,bool middle,bool right)
+  void mouse_up(real_type sx,real_type sy,bool shift,bool left,bool middle,bool right)
+  void mouse_move(real_type sx,real_type sy)
 };
 </pre>
 
 Observe that it consist of an initialization method, a display event handler and
 mouse event handlers. In the initialization method one would set up the initial
 state of the GUI, i.e. something like this
+
 <pre>
 void Application::init()
 {
-...
-m_zoom_mode              = false;
-m_pan_mode               = false;
-m_trackball_mode         = false;
-m_camera.target_locked() = true;
-m_camera.init(vector3_type(0,0,10),vector3_type(0,0,0),vector3_type(0,1,0));
-...
+  ...
+  m_zoom_mode              = false;
+  m_pan_mode               = false;
+  m_trackball_mode         = false;
+  m_camera.target_locked() = true;
+  m_camera.init(vector3_type(0,0,10),vector3_type(0,0,0),vector3_type(0,1,0));
+  ...
 }
 </pre>
 
 Notice that the initial behavior and position of the camera is set. Now in the
 display handler the camera can by used to setup the correct model-view
 transformation, as follows
+
 <pre>
 void Application::display()
 {
-glMatrixMode( GL_MODELVIEW );
-glLoadCameraMatrix(m_camera);
-... do some fancy rendering ...
+  glMatrixMode( GL_MODELVIEW );
+  glLoadCameraMatrix(m_camera);
+  ... do some fancy rendering ...
 }
 </pre>
 
 Of course we want to be able to move the camera around, a perfect place for
 changing the camera is in the mouse event handlers. For instance one could write
+
 <pre>
 void Application::mouse_down(real_type cur_x,real_type cur_y,bool shift,bool left,bool middle,bool /*right*/)
 {
-if (middle )
-m_zoom_mode = true;
-if ( shift &amp;&amp; left )
-m_pan_mode = true;
-if(!shift &amp;&amp; left)
-{
-m_camera.mouse_down( cur_x, cur_y );
-m_trackball_mode = true;
-}
-m_begin_x = cur_x;
-m_begin_y = cur_y;
+  if (middle )
+    m_zoom_mode = true;
+  if ( shift &amp;&amp; left )
+    m_pan_mode = true;
+  if(!shift &amp;&amp; left)
+  {
+      m_camera.mouse_down( cur_x, cur_y );
+      m_trackball_mode = true;
+  }
+
+  m_begin_x = cur_x;
+  m_begin_y = cur_y;
 }
 
 void Application::mouse_up(real_type cur_x,real_type cur_y,bool /*shift*/,bool /*left*/,bool /*middle*/,bool /*right*/)
@@ -280,15 +286,14 @@ m_begin_y = cur_y;
 </pre>
 This will support zooming, panning, and orbiting. For more details we refer
 the reader to the header file
-<pre>
-#include<OpenTissue/utility/GL/gl_camera.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/gl_camera.h>
 
 If one wants to do frustum culling on the CPU then an utility class for doing
 this is provided in the header file
-<pre>
-#include<OpenTissue/utility/GL/gl_frustum.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/gl_frustum.h>
+
 It works simply by updating an instance of the frustum class before testing,
 for instance one could add the following code to the display handler
 <pre>
@@ -297,23 +302,22 @@ glFrustum<types> frustum;
 frustum.update();
 if( frustum.contains( aabb ) )
 {
-... draw stuff inside AABB
+  ... draw stuff inside AABB
 }
 ...
 </pre>
 
 Culling currently only supports spheres, AABBs and points.
 
-===Using Framebuffer Object===
+## Using Framebuffer Object
 OpenTissue provides wrapper classes for OpenGL Framebuffer object and
 Renderbuffer, these are located in the header files
-<pre>
-#include<OpenTissue/utility/GL/gl_frame_buffer_object.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/gl_frame_buffer_object.h>
+
 and
-<pre>
-#include<OpenTissue/utility/GL/gl_render_buffer.h>
-</pre>
+
+    #include<OpenTissue/utility/GL/gl_render_buffer.h>
 
 Framebuffer object is a convenient way to change the render target. Thus it
 provides functionality for setting up render to texture (RTT) functionality or
@@ -322,6 +326,7 @@ ping-pong schemes.
 As an example we will set up a render-to-texture ping-pong scheme using both a
 depth and a stencil buffer. We thus need two textures, two Renderbuffers and one
 Framebuffer object,
+
 <pre>
 texture2D_pointer    m_texture[2];
 glFramebufferObject  m_fbo;
@@ -331,25 +336,25 @@ renderbuffer_pointer m_stencil;
 
 During initialization we must create the textures, the depth and stencil buffers
 and attach all of them to the Framebuffer Object.
-<pre>
-void Application::init()
-{
-...
-static const GLenum buffer[] = { GL_COLOR_ATTACHMENT0_EXT, GL_COLOR_ATTACHMENT1_EXT };
-for(unsigned int i=0;i<2;++i)
-m_texture[i] = create_float_texture_rectangle( width, height, 4, 0 );
-m_depth = create_depth_buffer(width,height);
-m_stencil = create_stencil_buffer(width,height);
-m_fbo.bind();
-for(unsigned int i=0;i<2;++i)
-m_fbo.attach_texture( buffer[i], m_texture[i] );
-m_fbo.attach_render_buffer( GL_DEPTH_ATTACHMENT_EXT, m_depth );
-m_fbo.attach_render_buffer( GL_STENCIL_ATTACHMENT_EXT, m_stencil );
-m_fbo.is_valid();
-glFramebufferObject::disable();
-...
-}
-</pre>
+
+    void Application::init()
+    {
+      ...
+      static const GLenum buffer[] = { GL_COLOR_ATTACHMENT0_EXT, GL_COLOR_ATTACHMENT1_EXT };
+      for(unsigned int i=0;i<2;++i)
+        m_texture[i] = create_float_texture_rectangle( width, height, 4, 0 );
+      m_depth = create_depth_buffer(width,height);
+      m_stencil = create_stencil_buffer(width,height);
+      m_fbo.bind();
+      for(unsigned int i=0;i<2;++i)
+        m_fbo.attach_texture( buffer[i], m_texture[i] );
+
+      m_fbo.attach_render_buffer( GL_DEPTH_ATTACHMENT_EXT, m_depth );
+      m_fbo.attach_render_buffer( GL_STENCIL_ATTACHMENT_EXT, m_stencil );
+      m_fbo.is_valid();
+      glFramebufferObject::disable();
+      ...
+    }
 
 Of course one do not need to attach depth and stencil buffers, these can be
 omitted if there are no need for them. Notice that after having attached all
@@ -363,23 +368,23 @@ handler as follows
 <pre>
 void Application::display()
 {
-...
-static const GLenum buffer[] = { GL_COLOR_ATTACHMENT0_EXT, GL_COLOR_ATTACHMENT1_EXT };
-int write = 0;
-int read  = 1;
+  ...
+  static const GLenum buffer[] = { GL_COLOR_ATTACHMENT0_EXT, GL_COLOR_ATTACHMENT1_EXT };
+  int write = 0;
+  int read  = 1;
 
-m_fbo.bind();
-for(unsigned int i=0;i<ping_pongs;++i)
-{
-glDrawBuffer (buffer[write]);
-draw_some_thing( ..., m_texture[read]);
-std::swap(m_write,m_read);
-}
-glFramebufferObject::disable();
+  m_fbo.bind();
+  for(unsigned int i=0;i<ping_pongs;++i)
+  {
+    glDrawBuffer (buffer[write]);
+    draw_some_thing( ..., m_texture[read]);
+    std::swap(m_write,m_read);
+  }
+  glFramebufferObject::disable();
 }
 </pre>
 Notice that before rendering the function glDrawBuffer is used to tell which
-buffer should receive the ``rendering''. If you desire to read back from a
+buffer should receive the rendering. If you desire to read back from a
 buffer (from GPU to CPU) you should use the function glReadBuffer to tell which
 buffer you want to read from.
 
@@ -395,26 +400,25 @@ another color buffer, then you can use render buffer for this. As an example
 <pre>
 void Application::some_method()
 {
-glFramebufferObject  fbo;
-renderbuffer_pointer color;
+  glFramebufferObject  fbo;
+  renderbuffer_pointer color;
 
-glPushAttrib(GL_ALL_ATTRIB_BITS);
-color.reset( new glRenderbuffer(GL_RGBA8_EXT, w, h) );
-fbo.bind();
-fbo.attach_render_buffer(GL_COLOR_ATTACHMENT0_EXT, color);
-fbo.is_valid();
-glDrawBuffer(GL_COLOR_ATTACHMENT0_EXT);
-... draw something ...
-glFramebufferObject::disable();
+  glPushAttrib(GL_ALL_ATTRIB_BITS);
+  color.reset( new glRenderbuffer(GL_RGBA8_EXT, w, h) );
+  fbo.bind();
+  fbo.attach_render_buffer(GL_COLOR_ATTACHMENT0_EXT, color);
+  fbo.is_valid();
+  glDrawBuffer(GL_COLOR_ATTACHMENT0_EXT);
+  ... draw something ...
+  glFramebufferObject::disable();
 }
 </pre>
 
 The Framebuffer Object class also have support for Texture3D, we redirect the
 reader to the header file
-<pre>
-#include<OpenTissue/utility/GL/gl_frame_buffer_object.h>
-</pre>
-For more details.
 
+    #include<OpenTissue/utility/GL/gl_frame_buffer_object.h>
+
+For more details.
 
 <i>Please note:</i> Currently the FramebufferObject class does not support cube map textures. Also, on some drivers the FBO extension does not support GL_TEXTURE_RECTANGULAR_ARB textures. This means that setting the "rectangular" flag when creating a Texture2D object will make the texture unsuitable for use with FramebufferObject. Specifying dimensions for a non-square texture (i.e. width = 256, height = 128 and rectangular = false), however, will most often work.

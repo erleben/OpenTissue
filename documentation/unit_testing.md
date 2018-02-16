@@ -1,4 +1,4 @@
-=How to organize and create unit tests in OpenTissue=
+# How to organize and create unit tests in OpenTissue
 
 Thanks to Joergen Havsberg Seland for the inspiration to setup unit testing in OpenTissue. Some of the bits and pieces in below are more or less copied directly from Joergen's description on the 3Dot wiki (anno May 2007). With a few added OpenTissue tweaks made by myself (kenny).
 
@@ -27,54 +27,52 @@ Remember to add your new unit-test to the CMakelist.txt file in the folder $(OPE
 
 All unit tests should be put in a top level test suite named with the name space and name of the class or file being tested, separated by underscore (depending on whether the test subject is a class or just a group of functions). An example cpp-file is shown below.
 
-<pre>
-//
-// OpenTissue, A toolbox for physical based simulation and animation.
-// Copyright (C) 2007 Department of Computer Science, University of Copenhagen
-//
-#include <OpenTissue/configuration.h>
+    //
+    // OpenTissue, A toolbox for physical based simulation and animation.
+    // Copyright (C) 2007 Department of Computer Science, University of Copenhagen
+    //
+    #include <OpenTissue/configuration.h>
 
-// Add Include headers from the code being tested
-#include <OpenTissue/math/basic_math_types.h>
+    // Add Include headers from the code being tested
+    #include <OpenTissue/math/basic_math_types.h>
 
-#define BOOST_AUTO_TEST_MAIN
-#include <boost/test/auto_unit_test.hpp>
+    #define BOOST_AUTO_TEST_MAIN
+    #include <boost/test/auto_unit_test.hpp>
 
-// Boost Test declaration and Checking macros
-#include <boost/test/unit_test_suite.hpp>
-#include <boost/test/test_tools.hpp>
+    // Boost Test declaration and Checking macros
+    #include <boost/test/unit_test_suite.hpp>
+    #include <boost/test/test_tools.hpp>
 
-BOOST_AUTO_TEST_SUITE(opentisue_math_basic_math_types);
+    BOOST_AUTO_TEST_SUITE(opentisue_math_basic_math_types);
 
-BOOST_AUTO_TEST_SUITE();
+    BOOST_AUTO_TEST_SUITE();
 
-BOOST_AUTO_TEST_CASE(my_first_test_case)
-{
-BOOST_CHECK_EQUAL( ...., true);
-BOOST_CHECK_EQUAL( ...., true);
-}
+    BOOST_AUTO_TEST_CASE(my_first_test_case)
+    {
+      BOOST_CHECK_EQUAL( ...., true);
+      BOOST_CHECK_EQUAL( ...., true);
+    }
 
-BOOST_AUTO_TEST_CASE(my_second_test_case)
-{
-BOOST_CHECK_EQUAL( ...., true);
-BOOST_CHECK_EQUAL( ...., true);
-}
+    BOOST_AUTO_TEST_CASE(my_second_test_case)
+    {
+      BOOST_CHECK_EQUAL( ...., true);
+      BOOST_CHECK_EQUAL( ...., true);
+    }
 
-BOOST_AUTO_TEST_CASE(my_third_test_case)
-{
-BOOST_CHECK_EQUAL( ...., true);
-BOOST_CHECK_EQUAL( ...., true);
-}
+    BOOST_AUTO_TEST_CASE(my_third_test_case)
+    {
+      BOOST_CHECK_EQUAL( ...., true);
+      BOOST_CHECK_EQUAL( ...., true);
+    }
 
-BOOST_AUTO_TEST_SUITE_END();
+    BOOST_AUTO_TEST_SUITE_END();
 
-BOOST_AUTO_TEST_CASE(my_always_fail_test_case)
-{
-BOOST_CHECK(false);
-}
+    BOOST_AUTO_TEST_CASE(my_always_fail_test_case)
+    {
+      BOOST_CHECK(false);
+    }
 
-BOOST_AUTO_TEST_SUITE_END();
-</pre>
+    BOOST_AUTO_TEST_SUITE_END();
 
 Important points about this code, are:
 
@@ -83,7 +81,7 @@ Important points about this code, are:
 <li>You may freely nest test suites within each other.</li>
 </ol>
 
-See the [http://www.boost.org/libs/test/doc/components/utf/index.html link boost test library] for more information on writing unit tests.
+See the [boost test library](http://www.boost.org/libs/test/doc/components/utf/index.html) for more information on writing unit tests.
 
 Exposing the tests is handled automatically. Behind the scenes, the following stuff happens:
 
@@ -94,11 +92,11 @@ Exposing the tests is handled automatically. Behind the scenes, the following st
 
 
 
-=A Guide to Boost unit-test framework=
+# A Guide to Boost unit-test framework
 
 This guide is only relevant for users that can not get the unit-testing to work probably. One should not have to do any of the steps below except installing boost correctly!
 
-This little guide is a short introduction on how to get the Boost [http://www.boost.org/libs/test/doc/components/utf/index.html link Unit Testing Framework] up and running. It consist of three steps
+This little guide is a short introduction on how to get the Boost [Unit Testing Framework](http://www.boost.org/libs/test/doc/components/utf/index.html) up and running. It consist of three steps
 
 <ul>
 <li>Make sure boost is installed correctly</li>
@@ -110,7 +108,7 @@ The boost installment and linker steps are specific for a windows environment ru
 
 == Is Boost installed correctly?==
 
-More details can be found at the boost [http://www.boost.org/more/getting_started.html link getting started] home page. An easy way of doing some of the steps below might be to use a [http://www.boost-consulting.com/products/free/beta link installer] that takes care of all the copying and binaries. When I (kenny) install the boost library on my windows machine running VC80, I perform the following steps
+More details can be found at the boost [getting started](http://www.boost.org/more/getting_started.html) home page. An easy way of doing some of the steps below might be to use a [installer](http://www.boost-consulting.com/products/free/beta) that takes care of all the copying and binaries. When I (kenny) install the boost library on my windows machine running VC80, I perform the following steps
 
 <ol>
 <li>Download latest boost version</li>
@@ -134,32 +132,30 @@ The BOOST environment variable is very important, because this is how OpenTissue
 
 A minimal setup would be to simply unpack boost and setup an environment variable, but if one wants every part of OpenTissue to work and reduce compile times, then all of the steps above must be done.
 
-== Creating a Test (Suite) Application==
+## Creating a Test (Suite) Application
 
 When using unit tests, create a cpp-file and write
 
-<pre>
-#include <boost/test/unit_test.hpp>
-using boost::unit_test::test_suite;
+    #include <boost/test/unit_test.hpp>
+    using boost::unit_test::test_suite;
 
-void some_test_function()
-{
-BOOST_CHECK( ??? );
-}
+    void some_test_function()
+    {
+      BOOST_CHECK( ??? );
+    }
 
-test_suite*
-init_unit_test_suite( int, char* [] ) {
-test_suite* test= BOOST_TEST_SUITE( "Unit test example" );
+    test_suite*
+    init_unit_test_suite( int, char* [] ) {
+      test_suite* test= BOOST_TEST_SUITE( "Unit test example" );
 
-test->add( BOOST_TEST_CASE( &some_test_function ) );
+      test->add( BOOST_TEST_CASE( &some_test_function ) );
 
-return test;
-}
-</pre>
+      return test;
+    }
 
-This is in a sense a minimal unit test program. If one needs more advanced testing then please refer to the boost documentation on the [http://www.boost.org/libs/test/doc/components/utf/index.html link Unit Testing Framework].
+This is in a sense a minimal unit test program. If one needs more advanced testing then please refer to the boost documentation on the [Unit Testing Framework](http://www.boost.org/libs/test/doc/components/utf/index.html).
 
-== Shutting up the Linker==
+## Shutting up the Linker
 Next open the:
 
 <center>project properties</center>
@@ -178,9 +174,7 @@ so one does not have to do any more.
 <b>Optional:</b> If one gets into lib-file linker hell and do not mind
 longer compile times then one can simply add the header file include
 
-<pre>
-#include  <boost/test/included/unit_test_framework.hpp>
-</pre>
+    #include  <boost/test/included/unit_test_framework.hpp>
 
 to ones cpp-file above. Then the boost unit test framework will get compiled
 along side with ones test suite.

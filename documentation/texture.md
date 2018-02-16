@@ -37,53 +37,43 @@ if you do not know the dimensions of the image until later on. You can
 access data in a image by using the () operator, for instance to set
 all pixels to semi-transparent green color, you would write
 
-<pre>
-for(unsigned int j=0;j<128;++j)
-for(unsigned int i=0;i<256;++i)
-{
-(* img)(i,j,0) = 0;
-(* img)(i,j,1) = 255;
-(* img)(i,j,2) = 0;
-(* img)(i,j,3) = 155;
-}
-</pre>
+    for(unsigned int j=0;j<128;++j)
+      for(unsigned int i=0;i<256;++i)
+      {
+        (* img)(i,j,0) = 0;
+        (* img)(i,j,1) = 255;
+        (* img)(i,j,2) = 0;
+        (* img)(i,j,3) = 155;
+      }
 
 Or a little more elegantly by querying the image of its dimensions
 
-<pre>
 for(unsigned int j=0;j<img->height();++j)
-for(unsigned int i=0;i<img->width();++i)
-{
-(* img)(i,j,0) = 0;
-(* img)(i,j,1) = 255;
-(* img)(i,j,2) = 0;
-(* img)(i,j,3) = 155;
-}
-</pre>
+  for(unsigned int i=0;i<img->width();++i)
+  {
+    (* img)(i,j,0) = 0;
+    (* img)(i,j,1) = 255;
+    (* img)(i,j,2) = 0;
+    (* img)(i,j,3) = 155;
+  }
 
 Actually you can also query the number of channels, such a hand-written clearing of the image could be written as
 
-<pre>
 for(unsigned int j=0;j<img->height();++j)
-for(unsigned int i=0;i<img->width();++i)
-for(unsigned int c=0;c<img->channels();++c)
-{
-(* img)(i,j,c) = 0;
-}
-</pre>
+  for(unsigned int i=0;i<img->width();++i)
+    for(unsigned int c=0;c<img->channels();++c)
+    {
+      (* img)(i,j,c) = 0;
+    }
 
 In some cases you may want to access the image data as a linear contiguous array, stored in row-format, for this you would write
 
-<pre>
-void * address = img->get_data();
-</pre>
+    void * address = img->get_data();
 
 Notice that this returns the address of the starting position of the data as a void pointer. If you want a pointer to the image data type, you'll need to cast it
 
-<pre>
-typedef typename image_type::value_type value_type;
-value_type * data = static_cast<value_type>(address);
-</pre>
+    typedef typename image_type::value_type value_type;
+    value_type * data = static_cast<value_type>(address);
 
 An easy to use interface have been implemented allowing end-users to read and write images from and to the hard drive. The functions implementing this is defined in the header files
 
