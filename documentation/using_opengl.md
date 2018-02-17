@@ -157,13 +157,25 @@ file
     #include<OpenTissue/utility/GL/gl_screen2object.h>
 
 The utility is used as follows
+
 <pre>
 int sx = 5,
 int sy = 15;
 int ox,oy,oz;
 glScreen2Object()(sx,sy, ox, oy, oz);
 
-std::cout << "pixel at (" << sx << "," << sy << ")corresponds to point (" << ox << "," << oy << ","<< oz << ")" << std::endl;
+std::cout << "pixel at ("
+          << sx
+          << ","
+          << sy
+          << ")corresponds to point ("
+          << ox
+          << ","
+          << oy
+          << ","
+          << oz
+          << ")"
+          << std::endl;
 </pre>
 
 Finally there is a picking tool available in the header file
@@ -234,56 +246,56 @@ void Application::display()
 Of course we want to be able to move the camera around, a perfect place for
 changing the camera is in the mouse event handlers. For instance one could write
 
-<pre>
-void Application::mouse_down(real_type cur_x,real_type cur_y,bool shift,bool left,bool middle,bool /*right*/)
-{
-  if (middle )
-    m_zoom_mode = true;
-  if ( shift &amp;&amp; left )
-    m_pan_mode = true;
-  if(!shift &amp;&amp; left)
-  {
-      m_camera.mouse_down( cur_x, cur_y );
-      m_trackball_mode = true;
-  }
+    void Application::mouse_down(real_type cur_x,real_type cur_y,bool shift,bool left,bool middle,bool /*right*/)
+    {
+      if (middle )
+        m_zoom_mode = true;
+      if ( shift &amp;&amp; left )
+        m_pan_mode = true;
+      if(!shift &amp;&amp; left)
+      {
+        m_camera.mouse_down( cur_x, cur_y );
+        m_trackball_mode = true;
+      }
 
-  m_begin_x = cur_x;
-  m_begin_y = cur_y;
-}
+      m_begin_x = cur_x;
+      m_begin_y = cur_y;
+    }
 
-void Application::mouse_up(real_type cur_x,real_type cur_y,bool /*shift*/,bool /*left*/,bool /*middle*/,bool /*right*/)
-{
-if ( m_zoom_mode )
-{
-m_camera.move( 0.25*(cur_y - m_begin_y) );
-m_zoom_mode = false;
-}
-if ( m_pan_mode )
-{
-m_camera.pan( 0.25*(m_begin_x - cur_x) , 0.25*(cur_y - m_begin_y) );
-m_pan_mode = false;
-}
-if ( m_trackball_mode )
-{
-m_camera.mouse_up( cur_x, cur_y );
-m_trackball_mode = false;
-}
-m_begin_x = cur_x;
-m_begin_y = cur_y;
-}
+    void Application::mouse_up(real_type cur_x,real_type cur_y,bool /*shift*/,bool /*left*/,bool /*middle*/,bool /*right*/)
+    {
+      if ( m_zoom_mode )
+      {
+        m_camera.move( 0.25*(cur_y - m_begin_y) );
+        m_zoom_mode = false;
+      }
+      if ( m_pan_mode )
+      {
+        m_camera.pan( 0.25*(m_begin_x - cur_x) , 0.25*(cur_y - m_begin_y) );
+        m_pan_mode = false;
+      }
+      if ( m_trackball_mode )
+      {
+        m_camera.mouse_up( cur_x, cur_y );
+        m_trackball_mode = false;
+      }
+      m_begin_x = cur_x;
+      m_begin_y = cur_y;
+    }
 
-void Application::mouse_move(real_type cur_x,real_type cur_y)
-{
-if ( m_zoom_mode )
-m_camera.move( 0.25*(cur_y - m_begin_y) );
-if ( m_pan_mode )
-m_camera.pan( 0.25*(m_begin_x - cur_x) , 0.25*(cur_y - m_begin_y) );
-if ( m_trackball_mode )
-m_camera.mouse_move( cur_x, cur_y);
-m_begin_x = cur_x;
-m_begin_y = cur_y;
-}
-</pre>
+    void Application::mouse_move(real_type cur_x,real_type cur_y)
+    {
+      if ( m_zoom_mode )
+        m_camera.move( 0.25*(cur_y - m_begin_y) );
+      if ( m_pan_mode )
+        m_camera.pan( 0.25*(m_begin_x - cur_x) , 0.25*(cur_y - m_begin_y) );
+      if ( m_trackball_mode )
+        m_camera.mouse_move( cur_x, cur_y);
+      m_begin_x = cur_x;
+      m_begin_y = cur_y;
+    }
+
+
 This will support zooming, panning, and orbiting. For more details we refer
 the reader to the header file
 
@@ -296,6 +308,7 @@ this is provided in the header file
 
 It works simply by updating an instance of the frustum class before testing,
 for instance one could add the following code to the display handler
+
 <pre>
 ...
 glFrustum<types> frustum;
@@ -365,24 +378,28 @@ is what you typically want during some initialization.
 
 After having initialized the Framebuffer Object you can use it in your display
 handler as follows
-<pre>
-void Application::display()
-{
-  ...
-  static const GLenum buffer[] = { GL_COLOR_ATTACHMENT0_EXT, GL_COLOR_ATTACHMENT1_EXT };
-  int write = 0;
-  int read  = 1;
 
-  m_fbo.bind();
-  for(unsigned int i=0;i<ping_pongs;++i)
-  {
-    glDrawBuffer (buffer[write]);
-    draw_some_thing( ..., m_texture[read]);
-    std::swap(m_write,m_read);
-  }
-  glFramebufferObject::disable();
-}
-</pre>
+
+    void Application::display()
+    {    
+      static const GLenum buffer[] = {
+            GL_COLOR_ATTACHMENT0_EXT
+          , GL_COLOR_ATTACHMENT1_EXT
+          };
+      int write = 0;
+      int read  = 1;
+
+      m_fbo.bind();
+      for(unsigned int i=0;i<ping_pongs;++i)
+      {
+        glDrawBuffer (buffer[write]);
+        draw_some_thing( ..., m_texture[read]);
+        std::swap(m_write,m_read);
+      }
+      glFramebufferObject::disable();
+    }
+
+
 Notice that before rendering the function glDrawBuffer is used to tell which
 buffer should receive the rendering. If you desire to read back from a
 buffer (from GPU to CPU) you should use the function glReadBuffer to tell which
