@@ -11,6 +11,7 @@
 
 #include <OpenTissue/core/containers/mesh/trimesh/trimesh_vertex.h>
 #include <OpenTissue/core/containers/mesh/trimesh/trimesh_face.h>
+#include <OpenTissue/core/containers/mesh/trimesh/kernels/trimesh_array_kernel.h>
 #include <OpenTissue/core/containers/mesh/trimesh/trimesh_core_access.h>
 
 #include <algorithm>
