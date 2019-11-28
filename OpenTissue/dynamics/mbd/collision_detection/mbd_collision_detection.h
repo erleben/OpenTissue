@@ -23,9 +23,9 @@ namespace OpenTissue
     */
     template<
       typename types,                                                ///< This is suppsed to be the TypeBinder.
-      template<typename types> class BroadPhasePolicy,               ///< The broad phase collision detection that should be used.
-      template<typename types> class NarrowPhasePolicy,              ///< The narrow phase collision detection that should be used.
-      template<typename types> class AnalyzerPolicy                  ///< The Spatial Temporal Analysis that should be used.
+      template<typename> class BroadPhasePolicy,               ///< The broad phase collision detection that should be used.
+      template<typename> class NarrowPhasePolicy,              ///< The narrow phase collision detection that should be used.
+      template<typename> class AnalyzerPolicy                  ///< The Spatial Temporal Analysis that should be used.
     >
     class CollisionDetection
     {

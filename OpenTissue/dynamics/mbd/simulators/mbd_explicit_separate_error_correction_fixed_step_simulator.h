@@ -71,7 +71,7 @@ namespace OpenTissue
           group_type * group = (*tmp);
           this->get_stepper()->error_correction(*group);
         }
-        update_time(time_step);
+        SimulatorInterface<mbd_types>::update_time(time_step);
       }
 
     };

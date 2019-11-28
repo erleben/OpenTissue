@@ -101,7 +101,7 @@ namespace OpenTissue
           real_type epsilon = OpenTissue::math::working_precision<real_type>();
           if(cp->m_un >= -epsilon)
             return;
-          J_b = compute_impulse(cp);// from collision_law_policy
+          J_b = collision_law_policy::compute_impulse(cp);// from collision_law_policy
           J_a = - J_b;
           mbd::apply_impulse(cp->get_body_A(),cp->m_rA,J_a);
           mbd::apply_impulse(cp->get_body_B(),cp->m_rB,J_b);

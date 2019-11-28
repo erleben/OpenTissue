@@ -484,7 +484,7 @@ namespace OpenTissue
         assert(v.get_idx()>=0);
         assert(v.get_idx()<m_vertex_lut.size());
 
-        return 0 != m_vertex_lut[v.get_idx()];
+        return m_vertex_lut[v.get_idx()] != boost::none;
       }
 
       bool is_valid_halfedge_handle(halfedge_handle const & h) const
@@ -495,7 +495,7 @@ namespace OpenTissue
         assert(h.get_idx()>=0);
         assert(h.get_idx()<m_halfedge_lut.size());
 
-        return 0 != m_halfedge_lut[h.get_idx()];
+        return m_halfedge_lut[h.get_idx()] != boost::none;
       }
 
       bool is_valid_edge_handle(edge_handle const & e) const
@@ -506,7 +506,7 @@ namespace OpenTissue
         assert(e.get_idx()>=0);
         assert(e.get_idx()<m_edge_lut.size());
 
-        return 0 != m_edge_lut[e.get_idx()];
+        return m_edge_lut[e.get_idx()] != boost::none;
       }
 
       bool is_valid_face_handle(face_handle const & f) const
@@ -517,7 +517,7 @@ namespace OpenTissue
         assert(f.get_idx()>=0);
         assert(f.get_idx()<m_face_lut.size());
 
-        return 0 != m_face_lut[f.get_idx()];
+        return m_face_lut[f.get_idx()] != boost::none;
       }
 
     };

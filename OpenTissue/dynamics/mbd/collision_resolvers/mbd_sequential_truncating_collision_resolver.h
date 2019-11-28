@@ -178,13 +178,13 @@ namespace OpenTissue
           {
             real_type e_n = cp->m_material->normal_restitution();
             cp->m_material->normal_restitution() = value_traits::zero();
-            J_b = compute_impulse(cp); // from collision_law_policy
+            J_b = collision_law_policy::compute_impulse(cp); // from collision_law_policy
             cp->m_material->normal_restitution() = e_n;
             cp->m_stcr_truncated = true;
           }
           else
           {
-            J_b = compute_impulse(cp);  // from collision_law_policy
+            J_b = collision_law_policy::compute_impulse(cp);  // from collision_law_policy
           }
           J_a = - J_b;
           mbd::apply_impulse(cp->get_body_A(),cp->m_rA,J_a);

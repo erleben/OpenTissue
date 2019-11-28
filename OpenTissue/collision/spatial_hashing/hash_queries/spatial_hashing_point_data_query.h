@@ -27,8 +27,8 @@ namespace OpenTissue
       {
         for(data_iterator data=begin;data!=end;++data)
         {
-          typename hash_grid::point_type p = position(*data);
-          get_cell(p).add( *data );
+          typename hash_grid::point_type p = Query< PointDataQuery<hash_grid,collision_policy>, hash_grid, collision_policy >::position(*data);
+          Query< PointDataQuery<hash_grid,collision_policy>, hash_grid, collision_policy >::get_cell(p).add( *data );
         }
       }
 
@@ -38,8 +38,8 @@ namespace OpenTissue
       {
         for(data_iterator data=begin;data!=end;++data)
         {
-          typename hash_grid::point_type p = position(*data);
-          get_cell(p).remove( *data );
+          typename hash_grid::point_type p = Query< PointDataQuery<hash_grid,collision_policy>, hash_grid, collision_policy >::position(*data);
+          Query< PointDataQuery<hash_grid,collision_policy>, hash_grid, collision_policy >::get_cell(p).remove( *data );
         }
       }
 

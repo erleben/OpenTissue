@@ -130,7 +130,7 @@ namespace OpenTissue
       void run(real_type timestep)
       {
         assert(timestep>0 || !"MassSpringSystem::run(): Non-positive time-step");
-        integrate ( *this, timestep ); //--- from integrator policy
+        integrator_policy::integrate ( *this, timestep ); //--- from integrator policy
         do_relaxation();
         this->time() += timestep;
       }

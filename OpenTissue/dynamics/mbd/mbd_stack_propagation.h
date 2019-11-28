@@ -105,7 +105,7 @@ namespace OpenTissue
       template <typename algorithm_type>
       void run(group_type & group, algorithm_type & algorithm, fixate_tag, upward_tag )
       {
-        m_cnt = analyze(group,m_layers);
+        m_cnt = StackAnalysis<mbd_types>::analyze(group,m_layers);
         for(index_type height=0;height<m_cnt;++height)
         {
           fixiate(height,m_layers[height]);
@@ -151,7 +151,7 @@ namespace OpenTissue
       {
         assert(m_cnt >= 1 || !"StackPropagation::run(...,downward): Need at least one layer");
 
-        m_cnt = analyze(group,m_layers);
+        m_cnt = StackAnalysis<mbd_types>::analyze(group,m_layers);
         index_type height=m_cnt-1;
         for(index_type layer=0;layer<m_cnt;++layer,--height)
         {

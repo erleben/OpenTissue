@@ -57,7 +57,7 @@ namespace OpenTissue
     public:
 
       Random()
-        : m_distribution(details<T>::zero(),details<T>::one())
+        : m_distribution((value_type) 0,(value_type) 1)
         , m_random(generator(), m_distribution)
       {}
 

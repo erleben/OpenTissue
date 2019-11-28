@@ -94,7 +94,7 @@ namespace OpenTissue
 
         while(norm(m_s,m_ss)>=m_epsilon_fix);
 
-        update_time(time_step);
+        SimulatorInterface<mbd_types>::update_time(time_step);
       }
 
     protected:

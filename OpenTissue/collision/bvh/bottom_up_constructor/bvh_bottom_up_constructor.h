@@ -88,11 +88,11 @@ namespace OpenTissue
 
             volume_container volumes; //--- empty!
 
-            bv->volume() = fit(node->coverage().begin(),node->coverage().end(),volumes.begin(),volumes.end());
+            bv->volume() = bottom_up_policy::fit(node->coverage().begin(),node->coverage().end(),volumes.begin(),volumes.end());
           }
         }
 
-        init(graph);//--- from policy
+        bottom_up_policy::init(graph);//--- from policy
 
         //--- Begin to merge leaves into parents, until only a single root exist
         while(this->has_more_edges())
@@ -103,14 +103,14 @@ namespace OpenTissue
           //--- Fit a volume to the new graph node
           volume_container volumes;
           node->get_volumes(volumes);
-          node->volume() = fit(node->coverage().begin(),node->coverage().end(),volumes.begin(),volumes.end());
+          node->volume() = bottom_up_policy::fit(node->coverage().begin(),node->coverage().end(),volumes.begin(),volumes.end());
           //--- Test if a BV node should be created for the new graph node
-          if( should_create_bv(node) )  //--- from policy
+          if( bottom_up_policy::should_create_bv(node) )  //--- from policy
           {
             node->create_bv(bvh);
             graph.remove_sub_nodes(node);
           }
-          update(node);//--- from policy
+          bottom_up_policy::update(node);//--- from policy
         }
         graph.clear();
         std::cout << "BVHBottomUpConstructor::run(): " << bvh.size() << " nodes created." << std::endl;

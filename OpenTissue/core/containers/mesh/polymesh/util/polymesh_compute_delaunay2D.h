@@ -10,7 +10,7 @@
 #include <OpenTissue/configuration.h>
 
 #include <Triangle/triangle.h>
-#include <boost/vector_property_map.hpp>
+#include <boost/property_map/vector_property_map.hpp>
 #include <boost/cast.hpp> // needed for boost::numeric_cast
 #include <cstring>        // needed for memset
 

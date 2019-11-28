@@ -152,7 +152,7 @@ namespace OpenTissue
         this->clear();
         self.first_pass(d0,d1);
 
-        reset(results);
+        collision_policy::reset(results);
         init_query();
         for(query_iterator q=q0;q!=q1;++q)
           query( (*q), results, type);
@@ -179,7 +179,7 @@ namespace OpenTissue
         , report_type const & type
         )
       {
-        reset(results);
+        collision_policy::reset(results);
         init_query();
         for(query_iterator q=q0;q!=q1;++q)
           query( (*q), results, type );
@@ -204,7 +204,7 @@ namespace OpenTissue
         , report_type const & type
         )
       {
-        reset(results);
+        collision_policy::reset(results);
         query(q, results, type );
       }
 
@@ -281,14 +281,14 @@ namespace OpenTissue
 
         for(iterator cur = begin;cur!=end;++cur,++cnt)
         {
-          point_type d = max_coord(*cur) - min_coord(*cur);//--- min_coord and max_coord by collision_policy
+          point_type d = collision_policy::max_coord(*cur) - collision_policy::min_coord(*cur);//--- min_coord and max_coord by collision_policy
           mean += d;
         }
         mean /= boost::numeric_cast<typename point_type::value_type>( cnt );
         size_t size = cnt;//--- KE 06-05-2005: Hmmm, cnt , appears to be a better value than  cnt/ 4?
         real_type spacing =  max (mean(0),  max( mean(1), mean(2) ) );
         this->resize( size );
-        set_spacing( spacing  );
+        hash_grid::set_spacing( spacing  );
       }
 
     protected:
@@ -324,7 +324,7 @@ namespace OpenTissue
           for ( triplet(1)= m(1) ; triplet(1) <= M(1); ++triplet(1) )
             for ( triplet(2)= m(2) ; triplet(2) <= M(2); ++triplet(2) )
             {
-              cell_type & cell = get_cell(triplet);
+              cell_type & cell = hash_grid::get_cell(triplet);
 
               if(cell.empty())
                 continue;
@@ -342,7 +342,7 @@ namespace OpenTissue
                   continue;
                 seen_before = true;
 
-                report( (*data), query, results);
+                collision_policy::report( (*data), query, results);
               }
             }
       }
@@ -354,10 +354,10 @@ namespace OpenTissue
 
         ++m_query_stamp;
 
-        point_type       min_corner = min_coord(query);  //--- by collision policy
-        point_type       max_corner = max_coord(query);  //--- by collision policy
-        triplet_type     m          = get_triplet(min_corner);
-        triplet_type     M          = get_triplet(max_corner);
+        point_type       min_corner = collision_policy::min_coord(query);  //--- by collision policy
+        point_type       max_corner = collision_policy::max_coord(query);  //--- by collision policy
+        triplet_type     m          = hash_grid::get_triplet(min_corner);
+        triplet_type     M          = hash_grid::get_triplet(max_corner);
 
         assert( m(0) <= M(0) || !"Minimum was larger than maximum");
         assert( m(1) <= M(1) || !"Minimum was larger than maximum");
@@ -368,7 +368,7 @@ namespace OpenTissue
           for ( triplet(1)= m(1) ; triplet(1) <= M(1); ++triplet(1) )
             for ( triplet(2)= m(2) ; triplet(2) <= M(2); ++triplet(2) )
             {
-              cell_type & cell = get_cell(triplet);
+              cell_type & cell = hash_grid::get_cell(triplet);
 
               if(cell.empty())
                 continue;
@@ -380,7 +380,7 @@ namespace OpenTissue
               typename cell_type::data_iterator Dbegin = cell.begin();
               typename cell_type::data_iterator Dend = cell.end();
               for(typename cell_type::data_iterator data = Dbegin;data!=Dend;++data)
-                report( (*data), query, results);
+                collision_policy::report( (*data), query, results);
             }
       }
 

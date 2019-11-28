@@ -47,7 +47,7 @@ namespace bvh
       typedef typename bvh_type::bv_ptr_container         bv_ptr_container;
       typedef typename bvh_type::bv_ptr_iterator          bv_ptr_iterator;
 
-      reset(results);//--- collision_policy
+      collision_policy::reset(results);//--- collision_policy
 
       bv_ptr_container Q;
 
