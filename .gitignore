@@ -30,6 +30,3 @@
 *.out
 *.app
 OpenTissueConfig.cmake
-
-# Build stuff
-build*
