@@ -78,6 +78,7 @@ The hash grid class stores an infinite, uniform 3D grid as a 1D hash tabel. It i
 
 ```cpp
 #include<OpenTissue/collision/spatial_hashing/hash_grid.h>
+```
 
 The hash grid needs a hash function, which must supply the following interface
 
