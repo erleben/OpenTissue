@@ -63,7 +63,7 @@ ENDIF(MSVC80)
 # Find all OpenTissue third-party dependencies, include paths and so on.
 #
 INCLUDE(${PROJECT_SOURCE_DIR}/cmake/FindOpenTissue.cmake)
-#FIND_PACKAGE(OpenTissue)
+FIND_PACKAGE(OpenTissue)
 IF(OPENTISSUE_FOUND)
   INCLUDE_DIRECTORIES( ${OPENTISSUE_INCLUDE_DIRS} )
   LINK_DIRECTORIES( ${OPENTISSUE_LIBRARY_DIRS} )

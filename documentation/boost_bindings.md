@@ -1,8 +1,8 @@
 # Easy Boost Bindings installation
 Goto the location where you want to install the boost bindings, and enter the following commands
 
-    svn co http://svn.boost.org/svn/boost/sandbox/numeric_bindings-v1/boost/numeric/bindings  boost/numeric/bindings
-    svn co http://svn.boost.org/svn/boost/sandbox/numeric_bindings-v1/libs/numeric/bindings libs/numeric/bindings
+    svn co https://svn.boost.org/svn/boost/sandbox/numeric_bindings-v1/boost/numeric/bindings  boost/numeric/bindings
+    svn co https://svn.boost.org/svn/boost/sandbox/numeric_bindings-v1/libs/numeric/bindings libs/numeric/bindings
 
 When you run CMake specify the BOOST_BINDING_PATH cache variable if CMake can not detected the setting itself.
 

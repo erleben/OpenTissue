@@ -38,7 +38,7 @@ namespace OpenTissue
 
         typedef typename face_type::mesh_type        mesh_type;
         typedef typename mesh_type::math_types       math_types;
-        typedef typename math_types::vector3_type    vector3_type;
+        // typedef typename math_types::vector3_type    vector3_type;
         typedef typename math_types::real_type  real_type;
         typedef typename math_types::value_traits    value_traits;
 

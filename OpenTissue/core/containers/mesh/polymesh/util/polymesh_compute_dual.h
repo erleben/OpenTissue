@@ -11,7 +11,7 @@
 
 #include <OpenTissue/core/containers/mesh/common/util/mesh_compute_face_center.h>
 #include <OpenTissue/core/containers/mesh/polymesh/util/polymesh_is_boundary.h>
-#include <boost/vector_property_map.hpp>
+#include <boost/property_map/vector_property_map.hpp>
 #include <list>
 #include <stdexcept> // needed for std::invalid_argument
 

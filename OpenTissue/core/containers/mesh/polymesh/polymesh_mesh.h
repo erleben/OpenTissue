@@ -186,7 +186,7 @@ namespace OpenTissue
           halfedge_handle h = find_halfedge_handle(A,B);
           if(h.is_null())
             return this->null_edge_handle();
-          return get_halfedge_iterator(h)->get_edge_handle();
+          return kernel_type::get_halfedge_iterator(h)->get_edge_handle();
         }
 
       private:

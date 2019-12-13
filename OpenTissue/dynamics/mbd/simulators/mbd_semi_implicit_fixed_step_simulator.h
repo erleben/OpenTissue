@@ -80,7 +80,7 @@ namespace OpenTissue
         mbd::set_position_vector(*m_all,m_ss);
         mbd::compute_scripted_motions(*m_all,this->time() + time_step);
 
-        update_time(time_step);
+        SimulatorInterface<mbd_types>::update_time(time_step);
       }
 
     };

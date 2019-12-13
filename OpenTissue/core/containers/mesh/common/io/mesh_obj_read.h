@@ -176,7 +176,7 @@ namespace OpenTissue
 
       while(!file.eof())
       {
-        if(getline(file,line)==0)
+        if(!getline(file,line))
           break;
 
         //std::stringstream stream(line.c_str());

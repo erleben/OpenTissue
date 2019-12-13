@@ -51,7 +51,7 @@ namespace OpenTissue
       */
       real_type evaluate(const vector& r) const
       {
-        if (!checkRange(r))
+        if (!FixedSmoothingKernel<Types, CheckRange>::checkRange(r))
           return 0.;
         register real_type res = base_type::m_radiusSqr-r*r;
         res *= res*res*m_k;
@@ -64,7 +64,7 @@ namespace OpenTissue
       */
       vector gradient(const vector& r) const
       {
-        if (!checkRange(r))
+        if (!FixedSmoothingKernel<Types, CheckRange>::checkRange(r))
           return vector(0);
         register real_type tmp = base_type::m_radiusSqr-r*r;
         tmp *= tmp*m_l;
@@ -77,7 +77,7 @@ namespace OpenTissue
       */
       real_type laplacian(const vector& r) const
       {
-        if (!checkRange(r))
+        if (!FixedSmoothingKernel<Types, CheckRange>::checkRange(r))
           return 0.;
         const real_type tmp = r*r;
         register real_type res = (base_type::m_radiusSqr-tmp)*(3*base_type::m_radiusSqr-7*tmp);

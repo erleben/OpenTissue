@@ -158,7 +158,7 @@ void performance_test(interval_type const & i)
   for(unsigned int i=0u;i<10000000u;++i)
     IV = IM * V + (IV*0.5);
   watch.stop();
-  BOOST_MESSAGE( typeid(interval_type).name() << " took " << watch() << " sec." );
+  BOOST_TEST_MESSAGE( typeid(interval_type).name() << " took " << watch() << " sec." );
 }
 
 BOOST_AUTO_TEST_SUITE(opentissue_math_interval);

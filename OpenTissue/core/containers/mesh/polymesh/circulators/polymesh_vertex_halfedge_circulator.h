@@ -75,7 +75,7 @@ namespace OpenTissue
       template <class OtherValue>
       bool operator==(PolyMeshVertexHalfedgeCirculator<PolyMesh,OtherValue> const& /*other*/) const
       {
-        if( !m_kernel || 0==m_cur )
+        if( !m_kernel || !m_cur )
           return true;
         return (m_active && m_first == m_cur);
       }
@@ -90,7 +90,7 @@ namespace OpenTissue
       {
         m_active = true;
 
-        if( !m_kernel || 0==m_cur)
+        if( !m_kernel || !m_cur)
           return *this;
 
         m_cur = m_cur.get()->get_twin_iterator()->get_next_iterator();
@@ -101,7 +101,7 @@ namespace OpenTissue
       {
         m_active = true;
 
-        if( !m_kernel || 0==m_cur)
+        if( !m_kernel || !m_cur)
           return *this;
 
         m_cur = m_cur.get()->get_prev_iterator()->get_twin_iterator();

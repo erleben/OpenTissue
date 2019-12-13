@@ -11,6 +11,7 @@
 
 #include <OpenTissue/core/containers/mesh/trimesh/trimesh_vertex.h>
 #include <OpenTissue/core/containers/mesh/trimesh/trimesh_face.h>
+#include <OpenTissue/core/containers/mesh/trimesh/kernels/trimesh_array_kernel.h>
 #include <OpenTissue/core/containers/mesh/trimesh/trimesh_core_access.h>
 
 #include <algorithm>
@@ -204,7 +205,7 @@ namespace OpenTissue
         vertex_handle add_vertex()
         {
           vertex_handle v = this->create_vertex();
-          vertex_iterator vit = get_vertex_iterator(v);
+          vertex_iterator vit = kernel_type::get_vertex_iterator(v);
           trimesh_core_access::set_owner(vit,this);
           return v;
         };
@@ -213,17 +214,17 @@ namespace OpenTissue
         vertex_handle add_vertex(vector3_type const & coord)
         {
           vertex_handle v = add_vertex();
-          get_vertex_iterator(v)->m_coord = coord;
+          kernel_type::get_vertex_iterator(v)->m_coord = coord;
           return v;
         };
 
         face_handle add_face(vertex_handle const & v0,vertex_handle const & v1,vertex_handle const & v2)
         {
-          if(! is_valid_vertex_handle(v0) )
+          if(! kernel_type::is_valid_vertex_handle(v0) )
             return this->null_face_handle();
-          if(! is_valid_vertex_handle(v1) )
+          if(! kernel_type::is_valid_vertex_handle(v1) )
             return this->null_face_handle();
-          if(! is_valid_vertex_handle(v2) )
+          if(! kernel_type::is_valid_vertex_handle(v2) )
             return this->null_face_handle();
           if(v0==v1)
             return this->null_face_handle();
@@ -234,7 +235,7 @@ namespace OpenTissue
 
           //--- Create the face
           face_handle f = this->create_face();
-          face_iterator fit = get_face_iterator(f);
+          face_iterator fit = kernel_type::get_face_iterator(f);
           trimesh_core_access::set_owner(fit,this);
 
           trimesh_core_access::set_vertex0_handle(fit,v0);
@@ -272,12 +273,12 @@ namespace OpenTissue
 
         bool remove_vertex(vertex_handle const & v)
         {
-          if(!is_valid_vertex_handle(v))
+          if(!kernel_type::is_valid_vertex_handle(v))
           {
             assert(!"TMesh::remove_vertex(...): Invalid vertex handle");
             return false;
           }
-          return remove_vertex( get_vertex_iterator(v) );
+          return remove_vertex( kernel_type::get_vertex_iterator(v) );
         };
 
         bool remove_vertex(vertex_iterator v)
@@ -287,15 +288,15 @@ namespace OpenTissue
             assert(!"TMesh::remove_vertex(...): Could not remove vertex because it is used by a face");
             return false;
           }
-          erase_vertex(v->get_handle());
+          kernel_type::erase_vertex(v->get_handle());
           return true;
         };
 
         bool remove_face(face_handle const & f)
         {
-          if(!is_valid_face_handle(f))
+          if(!kernel_type::is_valid_face_handle(f))
             return false;
-          return remove_face( get_face_iterator(f) );
+          return remove_face( kernel_type::get_face_iterator(f) );
         };
 
         bool remove_face(face_iterator f)
@@ -305,7 +306,7 @@ namespace OpenTissue
           trimesh_core_access::decrement_face_counter(f->get_vertex1_iterator());
           trimesh_core_access::decrement_face_counter(f->get_vertex2_iterator());
           //--- Ask kernel to remove face
-          erase_face(f->get_handle());
+          kernel_type::erase_face(f->get_handle());
           return true;
         };
 

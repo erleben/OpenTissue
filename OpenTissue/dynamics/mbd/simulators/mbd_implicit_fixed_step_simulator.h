@@ -90,7 +90,7 @@ namespace OpenTissue
         //--- perform true position update
         mbd::compute_position_update(*m_all,m_s,m_u,time_step,m_ss);
         mbd::set_position_vector(*m_all,m_ss);
-        update_time(time_step);
+        SimulatorInterface<mbd_types>::update_time(time_step);
       }
 
     };

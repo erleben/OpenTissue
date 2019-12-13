@@ -76,7 +76,7 @@ namespace OpenTissue
         typename group_type::indirect_contact_iterator contact;
         for(contact=begin;contact!=end;++contact)
         {
-          J_b = compute_impulse(&(*contact));  // from collision_law_policy
+          J_b = collision_law_policy::compute_impulse(&(*contact));  // from collision_law_policy
           J_a = - J_b;
           mbd::apply_impulse(contact->get_body_A(),contact->m_rA,J_a);
           mbd::apply_impulse(contact->get_body_B(),contact->m_rB,J_b);

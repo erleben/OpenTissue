@@ -90,7 +90,7 @@ namespace OpenTissue
       {
         typename EDMIOForces::iterator f = m_forces.find(id);
         if (m_forces.end() == f)
-          return 0;
+          return;
         delete f->second;
         m_forces.erase(f);
       }
@@ -117,7 +117,7 @@ namespace OpenTissue
       {
         typename EDMIOObjects::iterator o = m_objects.find(id);
         if (m_objects.end() == o)
-          return 0;
+          return;
         delete o->second;
         m_objects.erase(o);
       }
@@ -152,7 +152,7 @@ namespace OpenTissue
       {
         typename EDMIOModels::iterator b = m_models.find(id);
         if (m_models.end() == b)
-          return 0;
+          return;
         delete b->second;
         m_models.erase(b);
       }

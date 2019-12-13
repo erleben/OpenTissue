@@ -169,7 +169,7 @@ namespace OpenTissue
         restore_restitution();
 
         position_update(time_step);
-        update_time(time_step);
+        SimulatorInterface<mbd_types>::update_time(time_step);
       }
 
     protected:

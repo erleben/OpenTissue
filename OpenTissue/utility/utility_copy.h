@@ -10,6 +10,7 @@
 #include <OpenTissue/configuration.h>
 
 #include <boost/type_traits.hpp>
+#include <boost/type_traits/detail/ice_and.hpp>
 
 #include <cstring> // for memcpy()
 

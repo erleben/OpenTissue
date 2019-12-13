@@ -15,6 +15,16 @@ namespace OpenTissue
   {
 
     template<typename vector3_type>
+    bool separation_triangle_triangle(
+      vector3_type const & a0
+      , vector3_type const & a1
+      , vector3_type const & a2
+      , vector3_type const & b0
+      , vector3_type const & b1
+      , vector3_type const & b2        
+      );
+
+    template<typename vector3_type>
     bool triangle_triangle_sat(
       vector3_type const & a0
       , vector3_type const & a1

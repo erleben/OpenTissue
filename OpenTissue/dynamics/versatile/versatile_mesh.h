@@ -85,8 +85,8 @@ namespace OpenTissue
         for(typename Edges::edge_iterator edge=edges.begin();edge!=edges.end();++edge)
         {
           distance_constraint constraint;
-          node_type & ni = *node(edge->idxA());
-          node_type & nj = *node(edge->idxB());
+          node_type & ni = *base_class::node(edge->idxA());
+          node_type & nj = *base_class::node(edge->idxB());
           constraint.initialize(ni,nj);
           m_distance_constraints.push_back(constraint);
         }
@@ -101,9 +101,9 @@ namespace OpenTissue
         for(typename Boundary::face_iterator face=boundary.begin();face!=boundary.end();++face)
         {
           area_constraint constraint;
-          node_type & ni = *node(face->idx0());
-          node_type & nj = *node(face->idx1());
-          node_type & nk = *node(face->idx2());
+          node_type & ni = *base_class::node(face->idx0());
+          node_type & nj = *base_class::node(face->idx1());
+          node_type & nk = *base_class::node(face->idx2());
           constraint.initialize(ni,nj,nk);
           m_area_constraints.push_back(constraint);
         }

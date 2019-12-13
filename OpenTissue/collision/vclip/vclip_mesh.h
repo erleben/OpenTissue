@@ -124,7 +124,7 @@ namespace OpenTissue
       , VoronoiClipHalfEdgeTraits<M>
       , VoronoiClipEdgeTraits
       , VoronoiClipFaceTraits<M>
-      , polymesh::PolyMeshListKernel
+      // , polymesh::PolyMeshListKernel
       >
     {};
 

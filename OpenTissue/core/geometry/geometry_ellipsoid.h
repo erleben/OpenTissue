@@ -322,7 +322,7 @@ namespace OpenTissue
       */
       void get_covariance(vector3_type & mean, matrix3x3_type & C)
       {
-        mean = center;
+        mean = center();
         assert(m_radius0>value_traits::zero() || !"Ellipsoid::get_covariance(): radius of first axis was zero");
         assert(m_radius1>value_traits::zero() || !"Ellipsoid::get_covariance(): radius of second axis was zero");
         assert(m_radius2>value_traits::zero() || !"Ellipsoid::get_covariance(): radius of third axis was zero");
