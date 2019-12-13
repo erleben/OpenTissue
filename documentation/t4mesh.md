@@ -23,7 +23,7 @@ There is no need to include this header file explicitly. The two classes in this
 
 New nodes can be inserted by invoking the insert method, e.g. as
 
-    typedef t4mesh< > mesh_type;
+    typedef T4mesh< > mesh_type;
     typedef mesh_type::node_iterator node_iterator;
 
     node_iterator i = mesh.insert();
