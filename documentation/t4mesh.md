@@ -23,7 +23,7 @@ There is no need to include this header file explicitly. The two classes in this
 
 New nodes can be inserted by invoking the insert method, e.g. as
 
-    typedef t4mesh< > mesh_type;
+    typedef T4mesh< > mesh_type;
     typedef mesh_type::node_iterator node_iterator;
 
     node_iterator i = mesh.insert();
@@ -46,37 +46,38 @@ There are two ways to create tetrahedra elements. Either by using iterators as f
 
 or if the indices of the nodes making up a tetrahedron are known, then the index values can be used directly
 
-  tetrahedron_iterator t = mesh.insert( 0, 1, 2, 3 );
+    tetrahedron_iterator t = mesh.insert( 0, 1, 2, 3 );
 
 In a similar fashion one can lookup iterators to tetrahedron
 
-  tetrahedron_iterator t = mesh.find( i, j, k, m);
+    tetrahedron_iterator t = mesh.find( i, j, k, m);
 
 Removing tetrahedra is done by
 
-  tetrahedron_iterator t = ...
-  mesh.erase( t );
+    tetrahedron_iterator t = ...
+    mesh.erase( t );
 
 Currently there is no support for removing nodes. However there is support for looking up iterators for nodes and tetrahedra either by
 
-  unsigned int idx = ...
-  node_iterator n = mesh.node( idx )
+    unsigned int idx = ...
+    node_iterator n = mesh.node( idx )
 
 or by
 
-  unsigned int idx = ...
-  tetrahedron_iterator t = mesh.tetrahedron( idx )
+    unsigned int idx = ...
+    tetrahedron_iterator t = mesh.tetrahedron( idx )
 
 The number of nodes and tetrahedra can be found by
 
-  unsigned int nodes = mesh.size_nodes();
-  unsigned int tetrahedra = mesh.size_tetrahedra();
+    unsigned int nodes = mesh.size_nodes();
+    unsigned int tetrahedra = mesh.size_tetrahedra();
 
 Finally the tetrahedra mesh has support for iterating over nodes and tetrahedra as e.g.
 
-  for(node_iterator n = mesh.node_begin();n!=mesh.node_end();++n)
-    ...
-    for(tetrahedron_iterator t = mesh.tetrahedron_begin();t!=mesh.tetrahedron_end();++t)
+    for(node_iterator n = mesh.node_begin();n!=mesh.node_end();++n)
+      ...
+      for(tetrahedron_iterator t = mesh.tetrahedron_begin();
+        t!=mesh.tetrahedron_end();++t)
       ...
 
 ## Using Traits
@@ -91,20 +92,67 @@ This header file is automatically included in the header file
 
 As an example, say we want to create some sort of particle based simulation method, then we start by extending the node traits to contain relevant particle information.
 
-class my_node_traits<br />  {<br />  public:<br />    typedef typename double              real_type;<br />    typedef typename vector3<real_type>  vector3_type;<br /><br />  public:<br /><br />    bool         m_fixed;       ///< Node is fixed.<br />    vector3_type m_prev_coord;  ///< old position.<br />    vector3_type m_coord;       ///< position.<br />    vector3_type m_v;           ///< velocity.<br />    real_type    m_mass;        ///< Total mass.<br />    vector3_type m_f;           ///< Accumulator of forces.<br />  };<br />
+```cpp
+class my_node_traits
+{
+public:
+  typedef typename double              real_type;
+  typedef typename vector3<real_type>  vector3_type;
+  
+public:
+
+  bool         m_fixed;       ///< Node is fixed.
+  vector3_type m_prev_coord;  ///< old position.
+  vector3_type m_coord;       ///< position.
+  vector3_type m_v;           ///< velocity.
+  real_type    m_mass;        ///< Total mass.
+  vector3_type m_f;           ///< Accumulator of forces.
+};
+```
 
 Note that we chose to use the name m_coord for the position. This makes it very easy to use the t4mesh I/O functions (more on this later) without creating a generic point container (also more on this later). For this example ,we really do not need any tetrahedron traits, thus
-
-class my_tetrahedron_traits<br />  {<br />  public:<br />  };<br />
+```cpp
+class my_tetrahedron_traits
+{
+    public:
+};
+```
 
 Now we can define our mesh type as
 
-typedef   OpenTissue::t4mesh::T4Mesh< math_types, my_node_traits, my_tetrahedron_traits >  my_mesh_type;<br />
+    typedef   OpenTissue::t4mesh::T4Mesh< math_types, my_node_traits,   my_tetrahedron_traits >  my_mesh_type;
 
 For this example we could better exploit inheritance to add a simulation method to our tetrahedra mesh. Here we add a Verlet integration time-step method
+```cpp
+class MyVolumeMesh : public OpenTissue::t4mesh::T4Mesh< math_types, my_node_traits, my_tetrahedron_traits >
+{
+public:
 
-class MyVolumeMesh : public OpenTissue::t4mesh::T4Mesh< math_types, my_node_traits, my_tetrahedron_traits ><br />  {<br />  public:<br /><br />    typedef OpenTissue::t4mesh::T4Mesh< math_types, my_node_traits, my_tetrahedron_traits >  base_class;<br />    typedef typename my_node_traits::real_type                  real_type;<br />    typedef typename my_node_traits::vector3_type               vector3_type;<br />    typedef typename base_class::node_iterator                  node_iterator;<br /><br />  public:<br /><br />    void step(real_type const & dt)<br />    {<br />      real_type dt2 = dt*dt;<br />      real_type inv_2dt = 1.0/ (2.0*dt);<br />      node_iterator node  = this->node_begin();<br />      node_iterator end   = this->node_end();<br />      for(node=begin;node!=end;++node)<br />      {<br />        if(node->m_fixed)<br />          continue;<br />        vector3_type tmp = node->m_coord;<br />        node->m_coord = 2.0*node->m_coord - node->m_prev_coord + (dt2/node->m_mass) * ( node->m_f );<br />        node->m_v = (node->m_coord - node->m_prev_coord)* inv_2dt;<br />        node->m_prev_coord = tmp;<br />      }<br />    }<br />  };<br />
+  typedef OpenTissue::t4mesh::T4Mesh< math_types, my_node_traits, my_tetrahedron_traits >  base_class;
+  typedef typename my_node_traits::real_type                  real_type;
+  typedef typename my_node_traits::vector3_type               vector3_type;
+  typedef typename base_class::node_iterator                  node_iterator;
 
+public:
+
+  void step(real_type const & dt)
+  {
+    real_type dt2 = dt*dt;
+    real_type inv_2dt = 1.0/ (2.0*dt);
+    node_iterator node  = this->node_begin();
+    node_iterator end   = this->node_end();
+    for(node=begin;node!=end;++node)
+    {
+      if(node->m_fixed)
+        continue;
+      vector3_type tmp = node->m_coord;
+      node->m_coord = 2.0*node->m_coord - node->m_prev_coord + (dt2/node->m_mass) * ( node->m_f );
+      node->m_v = (node->m_coord - node->m_prev_coord)* inv_2dt;
+      node->m_prev_coord = tmp;
+    }
+  }
+};
+```
 To use this mesh one would have to compute the nodal forces before invoking the time-stepping method.
 
 
@@ -112,15 +160,15 @@ To use this mesh one would have to compute the nodal forces before invoking the 
 
 The default point container class is a utility class which can be used to make the coordinates of the nodes in a tetrahedra mesh appear as a point container, i.e. as though the coordinates are stored as
 
-std::vector<vector3_type> coordinates;<br />
+    std::vector<vector3_type> coordinates;
 
 and accesses as
 
-coordinates[node->idx()]<br />
+    coordinates[node->idx()]
 
 instead of
 
-node->m_coord<br />
+    node->m_coord
 
 Many algorithms in OpenTissue have been implemented in such a way that they do not rely on nodes to have a m_coord member. Instead coordinates are passed as point containers. This utility make it convenient to use these algorithms on nodes, where coordinates are stored in m_coord member.
 
@@ -134,7 +182,8 @@ and it is included automatically by including the header
 
 The default point container class is used as follows
 
-default_point_container<t4mesh_type> points(&mesh);<br />  points[idx] = vector3_type(1, 2, 3);<br />
+    default_point_container<t4mesh_type> points(&mesh);
+    points[idx] = vector3_type(1, 2, 3);
 
 
 ## T4Mesh Face Extraction
@@ -145,27 +194,53 @@ Faces are not stored explicitly in the t4mesh, but sometimes it is useful to ext
 
 Let us work through a small example to learn how to use the utility. First we need a volume mesh
 
-typedef OpenTissue::t4mesh::T4Mesh<....> mesh_type;<br />  mesh_type my_mesh;<br />  ... do something with my_mesh ...<br />
+    typedef OpenTissue::t4mesh::T4Mesh<....> mesh_type;
+    mesh_type my_mesh;
+    ... do something with my_mesh ...
 
-Then we can setup the face boundary type, and finally we extract the boundary faces by<br />
+Then we can setup the face boundary type, and finally we extract the boundary faces by
 
-typedef OpenTissue::t4mesh::T4BoundaryFaces< mesh_type > boundary_type;<br />  boundary_type boundary(my_mesh);<br />
+    typedef OpenTissue::t4mesh::T4BoundaryFaces< mesh_type > boundary_type;
+    boundary_type boundary(my_mesh);
 
 Observe that the extraction is done using the constructor of the face boundary type. This means that if one alters the volume mesh topology, then the face boundary may come out of sync with the volume mesh. In such cases the face boundaries must be re-extracted. After having extracted the boundary faces they may be iterate over as follows
 
-typedef  boundary::face_iterator face_iterator;<br />  for(face_iterator face=boundary.begin();face!=boundary.end();++face)<br />  {<br />    node_type & ni = my_mesh.node( face->idx0() );<br />    node_type & nj = my_mesh.node( face->idx1() );<br />    node_type & nk = my_mesh.node( face->idx2() );<br />    ... do something with nodes ...<br />  }<br />
+```cpp
+typedef  boundary::face_iterator face_iterator;
+for(face_iterator face=boundary.begin();face!=boundary.end();++face)
+{
+  node_type & ni = my_mesh.node( face->idx0() );
+  node_type & nj = my_mesh.node( face->idx1() );
+  node_type & nk = my_mesh.node( face->idx2() );
+  ... do something with nodes ...
+}
+```
 
 The boundary face types may be extended by using traits traits, which is done by defining a trait class
 
-class my_face_traits : public OpenTissue::t4mesh::DefaultFaceTraits<br />  {<br />    public:<br />       ...<br />       color_type  m_color;<br />       ...<br />  };<br />
+```cpp
+class my_face_traits : public OpenTissue::t4mesh::DefaultFaceTraits
+{
+  public:
+     ...
+     color_type  m_color;
+     ...
+};
+```
 
 Now we just have to change the face boundary type
 
-typedef OpenTissue::t4mesh::T4BoundaryFaces< mesh_type, my_face_traits > boundary_type;<br />
+    typedef OpenTissue::t4mesh::T4BoundaryFaces< mesh_type, my_face_traits > boundary_type;
 
 During iteration we can now access the new traits
 
-typedef  boundary::face_iterator face_iterator;<br />  for(face_iterator face=boundary.begin();face!=boundary.end();++face)<br />  {<br />    face->m_color = ...<br />  }<br />
+```cpp
+typedef  boundary::face_iterator face_iterator;
+for(face_iterator face=boundary.begin();face!=boundary.end();++face)
+{
+  face->m_color = ...
+}
+```
 
 
 ## T4Mesh Edge Extraction
@@ -176,8 +251,17 @@ Edges are not represented explicitly in a t4mesh, only nodes and tetrahedra are 
 
 The workings of this utility class is exactly the same as the boundary face extraction tool (explained previously), we therefore just show a short example here
 
-typedef OpenTissue::t4mesh::T4Edges < mesh_type > edges_type;<br />  edges_type edges(my_mesh);<br />  typedef edges_type::edge_iterator edge_iterator;<br />  for(typename edges_type::edge_iterator edge=edges.begin();edge!=edges.end();++edge)<br />  {<br />    node_type & ni = my_mesh.node( edge->idxA() );<br />    node_type & nj = my_mesh.node( edge->idxB() );<br />    ... do something ...<br />  }<br />
-
+```cpp
+typedef OpenTissue::t4mesh::T4Edges < mesh_type > edges_type;
+edges_type edges(my_mesh);
+typedef edges_type::edge_iterator edge_iterator;
+for(typename edges_type::edge_iterator edge=edges.begin();edge!=edges.end();++edge)
+{
+  node_type & ni = my_mesh.node( edge->idxA() );
+  node_type & nj = my_mesh.node( edge->idxB() );
+  ... do something ...
+}
+```
 
 ## T4Mesh IO functions
 
@@ -187,23 +271,49 @@ OpenTissue has its own XML-fileformat for storing t4meshes. The header files:
 
 defines read and write functions. These functions are used as follows
 
-std::string input_filename = ...<br />  t4mesh_xml_read( input_filename, my_mesh);<br />  ... do something with my_mesh ...<br />  std::string output_filename = ...<br />  t4mesh_xml_write( output_filename, my_mesh);<br />
+```cpp
+std::string input_filename = ...
+t4mesh_xml_read( input_filename, my_mesh);
+... do something with my_mesh ...
+std::string output_filename = ...
+t4mesh_xml_write( output_filename, my_mesh);
+```
 
 These versions of the I/O-functions assumes that the node traits has a m_coord data member. If not, you must supply a third argument, which is a point container. As an example say you decided to call your positional data member m_x0, that is
 
-class my_node_traits<br />  {<br />  public:<br />    ...<br />    vector3_type m_x0;<br />    ...<br />  };<br />
+```cpp
+class my_node_traits
+{
+public:
+  ...
+  vector3_type m_x0;
+  ...
+};
+```
 
 Now a point container interface can be defined as follows
-
-struct my_point_container<br />{<br />  my_point_container(mesh_type * mesh) : m_mesh(mesh) {};<br /><br />  vector3_type & operator[] (unsigned int const & idx)  {    return m_mesh->node(idx)->m_coord;  };<br /><br />  vector3_type const & operator[] (unsigned int const & idx)const  {    return m_mesh->node(idx)->m_coord;  };<br /><br />  void clear(){};<br />  unsigned int size()const{return m_mesh->size_nodes();};<br />  void resize(unsigned int){};<br /><br />  mesh_type * m_mesh;<br />};<br />
+```cpp
+struct my_point_container{
+my_point_container(mesh_type * mesh) : m_mesh(mesh) {};
+vector3_type & operator[] (unsigned int const & idx)  {    return m_mesh->node(idx)->m_coord;  };
+vector3_type const & operator[] (unsigned int const & idx)const  {    return m_mesh->node(idx)->m_coord;  };
+void clear(){};
+unsigned int size()const{return m_mesh->size_nodes();};
+void resize(unsigned int){};
+mesh_type * m_mesh;};
+```
 
 and the point container may be used as follows
 
-my_point_container points(&my_mesh);<br />  OpenTissue::t4mesh::xml_read( input_filename,  my_mesh, points);<br />  OpenTisssue::t4mesh::xml_write( output_filename, my_mesh, points);<br />
+    my_point_container points(&my_mesh);
+    OpenTissue::t4mesh::xml_read( input_filename,  my_mesh, points);
+    OpenTisssue::t4mesh::xml_write( output_filename, my_mesh, points);
 
 You may even decide not to store coordinates inside nodes, but instead have them stored in an external data structure. This is done as follows,
 
-std::vector<vector3_type> points(my_mesh.node_size());<br />  OpenTissue::t4mesh::xml_read( input_filename,  my_mesh, points);<br />  OpenTissue::t4mesh::xml_write( output_filename, my_mesh, points);<br />
+    std::vector<vector3_type> points(my_mesh.node_size());
+    OpenTissue::t4mesh::xml_read( input_filename,  my_mesh, points);
+    OpenTissue::t4mesh::xml_write( output_filename, my_mesh, points);
 
 OpenTissue also support importing TetGen files, the read function is defined in the header
 
@@ -211,7 +321,8 @@ OpenTissue also support importing TetGen files, the read function is defined in 
 
 And it is used in completely the same fashion as the XML read function
 
-OpenTissue::t4mesh::tetgen_read( input_filename,  my_mesh );<br />  OpenTissue::t4mesh::tetgen_read( input_filename, my_mesh, points);<br />
+    OpenTissue::t4mesh::tetgen_read( input_filename,  my_mesh );
+    OpenTissue::t4mesh::tetgen_read( input_filename, my_mesh, points);
 
 
 ## T4Mesh OpenGL Drawing
@@ -255,14 +366,20 @@ The mesh coupling functions are located in the header file
 
 In order to use it, one must bind a surface mesh (PolyMesh or TriMesh) to the volume mesh (t4mesh).
 
-OpenTissue::t4mesh::T4Mesh<>                   volume_mesh;<br />  OpenTissue::polymesh::PolyMesh<>                surface_mesh;<br />  std::vector barycentric;<br />  std::vector bind_info;<br /><br />  ... create geometry of surface mesh ...<br />  ... create geometry of volume mesh  ...<br /><br />   OpenTissue::t4mesh::mesh_coupling::bind_surface(surface_mesh,volume_mesh,barycentric,bind_info);<br />
+    OpenTissue::t4mesh::T4Mesh<>                   volume_mesh;
+    OpenTissue::polymesh::PolyMesh<>                surface_mesh;
+    std::vector barycentric;
+    std::vector bind_info;
+    ... create geometry of surface mesh ...
+    ... create geometry of volume mesh  ...
+     OpenTissue::t4mesh::mesh_coupling::bind_surface(surface_mesh,
+        volume_mesh,barycentric,bind_info);
 
 Now the surface mesh may be updated, when the volume mesh have changed its shape using,
 
-OpenTissue::t4mesh::mesh_coupling::update_surface(surface_mesh,volume_mesh,barycentric,bind_info);<br />
+    OpenTissue::t4mesh::mesh_coupling::update_surface(surface_mesh,volume_mesh,barycentric,bind_info);
 
 This should be done prior to rendering the surface mesh.
-
 
 ## Delaunay Tesselator
 
@@ -272,6 +389,8 @@ This utility function provides a wrapper interface for QHull, which performs a d
 
 And it is invoked by supplying a container of points, that is
 
-std::vector<vector3_type> points;<br />  ... create some points ...<br />  OpenTissue::t4mesh::delaunay_tesselator( points, my_mesh );<br />
+    std::vector<vector3_type> points;
+    ... create some points ...
+    OpenTissue::t4mesh::delaunay_tesselator( points, my_mesh );
 
 One can use any container type that is desired.

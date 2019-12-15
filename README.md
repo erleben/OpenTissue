@@ -24,7 +24,7 @@ Free for commercial use, open source under the [http://opensource.org/licenses/z
 Core- Atomic building blocks that are commonly used throughout all OpenTissue components, including data structures and algorithms.</font>
   * [BIG Matrix-Vector Library (large scale)](documentation/big.md)
   * [The Mesh Programming Guide](documentation/mesh.md)
-  * [The Tetrahedra Mesh Programming Guide](documentation/t4meh.md)
+  * [The Tetrahedra Mesh Programming Guide](documentation/t4mesh.md)
 
 Collision - Methods for detecting collisions between motion-independent objects and creating contact information.
   * [Optimal Spatial Hashing](documentation/hashing.md)
