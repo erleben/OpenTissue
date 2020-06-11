@@ -16,7 +16,7 @@ demos/opengl/sdf_collision
 </pre>
 
 This demo application shows how to setup geometries, perform collision queries,
-and how to do naive debug drawing. [http://www.jouercasino.eu jeux casino]
+and how to do naive debug drawing.
 
 
 <h2>Setting up the geometry</h2>
