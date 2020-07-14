@@ -30,3 +30,4 @@
 *.out
 *.app
 OpenTissueConfig.cmake
+.DS_Store
