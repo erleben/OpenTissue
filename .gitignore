@@ -31,3 +31,6 @@
 *.app
 OpenTissueConfig.cmake
 .DS_Store
+build/
+OpenTissue/configuration.h
+third_party/include/boost_bindings/
