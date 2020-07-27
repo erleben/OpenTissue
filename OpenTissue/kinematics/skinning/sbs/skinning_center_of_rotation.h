@@ -43,12 +43,9 @@ namespace OpenTissue
       center_of_rotation( skeleton_type const & skeleton, container_type const & bones )
     {
       //--- Skeleton typedefs
-      typedef typename skeleton_type::math_types::real_type			  real_type;
       typedef typename skeleton_type::math_types::vector3_type		vector3_type;
-      typedef typename skeleton_type::math_types::quaternion_type	quaternion_type;
       typedef typename skeleton_type::math_types::coordsys_type		coordsys_type;
       typedef typename skeleton_type::math_types::matrix3x3_type	matrix3x3_type;
-      typedef typename skeleton_type::bone_type						        bone_type;
 
       //--- SVD matrix typedefs
       typedef ublas::matrix<double>                       svd_matrix_type;

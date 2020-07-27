@@ -21,7 +21,7 @@ namespace OpenTissue
     {
       typedef typename mesh_type::face_vertex_circulator       face_vertex_circulator;
       vertices.clear();    
-      face_vertex_circulator v(face),end();
+      face_vertex_circulator v(face), end;
       for(;v!=end;++v)
         vertices.push_back( &(*v) );
     }

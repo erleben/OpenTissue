@@ -89,7 +89,6 @@ namespace OpenTissue
 					using std::pow;
 					using std::sqrt;
 					
-					typedef typename ME::size_type                         size_type;
 					typedef typename ME::value_type                        value_type;
 					typedef ublas::matrix<value_type>                      matrix_type;
 					typedef ublas::vector<typename ME::value_type>         vector_type;

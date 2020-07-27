@@ -47,7 +47,6 @@ namespace OpenTissue
           using std::fabs;
 
           typedef typename matrix_type::value_type                     real_type;
-          typedef typename ublas::identity_matrix<real_type>           identity_matrix_type;
           typedef typename OpenTissue::math::ValueTraits<real_type>    value_traits;
 
           if(H.size1() <= 0 || H.size2() <= 0)
@@ -282,7 +281,6 @@ namespace OpenTissue
         using std::min;
         using std::max;
 
-        typedef          ublas::compressed_matrix<T>       matrix_type;
         typedef          ublas::vector<T>                  vector_type;
         typedef          T                                 real_type;
         typedef          OpenTissue::math::ValueTraits<T>  value_traits;

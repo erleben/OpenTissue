@@ -245,7 +245,6 @@ namespace OpenTissue
     {
       typedef typename bone_type::math_types     math_types;
       typedef typename math_types::vector3_type  V;
-      typedef typename math_types::real_type     T;
       typedef typename math_types::value_traits  value_traits;
       
       V const zero = V(value_traits::zero(), value_traits::zero(), value_traits::zero());

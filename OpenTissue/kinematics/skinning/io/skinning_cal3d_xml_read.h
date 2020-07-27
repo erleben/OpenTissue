@@ -31,8 +31,6 @@ namespace OpenTissue
     bool cal3d_xml_read(std::string const & filename, skin_type_lst & skin_lst)
     {
       typedef typename skin_type_lst::value_type              value_type;
-      typedef typename value_type::vector3_type               vector3_type;
-      typedef typename value_type::real_type                  real_type;
       typedef typename value_type::vertex_handle              vertex_handle;
       typedef typename value_type::vertex_iterator            vertex_iterator;
       typedef typename value_type::face_handle                face_handle;

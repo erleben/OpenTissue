@@ -30,8 +30,6 @@ namespace OpenTissue
       typedef typename keyframe_animation_type::coordsys_type                             coordsys_type;
       typedef typename keyframe_animation_type::real_type                                 real_type;
       typedef typename keyframe_animation_type::channels_type                             channels_type;
-      typedef typename coordsys_type::vector3_type                                        vector3_type;
-      typedef typename coordsys_type::quaternion_type                                     quaternion_type;
 
 #ifdef TIXML_USE_STL
       TiXmlDocument xml_document(filename);

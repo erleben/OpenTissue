@@ -9,30 +9,31 @@ IF(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
     )
 ENDIF(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
 
-#-----------------------------------------------------------------------------
-#
-# No backward compatibility here!!!
-#
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
-#----------------------------------------------------------------
-#
-# Make CMake stop whining about having target with full lib names and some that
-# must be searched for.
-#
 if(COMMAND cmake_policy)
   cmake_policy(SET CMP0003 NEW)
-endif(COMMAND cmake_policy)
+ endif(COMMAND cmake_policy)
 
 PROJECT(OpenTissue)
 
-#-----------------------------------------------------------------------------
-#
-# We only want a debug and release configurations
-#
-IF (MSVC80)
-  SET(CMAKE_CONFIGURATION_TYPES  "Debug" "Release"  CACHE INTERNAL  "Allowed Configuration types" FORCE)
-ENDIF(MSVC80)
+SET(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
+
+IF (MSVC)
+  ADD_DEFINITIONS(-D_SCL_SECURE_NO_WARNINGS)
+  ADD_DEFINITIONS(-D_CRT_SECURE_NO_WARNINGS)
+ENDIF(MSVC)
+
+ADD_DEFINITIONS(-D_USE_MATH_DEFINES)
+ADD_DEFINITIONS(-DGL_SILENCE_DEPRECATION)
+
+SET(
+  CMAKE_MODULE_PATH 
+  ${PROJECT_SOURCE_DIR}/CMake 
+  ${PROJECT_SOURCE_DIR}/cmake 
+  ${CMAKE_MODULE_PATH}
+  )
+
 
 #-----------------------------------------------------------------------------
 #
@@ -43,26 +44,10 @@ SET(ENABLE_UNIT_TESTS         FALSE   CACHE BOOL   "Should we add unit tests to 
 SET(ENABLE_DOCUMENTATION      TRUE    CACHE BOOL   "Should we add documentation to the makefiles")
 SET(ENABLE_DEMOS              TRUE    CACHE BOOL   "Should we add documentation to the makefiles")
 
-#-----------------------------------------------------------------------------
-#
-# Setup compiler specific flags for different configuration modes
-#
-IF (MSVC80)
-  ADD_DEFINITIONS(-D_SCL_SECURE_NO_DEPRECATE) #Eliminating deprecation warnings
-  ADD_DEFINITIONS(-D_CRT_SECURE_NO_DEPRECATE) 
-  # Missing flags: /GS-, CMake can not hande the '-' part of this option!
-  SET(CMAKE_CXX_FLAGS_DEBUG  "${CMAKE_CXX_FLAGS_DEBUG} /Gm /D_CONSOLE"  )
-  SET(CMAKE_CXX_FLAGS_RELEASE  "${CMAKE_CXX_FLAGS_RELEASE}  /GL /Zi /D_CONSOLE")
-  SET(CMAKE_EXE_LINKER_FLAGS_RELEASE     "${CMAKE_EXE_LINKER_FLAGS_RELEASE}  /DEBUG /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /MACHINE:X86 /PROFILE")
-  SET(CMAKE_MODULE_LINKER_FLAGS_RELEASE  "${CMAKE_MODULE_LINKER_FLAGS_RELEASE}  /DEBUG /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /MACHINE:X86 /PROFILE")
-  SET(CMAKE_SHARED_LINKER_FLAGS_RELEASE  "${CMAKE_SHARED_LINKER_FLAGS_RELEASE}  /DEBUG /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /MACHINE:X86 /PROFILE")
-ENDIF(MSVC80)
-
 #-------------------------------------------------------------------------------
 #
 # Find all OpenTissue third-party dependencies, include paths and so on.
 #
-INCLUDE(${PROJECT_SOURCE_DIR}/cmake/FindOpenTissue.cmake)
 FIND_PACKAGE(OpenTissue)
 IF(OPENTISSUE_FOUND)
   INCLUDE_DIRECTORIES( ${OPENTISSUE_INCLUDE_DIRS} )

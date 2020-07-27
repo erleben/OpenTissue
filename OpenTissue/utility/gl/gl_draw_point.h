@@ -25,7 +25,6 @@ namespace OpenTissue
     template <typename vector3_type>
     inline void DrawPoint( vector3_type const & p , double const radius = 0.1)
     {
-      typedef typename vector3_type::value_type value_type;
       GLUquadric * qobj = gluNewQuadric();
       glPushMatrix();
       glTranslatef( p(0), p(1), p(2) );

@@ -17,8 +17,9 @@
 #include <cassert>
 #include <vector>
 
-// Shader program header includes
-#include <OpenTissue/gpu/cg/cg_program.h>
+//2020-07-27 Kenny: Cg no longer supported on osx.
+// // Shader program header includes
+//#include <OpenTissue/gpu/cg/cg_program.h>
 
 namespace OpenTissue
 {
@@ -37,8 +38,8 @@ namespace OpenTissue
       typedef std::vector<vector3_type>         rc_cached_type;
       typedef std::map<key_type, size_t>        lut_type;
 
-      //--- Shader program
-      typedef OpenTissue::cg::Program	            cg_program_type;
+      //2020-07-27 Kenny: Cg no longer supported on osx.
+      //typedef OpenTissue::cg::Program	            cg_program_type;  ///< Shader program
 
     public:
       static const size_t			    m_sz = 20u;			    ///< Number of skin parts.
@@ -49,7 +50,8 @@ namespace OpenTissue
       bool						            m_uploadRc;			    ///< Flag. Only upload r_c to gpu on first skin.
       size_t					            m_num_keys;			    ///< Numer of unique keys for this skin.
 
-      cg_program_type		          m_vp;				        ///< Cg vertex program.
+      //2020-07-27 Kenny: Cg no longer supported on osx.
+      //cg_program_type		          m_vp;				        ///< Cg vertex program.
 
       rc_cached_type              m_rc_cached;		    ///< Cached rotation centers.
       lut_type                    m_rc_lut;			      ///< Lookup Table for rotation centers.

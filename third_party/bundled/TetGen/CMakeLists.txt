@@ -30,13 +30,13 @@ IF(WIN32)
     TARGET TetGen
     POST_BUILD
     COMMAND ${CMAKE_COMMAND}
-    ARGS -E copy ${OpenTissue_BINARY_DIR}/third_party/bundled/TetGen/debug/TetGenD.lib ${OpenTissue_SOURCE_DIR}/third_party/lib/windows
+    ARGS -E copy ${OpenTissue_BINARY_DIR}/third_party/bundled/TetGen/debug/TetGenD.lib ${OpenTissue_SOURCE_DIR}/third_party/lib
   )
   ADD_CUSTOM_COMMAND(
     TARGET TetGen
     POST_BUILD
     COMMAND ${CMAKE_COMMAND}
-    ARGS -E copy ${OpenTissue_BINARY_DIR}/third_party/bundled/TetGen/release/TetGen.lib ${OpenTissue_SOURCE_DIR}/third_party/lib/windows
+    ARGS -E copy ${OpenTissue_BINARY_DIR}/third_party/bundled/TetGen/release/TetGen.lib ${OpenTissue_SOURCE_DIR}/third_party/lib
   )
 ELSE(WIN32)
   GET_TARGET_PROPERTY(TETGEN_LOCATION TetGen LOCATION)
@@ -45,7 +45,7 @@ ELSE(WIN32)
     TARGET TetGen
     POST_BUILD
     COMMAND ${CMAKE_COMMAND}
-    ARGS -E copy ${TETGEN_LOCATION} ${OpenTissue_SOURCE_DIR}/third_party/lib/linux/
+    ARGS -E copy ${TETGEN_LOCATION} ${OpenTissue_SOURCE_DIR}/third_party/lib/
   )
 ENDIF(WIN32)
 
@@ -65,9 +65,5 @@ ENDFOREACH( file ${TETGEN_HEADER_FILES})
 # Use the CMake Install functionality
 #
 FILE( GLOB_RECURSE TETGEN_HEADER_FILES *.h )
-IF(WIN32)
-  INSTALL(TARGETS TetGen ARCHIVE DESTINATION third_party/lib/windows)
-ELSE(WIN32)
-  INSTALL(TARGETS TetGen ARCHIVE DESTINATION third_party/lib/linux)
-ENDIF(WIN32)
+INSTALL(TARGETS TetGen ARCHIVE DESTINATION third_party/lib)
 INSTALL( FILES ${TETGEN_HEADER_FILES} DESTINATION third_party/include/TetGen )

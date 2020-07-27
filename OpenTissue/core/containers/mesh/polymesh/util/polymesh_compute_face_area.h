@@ -33,8 +33,6 @@ namespace OpenTissue
       using std::sqrt;
 
       typedef typename mesh_type::face_vertex_circulator   face_vertex_circulator;
-      typedef typename mesh_type::vertex_type              vertex_type;
-
       typedef typename mesh_type::math_types               math_types;
       typedef typename math_types::vector3_type            vector3_type;
       typedef typename math_types::real_type               real_type;

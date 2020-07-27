@@ -34,3 +34,7 @@ OpenTissueConfig.cmake
 build/
 OpenTissue/configuration.h
 third_party/include/boost_bindings/
+third_party/include/TetGen/
+third_party/include/Triangle/
+third_party/include/TinyXML/
+third_party/include/qhull/

@@ -9,7 +9,8 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/core/geometry/t4_gpu_scan/t4_gpu_scan.h>
+// 2020-07-25 Kenny: Cg is no longer running on osx hence, we outcommented its usage.
+//#include <OpenTissue/core/geometry/t4_gpu_scan/t4_gpu_scan.h>
 #include <OpenTissue/core/geometry/t4_cpu_scan/t4_cpu_scan.h>
 
 namespace OpenTissue
@@ -97,21 +98,22 @@ namespace OpenTissue
 
       mesh::compute_angle_weighted_vertex_normals(mesh);
 
-      if(use_gpu)
-      {
-        bool gpu_done = t4_gpu_scan(
-          mesh
-          , band
-          , phi
-          );
-        // Test if we should fall back on CPU 
-        if(!gpu_done)
-          t4_cpu_scan(mesh,band,phi, t4_cpu_signed() );      
-      }
-      else
-      {
+      // 2020-07-25 Kenny: Cg is no longer running on osx hence, we outcommented its usage.
+      //      if(use_gpu)
+      //      {
+      //        bool gpu_done = t4_gpu_scan(
+      //          mesh
+      //          , band
+      //          , phi
+      //          );
+      //        // Test if we should fall back on CPU
+      //        if(!gpu_done)
+      //          t4_cpu_scan(mesh,band,phi, t4_cpu_signed() );
+      //      }
+      //      else
+      //      {
         t4_cpu_scan(mesh,band,phi, t4_cpu_signed() );
-      }
+      //      }
 
       std::cout << "mesh2phi(): completed phi computation" << std::endl;      
     }
@@ -156,21 +158,23 @@ namespace OpenTissue
       band = sqrt(diff*diff)/value_traits::two();
 
       mesh::compute_angle_weighted_vertex_normals(mesh);
-      if(use_gpu)
-      {
-        bool gpu_done = t4_gpu_scan(
-          mesh
-          , band
-          , phi
-          );
-        // Test if we should fall back on CPU 
-        if(!gpu_done)
-          t4_cpu_scan(mesh,band,phi, t4_cpu_signed() );
-      }
-      else
-      {
+
+      // 2020-07-25 Kenny: Cg is no longer running on osx hence, we outcommented its usage.
+      //      if(use_gpu)
+      //      {
+      //        bool gpu_done = t4_gpu_scan(
+      //          mesh
+      //          , band
+      //          , phi
+      //          );
+      //        // Test if we should fall back on CPU
+      //        if(!gpu_done)
+      //          t4_cpu_scan(mesh,band,phi, t4_cpu_signed() );
+      //      }
+      //      else
+      //      {
         t4_cpu_scan(mesh,band,phi, t4_cpu_signed() );
-      }
+      //      }
       std::cout << "mesh2phi(): completed phi computation" << std::endl;      
     }
 

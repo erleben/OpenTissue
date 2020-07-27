@@ -45,10 +45,6 @@ namespace OpenTissue
                    skeleton_type & skeleton,
                    typename skin_type::skin_part_type::no_gpu_support* p=0 ) // Use SFINAE
       {
-        typedef typename skin_type::skin_part_type     skin_part_type;
-
-        //typedef typename skin_part_type::is_software_skin_algorithm_type is_software_skin_algorithm_type;
-
         // Do prerendering
         skin_type::skin_part_type::pre_render( skin );
 
@@ -74,8 +70,6 @@ namespace OpenTissue
                    skeleton_type & skeleton,
                    typename skin_type::skin_part_type::gpu_support* p=0 ) // Use SFINAE
       {
-        typedef typename skin_type::skin_part_type     skin_part_type;
-
         // Do prerendering, enable Cg etc.
         skin_type::skin_part_type::pre_render( skin );
 

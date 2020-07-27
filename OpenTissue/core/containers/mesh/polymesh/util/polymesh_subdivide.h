@@ -97,10 +97,6 @@ namespace OpenTissue
         edge_handle e1 = h1->get_edge_handle();
         edge_handle e2 = h2->get_edge_handle();
 
-        vertex_handle v0 = h0->get_origin_handle();
-        vertex_handle v1 = h1->get_origin_handle();
-        vertex_handle v2 = h2->get_origin_handle();
-
         vector3_type p0 = h0->get_origin_iterator()->m_coord;
         vector3_type p1 = h1->get_origin_iterator()->m_coord;
         vector3_type p2 = h2->get_origin_iterator()->m_coord;

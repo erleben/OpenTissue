@@ -33,13 +33,13 @@ IF(WIN32)
     TARGET TinyXML
     POST_BUILD
     COMMAND ${CMAKE_COMMAND}
-    ARGS -E copy ${OpenTissue_BINARY_DIR}/third_party/bundled/TinyXML/debug/TinyXMLD.lib ${OpenTissue_SOURCE_DIR}/third_party/lib/windows
+    ARGS -E copy ${OpenTissue_BINARY_DIR}/third_party/bundled/TinyXML/debug/TinyXMLD.lib ${OpenTissue_SOURCE_DIR}/third_party/lib
   )
   ADD_CUSTOM_COMMAND(
     TARGET TinyXML
     POST_BUILD
     COMMAND ${CMAKE_COMMAND}
-    ARGS -E copy ${OpenTissue_BINARY_DIR}/third_party/bundled/TinyXML/release/TinyXML.lib ${OpenTissue_SOURCE_DIR}/third_party/lib/windows
+    ARGS -E copy ${OpenTissue_BINARY_DIR}/third_party/bundled/TinyXML/release/TinyXML.lib ${OpenTissue_SOURCE_DIR}/third_party/lib
   )
 ELSE(WIN32)
   GET_TARGET_PROPERTY(TINYXML_LOCATION TinyXML LOCATION)
@@ -48,7 +48,7 @@ ELSE(WIN32)
     TARGET TinyXML
     POST_BUILD
     COMMAND ${CMAKE_COMMAND}
-    ARGS -E copy ${TINYXML_LOCATION} ${OpenTissue_SOURCE_DIR}/third_party/lib/linux/
+    ARGS -E copy ${TINYXML_LOCATION} ${OpenTissue_SOURCE_DIR}/third_party/lib/
   )
 ENDIF(WIN32)
 
@@ -68,9 +68,5 @@ ENDFOREACH( file ${TINYXML_HEADER_FILES})
 # Use the CMake Install functionality
 #
 FILE( GLOB_RECURSE TINYXML_HEADER_FILES *.h )
-IF(WIN32)
-  INSTALL(TARGETS TinyXML ARCHIVE DESTINATION third_party/lib/windows)
-ELSE(WIN32)
-  INSTALL(TARGETS TinyXML ARCHIVE DESTINATION third_party/lib/linux)
-ENDIF(WIN32)
+INSTALL(TARGETS TinyXML ARCHIVE DESTINATION third_party/lib)
 INSTALL( FILES ${TINYXML_HEADER_FILES} DESTINATION third_party/include/TinyXML )

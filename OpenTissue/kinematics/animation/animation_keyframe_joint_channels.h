@@ -91,7 +91,6 @@ namespace OpenTissue
         //--- keyframes, we must therefor initiate a search for the prober place
         //--- to insert the new keyframe.
         keyframe_iterator begin = m_keyframes.end();
-        keyframe_iterator end   = m_keyframes.end();
         keyframe_iterator prev = begin;
         keyframe_iterator next = prev+1;
         //--- Do a linear search for the interval containing the new key (a
