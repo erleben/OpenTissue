@@ -1,12 +1,16 @@
-ADD_EXECUTABLE(unit_t4mesh_compute_mesh_quality src/unit_t4mesh_compute_mesh_quality.cpp)
+add_executable(unit_t4mesh_compute_mesh_quality src/unit_t4mesh_compute_mesh_quality.cpp)
 
-TARGET_LINK_LIBRARIES(unit_t4mesh_compute_mesh_quality ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_t4mesh_compute_mesh_quality
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_t4mesh_compute_mesh_quality
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_t4mesh_compute_mesh_quality unit_t4mesh_compute_mesh_quality )
+ot_add_test(unit_t4mesh_compute_mesh_quality)
 
 

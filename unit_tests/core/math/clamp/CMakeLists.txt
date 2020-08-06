@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_clamp src/unit_clamp.cpp)
+add_executable(unit_clamp src/unit_clamp.cpp)
 
-TARGET_LINK_LIBRARIES(unit_clamp ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_clamp 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_clamp
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_clamp unit_clamp )
+ot_add_test(unit_clamp)

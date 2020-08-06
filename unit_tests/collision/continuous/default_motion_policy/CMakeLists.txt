@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_default_motion_policy src/unit_default_motion_policy.cpp)
+add_executable(unit_default_motion_policy src/unit_default_motion_policy.cpp)
 
-TARGET_LINK_LIBRARIES(unit_default_motion_policy ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_default_motion_policy
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_default_motion_policy
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_default_motion_policy unit_default_motion_policy )
+ot_add_test(unit_default_motion_policy)
 

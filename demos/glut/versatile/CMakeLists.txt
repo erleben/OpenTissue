@@ -1,16 +1,26 @@
-ADD_EXECUTABLE(versatile src/application.cpp)
+add_executable(versatile src/application.cpp)
 
-TARGET_LINK_LIBRARIES(versatile ${OPENTISSUE_LIBS})
+target_link_libraries(versatile
+  PRIVATE
+    OpenGL::OpenGL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    ${IL_LIBRARIES}
+    ${ILU_LIBRARIES}
+    ${ILUT_LIBRARIES}
+    OpenTissue
+)
 
 target_include_directories(versatile
     PRIVATE
         ${PROJECT_SOURCE_DIR}/third_party/bundled/
 )
 
-
-INSTALL(
+install(
   TARGETS versatile
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
 
 

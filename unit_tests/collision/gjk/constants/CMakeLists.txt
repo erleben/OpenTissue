@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_gjk_constants src/unit_constants.cpp)
+add_executable(unit_gjk_constants src/unit_constants.cpp)
 
-TARGET_LINK_LIBRARIES(unit_gjk_constants ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_gjk_constants
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_gjk_constants
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_gjk_constants unit_gjk_constants )
+ot_add_test(unit_gjk_constants)
 

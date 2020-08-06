@@ -1,9 +1,20 @@
-ADD_EXECUTABLE(particle_system src/application.cpp)
+add_executable(particle_system src/application.cpp)
 
-TARGET_LINK_LIBRARIES(particle_system ${OPENTISSUE_LIBS})
+target_link_libraries(particle_system
+  PRIVATE
+    OpenGL::OpenGL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    ${IL_LIBRARIES}
+    ${ILU_LIBRARIES}
+    ${ILUT_LIBRARIES}
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS particle_system 
+install(
+  TARGETS particle_system
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
 

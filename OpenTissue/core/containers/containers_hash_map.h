@@ -18,7 +18,7 @@
 #   include <hash_map.h>
     namespace stdext { using ::hash_map; }; // inherit globals
 # else
-#   include <ext/hash_map>
+#   include <hash_map>
 #   if (__GNUC__ == 3 && __GNUC_MINOR__ == 0)
       namespace stdext = std;               // GCC 3.0
 #   else

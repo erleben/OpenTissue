@@ -1,4 +1,4 @@
-SUBDIRS(benchmark_bfgs)
-SUBDIRS(benchmark_gjk)
-SUBDIRS(benchmark_svd)
-SUBDIRS(dynamic_table_dispatcher)
+add_subdirectory(benchmark_bfgs)
+add_subdirectory(benchmark_gjk)
+add_subdirectory(benchmark_svd)
+add_subdirectory(dynamic_table_dispatcher)

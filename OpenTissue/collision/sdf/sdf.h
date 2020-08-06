@@ -9,8 +9,6 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/collision/sdf/sdf_debug_draw_bvh.h>
-#include <OpenTissue/collision/sdf/sdf_debug_draw_sampling.h>
 #include <OpenTissue/collision/sdf/sdf_collision_policy.h>
 
 #include <OpenTissue/collision/collision_sdf_sdf.h>

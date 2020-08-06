@@ -1,15 +1,25 @@
-ADD_EXECUTABLE(character_animation src/application.cpp)
+add_executable(character_animation src/application.cpp)
 
-TARGET_LINK_LIBRARIES(character_animation ${OPENTISSUE_LIBS})
+target_link_libraries(character_animation
+  PRIVATE
+    OpenGL::OpenGL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    ${IL_LIBRARIES}
+    ${ILU_LIBRARIES}
+    ${ILUT_LIBRARIES}
+    TinyXML
+    OpenTissue
+)
 
 target_include_directories(character_animation
     PRIVATE
-        ${PROJECT_SOURCE_DIR}/third_party/bundled/TetGen/
         ${PROJECT_SOURCE_DIR}/third_party/bundled/
-        ${PROJECT_SOURCE_DIR}/third_party/bundled/Triangle/
 )
 
-INSTALL(
+install(
   TARGETS character_animation
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )

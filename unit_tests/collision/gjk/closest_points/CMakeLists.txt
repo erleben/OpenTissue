@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_closest_points src/unit_closest_points.cpp)
+add_executable(unit_closest_points src/unit_closest_points.cpp)
 
-TARGET_LINK_LIBRARIES(unit_closest_points ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_closest_points
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_closest_points
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_closest_points unit_closest_points )
+ot_add_test(unit_closest_points)
 

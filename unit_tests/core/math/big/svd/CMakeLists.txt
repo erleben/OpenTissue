@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_svd src/unit_svd.cpp)
+add_executable(unit_svd src/unit_svd.cpp)
 
-TARGET_LINK_LIBRARIES(unit_svd ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_svd 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_svd
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_svd unit_svd )
+ot_add_test(unit_svd)
 

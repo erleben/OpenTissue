@@ -1,13 +1,18 @@
-ADD_EXECUTABLE(unit_vclip src/unit_vclip.cpp)
+add_executable(unit_vclip src/unit_vclip.cpp)
 
-TARGET_LINK_LIBRARIES(unit_vclip ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_vclip
+  PRIVATE
+      Qhull::libqhull
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_vclip
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_vclip unit_vclip )
+ot_add_test(unit_vclip)
 
 
 

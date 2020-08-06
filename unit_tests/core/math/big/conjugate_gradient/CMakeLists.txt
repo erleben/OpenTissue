@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_conjugate_gradient src/unit_conjugate_gradient.cpp)
+add_executable(unit_conjugate_gradient src/unit_conjugate_gradient.cpp)
 
-TARGET_LINK_LIBRARIES(unit_conjugate_gradient ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_conjugate_gradient 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_conjugate_gradient
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_conjugate_gradient unit_conjugate_gradient )
+ot_add_test(unit_conjugate_gradient)
 

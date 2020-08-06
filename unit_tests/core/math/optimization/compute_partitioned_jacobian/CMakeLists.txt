@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_compute_partitioned_jacobian src/unit_compute_partitioned_jacobian.cpp)
+add_executable(unit_compute_partitioned_jacobian src/unit_compute_partitioned_jacobian.cpp)
 
-TARGET_LINK_LIBRARIES(unit_compute_partitioned_jacobian ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_compute_partitioned_jacobian 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_compute_partitioned_jacobian
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_compute_partitioned_jacobian unit_compute_partitioned_jacobian )
+ot_add_test(unit_compute_partitioned_jacobian)
 

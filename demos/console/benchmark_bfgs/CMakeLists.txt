@@ -1,11 +1,15 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(benchmark_bfgs src/benchmark_bfgs.cpp)
+add_executable(benchmark_bfgs src/benchmark_bfgs.cpp)
 
-TARGET_LINK_LIBRARIES(benchmark_bfgs ${OPENTISSUE_LIBS} )
+target_link_libraries(benchmark_bfgs
+  PRIVATE
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS benchmark_bfgs
   RUNTIME DESTINATION  bin/units
+  COMPONENT Demos
   )
 

@@ -1,1 +1,1 @@
-SUBDIRS( inverse )
+add_subdirectory( inverse )

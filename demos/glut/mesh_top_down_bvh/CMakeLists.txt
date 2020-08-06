@@ -1,10 +1,21 @@
-ADD_EXECUTABLE(mesh_top_down_bvh src/application.cpp)
+add_executable(mesh_top_down_bvh src/application.cpp)
 
-TARGET_LINK_LIBRARIES(mesh_top_down_bvh ${OPENTISSUE_LIBS})
+target_link_libraries(mesh_top_down_bvh
+  PRIVATE
+    OpenGL::OpenGL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    ${IL_LIBRARIES}
+    ${ILU_LIBRARIES}
+    ${ILUT_LIBRARIES}
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS mesh_top_down_bvh
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
 
 

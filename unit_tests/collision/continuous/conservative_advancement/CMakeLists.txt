@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_conservative_advancement src/unit_conservative_advancement.cpp)
+add_executable(unit_conservative_advancement src/unit_conservative_advancement.cpp)
 
-TARGET_LINK_LIBRARIES(unit_conservative_advancement ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_conservative_advancement
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_conservative_advancement
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_conservative_advancement unit_conservative_advancement )
+ot_add_test(unit_conservative_advancement)
 

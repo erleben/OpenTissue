@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_timer src/unit_timer.cpp)
+add_executable(unit_timer src/unit_timer.cpp)
 
-TARGET_LINK_LIBRARIES(unit_timer ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_timer 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_timer
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_timer unit_timer )
+ot_add_test(unit_timer)

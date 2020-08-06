@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_reduce_tetrahedron src/unit_reduce_tetrahedron.cpp)
+add_executable(unit_reduce_tetrahedron src/unit_reduce_tetrahedron.cpp)
 
-TARGET_LINK_LIBRARIES(unit_reduce_tetrahedron ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_reduce_tetrahedron
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_reduce_tetrahedron
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_reduce_tetrahedron unit_reduce_tetrahedron )
+ot_add_test(unit_reduce_tetrahedron)
 

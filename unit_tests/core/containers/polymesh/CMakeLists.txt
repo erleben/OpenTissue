@@ -1,11 +1,22 @@
-ADD_EXECUTABLE(unit_polymesh src/unit_polymesh.cpp)
+add_executable(unit_polymesh src/unit_polymesh.cpp)
 
-TARGET_LINK_LIBRARIES(unit_polymesh ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_polymesh
+  PRIVATE
+#       OpenGL::OpenGL
+      Qhull::libqhull
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
-  TARGETS unit_polymesh 
+target_include_directories(unit_polymesh
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/third_party/bundled/
+)
+
+install(
+  TARGETS unit_polymesh
   RUNTIME DESTINATION  bin/units
   )
 
 
-ADD_TEST( unit_polymesh unit_polymesh )
+ot_add_test(unit_polymesh)

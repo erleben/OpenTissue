@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_inscribed_circumscribed_quality_measure src/unit_inscribed_circumscribed_quality_measure.cpp)
-                                                                               
-TARGET_LINK_LIBRARIES(unit_inscribed_circumscribed_quality_measure ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+add_executable(unit_inscribed_circumscribed_quality_measure src/unit_inscribed_circumscribed_quality_measure.cpp)
 
-INSTALL(
+target_link_libraries(unit_inscribed_circumscribed_quality_measure
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
+
+install(
   TARGETS unit_inscribed_circumscribed_quality_measure
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_inscribed_circumscribed_quality_measure unit_inscribed_circumscribed_quality_measure )
+ot_add_test(unit_inscribed_circumscribed_quality_measure)

@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_motion_interpolation src/unit_motion_interpolation.cpp)
+add_executable(unit_motion_interpolation src/unit_motion_interpolation.cpp)
 
-TARGET_LINK_LIBRARIES(unit_motion_interpolation ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_motion_interpolation
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_motion_interpolation
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_motion_interpolation unit_motion_interpolation )
+ot_add_test(unit_motion_interpolation)
 

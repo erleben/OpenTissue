@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_blocking_constraint src/unit_blocking_constraint.cpp)
+add_executable(unit_blocking_constraint src/unit_blocking_constraint.cpp)
 
-TARGET_LINK_LIBRARIES(unit_blocking_constraint ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_blocking_constraint 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_blocking_constraint
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_blocking_constraint unit_blocking_constraint )
+ot_add_test(unit_blocking_constraint)
 

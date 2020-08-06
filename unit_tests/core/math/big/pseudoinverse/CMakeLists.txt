@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_pseudoinverse src/unit_pseudoinverse.cpp)
+add_executable(unit_pseudoinverse src/unit_pseudoinverse.cpp)
 
-TARGET_LINK_LIBRARIES(unit_pseudoinverse ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_pseudoinverse 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_pseudoinverse
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_pseudoinverse unit_pseudoinverse )
+ot_add_test(unit_pseudoinverse)
 

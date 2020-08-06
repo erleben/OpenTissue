@@ -13,7 +13,6 @@
 #include <OpenTissue/kinematics/skeleton/skeleton_bone.h>
 #include <OpenTissue/kinematics/skeleton/skeleton_skeleton.h>
 
-#include <OpenTissue/utility/gl/gl_draw_bone.h>
 #include <OpenTissue/utility/utility_empty_traits.h>
 
 namespace OpenTissue

@@ -1,3 +1,3 @@
-SUBDIRS( default_motion_policy )
-SUBDIRS( conservative_advancement )
-SUBDIRS( motion_interpolation )
+add_subdirectory( default_motion_policy )
+add_subdirectory( conservative_advancement )
+add_subdirectory( motion_interpolation )

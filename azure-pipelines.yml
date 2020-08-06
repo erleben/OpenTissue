@@ -6,15 +6,68 @@
 trigger:
 - master
 
+strategy:
+  matrix:
+    linux:
+      imageName: "ubuntu-latest"
+    mac1014:
+      imageName: "macOS-latest"
+
+  maxParallel: 3
+
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: '$(imageName)'
 
 steps:
-- script: |
-    sudo apt-get -y install cmake
-    which cmake
+- task: UsePythonVersion@0
+  displayName: Get Python for Python tools.
+  inputs:
+    versionSpec: '3.7'
+  name: pyTools
+
+- bash: |
+    python --version
+    python -m pip install --upgrade jinja2
+    python -m pip install --upgrade setuptools wheel
+    python -m pip install --upgrade pip
+    python -m pip install --upgrade conan
+    conan --version
+  displayName: 'Install Conan'
+
+- bash: |
     mkdir build
-    cmake -S ${PWD} -B ${PWD}/build
+    pushd build
+    conan remote add ot_deps https://api.bintray.com/conan/opentissue/Deps
+    conan install .. || exit 1
+    popd
+  displayName: 'Resolve Dependencies'
+
+- bash: |
+    cmake -DOPENTISSUE_ENABLE_UNIT_TESTS=ON -S ${PWD} -B ${PWD}/build
+    cmake --build ${PWD}/build --target Continuous -j 2
+    pushd build
+    ctest -T Test
+    popd
+  displayName: 'Build and Run Unit Tests'
+
+- bash: |
+    cmake -DOPENTISSUE_ENABLE_UNIT_TESTS=OFF -S ${PWD} -B ${PWD}/build
     cmake --build ${PWD}/build --target package
-    
-  displayName: 'cmake'
+  displayName: 'Package'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: cTest
+    testResultsFiles: build/Testing/*/Test.xml
+    testRunTitle: 'Publish test results'
+
+- task: CopyFiles@2
+  inputs:
+    contents: 'build/OpenTissue-*'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'

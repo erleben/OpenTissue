@@ -1,0 +1,10 @@
+[requires]
+Triangle/1.0@OpenTissue/stable
+TetGen/1.0@OpenTissue/stable
+TinyXML/1.0@OpenTissue/stable
+DevIL/1.8.0@OpenTissue/stable
+Qhull/7.3.2@OpenTissue/stable
+boost/1.69.0
+
+[generators]
+cmake

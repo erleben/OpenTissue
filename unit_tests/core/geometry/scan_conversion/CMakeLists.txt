@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_scan_conversion src/unit_scan_conversion.cpp)
+add_executable(unit_scan_conversion src/unit_scan_conversion.cpp)
 
-TARGET_LINK_LIBRARIES(unit_scan_conversion ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_scan_conversion
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
-  TARGETS unit_scan_conversion 
+install(
+  TARGETS unit_scan_conversion
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_scan_conversion unit_scan_conversion )
+ot_add_test(unit_scan_conversion)
 

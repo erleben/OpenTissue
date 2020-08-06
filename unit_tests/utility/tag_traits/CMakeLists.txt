@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_tag_traits src/unit_tag_traits.cpp)
+add_executable(unit_tag_traits src/unit_tag_traits.cpp)
 
-TARGET_LINK_LIBRARIES(unit_tag_traits ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_tag_traits 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS unit_tag_traits 
+install(
+  TARGETS unit_tag_traits
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_tag_traits unit_tag_traits )
+ot_add_test(unit_tag_traits)

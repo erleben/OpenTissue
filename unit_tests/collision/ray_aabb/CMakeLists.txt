@@ -1,13 +1,17 @@
-ADD_EXECUTABLE(unit_ray_aabb src/unit_ray_aabb.cpp)
+add_executable(unit_ray_aabb src/unit_ray_aabb.cpp)
 
-TARGET_LINK_LIBRARIES(unit_ray_aabb ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_ray_aabb
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_ray_aabb
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_ray_aabb unit_ray_aabb )
+ot_add_test(unit_ray_aabb)
 
 
 

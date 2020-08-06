@@ -1,9 +1,20 @@
-ADD_EXECUTABLE(meshless_shape_matching src/application.cpp)
+add_executable(meshless_shape_matching src/application.cpp)
 
-TARGET_LINK_LIBRARIES(meshless_shape_matching ${OPENTISSUE_LIBS})
+target_link_libraries(meshless_shape_matching
+  PRIVATE
+    OpenGL::OpenGL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    ${IL_LIBRARIES}
+    ${ILU_LIBRARIES}
+    ${ILUT_LIBRARIES}
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS meshless_shape_matching 
+install(
+  TARGETS meshless_shape_matching
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
 

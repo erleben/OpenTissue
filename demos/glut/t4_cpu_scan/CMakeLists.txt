@@ -1,9 +1,20 @@
-ADD_EXECUTABLE(t4_cpu_scan src/application.cpp)
+add_executable(t4_cpu_scan src/application.cpp)
 
-TARGET_LINK_LIBRARIES(t4_cpu_scan ${OPENTISSUE_LIBS})
+target_link_libraries(t4_cpu_scan
+  PRIVATE
+    OpenGL::OpenGL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    ${IL_LIBRARIES}
+    ${ILU_LIBRARIES}
+    ${ILUT_LIBRARIES}
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS t4_cpu_scan
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
 

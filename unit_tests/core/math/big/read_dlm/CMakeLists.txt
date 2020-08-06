@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_read_dlm src/unit_read_dlm.cpp)
+add_executable(unit_read_dlm src/unit_read_dlm.cpp)
 
-TARGET_LINK_LIBRARIES(unit_read_dlm ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_read_dlm 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_read_dlm
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_read_dlm unit_read_dlm )
+ot_add_test(unit_read_dlm)
 

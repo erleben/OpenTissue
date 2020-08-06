@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_signed_distance_to_vertex_edge_vp src/unit_sign_dist2vert_edge_vp.cpp)
+add_executable(unit_signed_distance_to_vertex_edge_vp src/unit_sign_dist2vert_edge_vp.cpp)
 
-TARGET_LINK_LIBRARIES(unit_signed_distance_to_vertex_edge_vp ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_signed_distance_to_vertex_edge_vp
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_signed_distance_to_vertex_edge_vp
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_signed_distance_to_vertex_edge_vp unit_signed_distance_to_vertex_edge_vp )
+ot_add_test(unit_signed_distance_to_vertex_edge_vp)
 

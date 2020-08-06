@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_grid src/unit_grid.cpp)
+add_executable(unit_grid src/unit_grid.cpp)
 
-TARGET_LINK_LIBRARIES(unit_grid ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_grid
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_grid
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_grid unit_grid )
+ot_add_test(unit_grid)

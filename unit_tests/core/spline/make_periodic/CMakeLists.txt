@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_make_periodic src/unit_make_periodic.cpp)
+add_executable(unit_make_periodic src/unit_make_periodic.cpp)
 
-TARGET_LINK_LIBRARIES(unit_make_periodic ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_make_periodic 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_make_periodic
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_make_periodic unit_make_periodic )
+ot_add_test(unit_make_periodic)

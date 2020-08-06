@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_contiguous_interval src/unit_contiguous_interval.cpp)
+add_executable(unit_contiguous_interval src/unit_contiguous_interval.cpp)
 
-TARGET_LINK_LIBRARIES(unit_contiguous_interval ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_contiguous_interval 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_contiguous_interval
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_contiguous_interval unit_contiguous_interval )
+ot_add_test(unit_contiguous_interval)

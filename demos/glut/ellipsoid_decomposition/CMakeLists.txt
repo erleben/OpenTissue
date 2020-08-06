@@ -1,9 +1,21 @@
-ADD_EXECUTABLE(ellipsoid_decomposition src/application.cpp)
+add_executable(ellipsoid_decomposition src/application.cpp)
 
-TARGET_LINK_LIBRARIES(ellipsoid_decomposition ${OPENTISSUE_LIBS})
+target_link_libraries(ellipsoid_decomposition
+  PRIVATE
+    OpenGL::OpenGL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    ${IL_LIBRARIES}
+    ${ILU_LIBRARIES}
+    ${ILUT_LIBRARIES}
+    Qhull::libqhull
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS ellipsoid_decomposition 
+install(
+  TARGETS ellipsoid_decomposition
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
 

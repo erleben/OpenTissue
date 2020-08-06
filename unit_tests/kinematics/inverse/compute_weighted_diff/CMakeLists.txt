@@ -1,12 +1,16 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_compute_weighted_diff src/unit_compute_weighted_diff.cpp)
+add_executable(unit_compute_weighted_diff src/unit_compute_weighted_diff.cpp)
 
-TARGET_LINK_LIBRARIES(unit_compute_weighted_diff ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_compute_weighted_diff 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_compute_weighted_diff
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_compute_weighted_diff unit_compute_weighted_diff )
+ot_add_test(unit_compute_weighted_diff)

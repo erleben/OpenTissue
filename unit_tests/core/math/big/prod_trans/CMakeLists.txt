@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_prod_trans src/unit_prod_trans.cpp)
+add_executable(unit_prod_trans src/unit_prod_trans.cpp)
 
-TARGET_LINK_LIBRARIES(unit_prod_trans ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_prod_trans 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_prod_trans
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_prod_trans unit_prod_trans )
+ot_add_test(unit_prod_trans)
 

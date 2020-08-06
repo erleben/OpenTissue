@@ -1,12 +1,16 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_nonlinear_solver src/unit_nonlinear_solver.cpp)
+add_executable(unit_nonlinear_solver src/unit_nonlinear_solver.cpp)
 
-TARGET_LINK_LIBRARIES(unit_nonlinear_solver ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_nonlinear_solver 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_nonlinear_solver
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_nonlinear_solver unit_nonlinear_solver )
+ot_add_test(unit_nonlinear_solver)

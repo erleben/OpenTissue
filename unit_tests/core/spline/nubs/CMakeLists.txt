@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_nubs src/unit_nubs.cpp)
+add_executable(unit_nubs src/unit_nubs.cpp)
 
-TARGET_LINK_LIBRARIES(unit_nubs ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_nubs 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS unit_nubs 
+install(
+  TARGETS unit_nubs
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_nubs unit_nubs )
+ot_add_test(unit_nubs)

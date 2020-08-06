@@ -104,24 +104,24 @@ void utilities_compile_test()
   OpenTissue::mbd::mel::geometry_string(configuration.body_begin(),configuration.body_end());
   OpenTissue::mbd::mel::keyframe_string(configuration.body_begin(),configuration.body_end(),simulator.time());
   OpenTissue::mbd::mel::euler_filter_string(configuration.body_begin(),configuration.body_end());
-  
+
   typename mbd_types::body_type * body = 0;
 
 
-  OpenTissue::mbd::draw_body(*body,true);
-
-  OpenTissue::mbd::DrawBodyFunctor<false>()(*body);
-  OpenTissue::mbd::DrawBodyFunctor<true>()(*body);
-
-  OpenTissue::mbd::draw_contacts(configuration);
+//   OpenTissue::mbd::draw_body(*body,true);
+//
+//   OpenTissue::mbd::DrawBodyFunctor<false>()(*body);
+//   OpenTissue::mbd::DrawBodyFunctor<true>()(*body);
+//
+//   OpenTissue::mbd::draw_contacts(configuration);
 
   typename mbd_types::joint_type * joint = 0;
 
 
-  OpenTissue::mbd::draw_joint(*joint);
-  OpenTissue::mbd::DrawJointFunctor()(*joint);
-
-  OpenTissue::mbd::draw_penetrations(configuration);
+//   OpenTissue::mbd::draw_joint(*joint);
+//   OpenTissue::mbd::DrawJointFunctor()(*joint);
+//
+//   OpenTissue::mbd::draw_penetrations(configuration);
 }
 
 

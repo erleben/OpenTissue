@@ -1,12 +1,16 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_jacobian_assembly src/unit_jacobian_assembly.cpp)
+add_executable(unit_jacobian_assembly src/unit_jacobian_assembly.cpp)
 
-TARGET_LINK_LIBRARIES(unit_jacobian_assembly ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_jacobian_assembly 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_jacobian_assembly
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_jacobian_assembly unit_jacobian_assembly )
+ot_add_test(unit_jacobian_assembly)
