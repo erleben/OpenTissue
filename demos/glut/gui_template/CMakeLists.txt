@@ -2,7 +2,7 @@ add_executable(gui_template src/application.cpp)
 
 target_link_libraries(gui_template
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

@@ -2,7 +2,7 @@ add_executable(hybrid_bounding_volume_hierarchy src/application.cpp)
 
 target_link_libraries(hybrid_bounding_volume_hierarchy
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

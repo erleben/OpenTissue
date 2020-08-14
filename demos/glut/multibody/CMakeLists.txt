@@ -26,7 +26,7 @@ add_executable(multibody
 
 target_link_libraries(multibody
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

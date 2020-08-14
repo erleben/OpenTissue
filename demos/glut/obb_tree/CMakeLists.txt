@@ -2,7 +2,7 @@ add_executable(obb_tree src/application.cpp)
 
 target_link_libraries(obb_tree
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

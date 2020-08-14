@@ -2,7 +2,7 @@ add_executable(character_animation src/application.cpp)
 
 target_link_libraries(character_animation
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

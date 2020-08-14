@@ -2,7 +2,7 @@ add_executable(meshless_shape_matching src/application.cpp)
 
 target_link_libraries(meshless_shape_matching
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

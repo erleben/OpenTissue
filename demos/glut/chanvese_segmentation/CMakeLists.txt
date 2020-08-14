@@ -2,7 +2,7 @@ add_executable(chanvese_segmentation src/application.cpp)
 
 target_link_libraries(chanvese_segmentation
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

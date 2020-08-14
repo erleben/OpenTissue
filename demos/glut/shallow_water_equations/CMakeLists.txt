@@ -2,7 +2,7 @@ add_executable(shallow_water_equations src/application.cpp)
 
 target_link_libraries(shallow_water_equations
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

@@ -2,7 +2,7 @@ add_executable(particle_system src/application.cpp)
 
 target_link_libraries(particle_system
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

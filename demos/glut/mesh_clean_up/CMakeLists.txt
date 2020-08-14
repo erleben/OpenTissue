@@ -2,7 +2,7 @@ add_executable(mesh_clean_up src/application.cpp)
 
 target_link_libraries(mesh_clean_up
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

@@ -1,7 +1,7 @@
 #-----------------------------------------------------------------------------
 # If on linux and found a dynamic link library (.so),
 # define BOOST_TEST_DYN_LINK to automagically get the main method.
-#
+# TODO: This needs to be fixed, Boost_unit_test_framework_LIBRARY is not always defined.
 if(Boost_unit_test_framework_LIBRARY)
   get_filename_component(LIB_EXTENSION ${Boost_unit_test_framework_LIBRARY} EXT)
   if(LIB_EXTENSION STREQUAL ".so")
@@ -14,6 +14,21 @@ function(ot_add_test TEST_NAME)
     COMMAND $<TARGET_FILE:${TEST_NAME}> ${ARGN}
   )
 endfunction()
+
+option(CODE_COVERAGE "Enable coverage reporting" OFF)
+if(CODE_COVERAGE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  # Add required flags (GCC & LLVM/Clang)
+  target_compile_options(OpenTissue INTERFACE
+    -O0        # no optimization
+    -g         # generate debug info
+    --coverage # sets all required flags
+  )
+  if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.13)
+    target_link_options(OpenTissue INTERFACE --coverage)
+  else()
+    target_link_libraries(OpenTissue INTERFACE --coverage)
+  endif()
+endif()
 
 add_subdirectory( collision )
 add_subdirectory( core )

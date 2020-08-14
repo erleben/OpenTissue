@@ -2,7 +2,7 @@ add_executable(elastically_deformable_models src/application.cpp)
 
 target_link_libraries(elastically_deformable_models
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

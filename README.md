@@ -1,4 +1,5 @@
 [![Build Status](https://dev.azure.com/ricortiz/ricortiz/_apis/build/status/ricortiz.OpenTissue?branchName=OpenTissue-Modernization-PhaseI-BuildSystem)](https://dev.azure.com/ricortiz/ricortiz/_build/latest?definitionId=1&branchName=OpenTissue-Modernization-PhaseI-BuildSystem)
+[![License](https://img.shields.io/badge/License-Zlib-blue.svg)](http://opensource.org/licenses/zlib-license.php)
 
 # OpenTissue
 OpenTissue is a collection of generic algorithms and data structures for rapid development of interactive modeling and simulation.

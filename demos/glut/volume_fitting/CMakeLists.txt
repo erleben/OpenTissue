@@ -2,7 +2,7 @@ add_executable(volume_fitting src/application.cpp)
 
 target_link_libraries(volume_fitting
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

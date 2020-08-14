@@ -2,7 +2,7 @@ add_executable(smoothed_particle_hydrodynamics src/application.cpp)
 
 target_link_libraries(smoothed_particle_hydrodynamics
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

@@ -2,7 +2,7 @@ add_executable(vertex_mean_curvature src/application.cpp)
 
 target_link_libraries(vertex_mean_curvature
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

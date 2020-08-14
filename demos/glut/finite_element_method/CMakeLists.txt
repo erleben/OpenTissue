@@ -2,7 +2,7 @@ add_executable(finite_element_method src/application.cpp)
 
 target_link_libraries(finite_element_method
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew

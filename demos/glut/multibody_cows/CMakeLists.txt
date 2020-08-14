@@ -2,7 +2,7 @@ add_executable(multibody_cows src/application.cpp)
 
 target_link_libraries(multibody_cows
   PRIVATE
-    OpenGL::OpenGL
+    OpenGL::GL
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
