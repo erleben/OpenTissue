@@ -31,6 +31,15 @@
 #
 ##################################################################################################
 
+# If we have the conan target then use it and exit.
+if(TARGET CONAN_PKG::Qhull)
+  if(NOT TARGET Qhull::libqhull)
+    add_library(Qhull::libqhull INTERFACE IMPORTED)
+    target_link_libraries(Qhull::libqhull INTERFACE CONAN_PKG::Qhull)
+  endif()
+  return()
+endif()
+
 # Find headers and libraries
 find_path(Qhull_INCLUDE_DIR NAMES libqhull.h PATH_SUFFIXES libqhull)
 
@@ -55,13 +64,13 @@ if(Qhull_FOUND)
     add_library(Qhull::libqhull UNKNOWN IMPORTED)
     if(EXISTS ${Qhull_LIBRARY_RELEASE})
       set_property(TARGET Qhull::libqhull APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-      set_target_properties(Qhull::libqhull PROPERTIES MASP_IMPORTED_CONFIG_RELEASE Release
+      set_target_properties(Qhull::libqhull PROPERTIES MAP_IMPORTED_CONFIG_RELEASE Release
         IMPORTED_LOCATION_RELEASE "${Qhull_LIBRARY_RELEASE}")
     endif()
 
     if(EXISTS ${Qhull_LIBRARY_DEBUG})
       set_property(TARGET Qhull::libqhull APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
-      set_target_properties(Qhull::libqhull PROPERTIES MASP_IMPORTED_CONFIG_DEBUG Debug
+      set_target_properties(Qhull::libqhull PROPERTIES MAP_IMPORTED_CONFIG_DEBUG Debug
         IMPORTED_LOCATION_RELEASE "${Qhull_LIBRARY_DEBUG}")
     endif()
 

@@ -3,16 +3,10 @@ project(OpenTissue VERSION 0.994
                    DESCRIPTION "A header only c++ library collection of generic algorithms and data structures for rapid development of interactive modeling and simulation."
                    HOMEPAGE_URL "https://github.com/erleben/OpenTissue")
 
-# Add connan dependencies utilities, only access to root directories is used.
+# Add connan dependencies, conan targets will be used.
 if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-  set(BOOST_ROOT ${CONAN_BOOST_ROOT})
-  set(DevIL_ROOT ${CONAN_DEVIL_ROOT})
-  set(Qhull_ROOT ${CONAN_QHULL_ROOT})
-  set(TetGen_ROOT ${CONAN_TETGEN_ROOT})
-  set(TinyXML_ROOT ${CONAN_TINYXML_ROOT})
-  set(Triangle_ROOT ${CONAN_TRIANGLE_ROOT})
-  conan_basic_setup()
+  conan_basic_setup(TARGETS)
 endif()
 
 #-----------------------------------------------------------------------------
@@ -35,9 +29,9 @@ set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
 # Global variables that control the behaviour of CMake. Use these in
 # the GUI to turn on/off different kind of things.
 #
-set(OPENTISSUE_ENABLE_UNIT_TESTS         FALSE   CACHE BOOL   "Build unit test")
-set(OPENTISSUE_ENABLE_DOCUMENTATION      FALSE   CACHE BOOL   "Build documentation")
-set(OPENTISSUE_ENABLE_DEMOS              FALSE   CACHE BOOL   "Build demos")
+option(OPENTISSUE_ENABLE_UNIT_TESTS "Build unit test" OFF)
+option(OPENTISSUE_ENABLE_DOCUMENTATION "Build documentation" OFF)
+option(OPENTISSUE_ENABLE_DEMOS "Build demos" OFF)
 
 #-----------------------------------------------------------------------------
 #
@@ -90,7 +84,6 @@ if(OPENTISSUE_ENABLE_DEMOS)
   #
   find_package(GLEW REQUIRED)
 
-  find_package(TinyXML REQUIRED)
 endif()
 
 #-----------------------------------------------------------------------------
@@ -101,6 +94,7 @@ endif()
 #
 find_package(DevIL REQUIRED)
 
+find_package(TinyXML REQUIRED)
 find_package(TetGen REQUIRED)
 find_package(Triangle REQUIRED)
 
@@ -127,6 +121,7 @@ if(OPENTISSUE_ENABLE_DOCUMENTATION)
 endif()
 
 if(OPENTISSUE_ENABLE_UNIT_TESTS)
+  enable_testing()
   include(CTest)
   add_subdirectory(unit_tests)
 endif()

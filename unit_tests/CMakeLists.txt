@@ -11,12 +11,13 @@ endif(Boost_unit_test_framework_LIBRARY)
 
 function(ot_add_test TEST_NAME)
   add_test(NAME ${TEST_NAME}
-    COMMAND $<TARGET_FILE:${TEST_NAME}> ${ARGN}
+    COMMAND ${CMAKE_COMMAND} -E env OPENTISSUE=${PROJECT_SOURCE_DIR} $<TARGET_FILE:${TEST_NAME}> ${ARGN}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
   )
 endfunction()
 
-option(CODE_COVERAGE "Enable coverage reporting" OFF)
-if(CODE_COVERAGE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+option(OPENTISSUE_ENABLE_CODE_COVERAGE "Enable coverage reporting" OFF)
+if(OPENTISSUE_ENABLE_CODE_COVERAGE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
   # Add required flags (GCC & LLVM/Clang)
   target_compile_options(OpenTissue INTERFACE
     -O0        # no optimization

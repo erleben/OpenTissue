@@ -39,6 +39,9 @@
 
 
 #include <OpenTissue/utility/utility_timer.h>
+#include <OpenTissue/dynamics/mbd/util/mbd_draw_body.h>
+#include <OpenTissue/dynamics/mbd/util/mbd_draw_contacts.h>
+#include <OpenTissue/dynamics/mbd/util/mbd_draw_joint.h>
 
 class Application : public OpenTissue::glut::PerspectiveViewApplication
 {

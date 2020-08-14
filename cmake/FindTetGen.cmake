@@ -31,8 +31,17 @@
 #
 ##################################################################################################
 
+# If we have the conan target then use it and exit.
+if(TARGET CONAN_PKG::TetGen)
+  if(NOT TARGET TetGen)
+    add_library(TetGen INTERFACE IMPORTED)
+    target_link_libraries(TetGen INTERFACE CONAN_PKG::TetGen)
+  endif()
+  return()
+endif()
+
 # Find headers and libraries
-find_path(TetGen_INCLUDE_DIR NAMES tetgen.h)
+find_path(TetGen_INCLUDE_DIR NAMES tetgen.h PATH_SUFFIXES TetGen)
 
 find_library(TetGen_LIBRARY_RELEASE  NAMES TetGen)
 find_library(TetGen_LIBRARY_DEBUG  NAMES TetGen_d)
@@ -55,13 +64,13 @@ if(TetGen_FOUND)
     add_library(TetGen UNKNOWN IMPORTED)
     if(EXISTS ${TetGen_LIBRARY_RELEASE})
       set_property(TARGET TetGen APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-      set_target_properties(TetGen PROPERTIES MASP_IMPORTED_CONFIG_RELEASE Release
+      set_target_properties(TetGen PROPERTIES MAP_IMPORTED_CONFIG_RELEASE Release
         IMPORTED_LOCATION_RELEASE "${TetGen_LIBRARY_RELEASE}")
     endif()
 
     if(EXISTS ${TetGen_LIBRARY_DEBUG})
       set_property(TARGET TetGen APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
-      set_target_properties(TetGen PROPERTIES MASP_IMPORTED_CONFIG_DEBUG Debug
+      set_target_properties(TetGen PROPERTIES MAP_IMPORTED_CONFIG_DEBUG Debug
         IMPORTED_LOCATION_RELEASE "${TetGen_LIBRARY_DEBUG}")
     endif()
 

@@ -6,9 +6,7 @@ target_link_libraries(t4mesh_tetgen_generator
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    ${IL_LIBRARIES}
-    ${ILU_LIBRARIES}
-    ${ILUT_LIBRARIES}
+    DevIL::DevIL
     TetGen
     TinyXML
     OpenTissue

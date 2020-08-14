@@ -6,9 +6,7 @@ target_link_libraries(shallow_water_equations
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    ${IL_LIBRARIES}
-    ${ILU_LIBRARIES}
-    ${ILUT_LIBRARIES}
+    DevIL::DevIL
     OpenTissue
 )
 
@@ -17,4 +15,3 @@ install(
   RUNTIME DESTINATION  bin/demos/glut/
   COMPONENT Demos
   )
-

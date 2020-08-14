@@ -2,9 +2,10 @@ include_directories( ${PROJECT_SOURCE_DIR}/src )
 
 add_executable(unit_set_default_joints src/unit_set_default_joints.cpp)
 
-target_link_libraries(unit_set_default_joints 
+target_link_libraries(unit_set_default_joints
   PRIVATE
     Boost::unit_test_framework
+    TinyXML
     OpenTissue
 )
 

@@ -2,9 +2,10 @@ include_directories( ${PROJECT_SOURCE_DIR}/src )
 
 add_executable(unit_joint_parameters src/unit_joint_parameters.cpp)
 
-target_link_libraries(unit_joint_parameters 
+target_link_libraries(unit_joint_parameters
   PRIVATE
     Boost::unit_test_framework
+    TinyXML
     OpenTissue
 )
 

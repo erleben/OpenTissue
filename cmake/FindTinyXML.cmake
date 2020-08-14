@@ -31,6 +31,15 @@
 #
 ##################################################################################################
 
+# If we have the conan target then use it and exit.
+if(TARGET CONAN_PKG::TinyXML)
+  if(NOT TARGET TinyXML)
+    add_library(TinyXML INTERFACE IMPORTED)
+    target_link_libraries(TinyXML INTERFACE CONAN_PKG::TinyXML)
+  endif()
+  return()
+endif()
+
 # Find headers and libraries
 find_path(TinyXML_INCLUDE_DIR NAMES tinyxml.h PATH_SUFFIXES TinyXML)
 
@@ -55,13 +64,13 @@ if(TinyXML_FOUND)
     add_library(TinyXML UNKNOWN IMPORTED)
     if(EXISTS ${TinyXML_LIBRARY_RELEASE})
       set_property(TARGET TinyXML APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-      set_target_properties(TinyXML PROPERTIES MASP_IMPORTED_CONFIG_RELEASE Release
+      set_target_properties(TinyXML PROPERTIES MAP_IMPORTED_CONFIG_RELEASE Release
         IMPORTED_LOCATION_RELEASE "${TinyXML_LIBRARY_RELEASE}")
     endif()
 
     if(EXISTS ${TinyXML_LIBRARY_DEBUG})
       set_property(TARGET TinyXML APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
-      set_target_properties(TinyXML PROPERTIES MASP_IMPORTED_CONFIG_DEBUG Debug
+      set_target_properties(TinyXML PROPERTIES MAP_IMPORTED_CONFIG_DEBUG Debug
         IMPORTED_LOCATION_RELEASE "${TinyXML_LIBRARY_DEBUG}")
 
     endif()

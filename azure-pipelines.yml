@@ -11,9 +11,9 @@ strategy:
     linux:
       imageName: "ubuntu-latest"
     mac1014:
-      imageName: "macOS-latest"
+      imageName: "macOS-10.14"
 
-  maxParallel: 3
+  maxParallel: 2
 
 pool:
   vmImage: '$(imageName)'
@@ -38,12 +38,12 @@ steps:
     mkdir build
     pushd build
     conan remote add ot_deps https://api.bintray.com/conan/opentissue/Deps
-    conan install .. || exit 1
+    conan install .. -s build_type=Debug || exit 1
     popd
   displayName: 'Resolve Dependencies'
 
 - bash: |
-    cmake -DOPENTISSUE_ENABLE_UNIT_TESTS=ON -S ${PWD} -B ${PWD}/build
+    cmake -DOPENTISSUE_ENABLE_CODE_COVERAGE:BOOL=ON -DCMAKE_BUILD_TYPE=Debug -DOPENTISSUE_ENABLE_UNIT_TESTS=ON -S ${PWD} -B ${PWD}/build
     cmake --build ${PWD}/build --target Continuous -j 2
     pushd build
     ctest -T Test

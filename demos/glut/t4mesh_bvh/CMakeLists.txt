@@ -6,9 +6,7 @@ target_link_libraries(t4mesh_bvh
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    ${IL_LIBRARIES}
-    ${ILU_LIBRARIES}
-    ${ILUT_LIBRARIES}
+    DevIL::DevIL
     Qhull::libqhull
     TinyXML
     OpenTissue
@@ -24,4 +22,3 @@ install(
   RUNTIME DESTINATION  bin/demos/glut/
   COMPONENT Demos
   )
-

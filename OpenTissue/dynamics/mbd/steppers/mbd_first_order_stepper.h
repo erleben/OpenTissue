@@ -26,7 +26,7 @@ namespace OpenTissue
   namespace mbd
   {
     template< typename mbd_types, typename solver_type  >
-    class FirstOrderStepper 
+    class FirstOrderStepper
       : public StepperInterface<mbd_types>
     {
     public:
@@ -43,17 +43,17 @@ namespace OpenTissue
     protected:
 
       solver_type            m_solver;
-      vector_type            m_f_ext; 
-      vector_type            m_s;     
+      vector_type            m_f_ext;
+      vector_type            m_s;
       matrix_type            m_invM;
-      matrix_type            m_J; 
-      idx_vector_type        m_pi;  
-      vector_type            m_mu;  
-      vector_type            m_b;   
-      vector_type            m_rhs; 
-      vector_type            m_gamma; 
-      vector_type            m_lo;    
-      vector_type            m_hi;    
+      matrix_type            m_J;
+      idx_vector_type        m_pi;
+      vector_type            m_mu;
+      vector_type            m_b;
+      vector_type            m_rhs;
+      vector_type            m_gamma;
+      vector_type            m_lo;
+      vector_type            m_hi;
       vector_type            m_x;
       vector_type            m_tmp;
 
@@ -108,7 +108,7 @@ namespace OpenTissue
 
       void run(group_type & group,real_type const & time_step)
       {
-        OpenTissue::utility::Timer<real_type> watch1,watch2;
+        OpenTissue::utility::Timer<double> watch1,watch2;
 
         watch1.start();
         watch2.start();
@@ -224,7 +224,7 @@ namespace OpenTissue
       }
 
       void error_correction(group_type & group)
-      { 
+      {
         bool tmp1 = this->warm_starting();
         bool tmp2 = this->use_external_forces();
         bool tmp3 = this->use_erp();

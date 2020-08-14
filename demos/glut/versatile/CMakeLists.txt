@@ -6,9 +6,8 @@ target_link_libraries(versatile
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    ${IL_LIBRARIES}
-    ${ILU_LIBRARIES}
-    ${ILUT_LIBRARIES}
+    DevIL::DevIL
+    TinyXML
     OpenTissue
 )
 
@@ -22,6 +21,3 @@ install(
   RUNTIME DESTINATION  bin/demos/glut/
   COMPONENT Demos
   )
-
-
-

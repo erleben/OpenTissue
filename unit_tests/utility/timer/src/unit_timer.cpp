@@ -39,19 +39,4 @@ BOOST_AUTO_TEST_SUITE(opentissue_utility_timer);
     BOOST_CHECK( duration < 2.1);
   }
 
-  BOOST_AUTO_TEST_CASE(float_testing)
-  {
-    OpenTissue::utility::Timer<float> timer;
-    timer.start();
-#if defined(WIN32)
-    Sleep( 2 * 1000 );
-#else
-    sleep ( 2 );
-#endif
-    timer.stop();
-    float duration = timer();
-    BOOST_CHECK( duration > 1.9f);
-    BOOST_CHECK( duration < 2.1f);
-  }
-
 BOOST_AUTO_TEST_SUITE_END();

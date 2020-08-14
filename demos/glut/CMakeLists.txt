@@ -29,4 +29,3 @@ add_subdirectory(variational_interpolator)
 add_subdirectory(versatile)
 add_subdirectory(vertex_mean_curvature)
 add_subdirectory(volume_fitting)
-

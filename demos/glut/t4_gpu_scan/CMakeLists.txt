@@ -8,5 +8,3 @@ install(
   RUNTIME DESTINATION  bin/demos/glut/
   COMPONENT Demos
   )
-
-

@@ -31,6 +31,15 @@
 #
 ##################################################################################################
 
+# If we have the conan target then use it and exit.
+if(TARGET CONAN_PKG::DevIL)
+  if(NOT TARGET DevIL::DevIL)
+    add_library(DevIL::DevIL INTERFACE IMPORTED)
+    target_link_libraries(DevIL::DevIL INTERFACE CONAN_PKG::DevIL)
+  endif()
+  return()
+endif()
+
 # Find headers and libraries
 find_path(DevIL_INCLUDE_DIR NAMES il.h ilu.h ilut.h PATH_SUFFIXES IL)
 
@@ -52,26 +61,32 @@ find_package_handle_standard_args(DevIL DEFAULT_MSG DevIL_LIBRARIES
                                                     DevIL_INCLUDE_DIR)
 
 if(DevIL_FOUND)
-  if(NOT TARGET DevIL)
+    if(NOT TARGET DevIL::DevIL)
+      add_library(DevIL::DevIL INTERFACE IMPORTED)
+    endif()
+
     foreach(_lib IL ILU ILUT)
 
-      add_library(DevIL::${_lib} UNKNOWN IMPORTED)
-      if(EXISTS ${DevIL_LIBRARY_${_lib}_RELEASE})
-        set_property(TARGET DevIL::${_lib} APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-        set_target_properties(DevIL::${_lib} PROPERTIES MASP_IMPORTED_CONFIG_RELEASE Release
-          IMPORTED_LOCATION_RELEASE "${DevIL_LIBRARY_${_lib}_RELEASE}")
+      if(NOT TARGET DevIL::${_lib})
+        add_library(DevIL::${_lib} UNKNOWN IMPORTED)
+        if(EXISTS ${DevIL_LIBRARY_${_lib}_RELEASE})
+          set_property(TARGET DevIL::${_lib} APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+          set_target_properties(DevIL::${_lib} PROPERTIES MAP_IMPORTED_CONFIG_RELEASE Release
+            IMPORTED_LOCATION_RELEASE "${DevIL_LIBRARY_${_lib}_RELEASE}")
+        endif()
+
+        if(EXISTS ${DevIL_LIBRARY_${_lib}_DEBUG})
+          set_property(TARGET DevIL::${_lib} APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
+          set_target_properties(DevIL::${_lib} PROPERTIES MAP_IMPORTED_CONFIG_DEBUG Debug
+            IMPORTED_LOCATION_RELEASE "${DevIL_LIBRARY_${_lib}_DEBUG}")
+        endif()
+
+        set_target_properties(DevIL::${_lib} PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${DevIL_INCLUDE_DIR})
       endif()
 
-      if(EXISTS ${DevIL_LIBRARY_${_lib}_DEBUG})
-        set_property(TARGET DevIL::${_lib} APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
-        set_target_properties(DevIL::${_lib} PROPERTIES MASP_IMPORTED_CONFIG_DEBUG Debug
-          IMPORTED_LOCATION_RELEASE "${DevIL_LIBRARY_${_lib}_DEBUG}")
-      endif()
-
-      set_target_properties(DevIL::${_lib} PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${DevIL_INCLUDE_DIR})
-
+      target_link_libraries(DevIL::DevIL INTERFACE DevIL::${_lib})
     endforeach(_lib IL ILU ILUT)
-  endif()
+
 endif()
 
 mark_as_advanced(DevIL_INCLUDE_DIR

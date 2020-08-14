@@ -31,6 +31,15 @@
 #
 ##################################################################################################
 
+# If we have the conan target then use it and exit.
+if(TARGET CONAN_PKG::Triangle)
+  if(NOT TARGET Triangle)
+    add_library(Triangle INTERFACE IMPORTED)
+    target_link_libraries(Triangle INTERFACE CONAN_PKG::Triangle)
+  endif()
+  return()
+endif()
+
 # Find headers and libraries
 find_path(Triangle_INCLUDE_DIR NAMES triangle.h PATH_SUFFIXES Triangle)
 
@@ -55,13 +64,13 @@ if(Triangle_FOUND)
     add_library(Triangle UNKNOWN IMPORTED)
     if(EXISTS ${Triangle_LIBRARY_RELEASE})
       set_property(TARGET Triangle APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-      set_target_properties(Triangle PROPERTIES MASP_IMPORTED_CONFIG_RELEASE Release
+      set_target_properties(Triangle PROPERTIES MAP_IMPORTED_CONFIG_RELEASE Release
         IMPORTED_LOCATION_RELEASE "${Triangle_LIBRARY_RELEASE}")
     endif()
 
     if(EXISTS ${Triangle_LIBRARY_DEBUG})
       set_property(TARGET Triangle APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
-      set_target_properties(Triangle PROPERTIES MASP_IMPORTED_CONFIG_DEBUG Debug
+      set_target_properties(Triangle PROPERTIES MAP_IMPORTED_CONFIG_DEBUG Debug
         IMPORTED_LOCATION_RELEASE "${Triangle_LIBRARY_DEBUG}")
     endif()
 

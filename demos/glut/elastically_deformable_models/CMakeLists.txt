@@ -6,9 +6,7 @@ target_link_libraries(elastically_deformable_models
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    ${IL_LIBRARIES}
-    ${ILU_LIBRARIES}
-    ${ILUT_LIBRARIES}
+    DevIL::DevIL
     OpenTissue
 )
 
