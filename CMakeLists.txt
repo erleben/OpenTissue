@@ -7,6 +7,9 @@ project(OpenTissue VERSION 0.994
 if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   conan_basic_setup(TARGETS)
+  set(BOOST_ROOT ${CONAN_BOOST_ROOT})
+  set(BOOST_LIBRARYDIR ${CONAN_LIB_DIRS_BOOST})
+  set(BOOST_INCLUDEDIR ${CONAN_INCLUDE_DIRS_BOOST})
 endif()
 
 #-----------------------------------------------------------------------------
@@ -37,10 +40,12 @@ option(OPENTISSUE_ENABLE_DEMOS "Build demos" OFF)
 #
 # Try to find Boost (http://www.boost.org/), Boost is needed by almost all
 # OpenTissue code, one have to make sure this one works!
-#
+# FindBoost
 if(OPENTISSUE_ENABLE_UNIT_TESTS)
   set(OPENTISSUE_BOOST_COMPONENTS unit_test_framework)
 endif()
+set(Boost_DEBUG ON)
+set(Boost_VERBOSE ON)
 find_package(Boost 1.39.0 COMPONENTS "${OPENTISSUE_BOOST_COMPONENTS}" REQUIRED)
 
 if(OPENTISSUE_ENABLE_DEMOS)
@@ -121,7 +126,7 @@ if(OPENTISSUE_ENABLE_DOCUMENTATION)
 endif()
 
 if(OPENTISSUE_ENABLE_UNIT_TESTS)
-  enable_testing()
+  option(BUILD_TESTING "Enable cmake testing utils." ON)
   include(CTest)
   add_subdirectory(unit_tests)
 endif()

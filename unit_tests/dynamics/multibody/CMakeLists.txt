@@ -3,33 +3,32 @@
 # We got a bunch of compile tests, it really make no sense to build an
 # executable from these. We just create a static lib for each of these.
 #
-set(SRC_FILES double_2pass_shock_propagation_stepper.cpp
-  double_constraint_based_shock_propagation_stepper.cpp
-  double_dynamics_projection_stepper.cpp
-  double_dynamics_stepper.cpp
-  double_first_order_stepper.cpp
-  double_iterate_once_collision_resolver.cpp
-  double_sequential_collision_resolver.cpp
-  double_sequential_truncating_collision_resolver.cpp
-  float_2pass_shock_propagation_stepper.cpp
-  float_constraint_based_shock_propagation_stepper.cpp
-  float_dynamics_projection_stepper.cpp
-  float_dynamics_stepper.cpp
-  float_first_order_stepper.cpp
-  float_iterate_once_collision_resolver.cpp
-  float_sequential_collision_resolver.cpp
-  float_sequential_truncating_collision_resolver.cpp
+set(SRC_FILES
+  src/simulator_types_compile_testing/double_2pass_shock_propagation_stepper.cpp
+  src/simulator_types_compile_testing/double_constraint_based_shock_propagation_stepper.cpp
+  src/simulator_types_compile_testing/double_dynamics_projection_stepper.cpp
+  src/simulator_types_compile_testing/double_dynamics_stepper.cpp
+  src/simulator_types_compile_testing/double_first_order_stepper.cpp
+  src/simulator_types_compile_testing/double_iterate_once_collision_resolver.cpp
+  src/simulator_types_compile_testing/double_sequential_collision_resolver.cpp
+  src/simulator_types_compile_testing/double_sequential_truncating_collision_resolver.cpp
+  src/simulator_types_compile_testing/float_2pass_shock_propagation_stepper.cpp
+  src/simulator_types_compile_testing/float_constraint_based_shock_propagation_stepper.cpp
+  src/simulator_types_compile_testing/float_dynamics_projection_stepper.cpp
+  src/simulator_types_compile_testing/float_dynamics_stepper.cpp
+  src/simulator_types_compile_testing/float_first_order_stepper.cpp
+  src/simulator_types_compile_testing/float_iterate_once_collision_resolver.cpp
+  src/simulator_types_compile_testing/float_sequential_collision_resolver.cpp
+  src/simulator_types_compile_testing/float_sequential_truncating_collision_resolver.cpp
 )
 
-foreach(file ${FILES})
-  get_filename_component(FILE_NAME ${file} NAME_WE)
-  add_library(unit_mbd_${FILE_NAME} ${file})
-  target_link_libraries(unit_mbd_${FILE_NAME}
+add_library(unit_multibody_build_test ${SRC_FILES})
+target_link_libraries(unit_multibody_build_test
   PRIVATE
     Boost::unit_test_framework
+    Qhull::libqhull
     OpenTissue
 )
-endforeach()
 
 #----------------------------------------------------------------------
 #
@@ -46,6 +45,7 @@ add_executable(unit_multibody
 target_link_libraries(unit_multibody
   PRIVATE
     Boost::unit_test_framework
+    Qhull::libqhull
     OpenTissue
 )
 
