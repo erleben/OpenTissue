@@ -48,6 +48,7 @@ steps:
     cmake --build ${PWD}/build --target Continuous -j 2
     pushd build
     ctest -T Test
+    ctest -T Coverage
     popd
   displayName: 'Build and Run Unit Tests'
 
