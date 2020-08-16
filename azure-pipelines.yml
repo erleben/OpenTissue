@@ -44,6 +44,7 @@ steps:
 
 - bash: |
     cmake -DOPENTISSUE_ENABLE_CODE_COVERAGE:BOOL=ON -DCMAKE_BUILD_TYPE=Debug -DOPENTISSUE_ENABLE_UNIT_TESTS=ON -S ${PWD} -B ${PWD}/build
+    cmake --build ${PWD}/build --target all
     cmake --build ${PWD}/build --target Continuous -j 2
     pushd build
     ctest -T Test
