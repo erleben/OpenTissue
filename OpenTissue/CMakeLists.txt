@@ -7,6 +7,11 @@ if(NOT TARGET OpenTissue)
   add_library(OpenTissue INTERFACE)
 endif()
 
+target_link_libraries(OpenTissue
+  INTERFACE
+    Boost::disable_autolinking
+)
+
 target_include_directories(OpenTissue
   INTERFACE
     $<INSTALL_INTERFACE:include/OpenTissue>
@@ -20,6 +25,7 @@ target_compile_definitions(OpenTissue
     $<$<CXX_COMPILER_ID:MSVC>:_SCL_SECURE_NO_DEPRECATE>
     $<$<CXX_COMPILER_ID:MSVC>:_CRT_SECURE_NO_WARNINGS>
     $<$<CXX_COMPILER_ID:MSVC>:_CRT_SECURE_NO_DEPRECATE>
+    $<$<CXX_COMPILER_ID:MSVC>:_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS>
     $<$<CXX_COMPILER_ID:GNU>:_USE_MATH_DEFINES>
     $<$<CXX_COMPILER_ID:GNU>:GL_SILENCE_DEPRECATION>
 )

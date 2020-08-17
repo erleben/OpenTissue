@@ -43,7 +43,12 @@ endif()
 # Find headers and libraries
 find_path(DevIL_INCLUDE_DIR NAMES il.h ilu.h ilut.h PATH_SUFFIXES IL)
 
-foreach(_lib IL ILU ILUT)
+set(IL_NAME IL)
+if(MSVC)
+  set(IL_NAME DevIL)
+endif()
+
+foreach(_lib ${IL_NAME} ILU ILUT)
   find_library(DevIL_LIBRARY_${_lib}_RELEASE  NAMES ${_lib} HINTS ${DevIL_ROOT})
   find_library(DevIL_LIBRARY_${_lib}_DEBUG  NAMES ${_lib}_d HINTS ${DevIL_ROOT})
   if(DevIL_LIBRARY_${_lib}_RELEASE)

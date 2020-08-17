@@ -50,7 +50,7 @@ steps:
 
 - bash: |
     cmake -DOPENTISSUE_ENABLE_CODE_COVERAGE:BOOL=ON -DCMAKE_BUILD_TYPE=Debug -DOPENTISSUE_ENABLE_UNIT_TESTS=ON -S ${PWD} -B ${PWD}/build
-    cmake --build ${PWD}/build --target all -j 2
+    cmake --build ${PWD}/build $([[ "$OSTYPE" != "msys" ]] && echo "--target all") -j 2
     [[ "$OSTYPE" != "msys" ]] &&  gcovr --xml -k -r . -o build/Cobertura.xml build/
     cmake --build ${PWD}/build --target Continuous -j 2
     pushd build
