@@ -21,7 +21,7 @@ Free for commercial use, open source under the [http://opensource.org/licenses/z
   * Have a look at our [OpenTissue Gallery](https://www.youtube.com/playlist?list=PLNtAp--NfuirWaf0HhB9wUeromoXWvJlb)
   * Doxygen documentation (run doxygen on the source tree)
   * Demo applications (work as small tutorials/hands on examples)
-  * The book: [Physics-Based Animation](http://www.amazon.com/gp/product/1584503807/103-8827121-8536640?v=glance&n=283155)
+  * The book: [Physics-Based Animation](https://iphys.wordpress.com/2020/01/12/free-textbook-physics-based-animation/)
 
 ## Programming Guides
 Core- Atomic building blocks that are commonly used throughout all OpenTissue components, including data structures and algorithms.</font>
