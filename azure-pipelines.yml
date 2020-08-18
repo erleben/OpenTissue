@@ -8,14 +8,14 @@ trigger:
 
 strategy:
   matrix:
-    #linux:
-      #imageName: "ubuntu-latest"
-    #mac1014:
-      #imageName: "macOS-10.14"
+    linux:
+      imageName: "ubuntu-latest"
+    mac1014:
+      imageName: "macOS-10.14"
     VisualStudio2019:
       imageName: "windows-latest"
 
-  maxParallel: 2
+  maxParallel: 3
 
 pool:
   vmImage: '$(imageName)'

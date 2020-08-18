@@ -42,6 +42,9 @@ namespace OpenTissue
       template <>
       inline unsigned int zero<unsigned int>() { return 0u; }
 
+      template <>
+      inline unsigned long long zero<unsigned long long>() { return 0u; }
+
     }  // namespace detail
 
 
