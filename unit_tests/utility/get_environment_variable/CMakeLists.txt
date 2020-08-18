@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_get_environment_variable src/unit_get_environment_variable.cpp)
+add_executable(unit_get_environment_variable src/unit_get_environment_variable.cpp)
 
-TARGET_LINK_LIBRARIES(unit_get_environment_variable ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_get_environment_variable
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_get_environment_variable
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_get_environment_variable unit_get_environment_variable )
+ot_add_test(unit_get_environment_variable)

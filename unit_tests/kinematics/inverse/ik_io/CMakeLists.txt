@@ -1,12 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_ik_io src/unit_ik_io.cpp)
+add_executable(unit_ik_io src/unit_ik_io.cpp)
 
-TARGET_LINK_LIBRARIES(unit_ik_io ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_ik_io
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+    TinyXML
+)
 
-INSTALL(
+install(
   TARGETS unit_ik_io
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_ik_io unit_ik_io )
+ot_add_test(unit_ik_io)

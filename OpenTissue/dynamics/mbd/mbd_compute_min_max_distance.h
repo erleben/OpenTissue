@@ -9,8 +9,6 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/gl/gl_util.h>
-
 #include <OpenTissue/core/math/math_constants.h>
 
 #include <boost/cast.hpp>
@@ -56,4 +54,4 @@ namespace OpenTissue
   } //End of namespace mbd
 } //End of namespace OpenTissue
 // OPENTISSUE_DYNAMICS_MBD_UTIL_MBD_COMPUTE_MIN_MAX_DISTANCE_H
-#endif 
+#endif

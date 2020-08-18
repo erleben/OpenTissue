@@ -93,10 +93,6 @@
 #include <OpenTissue/dynamics/mbd/util/mbd_mel_keyframe_string.h>
 #include <OpenTissue/dynamics/mbd/util/mbd_mel_euler_filter_string.h>
 
-#include <OpenTissue/dynamics/mbd/util/mbd_draw_penetrations.h>
-#include <OpenTissue/dynamics/mbd/util/mbd_draw_contacts.h>
-#include <OpenTissue/dynamics/mbd/util/mbd_draw_joint.h>
-#include <OpenTissue/dynamics/mbd/util/mbd_draw_body.h>
 //----------------------------- end yrgk!
 
 

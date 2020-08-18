@@ -1,8 +1,18 @@
-ADD_EXECUTABLE(obb_tree src/application.cpp)
+add_executable(obb_tree src/application.cpp)
 
-TARGET_LINK_LIBRARIES(obb_tree ${OPENTISSUE_LIBS})
+target_link_libraries(obb_tree
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    Qhull::libqhull
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS obb_tree 
+install(
+  TARGETS obb_tree
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )

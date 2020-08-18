@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_shur_system src/unit_shur_system.cpp)
+add_executable(unit_shur_system src/unit_shur_system.cpp)
 
-TARGET_LINK_LIBRARIES(unit_shur_system ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_shur_system 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_shur_system
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_shur_system unit_shur_system )
+ot_add_test(unit_shur_system)
 

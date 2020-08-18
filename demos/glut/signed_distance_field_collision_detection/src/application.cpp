@@ -15,6 +15,8 @@
 #include <OpenTissue/core/containers/mesh/mesh.h>
 #include <OpenTissue/core/containers/grid/grid.h>
 #include <OpenTissue/collision/sdf/sdf.h>
+#include <OpenTissue/collision/sdf/sdf_debug_draw_sampling.h>
+#include <OpenTissue/collision/sdf/sdf_debug_draw_bvh.h>
 #include <OpenTissue/core/geometry/geometry_sphere.h>
 #include <OpenTissue/core/geometry/geometry_plane.h>
 #include <OpenTissue/utility/utility_timer.h>
@@ -57,7 +59,7 @@ protected:
 
   unsigned int m_depth;      ///< Used for debug drawing, indicates the depth of spheres in bvh of sdf_geometry type
   bool m_action[256];               ///< Boolean array used to keep track of the user actions/selections.
-    
+
   static unsigned char const ONE_KEY   = '1';
   static unsigned char const TWO_KEY   = '2';
   static unsigned char const THREE_KEY = '3';
@@ -166,7 +168,7 @@ public:
         m_wcsB.T() += vector3_type(-1.0,0.0,0.0);
       }
       break;
-    case '1':    
+    case '1':
       {
 
         coordsys_type::vector3_type T;
@@ -186,7 +188,7 @@ public:
         watch.stop();
 
         std::cout << "|C| = " << m_contacts.size() << std::endl;
-        std::cout << "collision query took " << watch() << " seconds" << std::endl; 
+        std::cout << "collision query took " << watch() << " seconds" << std::endl;
 
         m_action[ONE_KEY] = true;
         m_action[TWO_KEY] = false;
@@ -215,7 +217,7 @@ public:
         watch.stop();
 
         std::cout << "|C| = " << m_contacts.size() << std::endl;
-        std::cout << "collision query took " << watch() << " seconds" << std::endl; 
+        std::cout << "collision query took " << watch() << " seconds" << std::endl;
 
         m_action[ONE_KEY] = false;
         m_action[TWO_KEY] = true;
@@ -242,7 +244,7 @@ public:
         watch.stop();
 
         std::cout << "|C| = " << m_contacts.size() << std::endl;
-        std::cout << "collision query took " << watch() << " seconds" << std::endl; 
+        std::cout << "collision query took " << watch() << " seconds" << std::endl;
 
         m_action[ONE_KEY] = false;
         m_action[TWO_KEY] = false;
@@ -260,8 +262,8 @@ public:
         --m_depth;
       std::cout << "depth = " << m_depth << std::endl;
       break;
-    default:    
-      std::cout << "You pressed " << choice << std::endl;    
+    default:
+      std::cout << "You pressed " << choice << std::endl;
       break;
     };
   }

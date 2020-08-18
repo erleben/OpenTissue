@@ -1,10 +1,10 @@
-ADD_EXECUTABLE(t4_gpu_scan src/application.cpp)
+add_executable(t4_gpu_scan src/application.cpp)
 
-TARGET_LINK_LIBRARIES(t4_gpu_scan ${OPENTISSUE_LIBS})
+target_link_libraries(t4_gpu_scan
+    OpenTissue)
 
-INSTALL(
+install(
   TARGETS t4_gpu_scan
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
-
-

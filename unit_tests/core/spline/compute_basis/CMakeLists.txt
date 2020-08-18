@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_compute_basis src/unit_compute_basis.cpp)
+add_executable(unit_compute_basis src/unit_compute_basis.cpp)
 
-TARGET_LINK_LIBRARIES(unit_compute_basis ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_compute_basis 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_compute_basis
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_compute_basis unit_compute_basis )
+ot_add_test(unit_compute_basis)

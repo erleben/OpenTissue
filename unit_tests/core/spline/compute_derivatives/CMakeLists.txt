@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_compute_derivatives src/unit_compute_derivatives.cpp)
+add_executable(unit_compute_derivatives src/unit_compute_derivatives.cpp)
 
-TARGET_LINK_LIBRARIES(unit_compute_derivatives ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_compute_derivatives 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_compute_derivatives
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_compute_derivatives unit_compute_derivatives )
+ot_add_test(unit_compute_derivatives)

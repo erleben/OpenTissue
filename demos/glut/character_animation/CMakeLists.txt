@@ -1,8 +1,23 @@
-ADD_EXECUTABLE(character_animation src/application.cpp)
+add_executable(character_animation src/application.cpp)
 
-TARGET_LINK_LIBRARIES(character_animation ${OPENTISSUE_LIBS})
+target_link_libraries(character_animation
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    TinyXML
+    OpenTissue
+)
 
-INSTALL(
+target_include_directories(character_animation
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/third_party/bundled/
+)
+
+install(
   TARGETS character_animation
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )

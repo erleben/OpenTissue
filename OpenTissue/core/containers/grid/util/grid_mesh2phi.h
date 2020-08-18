@@ -13,6 +13,8 @@
 //#include <OpenTissue/core/geometry/t4_gpu_scan/t4_gpu_scan.h>
 #include <OpenTissue/core/geometry/t4_cpu_scan/t4_cpu_scan.h>
 
+#include <OpenTissue/core/math/math_power2.h>
+
 namespace OpenTissue
 {
   namespace grid
@@ -53,7 +55,7 @@ namespace OpenTissue
       //--- first we try to make a best guess at how the grid spacing
       //--- Our strategy is that we ideally want 5x5 grids for the
       //--- minimum quad in the mesh!!!
-      real_type delta = sqrt( (2.0*min_area) / 25.0 ); 
+      real_type delta = sqrt( (2.0*min_area) / 25.0 );
 
       vector3_type min_coord;
       vector3_type max_coord;
@@ -72,7 +74,7 @@ namespace OpenTissue
       std::cout << "mesh2phi(): best power2 resolution = " << resolution2 << std::endl;
 
       //--- Make sure that resolution is not greather than the one specified by the user...
-      size_t resolution3 =  min(max_resolution,resolution2);      
+      size_t resolution3 =  min(max_resolution,resolution2);
       std::cout << "mesh2phi(): resolution set to = " << resolution3 << std::endl;
 
       //--- Next we want to make sure that we a layer of grid cells outside the mesh
@@ -115,7 +117,7 @@ namespace OpenTissue
         t4_cpu_scan(mesh,band,phi, t4_cpu_signed() );
       //      }
 
-      std::cout << "mesh2phi(): completed phi computation" << std::endl;      
+      std::cout << "mesh2phi(): completed phi computation" << std::endl;
     }
 
     /**
@@ -175,7 +177,7 @@ namespace OpenTissue
       //      {
         t4_cpu_scan(mesh,band,phi, t4_cpu_signed() );
       //      }
-      std::cout << "mesh2phi(): completed phi computation" << std::endl;      
+      std::cout << "mesh2phi(): completed phi computation" << std::endl;
     }
 
   } // namespace grid

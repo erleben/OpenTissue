@@ -1,23 +1,21 @@
-SUBDIRS( 
-  prod
-  prod_add
-  prod_sub
-  residual
-  prod_add_rhs
-  prod_sub_rhs
-  prod_trans
-  prod_row
-  read_dlm
-  forward_gauss_seidel
-  backward_gauss_seidel
-  symmetric_gauss_seidel
-  jacobi
-  svd
-  conjugate_gradient
-  lu
-  cholesky
-  gmres
-  shur_system
-  mgs
-  pseudoinverse
-)
+add_subdirectory(prod)
+add_subdirectory(prod_add)
+add_subdirectory(prod_sub)
+add_subdirectory(residual)
+add_subdirectory(prod_add_rhs)
+add_subdirectory(prod_sub_rhs)
+add_subdirectory(prod_trans)
+add_subdirectory(prod_row)
+add_subdirectory(read_dlm)
+add_subdirectory(forward_gauss_seidel)
+add_subdirectory(backward_gauss_seidel)
+add_subdirectory(symmetric_gauss_seidel)
+add_subdirectory(jacobi)
+add_subdirectory(svd)
+add_subdirectory(conjugate_gradient)
+add_subdirectory(lu)
+add_subdirectory(cholesky)
+add_subdirectory(gmres)
+add_subdirectory(shur_system)
+add_subdirectory(mgs)
+add_subdirectory(pseudoinverse)

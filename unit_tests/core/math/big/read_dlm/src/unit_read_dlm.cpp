@@ -22,7 +22,7 @@ BOOST_AUTO_TEST_CASE(my_test_case)
   typedef ublas::compressed_matrix<double> matrix_type;
   typedef ublas::vector<double>            vector_type;
 
-  std::string data_path = "C:/work/OpenTissue_sandbox/demos/data/dlm";
+  std::string data_path = "dlm";
 
   matrix_type A;
   vector_type x;

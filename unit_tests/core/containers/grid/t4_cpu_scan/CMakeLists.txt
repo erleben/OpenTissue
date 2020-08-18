@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_t4_cpu_scan src/unit_t4_cpu_scan.cpp)
+add_executable(unit_t4_cpu_scan src/unit_t4_cpu_scan.cpp)
 
-TARGET_LINK_LIBRARIES(unit_t4_cpu_scan ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_t4_cpu_scan
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_t4_cpu_scan
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_t4_cpu_scan unit_t4_cpu_scan )
+ot_add_test(unit_t4_cpu_scan)

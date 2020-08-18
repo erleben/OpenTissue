@@ -1,10 +1,17 @@
-ADD_EXECUTABLE(gui_template src/application.cpp)
+add_executable(gui_template src/application.cpp)
 
-TARGET_LINK_LIBRARIES(gui_template ${OPENTISSUE_LIBS})
+target_link_libraries(gui_template
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS gui_template
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
-
-

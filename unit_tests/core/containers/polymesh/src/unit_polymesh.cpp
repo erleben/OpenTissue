@@ -6,7 +6,7 @@
 
 #include <OpenTissue/core/math/math_basic_types.h>
 #include <OpenTissue/core/containers/mesh/mesh.h>
-#include <OpenTissue/utility/gl/gl_draw_mesh.h>
+// #include <OpenTissue/utility/gl/gl_draw_mesh.h>
 
 #define BOOST_AUTO_TEST_MAIN
 #include <OpenTissue/utility/utility_push_boost_filter.h>
@@ -330,12 +330,12 @@ void polymesh_compile_test()
     }
   }
 
-  OpenTissue::gl::MeshDrawDisplayLists<mesh_type> display_lists(m_mesh);
-  display_lists();
-  OpenTissue::gl::DrawMesh(m_mesh);
+//   OpenTissue::gl::MeshDrawDisplayLists<mesh_type> display_lists(m_mesh);
+//   display_lists();
+//   OpenTissue::gl::DrawMesh(m_mesh);
 
-  OpenTissue::gl::MeshDrawArray<mesh_type> varray(m_mesh);
-  varray();
+//   OpenTissue::gl::MeshDrawArray<mesh_type> varray(m_mesh);
+//   varray();
 }
 
 

@@ -26,9 +26,9 @@
 /**
  * OpenTissue Version
  */
-#define OPENTISSUE_VERSION        0.994
-#define OPENTISSUE_VERSION_MAJOR  0
-#define OPENTISSUE_VERSION_MINOR  994
+#define OPENTISSUE_VERSION "@OpenTissue_VERSION@"
+#define OPENTISSUE_VERSION_MAJOR "@OpenTissue_VERSION_MAJOR@"
+#define OPENTISSUE_VERSION_MINOR "@OpenTissue_VERSION_MINOR@"
 
 #include <string>
 
@@ -43,7 +43,7 @@ std::string const opentissue_path = "@PROJECT_SOURCE_DIR@/";
  * OpenTissue Version String.
  * This string value can be used by end users for compatibility testing.
  */
-std::string const opentissue_version = "0.994";
+std::string const opentissue_version = "@OpenTissue_VERSION@";
 
 
 //OPENTISSUE_CONFIGURATIOM_H

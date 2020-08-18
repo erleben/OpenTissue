@@ -1,8 +1,17 @@
-ADD_EXECUTABLE(chanvese_segmentation src/application.cpp)
+add_executable(chanvese_segmentation src/application.cpp)
 
-TARGET_LINK_LIBRARIES(chanvese_segmentation ${OPENTISSUE_LIBS})
+target_link_libraries(chanvese_segmentation
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS chanvese_segmentation 
+install(
+  TARGETS chanvese_segmentation
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )

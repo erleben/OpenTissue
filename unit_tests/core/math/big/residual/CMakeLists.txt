@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_residual src/unit_residual.cpp)
+add_executable(unit_residual src/unit_residual.cpp)
 
-TARGET_LINK_LIBRARIES(unit_residual ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_residual 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_residual
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_residual unit_residual )
+ot_add_test(unit_residual)
 

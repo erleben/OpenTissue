@@ -15,10 +15,11 @@
 #include <OpenTissue/dynamics/mbd/math/mbd_optimized_ublas_math_policy.h>
 #include <OpenTissue/dynamics/mbd/mbd.h>
 #include <OpenTissue/utility/utility_timer.h>
+#include <OpenTissue/dynamics/mbd/util/mbd_draw_body.h>
+#include <OpenTissue/dynamics/mbd/util/mbd_draw_contacts.h>
 #include <OpenTissue/core/geometry/geometry_compute_box_mass_properties.h>
 #include <OpenTissue/core/geometry/geometry_compute_sphere_mass_properties.h>
 #include <OpenTissue/core/math/math_random.h>
-
 
 class Application : public OpenTissue::glut::PerspectiveViewApplication
 {
@@ -101,10 +102,10 @@ protected:
 
   std::string   m_prefix;         ///< Prefix std::string used for generating images...
   size_type     m_framecount;     ///< frame counter...
-  bool          m_recording_on;  
-  bool          m_wireframe_on;  
-  bool          m_simulation_on; 
-  bool          m_statistics_on; 
+  bool          m_recording_on;
+  bool          m_wireframe_on;
+  bool          m_simulation_on;
+  bool          m_statistics_on;
   size_type     m_max_frames;
   size_type     m_inbetween;      ///< frames inbetween a generated key frame
   real_type     m_running_time;
@@ -212,7 +213,7 @@ protected:
     m_library.clear();
     m_simulator.clear();
 
-    //--- Prepare collision geometries 
+    //--- Prepare collision geometries
     if(m_cow_mesh.size_vertices()==0)
     {
       std::string data_path = opentissue_path;
@@ -297,7 +298,7 @@ protected:
     m_library.clear();
     m_simulator.clear();
 
-    //--- Prepare collision geometries 
+    //--- Prepare collision geometries
     if(m_cow_mesh.size_vertices()==0)
     {
       std::string data_path = opentissue_path;
@@ -1224,8 +1225,8 @@ public:
       m_simulator.get_stepper()->set_fraction(0.00125);
       reset_timestep();
       break;
-    case 'A': 
-      m_recording_on = true;  
+    case 'A':
+      m_recording_on = true;
       m_framecount = 0;
       break;
     case 'D':    m_statistics_on = ! m_statistics_on;      break;
@@ -1248,13 +1249,13 @@ public:
     std::cout << "Dump statistics = " << m_statistics_on << std::endl;
     std::cout << "MEL recording = "   << m_recording_on  << std::endl;
     std::cout << "Run simulation = "  << m_simulation_on << std::endl;
-    std::cout << "Timestep = " 
-      << m_timestep 
-      << " max frames = " 
-      << m_max_frames 
-      << " inbetween = " 
+    std::cout << "Timestep = "
+      << m_timestep
+      << " max frames = "
+      << m_max_frames
+      << " inbetween = "
       << m_inbetween
-      << std::endl;       
+      << std::endl;
   }
 
   void do_init_right_click_menu(int main_menu, void menu(int entry))

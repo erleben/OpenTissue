@@ -1,12 +1,16 @@
-ADD_EXECUTABLE(unit_interval src/unit_interval.cpp)
+add_executable(unit_interval src/unit_interval.cpp)
 
-TARGET_LINK_LIBRARIES(unit_interval ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_interval 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS unit_interval 
+install(
+  TARGETS unit_interval
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_interval unit_interval )
+ot_add_test(unit_interval)
 
 

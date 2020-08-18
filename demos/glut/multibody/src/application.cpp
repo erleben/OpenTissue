@@ -39,6 +39,9 @@
 
 
 #include <OpenTissue/utility/utility_timer.h>
+#include <OpenTissue/dynamics/mbd/util/mbd_draw_body.h>
+#include <OpenTissue/dynamics/mbd/util/mbd_draw_contacts.h>
+#include <OpenTissue/dynamics/mbd/util/mbd_draw_joint.h>
 
 class Application : public OpenTissue::glut::PerspectiveViewApplication
 {
@@ -52,10 +55,10 @@ protected:
 
   std::string   m_prefix;         ///< Prefix std::string used for generating images...
   size_type     m_framecount;     ///< frame counter...
-  bool          m_recording_on;  
-  bool          m_wireframe_on;  
-  bool          m_simulation_on; 
-  bool          m_statistics_on; 
+  bool          m_recording_on;
+  bool          m_wireframe_on;
+  bool          m_simulation_on;
+  bool          m_statistics_on;
   size_type     m_max_frames;
   size_type     m_inbetween;      ///< frames inbetween a generated key frame
   real_type     m_running_time;
@@ -363,8 +366,8 @@ public:
       m_ragdoll.torture2(m_data);
       reset_timestep();
       break;
-    case 'A': 
-      m_recording_on = true;  
+    case 'A':
+      m_recording_on = true;
       m_framecount = 0;
       break;
     case 'D':    m_statistics_on = ! m_statistics_on;      break;
@@ -387,13 +390,13 @@ public:
     std::cout << "Dump statistics = " << m_statistics_on                      << std::endl;
     std::cout << "MEL recording   = " << m_recording_on                       << std::endl;
     std::cout << "Run simulation  = " << m_simulation_on                      << std::endl;
-    std::cout << "Timestep        = " 
-      << m_timestep 
-      << " max frames = " 
-      << m_max_frames 
-      << " inbetween = " 
+    std::cout << "Timestep        = "
+      << m_timestep
+      << " max frames = "
+      << m_max_frames
+      << " inbetween = "
       << m_inbetween
-      << std::endl;       
+      << std::endl;
   }
 
   void do_init_right_click_menu(int main_menu, void menu(int entry))

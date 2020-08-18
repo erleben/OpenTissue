@@ -29,7 +29,7 @@ namespace OpenTissue
   {
 
     template< typename mbd_types, typename solver_type >
-    class DynamicsStepper 
+    class DynamicsStepper
       : public StepperInterface<mbd_types>
     {
     public:
@@ -46,20 +46,20 @@ namespace OpenTissue
     protected:
 
       solver_type          m_solver;
-      vector_type          m_f_ext; 
-      vector_type          m_s;     
+      vector_type          m_f_ext;
+      vector_type          m_s;
       matrix_type          m_invM;
-      matrix_type          m_J; 
-      idx_vector_type      m_pi;  
-      vector_type          m_mu;  
-      vector_type          m_b;   
-      vector_type          m_rhs; 
-      vector_type          m_gamma; 
-      vector_type          m_lo;    
-      vector_type          m_hi;    
-      vector_type          m_x;     
-      vector_type          m_u;   
-      vector_type          m_tmp;   
+      matrix_type          m_J;
+      idx_vector_type      m_pi;
+      vector_type          m_mu;
+      vector_type          m_b;
+      vector_type          m_rhs;
+      vector_type          m_gamma;
+      vector_type          m_lo;
+      vector_type          m_hi;
+      vector_type          m_x;
+      vector_type          m_u;
+      vector_type          m_tmp;
 
     public:
 
@@ -69,7 +69,7 @@ namespace OpenTissue
 
     protected:
 
-      bool            m_warm_starting;  
+      bool            m_warm_starting;
       bool            m_use_stabilization;
       bool            m_use_friction;
       bool            m_use_bounce;
@@ -116,7 +116,7 @@ namespace OpenTissue
 
       void run(group_type & group, real_type const & time_step)
       {
-        OpenTissue::utility::Timer<real_type> watch1,watch2;
+        OpenTissue::utility::Timer<double> watch1,watch2;
 
         watch1.start();
         watch2.start();
@@ -137,9 +137,9 @@ namespace OpenTissue
           , m_mu
           , m_gamma
           , m_rhs
-          , this->use_stabilization()  
-          , this->use_friction()       
-          , this->use_bounce()         
+          , this->use_stabilization()
+          , this->use_friction()
+          , this->use_bounce()
           , this->use_stabilization()  // The use_erp parameter only makes sense for this type of stepper if stabilization is used!
           );
 

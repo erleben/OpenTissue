@@ -1,8 +1,18 @@
-ADD_EXECUTABLE(hybrid_bounding_volume_hierarchy src/application.cpp)
+add_executable(hybrid_bounding_volume_hierarchy src/application.cpp)
 
-TARGET_LINK_LIBRARIES(hybrid_bounding_volume_hierarchy ${OPENTISSUE_LIBS})
+target_link_libraries(hybrid_bounding_volume_hierarchy
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    Qhull::libqhull
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS hybrid_bounding_volume_hierarchy
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )

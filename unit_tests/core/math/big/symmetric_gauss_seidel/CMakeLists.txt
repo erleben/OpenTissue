@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_symmetric_gauss_seidel src/unit_symmetric_gauss_seidel.cpp)
+add_executable(unit_symmetric_gauss_seidel src/unit_symmetric_gauss_seidel.cpp)
 
-TARGET_LINK_LIBRARIES(unit_symmetric_gauss_seidel ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_symmetric_gauss_seidel 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_symmetric_gauss_seidel
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_symmetric_gauss_seidel unit_symmetric_gauss_seidel )
+ot_add_test(unit_symmetric_gauss_seidel)
 

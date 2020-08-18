@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_dynamic_table_dispatcher src/unit_dynamic_table_dispatcher.cpp)
+add_executable(unit_dynamic_table_dispatcher src/unit_dynamic_table_dispatcher.cpp)
 
-TARGET_LINK_LIBRARIES(unit_dynamic_table_dispatcher ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_dynamic_table_dispatcher
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_dynamic_table_dispatcher
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_dynamic_table_dispatcher unit_dynamic_table_dispatcher )
+ot_add_test(unit_dynamic_table_dispatcher)

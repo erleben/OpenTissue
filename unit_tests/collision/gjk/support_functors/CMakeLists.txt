@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_support_functors src/unit_support_functors.cpp)
+add_executable(unit_support_functors src/unit_support_functors.cpp)
 
-TARGET_LINK_LIBRARIES(unit_support_functors ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_support_functors
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_support_functors
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_support_functors  unit_support_functors )
+ot_add_test(unit_support_functors)
 

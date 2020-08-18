@@ -3,19 +3,38 @@
 # We got a bunch of compile tests, it really make no sense to build an
 # executable from these. We just create a static lib for each of these.
 #
-FILE( GLOB_RECURSE FILES src/simulator_types_compile_testing/*.cpp )
+set(SRC_FILES
+  src/simulator_types_compile_testing/double_2pass_shock_propagation_stepper.cpp
+  src/simulator_types_compile_testing/double_constraint_based_shock_propagation_stepper.cpp
+  src/simulator_types_compile_testing/double_dynamics_projection_stepper.cpp
+  src/simulator_types_compile_testing/double_dynamics_stepper.cpp
+  src/simulator_types_compile_testing/double_first_order_stepper.cpp
+  src/simulator_types_compile_testing/double_iterate_once_collision_resolver.cpp
+  src/simulator_types_compile_testing/double_sequential_collision_resolver.cpp
+  src/simulator_types_compile_testing/double_sequential_truncating_collision_resolver.cpp
+  src/simulator_types_compile_testing/float_2pass_shock_propagation_stepper.cpp
+  src/simulator_types_compile_testing/float_constraint_based_shock_propagation_stepper.cpp
+  src/simulator_types_compile_testing/float_dynamics_projection_stepper.cpp
+  src/simulator_types_compile_testing/float_dynamics_stepper.cpp
+  src/simulator_types_compile_testing/float_first_order_stepper.cpp
+  src/simulator_types_compile_testing/float_iterate_once_collision_resolver.cpp
+  src/simulator_types_compile_testing/float_sequential_collision_resolver.cpp
+  src/simulator_types_compile_testing/float_sequential_truncating_collision_resolver.cpp
+)
 
-FOREACH(file ${FILES})
-  GET_FILENAME_COMPONENT(FILE_NAME ${file} NAME_WE )  
-  ADD_LIBRARY("unit_mbd_${FILE_NAME}"    ${file}    )
-  TARGET_LINK_LIBRARIES("unit_mbd_${FILE_NAME}" ${OPENTISSUE_LIBS})
-ENDFOREACH( file ${FILES})
+add_library(unit_multibody_build_test ${SRC_FILES})
+target_link_libraries(unit_multibody_build_test
+  PRIVATE
+    Boost::unit_test_framework
+    Qhull::libqhull
+    OpenTissue
+)
 
 #----------------------------------------------------------------------
 #
 # This is the only executable in the retro unit test
 #
-ADD_EXECUTABLE(unit_multibody 
+add_executable(unit_multibody
   src/unit_retro.cpp
   src/projected_gauss_seidel_compile_test.cpp
   src/math_policies_compile_test.cpp
@@ -23,11 +42,16 @@ ADD_EXECUTABLE(unit_multibody
   src/compile_test.cpp
 )
 
-TARGET_LINK_LIBRARIES(unit_multibody ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_multibody
+  PRIVATE
+    Boost::unit_test_framework
+    Qhull::libqhull
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_multibody
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_multibody unit_multibody )
+ot_add_test(unit_multibody)

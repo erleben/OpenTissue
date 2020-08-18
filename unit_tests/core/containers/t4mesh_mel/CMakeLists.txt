@@ -1,12 +1,16 @@
-ADD_EXECUTABLE(unit_t4mesh_mel src/unit_t4mesh_mel.cpp)
+add_executable(unit_t4mesh_mel src/unit_t4mesh_mel.cpp)
 
-TARGET_LINK_LIBRARIES(unit_t4mesh_mel ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_t4mesh_mel
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_t4mesh_mel
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_t4mesh_mel unit_t4mesh_mel )
+ot_add_test(unit_t4mesh_mel)
 
 

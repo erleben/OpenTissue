@@ -1,1 +1,1 @@
-SUBDIRS( multibody )
+add_subdirectory( multibody )

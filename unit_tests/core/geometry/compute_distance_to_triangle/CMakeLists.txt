@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_compute_distance_to_triangle src/unit_compute_distance_to_triangle.cpp)
+add_executable(unit_compute_distance_to_triangle src/unit_compute_distance_to_triangle.cpp)
 
-TARGET_LINK_LIBRARIES(unit_compute_distance_to_triangle ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_compute_distance_to_triangle
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_compute_distance_to_triangle
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_compute_distance_to_triangle unit_compute_distance_to_triangle  )
+ot_add_test(unit_compute_distance_to_triangle)

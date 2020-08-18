@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_make_cubic_interpolation src/unit_make_cubic_interpolation.cpp)
+add_executable(unit_make_cubic_interpolation src/unit_make_cubic_interpolation.cpp)
 
-TARGET_LINK_LIBRARIES(unit_make_cubic_interpolation ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_make_cubic_interpolation 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_make_cubic_interpolation
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_make_cubic_interpolation unit_make_cubic_interpolation )
+ot_add_test(unit_make_cubic_interpolation)

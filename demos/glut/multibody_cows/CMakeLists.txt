@@ -1,9 +1,17 @@
-ADD_EXECUTABLE(multibody_cows src/application.cpp)
+add_executable(multibody_cows src/application.cpp)
 
-TARGET_LINK_LIBRARIES(multibody_cows ${OPENTISSUE_LIBS})
+target_link_libraries(multibody_cows
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS multibody_cows 
+install(
+  TARGETS multibody_cows
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
-

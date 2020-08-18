@@ -2,7 +2,7 @@
 #
 # Use the CMake Install functionality
 #
-INSTALL(DIRECTORY ./ DESTINATION third_party
+install(DIRECTORY ./ DESTINATION third_party
   PATTERN ".svn" EXCLUDE
   PATTERN "CMakeLists.txt" EXCLUDE
   PATTERN "debug" EXCLUDE
@@ -14,11 +14,11 @@ INSTALL(DIRECTORY ./ DESTINATION third_party
 #
 # Deafult overriding on windows platforms, copy all dll's into the same folder as exe-files
 #
-#IF(WIN32)
+#if(WIN32)
 #  FILE( GLOB_RECURSE DLL_FILES *.dll )
-#  FOREACH(file ${DLL_FILES})
-#    CONFIGURE_FILE( ${file}  ${LIBRARY_OUTPUT_PATH} COPYONLY )
-#  ENDFOREACH( file ${DLL_FILES})
-#ENDIF(WIN32)
+#  foreach(file ${DLL_FILES})
+#    configure_file( ${file}  ${LIBRARY_OUTPUT_PATH} COPYONLY )
+#  endforeach( file ${DLL_FILES})
+#endif(WIN32)
 
-SUBDIRS(bundled)
+add_subdirectory(bundled)

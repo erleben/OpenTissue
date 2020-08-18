@@ -1,11 +1,21 @@
-ADD_EXECUTABLE(unit_polymesh_compute_voronoi src/unit_polymesh_compute_voronoi.cpp)
+add_executable(unit_polymesh_compute_voronoi src/unit_polymesh_compute_voronoi.cpp)
 
-TARGET_LINK_LIBRARIES(unit_polymesh_compute_voronoi ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_polymesh_compute_voronoi
+  PRIVATE
+      Boost::unit_test_framework
+      Triangle
+      OpenTissue
+)
 
-INSTALL(
+target_include_directories(unit_polymesh_compute_voronoi
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/third_party/bundled/
+)
+
+install(
   TARGETS unit_polymesh_compute_voronoi
   RUNTIME DESTINATION  bin/units
   )
 
 
-ADD_TEST( unit_polymesh_compute_voronoi unit_polymesh_compute_voronoi )
+ot_add_test(unit_polymesh_compute_voronoi)

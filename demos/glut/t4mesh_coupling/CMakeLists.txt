@@ -1,10 +1,17 @@
-ADD_EXECUTABLE(t4mesh_coupling src/application.cpp)
+add_executable(t4mesh_coupling src/application.cpp)
 
-TARGET_LINK_LIBRARIES(t4mesh_coupling ${OPENTISSUE_LIBS})
+target_link_libraries(t4mesh_coupling
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS t4mesh_coupling 
+install(
+  TARGETS t4mesh_coupling
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
-
-

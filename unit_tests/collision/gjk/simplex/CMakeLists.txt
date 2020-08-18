@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_simplex src/unit_simplex.cpp)
+add_executable(unit_simplex src/unit_simplex.cpp)
 
-TARGET_LINK_LIBRARIES(unit_simplex ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_simplex
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_simplex
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_simplex unit_simplex )
+ot_add_test(unit_simplex)
 

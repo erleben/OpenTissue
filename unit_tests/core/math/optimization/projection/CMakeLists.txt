@@ -1,13 +1,17 @@
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src )
 
-ADD_EXECUTABLE(unit_projection src/unit_projection.cpp)
+add_executable(unit_projection src/unit_projection.cpp)
 
-TARGET_LINK_LIBRARIES(unit_projection ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_projection 
+  PRIVATE
+    Boost::unit_test_framework
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_projection
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_projection unit_projection )
+ot_add_test(unit_projection)
 

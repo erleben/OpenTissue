@@ -1,9 +1,24 @@
-ADD_EXECUTABLE(t4mesh_bvh src/application.cpp)
+add_executable(t4mesh_bvh src/application.cpp)
 
-TARGET_LINK_LIBRARIES(t4mesh_bvh ${OPENTISSUE_LIBS})
+target_link_libraries(t4mesh_bvh
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    Qhull::libqhull
+    TinyXML
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS t4mesh_bvh 
+target_include_directories(t4mesh_bvh
+    PRIVATE
+        ${PROJECT_SOURCE_DIR}/third_party/bundled/
+)
+
+install(
+  TARGETS t4mesh_bvh
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
-

@@ -1,10 +1,14 @@
-ADD_EXECUTABLE(unit_heap src/unit_heap.cpp)
+add_executable(unit_heap src/unit_heap.cpp)
 
-TARGET_LINK_LIBRARIES(unit_heap ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_heap
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
-  TARGETS unit_heap 
+install(
+  TARGETS unit_heap
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_heap unit_heap )
+ot_add_test(unit_heap)

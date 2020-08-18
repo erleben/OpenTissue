@@ -1,11 +1,15 @@
-ADD_EXECUTABLE(unit_reduce_edge src/unit_reduce_edge.cpp)
+add_executable(unit_reduce_edge src/unit_reduce_edge.cpp)
 
-TARGET_LINK_LIBRARIES(unit_reduce_edge ${OPENTISSUE_LIBS} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+target_link_libraries(unit_reduce_edge
+  PRIVATE
+      Boost::unit_test_framework
+      OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS unit_reduce_edge
   RUNTIME DESTINATION  bin/units
   )
 
-ADD_TEST( unit_reduce_edge unit_reduce_edge )
+ot_add_test(unit_reduce_edge)
 

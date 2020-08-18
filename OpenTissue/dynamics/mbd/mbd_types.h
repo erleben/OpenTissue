@@ -57,42 +57,7 @@ namespace OpenTissue
 
       typedef Types<math_policy_,sleepy_policy_,stepper_policy_,collision_detection_policy_,simulator_type_> types;
 
-      typedef math_policy_                        math_policy;
-      typedef sleepy_policy_<types>               sleepy_policy;
-      typedef stepper_policy_<types>              stepper_policy;
-      typedef collision_detection_policy_<types>  collision_detection_policy;
-      typedef simulator_type_<types>              simulator_type;
-
-    protected:
-
-      class NodeTraitsClass 
-        : public sleepy_policy::node_traits
-        , public stepper_policy::node_traits
-        , public collision_detection_policy::node_traits
-        , public simulator_type::node_traits
-      {            
-      };
-
-      class EdgeTraitsClass 
-        : public sleepy_policy::edge_traits
-        , public stepper_policy::edge_traits
-        , public collision_detection_policy::edge_traits
-        , public simulator_type::edge_traits
-      {};
-
-      class ConstraintTraitsClass 
-        : public sleepy_policy::constraint_traits
-        , public stepper_policy::constraint_traits
-        , public collision_detection_policy::constraint_traits
-        , public simulator_type::constraint_traits
-      {};
-
-    public:
-
-      typedef EdgeTraitsClass                 edge_traits;
-      typedef NodeTraitsClass                 node_traits;
-      typedef ConstraintTraitsClass           constraint_traits;
-
+      typedef math_policy_                                          math_policy;
       typedef OpenTissue::utility::Identifier                       identifier_type;
       typedef Body<types>                                           body_type;
       typedef Edge<types>                                           edge_type;
@@ -145,6 +110,40 @@ namespace OpenTissue
       typedef typename std::list<constraint_type* >                                                       constraint_ptr_container;
       typedef boost::indirect_iterator<typename constraint_ptr_container::iterator,constraint_type>       indirect_constraint_iterator;
       typedef boost::indirect_iterator<typename constraint_ptr_container::const_iterator,constraint_type> const_indirect_constraint_iterator;
+
+      typedef sleepy_policy_<types>               sleepy_policy;
+      typedef stepper_policy_<types>              stepper_policy;
+      typedef collision_detection_policy_<types>  collision_detection_policy;
+      typedef simulator_type_<types>              simulator_type;    
+
+    protected:
+
+      class NodeTraitsClass 
+        : public sleepy_policy::node_traits
+        , public stepper_policy::node_traits
+        , public collision_detection_policy::node_traits
+        , public simulator_type::node_traits
+      {            
+      };
+
+      class EdgeTraitsClass 
+        : public sleepy_policy::edge_traits
+        , public stepper_policy::edge_traits
+        , public collision_detection_policy::edge_traits
+        , public simulator_type::edge_traits
+      {};
+
+      class ConstraintTraitsClass 
+        : public sleepy_policy::constraint_traits
+        , public stepper_policy::constraint_traits
+        , public collision_detection_policy::constraint_traits
+        , public simulator_type::constraint_traits
+      {};   
+
+    public:
+      typedef EdgeTraitsClass                 edge_traits;
+      typedef NodeTraitsClass                 node_traits;
+      typedef ConstraintTraitsClass           constraint_traits;           
     };
 
   } //End of namespace mbd

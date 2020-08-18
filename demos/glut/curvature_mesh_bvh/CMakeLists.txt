@@ -1,9 +1,17 @@
-ADD_EXECUTABLE(curvature_mesh_bvh src/application.cpp)
+add_executable(curvature_mesh_bvh src/application.cpp)
 
-TARGET_LINK_LIBRARIES(curvature_mesh_bvh ${OPENTISSUE_LIBS})
+target_link_libraries(curvature_mesh_bvh
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS curvature_mesh_bvh 
+install(
+  TARGETS curvature_mesh_bvh
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
-

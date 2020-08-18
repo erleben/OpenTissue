@@ -26,6 +26,8 @@ namespace OpenTissue
   namespace utility
   {
 
+    template<typename real_type>
+    class Timer;
     /**
     * High Resoultion Timer.
     * Based on http://www-106.ibm.com/developerworks/library/l-rt1/
@@ -46,8 +48,8 @@ namespace OpenTissue
     *  timer.stop()
     *  std::cout << "It took " << timer() << " seconds to do it" << std::endl;
     */
-    template<typename real_type>
-    class Timer
+    template<>
+    class Timer<double>
     {
 #ifdef WIN32
     private:
@@ -71,11 +73,11 @@ namespace OpenTissue
       {
         QueryPerformanceCounter(&m_end);
       }
-      real_type operator()()const
+      double operator()()const
       {
-        real_type end = static_cast<real_type>(m_end.QuadPart);
-        real_type start = static_cast<real_type>(m_start.QuadPart);
-        real_type freq = static_cast<real_type>(m_freq.QuadPart);
+        double end = static_cast<double>(m_end.QuadPart);
+        double start = static_cast<double>(m_start.QuadPart);
+        double freq = static_cast<double>(m_freq.QuadPart);
         return (end - start)/ freq;
       }
 #else
@@ -86,10 +88,10 @@ namespace OpenTissue
     public:
       void start() { gettimeofday(&m_start, &m_tz); }
       void stop()  { gettimeofday(&m_end,&m_tz); }
-      real_type operator()()const
+      double operator()()const
       {
-        real_type t1 =  static_cast<real_type>(m_start.tv_sec) + static_cast<real_type>(m_start.tv_usec)/(1000*1000);
-        real_type t2 =  static_cast<real_type>(m_end.tv_sec) + static_cast<real_type>(m_end.tv_usec)/(1000*1000);
+        double t1 =  static_cast<double>(m_start.tv_sec) + static_cast<double>(m_start.tv_usec)/(1000*1000);
+        double t2 =  static_cast<double>(m_end.tv_sec) + static_cast<double>(m_end.tv_usec)/(1000*1000);
         return t2-t1;
       }
 #endif

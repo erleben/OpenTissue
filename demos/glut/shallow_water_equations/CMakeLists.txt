@@ -1,9 +1,17 @@
-ADD_EXECUTABLE(shallow_water_equations src/application.cpp)
+add_executable(shallow_water_equations src/application.cpp)
 
-TARGET_LINK_LIBRARIES(shallow_water_equations ${OPENTISSUE_LIBS})
+target_link_libraries(shallow_water_equations
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS shallow_water_equations 
+install(
+  TARGETS shallow_water_equations
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
-

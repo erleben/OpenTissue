@@ -1,9 +1,17 @@
-ADD_EXECUTABLE(vertex_mean_curvature src/application.cpp)
+add_executable(vertex_mean_curvature src/application.cpp)
 
-TARGET_LINK_LIBRARIES(vertex_mean_curvature ${OPENTISSUE_LIBS})
+target_link_libraries(vertex_mean_curvature
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    OpenTissue
+)
 
-INSTALL(
-  TARGETS vertex_mean_curvature 
+install(
+  TARGETS vertex_mean_curvature
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
-

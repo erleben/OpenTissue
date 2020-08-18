@@ -1,9 +1,18 @@
-ADD_EXECUTABLE(t4mesh_delaunay_tesselator src/application.cpp)
+add_executable(t4mesh_delaunay_tesselator src/application.cpp)
 
-TARGET_LINK_LIBRARIES(t4mesh_delaunay_tesselator ${OPENTISSUE_LIBS})
+target_link_libraries(t4mesh_delaunay_tesselator
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    Qhull::libqhull
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS t4mesh_delaunay_tesselator
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
-

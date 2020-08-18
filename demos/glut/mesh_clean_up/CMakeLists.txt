@@ -1,9 +1,17 @@
-ADD_EXECUTABLE(mesh_clean_up src/application.cpp)
+add_executable(mesh_clean_up src/application.cpp)
 
-TARGET_LINK_LIBRARIES(mesh_clean_up ${OPENTISSUE_LIBS})
+target_link_libraries(mesh_clean_up
+  PRIVATE
+    OpenGL::GL
+    OpenGL::GLU
+    GLUT::GLUT
+    GLEW::glew
+    DevIL::DevIL
+    OpenTissue
+)
 
-INSTALL(
+install(
   TARGETS mesh_clean_up
   RUNTIME DESTINATION  bin/demos/glut/
+  COMPONENT Demos
   )
-

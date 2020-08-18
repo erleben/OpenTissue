@@ -1,2 +1,2 @@
-SUBDIRS( dynamic_table_dispatcher )
+add_subdirectory( dynamic_table_dispatcher )
 
