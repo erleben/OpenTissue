@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/ricortiz/ricortiz/_apis/build/status/ricortiz.OpenTissue?branchName=OpenTissue-Modernization-PhaseI-BuildSystem)](https://dev.azure.com/ricortiz/ricortiz/_build/latest?definitionId=1&branchName=OpenTissue-Modernization-PhaseI-BuildSystem)
+[![Build Status](https://dev.azure.com/OpenTissue/OpenTissue/_apis/build/status/erleben.OpenTissue?branchName=master)](https://dev.azure.com/OpenTissue/OpenTissue/_build/latest?definitionId=5&branchName=master)
 [![License](https://img.shields.io/badge/License-Zlib-blue.svg)](http://opensource.org/licenses/zlib-license.php)
 
 # OpenTissue
