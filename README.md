@@ -4,7 +4,7 @@
 # OpenTissue
 OpenTissue is a collection of generic algorithms and data structures for rapid development of interactive modeling and simulation.
 
-Free for commercial use, open source under the [http://opensource.org/licenses/zlib-license.php ZLib License].
+Free for commercial use, open source under the [Zlib license](http://opensource.org/licenses/zlib-license.php).
 
 ## Getting Started/Installing
   * [Easy Boost Bindings](documentation/boost_bindings.md)
