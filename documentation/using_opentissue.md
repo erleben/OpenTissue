@@ -8,10 +8,10 @@ Many of these sub-libraries are self-contained, that is, they do not have explic
   2. Conan: ```pip install conan``` prefers python3.
   3. CMake 3.12
 
-## OpenTisue dependency handling with Conan.io
+## OpenTissue dependency handling with Conan.io
 If you use OpenTissue CMake/Conan based build system generation and dependency resolution. Conan will download all needed dependencies while CMake will use those dependencies to build your applications.
 
-Here is a breakdown of third-party dependencies that OpenTissue *currenly* has:
+Here is a breakdown of third-party dependencies that OpenTissue *currently* has:
 
 - OpenTissue
 > - Boost
@@ -43,11 +43,11 @@ Set up your workflow by following these simple steps:
       mkdir build && cd build
 * Fetch all dependencies by running Conan: 
 
-      conan install <path-to-opentissue> -s build_type=Debug -o *:shared=False
-  (Note: \*:shared=False indicates conan that we only want static libraries)
+      conan install <path-to-opentissue-source> -s build_type=Debug -o *:shared=False
+  (Note: \*:shared=False indicates to conan that we only want static libraries)
 * Run CMake on the same build directory: 
   
-      cmake <path-to-opentissue>
+      cmake <path-to-opentissue-source>
       
 ## Using OpenTissue as Third-Party Software
 
@@ -87,7 +87,7 @@ target_link_library(MyProject
 )
 </pre>
 
-Notice that we set the ```OpenTissue_ROOT``` variable to the build directory conataining ```OpenTissueConfig.cmake```. This will instruct ```find_package()``` to look there in order to search for OpenTissue. Once it finds ```OpenTissueConfig.cmake``` it will load it along with ```OpenTissueTargets.cmake``` and ```OpenTissueVersion.cmake```. This will automatically bring the ```OpenTissue::<target>``` targets which you can then use in your project to resolve OpenTissue dependencies in your application.
+Notice that we set the ```OpenTissue_ROOT``` variable to the build directory containing ```OpenTissueConfig.cmake```. This will instruct ```find_package()``` to look there in order to search for OpenTissue. Once it finds ```OpenTissueConfig.cmake``` it will load it along with ```OpenTissueTargets.cmake``` and ```OpenTissueVersion.cmake```. This will automatically bring the ```OpenTissue::<target>``` targets which you can then use in your project to resolve OpenTissue dependencies in your application.
 
 The special targets ```OpenTissue::<target>``` are ```interface external targets``` and they contain references to the OpenTissue headers, flags and possibly other flags that may be needed by your application. 
 
@@ -100,7 +100,7 @@ The special targets ```OpenTissue::<target>``` are ```interface external targets
 OpenTissue::headers
 </td>
 <td>
-External interface target. Conatain references to OpenTissue header directory path, compliler flags and other definitions.
+External interface target. Contains references to OpenTissue header directory path, compiler flags and other definitions.
 </td>
 </tr>
 </table>
