@@ -147,7 +147,7 @@ include(CMakePackageConfigHelpers)
 include(CPack)
 include(GNUInstallDirs)
 
-export(PACKAGE OT) # Makes OT discoverable, via ~/.cmake
+export(PACKAGE OpenTissue) # Makes OT discoverable, via ~/.cmake
 export(TARGETS headers depends NAMESPACE OpenTissue:: FILE OpenTissueTargets.cmake)
 
 configure_file(
