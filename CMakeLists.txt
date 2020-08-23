@@ -6,7 +6,7 @@ project(OpenTissue VERSION 0.994
 # Add connan dependencies, conan targets will be used.
 if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-  conan_basic_setup(TARGETS)
+  conan_basic_setup(TARGETS NO_OUTPUT_DIRS)
   set(Boost_USE_STATIC_LIBS ON)
 endif()
 
@@ -42,7 +42,8 @@ option(OPENTISSUE_ENABLE_DEMOS "Build demos" OFF)
 if(OPENTISSUE_ENABLE_UNIT_TESTS)
   set(OPENTISSUE_BOOST_COMPONENTS unit_test_framework)
 endif()
-find_package(Boost 1.39.0 COMPONENTS "${OPENTISSUE_BOOST_COMPONENTS}" REQUIRED)
+set(OPENTISSUE_BOOST_VERSION 1.39.0)
+find_package(Boost ${OPENTISSUE_BOOST_VERSION} COMPONENTS "${OPENTISSUE_BOOST_COMPONENTS}" REQUIRED)
 
 if(OPENTISSUE_ENABLE_DEMOS)
   #-----------------------------------------------------------------------------
@@ -147,7 +148,7 @@ include(CPack)
 include(GNUInstallDirs)
 
 export(PACKAGE OT) # Makes OT discoverable, via ~/.cmake
-export(TARGETS OpenTissue NAMESPACE OT:: FILE OpenTissueTargets.cmake)
+export(TARGETS headers depends NAMESPACE OpenTissue:: FILE OpenTissueTargets.cmake)
 
 configure_file(
   "${PROJECT_SOURCE_DIR}/cmake/OpenTissueConfig.cmake.in"
@@ -168,7 +169,7 @@ write_basic_package_version_file(
   COMPATIBILITY SameMajorVersion
 )
 
-install(TARGETS OpenTissue
+install(TARGETS headers depends
   EXPORT OpenTissueTargets
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
@@ -177,7 +178,7 @@ install(TARGETS OpenTissue
 
 install(EXPORT OpenTissueTargets
   FILE OpenTissueTargets.cmake
-  NAMESPACE OT::
+  NAMESPACE OpenTissue::
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/OpenTissue
 )
 

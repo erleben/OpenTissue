@@ -16,8 +16,19 @@ set(OPENTISSUE_VERSION @OpenTissue_VERSION@)
 
 @PACKAGE_INIT@
 
+if(EXISTS ${CMAKE_CURRENT_LIST_DIR}/conanbuildinfo.cmake)
+  include(${CMAKE_CURRENT_LIST_DIR}/conanbuildinfo.cmake)
+  list(INSERT CMAKE_MODULE_PATH 0 @PROJECT_SOURCE_DIR@/cmake)
+  conan_basic_setup(TARGETS NO_OUTPUT_DIRS)
+  set(Boost_USE_STATIC_LIBS ON)
+  find_package(Boost @OPENTISSUE_BOOST_VERSION@ COMPONENTS "@OPENTISSUE_BOOST_COMPONENTS@" REQUIRED)
+  find_package(DevIL REQUIRED)
+  find_package(TinyXML REQUIRED)
+  find_package(TetGen REQUIRED)
+  find_package(Triangle REQUIRED)
+  find_package(Qhull REQUIRED)
+endif()
+
 check_required_components(OpenTissue)
 
-set_and_check(OPENTISSUE_CMAKE_DATA_DIR "@PACKAGE_CMAKE_INSTALL_LIBDIR@/cmake")
-
-include("${OPENTISSUE_CMAKE_DATA_DIR}/OpenTissue/OpenTissueTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/OpenTissueTargets.cmake")
