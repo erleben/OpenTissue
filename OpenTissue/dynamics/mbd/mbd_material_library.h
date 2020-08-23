@@ -7,9 +7,11 @@
 //
 // OTTL is licensed under zlib: http://opensource.org/licenses/zlib-license.php
 //
+
+#include <unordered_map>
+
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/core/containers/containers_hash_map.h>
 #include <OpenTissue/utility/utility_map_data_iterator.h>
 
 #include <boost/iterator/indirect_iterator.hpp>
@@ -19,8 +21,8 @@ namespace OpenTissue
   namespace mbd
   {
 
-    /** 
-     * 
+    /**
+     *
      Modelling Material Properties.
 
 First one should create some unique positive material indices,
@@ -220,7 +222,7 @@ choice a low friction bouncy type of material.
 
     protected:
 
-      typedef typename stdext::hash_map<index_type, material_type*>         material_ptr_lut_type;
+      typedef typename std::unordered_map<index_type, material_type*>         material_ptr_lut_type;
       typedef OpenTissue::utility::map_data_iterator<typename material_ptr_lut_type::iterator>   material_ptr_lut_iterator;
 
     public:
@@ -267,7 +269,7 @@ choice a low friction bouncy type of material.
       material_type * default_material() { return &m_default; }
 
       size_type size_materials() const { return m_storage.size(); }
-      
+
       material_iterator material_begin() { return material_iterator( material_ptr_lut_iterator( m_storage.begin() ) );}
       material_iterator material_end()   { return material_iterator( material_ptr_lut_iterator( m_storage.end()   ) );}
 
