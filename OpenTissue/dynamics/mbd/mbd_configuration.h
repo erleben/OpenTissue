@@ -7,9 +7,11 @@
 //
 // OTTL is licensed under zlib: http://opensource.org/licenses/zlib-license.php
 //
+
+#include <unordered_map>
+
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/core/containers/containers_hash_map.h>
 #include <OpenTissue/utility/utility_map_data_iterator.h>
 
 #include <boost/iterator/indirect_iterator.hpp>
@@ -37,9 +39,9 @@ namespace OpenTissue
       typedef typename mbd_types::collision_detection_policy     collision_detection_policy;
 
 
-      typedef typename stdext::hash_map<size_type, body_type*>   body_ptr_lut_type;
-      typedef typename stdext::hash_map<size_type, joint_type*>  joint_ptr_lut_type;
-      typedef typename stdext::hash_map<size_type, edge_type>    edge_lut_type;
+      typedef typename std::unordered_map<size_type, body_type*>   body_ptr_lut_type;
+      typedef typename std::unordered_map<size_type, joint_type*>  joint_ptr_lut_type;
+      typedef typename std::unordered_map<size_type, edge_type>    edge_lut_type;
 
     protected:
 
