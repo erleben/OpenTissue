@@ -7,9 +7,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#define DEFINE_GLUT_MAIN
-#include <OpenTissue/utility/glut/glut_perspective_view_application.h>
-#undef DEFINE_GLUT_MAIN
+#include <OpenTissue/utility/glut/glut_application.h>
 
 #include <OpenTissue/core/containers/grid/io/grid_raw_read.h>
 #include <OpenTissue/utility/utility_get_environment_variable.h>
@@ -32,27 +30,23 @@
 
 using namespace OpenTissue;
 
-class Application : public OpenTissue::glut::PerspectiveViewApplication
+class Application : public OpenTissue::glut::GlutApplication
 {
 protected:
-
+  typedef OpenTissue::glut::GlutApplication                      base_type;
   typedef OpenTissue::math::BasicMathTypes<double,unsigned int>	 math_types;
   typedef math_types::real_type								                   real_type;
   typedef math_types::vector3_type				                       vector3_type;
   typedef unsigned short									                       value_type;
-  typedef OpenTissue::grid::Grid<value_type, math_types>			           input_type;
+  typedef OpenTissue::grid::Grid<value_type, math_types>			   input_type;
   typedef OpenTissue::trimesh::TriMesh<>				  			         mesh_type;  
-  typedef OpenTissue::grid::Grid<real_type,math_types>                  levelset_type;
-
-  input_type    m_volume;
-  mesh_type     m_surface;
-  levelset_type m_phi;
+  typedef OpenTissue::grid::Grid<real_type,math_types>           levelset_type;
 
 public:
+  Application() 
+    : OpenTissue::glut::GlutApplication("Chan-Vese Segmentation Application") {}
 
-  char const * do_get_title() const { return "Chan-Vese Segmentation Application"; }
-
-  void do_display()
+  void update(float) override
   {
     gl::ColorPicker(0.8,0.4,0.8);
     gl::DrawGridAABB(m_volume);
@@ -62,7 +56,7 @@ public:
     gl::DrawMesh(m_surface);
   }
 
-  void do_action(unsigned char choice)
+  void action(unsigned char choice) override
   {
     switch ( choice )
     {
@@ -73,7 +67,7 @@ public:
         real_type nu = 0.05;
         real_type epsilon = 1.0;
         unsigned int max_iterations = 100;
-        chan_vese_auto_in_out(m_phi,m_volume,lambda,0.0,nu,timestep,m_phi,epsilon,max_iterations);
+        OpenTissue::grid::chan_vese_auto_in_out(m_phi,m_volume,lambda,0.0,nu,timestep,m_phi,epsilon,max_iterations);
       }
       break;
     case 'm':
@@ -118,32 +112,26 @@ public:
     };
   }
 
-  void do_init_right_click_menu(int main_menu, void menu(int entry))
+  void init() override
   {
-    int controls = glutCreateMenu( menu );
-    glutAddMenuEntry( "Extract surface          [e]", 'e' );
-    glutAddMenuEntry( "Reset segmentation       [r]", 'r' );
-    glutAddMenuEntry( "Compute volume           [v]", 'v' );
-    glutAddMenuEntry( "ignore inside            [i]", 'i' );
-    glutAddMenuEntry( "ignore outside           [o]", 'o' );
-    glutAddMenuEntry( "chan vese step           [s]", 's' );
-    glutAddMenuEntry( "Mean curvature flow      [m]", 'm' );
-    glutSetMenu( main_menu );
-    glutAddSubMenu( "Chan-Vese", controls );
-  }
-
-  void do_init()
-  {
+    this->init_right_click_menu();
     this->camera().move(95);
-
-    load_knee();
+    this->load_knee();
   }
 
-  void do_run(){}
+  void init_right_click_menu()
+  {
+    std::unordered_map<unsigned char, const char*> menu_map;
+    menu_map.insert(std::make_pair('e', "Extract surface          [e]"));
+    menu_map.insert(std::make_pair('r', "Reset segmentation       [r]"));
+    menu_map.insert(std::make_pair('v', "Compute volume           [v]"));
+    menu_map.insert(std::make_pair('i', "ignore inside            [i]"));
+    menu_map.insert(std::make_pair('o', "ignore outside           [o]"));
+    menu_map.insert(std::make_pair('s', "chan vese step           [s]"));
+    menu_map.insert(std::make_pair('m', "Mean curvature flow      [m]"));
 
-  void do_shutdown(){}
-
-protected:
+    this->add_sub_menu("Chan-Vese", menu_map);
+  }
 
   void load_teddy()
   {
@@ -156,7 +144,6 @@ protected:
     std::fill(m_phi.begin(), m_phi.end(), 0 );
     OpenTissue::grid::blockify(m_phi);
   }
-
   void load_knee()
   {
     input_type tmp;
@@ -183,11 +170,19 @@ protected:
     OpenTissue::grid::chan_vese::threshold_initialize(m_volume, 10, 100, m_phi);
   }
 
+private:
+  input_type    m_volume;
+  mesh_type     m_surface;
+  levelset_type m_phi;
 };
 
-OpenTissue::glut::instance_pointer init_glut_application(int argc, char **argv)
+OpenTissue::glut::GlutApplication::Ptr createApplication(int argc, char **argv)
 {
-  OpenTissue::glut::instance_pointer instance;
-  instance.reset( new Application() );
-  return instance;
+  glutInit(&argc, argv);
+  auto app = OpenTissue::glut::GlutApplication::New<Application>();
+  app->get_window()->set_event_dispatcher([]()
+  {
+      return OpenTissue::glut::GlutApplication::New<Application>();
+  });
+  return app;
 }
