@@ -39,7 +39,6 @@ class GlutWindow : public graphics::Window<GlutWindow>
 public:
   using Self = GlutWindow;
   using Base = graphics::Window<GlutWindow>;
-  using EventHandler = graphics::EventHandler<glut::GlutApplication>;
 
 public:
   GlutWindow() = delete;
@@ -52,9 +51,17 @@ public:
 
   void update();
 
+  void set_vsync(bool enabled);
+
+  void set_event_callback(const CallBackFnType &fn)
+  {
+    GlutWindow::m_event_dispatcher = fn;
+  }
+
 private:
   int m_handle;
   int m_main_menu;
+  static CallBackFnType   m_event_dispatcher;
 };
 
 }

@@ -40,12 +40,12 @@ template<typename Derived>
 class Application
 {
 public: 
-  using Self        = Application<Derived>;
-  using Ptr         = std::shared_ptr<Self>;
-  using MathTypes   = OpenTissue::math::default_math_types;
-  using CameraType  = gl::Camera<MathTypes>;  ///< Camera class taking care of the model-view projection transformation.
-  using FrustumType = gl::Frustum<MathTypes>; ///< Frustum class, can be used for optimizing the rendering process by offering simple frustum culling.
-  using WindowType  = typename ApplicationTraits<Derived>::WindowType;   ///< Window
+  using Self           = Application<Derived>;
+  using Ptr            = std::shared_ptr<Self>;
+  using MathTypes      = OpenTissue::math::default_math_types;
+  using CameraType     = gl::Camera<MathTypes>;  ///< Camera class taking care of the model-view projection transformation.
+  using FrustumType    = gl::Frustum<MathTypes>; ///< Frustum class, can be used for optimizing the rendering process by offering simple frustum culling.
+  using WindowType     = typename ApplicationTraits<Derived>::WindowType;   ///< Window
 
   template<typename ChildType, typename... Args>
   static Ptr New(Args&&... args)
@@ -139,7 +139,22 @@ private:
 
   void init()
   {
+    m_window->set_event_callback([this](const Event &e)
+    {
+      if(!e.handled())
+      {
+        on_event(e);
+      }
+    });
     m_window->init();
+
+    this->init_gl();
+    this->init_camera();
+    static_cast<Derived*>(this)->init();
+  }
+
+  void init_gl()
+  {
     auto err = glewInit();
     if (GLEW_OK != err)
     {
@@ -163,14 +178,15 @@ private:
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
     this->update_lights();
+  }
 
+  void init_camera()
+  {
     m_camera.target_locked() = true;
     MathTypes::vector3_type position(0,0,100);
     MathTypes::vector3_type target(0,0,0);
     MathTypes::vector3_type up(0,1,0);
     m_camera.init(position, target, up);
-
-    static_cast<Derived*>(this)->init();
   }
 
   void update_lights()
@@ -190,13 +206,11 @@ private:
     glLightfv(GL_LIGHT0, GL_POSITION, light_position);
   }
 
-  WindowType::Ptr get_window()
-  {
-    return m_window;
-  }
-
 public: // Event handling
-  bool on_event(const Event<WindowDisplayEvent> &e)
+  template<typename T>
+  bool on_event(const T &e);
+
+  bool on_event(const WindowDisplayEvent &e)
   {
     this->display(this->get_time());
     return true;
@@ -204,7 +218,7 @@ public: // Event handling
   
   //----------------------------------------------------------------------------
 
-  bool on_event(const Event<WindowCloseEvent> &)
+  bool on_event(const WindowCloseEvent &)
   {
     m_running = false;
     return true;
@@ -212,7 +226,7 @@ public: // Event handling
 
   //----------------------------------------------------------------------------
 
-  bool on_event(const Event<WindowResizeEvent> &e)
+  bool on_event(const WindowResizeEvent &e)
   {
     auto width = e.get_width();
     auto height = e.get_height();
@@ -257,19 +271,12 @@ public: // Event handling
       case ' ':
         m_idle_on = !m_idle_on;
         static_cast<Derived*>(this)->idle();
+        break;
       case 'o':
         m_camera.orbit_mode() = !m_camera.orbit_mode();
-        if(m_camera.orbit_mode())
-          std::cout << "orbit mode on" << std::endl;
-        else
-          std::cout << "orbit mode off " << std::endl;
         break;
       case 'l':
         m_camera.target_locked() = !m_camera.target_locked();
-        if(m_camera.target_locked())
-          std::cout << "target is locked" << std::endl;
-        else
-          std::cout << "target is free " << std::endl;
         break;
       case 'y':
         m_screen_capture = true;
@@ -353,7 +360,7 @@ public: // Event handling
 
   //----------------------------------------------------------------------------
 
-  bool on_event(const Event<MouseMovedEvent> &e)
+  bool on_event(const MouseMovedEvent &e)
   {
     auto x = e.get_x();
     auto y = e.get_y();

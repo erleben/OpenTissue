@@ -148,7 +148,7 @@ enum class KeyCode : uint16_t
   Menu                = 348
 };
 
-class KeyEvent : public Event<KeyEvent>
+class KeyEvent : public Event
 {
 public: 
   virtual ~KeyEvent() = default;

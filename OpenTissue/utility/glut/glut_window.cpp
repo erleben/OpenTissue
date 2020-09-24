@@ -32,7 +32,10 @@ void GlutWindow::add_sub_menu(const std::string &name,
   auto menu_dispatcher = [](int k)
   {
     graphics::KeyPressedEvent e(static_cast<graphics::KeyCode>(k), 0);
-    Self::EventHandler::dispatch(e);
+    if(GlutWindow::m_event_dispatcher)
+    {
+      GlutWindow::m_event_dispatcher(e);
+    }
   };
 
   if(m_main_menu < 0)
@@ -65,7 +68,7 @@ void GlutWindow::init()
     menu_map.insert(std::make_pair(' ', "toggle idle                  [ ]"));
     menu_map.insert(std::make_pair('o', "toggle camera orbit/rotate   [o]"));
     menu_map.insert(std::make_pair('l', "toggle camera target locked  [l]"));
-    menu_map.insert(std::make_pair('y', "screen capture               [y]"));   
+    menu_map.insert(std::make_pair('y', "screen capture               [y]")); 
 
     this->add_sub_menu("controls", menu_map);
   
@@ -78,14 +81,20 @@ void GlutWindow::init()
     glutReshapeFunc([](int width, int height)
     {
       graphics::WindowResizeEvent e(width, height);
-      Self::EventHandler::dispatch(e);
+      if(GlutWindow::m_event_dispatcher)
+      {
+        GlutWindow::m_event_dispatcher(e);
+      }
     });
     
     glutKeyboardFunc([](unsigned char key, int x, int y)
     {
       auto code = static_cast<graphics::KeyCode>(key);
       graphics::KeyPressedEvent e(code);
-      Self::EventHandler::dispatch(e);
+      if(GlutWindow::m_event_dispatcher)
+      {
+        GlutWindow::m_event_dispatcher(e);
+      }
     });
 
     glutMouseFunc([](int button, int state, int x, int y)
@@ -132,34 +141,51 @@ void GlutWindow::init()
       if(down)
       {
         graphics::MouseButtonPressedEvent e(code, key, x, y);
-        Self::EventHandler::dispatch(e);
+        if(GlutWindow::m_event_dispatcher)
+        {
+          GlutWindow::m_event_dispatcher(e);
+        }
       }
       else
       {
         graphics::MouseButtonReleasedEvent e(code, x, y);
-        Self::EventHandler::dispatch(e);
+        if(GlutWindow::m_event_dispatcher)
+        {
+          GlutWindow::m_event_dispatcher(e);
+        }
       }
     });
 
     glutPassiveMotionFunc([](int x, int y)
     {
       graphics::MouseMovedEvent e(x, y);
-      Self::EventHandler::dispatch(e);
+      if(GlutWindow::m_event_dispatcher)
+      {
+        GlutWindow::m_event_dispatcher(e);
+      }
     });
 
     glutMotionFunc([](int x, int y)
     {
       graphics::MouseMovedEvent e(graphics::MouseCode::Button0, x, y);
-      Self::EventHandler::dispatch(e);
+      if(GlutWindow::m_event_dispatcher)
+      {
+        GlutWindow::m_event_dispatcher(e);
+      }
     });
 
     glutDisplayFunc([]()
     {
       graphics::WindowDisplayEvent e;
-      Self::EventHandler::dispatch(e);
+      if(GlutWindow::m_event_dispatcher)
+      {
+        GlutWindow::m_event_dispatcher(e);
+      }
     });
   }
 }
+
+GlutWindow::CallBackFnType GlutWindow::m_event_dispatcher;
 
 }
 }

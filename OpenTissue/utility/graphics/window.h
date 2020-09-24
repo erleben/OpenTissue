@@ -7,13 +7,15 @@
 //
 #pragma once
 
-#include <unordered_map>
+#include <functional>
 #include <memory>
+#include <unordered_map>
+
+// #include "OpenTissue/utility/graphics/event.h"
 
 namespace OpenTissue {
 namespace graphics {
 
-template<typename T>
 class Event;
 
 template<typename T>
@@ -45,7 +47,7 @@ public:
   using Self          = Window<Derived>;
   using Ptr           = std::shared_ptr<Self>;
   using WindowTypePtr = typename WindowTraits<Derived>::WindowType;
-  // using EventHandler  = typename WindowTraits<Derived>::EventHandler;
+  using CallBackFnType = std::function<void(const Event&)>;
 
 public:
   Window(const Window &)            = delete;
@@ -77,9 +79,9 @@ public:
     static_cast<Derived*>(this)->set_vsync(enabled);
   }
 
-  bool is_vsync() const
+  void set_event_callback(const CallBackFnType &fn)
   {
-    static_cast<Derived*>(this)->is_vsync();
+    static_cast<Derived*>(this)->set_event_callback(fn);
   }
 
   WindowTypePtr get_window()
@@ -92,20 +94,6 @@ public:
   {
     static_cast<Derived*>(this)->add_sub_menu(name, menu_map);
   }
-
-  // void set_event_handler(typename EventHandler::Ptr event_handler)
-  // {
-  //   m_event_handler = event_handler;
-  // }
-
-  // template<typename T>
-  // bool event_callback(const Event<T> &e)
-  // {
-  //   if(m_event_handler)
-  //   {
-  //     m_event_handler->run(e);
-  //   }
-  // }
 
   void set_width(const uint32_t width)
   {
@@ -127,24 +115,10 @@ public:
     return m_properties.height;
   }
 
-  static void set_event_dispatcher(const std::function<void()> &fn)
-  {
-    Self::m_event_dispatcher = fn;
-  }
-
-  static const std::function<void()> &get_event_dispatcher()
-  {
-    return Self::m_event_dispatcher;
-  }
-
 protected:
-  WindowProperties              m_properties;
-  static std::function<void()>  m_event_dispatcher;
-  bool                       m_vsync;
+  WindowProperties m_properties;
+  bool             m_vsync = false; ///< Boolean flag indicating whether vertical syncronization if active.
 };
-
-template<typename Derived> 
-Window<Derived>::m_event_dispatcher = 
 
 }
 }

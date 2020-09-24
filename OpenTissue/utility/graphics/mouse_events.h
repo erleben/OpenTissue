@@ -30,7 +30,7 @@ enum class MouseCode : uint16_t
   ButtonMiddle           = Button2
 };
 
-class MouseMovedEvent : public Event<MouseMovedEvent>
+class MouseMovedEvent : public Event
 {
 public:
   MouseMovedEvent(const float x, const float y)
@@ -70,7 +70,7 @@ private:
   float m_mousex, m_mousey;
 };
 
-class MouseScrolledEvent : public Event<MouseScrolledEvent>
+class MouseScrolledEvent : public Event
 {
 public:
   MouseScrolledEvent(const float xoffset, const float yoffset)
@@ -100,7 +100,7 @@ private:
   float m_xoffset, m_yoffset;
 };
 
-class MouseButtonEvent : public Event<MouseButtonEvent>
+class MouseButtonEvent : public Event
 {
 public:
   MouseCode get_mouse_button() const 

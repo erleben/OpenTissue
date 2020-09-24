@@ -12,7 +12,7 @@
 namespace OpenTissue {
 namespace graphics {
   
-class WindowResizeEvent : public Event<WindowResizeEvent>
+class WindowResizeEvent : public Event
 {
 public:
   WindowResizeEvent(unsigned int width, unsigned int height)
@@ -47,7 +47,7 @@ private:
   unsigned int m_width, m_height;
 };
 
-class WindowCloseEvent : public Event<WindowCloseEvent>
+class WindowCloseEvent : public Event
 {
 public:
   WindowCloseEvent() = default;
@@ -68,7 +68,7 @@ public:
   }
 };
 
-class WindowDisplayEvent : public Event<WindowDisplayEvent>
+class WindowDisplayEvent : public Event
 {
 public:
   WindowDisplayEvent() = default;

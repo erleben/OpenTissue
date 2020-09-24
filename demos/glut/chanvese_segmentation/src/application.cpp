@@ -180,9 +180,5 @@ OpenTissue::glut::GlutApplication::Ptr createApplication(int argc, char **argv)
 {
   glutInit(&argc, argv);
   auto app = OpenTissue::glut::GlutApplication::New<Application>();
-  app->get_window()->set_event_dispatcher([]()
-  {
-      return OpenTissue::glut::GlutApplication::New<Application>();
-  });
   return app;
 }
