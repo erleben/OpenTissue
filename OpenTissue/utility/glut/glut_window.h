@@ -12,6 +12,8 @@
 #include "OpenTissue/utility/graphics/mouse_events.h"
 #include "OpenTissue/utility/graphics/application_events.h"
 
+#include "OpenTissue/utility/graphics_export.h"
+
 namespace OpenTissue {
 
 namespace glut {
@@ -34,7 +36,7 @@ public:
 
 namespace glut {
 
-class GlutWindow : public graphics::Window<GlutWindow>
+class OT_GRAPHICS_DEPRECATED_API GlutWindow : public graphics::Window<GlutWindow>
 {
 public:
   using Self = GlutWindow;
@@ -53,10 +55,7 @@ public:
 
   void set_vsync(bool enabled);
 
-  void set_event_callback(const CallBackFnType &fn)
-  {
-    GlutWindow::m_event_dispatcher = fn;
-  }
+  void set_event_callback(const CallBackFnType &fn);
 
 private:
   int m_handle;

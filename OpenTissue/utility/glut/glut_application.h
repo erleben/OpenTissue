@@ -13,6 +13,8 @@
 #include "OpenTissue/utility/glut/glut_window.h"
 #include "OpenTissue/utility/graphics/application.h"
 
+#include "OpenTissue/utility/graphics_export.h"
+
 namespace OpenTissue {
 
 namespace glut {
@@ -29,6 +31,9 @@ class ApplicationTraits<glut::GlutApplication>
 public:
   using WindowType = glut::GlutWindow;
 };
+
+class Event;
+
 }
 
 
@@ -46,7 +51,7 @@ namespace glut {
  * planes and fov).
  *
  */
-class GlutApplication : public graphics::Application<GlutApplication>
+class OT_GRAPHICS_DEPRECATED_API GlutApplication : public graphics::Application<GlutApplication>
 {
 public: 
   GlutApplication(const std::string &title);
@@ -55,25 +60,20 @@ public:
   void add_sub_menu(const std::string &name,
                     std::unordered_map<unsigned char, const char*> menu_map);
 
-
-  template<typename T>
-  bool on_event(const T &e)
-  {
-    glutPostRedisplay();
-    return true;
-  }
-
-  virtual void action(unsigned char choice);
-  virtual void update(float timestep);
-  virtual float get_time() const;
-  virtual void idle();
-  virtual void init();
-  virtual void shutdown();
+  void shutdown();
 
   void run();
 
-  CameraType &camera();
+  bool on_event(const graphics::Event &);
+  
+  float get_time() const;
 
+  virtual void action(unsigned char choice) = 0;
+  virtual void update(float timestep) = 0;
+  virtual void idle() = 0;
+  virtual void init() = 0;
+  
+  
 private:
   std::unordered_map<char, std::string> m_menu_map;
 };

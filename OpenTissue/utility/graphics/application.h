@@ -118,6 +118,16 @@ protected:
     static_cast<Derived*>(this)->add_sub_menu(name, menu_map);    
   }
 
+  CameraType &camera()
+  {
+    return m_camera;
+  }
+
+  const CameraType &camera() const
+  {
+    return m_camera;
+  }
+
 private:
   float get_time() const
   {
@@ -126,10 +136,10 @@ private:
 
   void display(float timestep)
   {
-    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    glMatrixMode( GL_MODELVIEW );
-    glLoadMatrixf( m_camera.get_modelview_matrix() );
+    glMatrixMode(GL_MODELVIEW);
+    glLoadMatrixf(m_camera.get_modelview_matrix());
     m_frustum.update();
     
     static_cast<Derived*>(this)->update(timestep);
@@ -143,7 +153,7 @@ private:
     {
       if(!e.handled())
       {
-        on_event(e);
+        this->on_event(e);
       }
     });
     m_window->init();
@@ -159,7 +169,7 @@ private:
     if (GLEW_OK != err)
     {
       // auto err_string = std::string(glewGetErrorString(err));
-      throw std::runtime_error("GLEW Error: " /* + err_string */);
+      throw std::runtime_error("Application::init_gl() - GLEW Error: " /* + err_string */);
     }
     std::cout << "GLEW status: Using GLEW " << glewGetString(GLEW_VERSION) << std::endl;
     
@@ -207,26 +217,82 @@ private:
   }
 
 public: // Event handling
-  template<typename T>
-  bool on_event(const T &e);
+  void on_event(const Event &e)
+  {
+    EventType type = e.get_event_type();
+    switch(type)
+    {
+      case EventType::WindowClose:
+      {
+        this->on_window_close(static_cast<const WindowCloseEvent&>(e));
+        break;
+      }
+      case EventType::WindowResize:
+      {
+        this->on_window_resize(static_cast<const WindowResizeEvent&>(e));
+        break;
+      }
+      case EventType::WindowDisplay:
+      {
+        this->on_window_display(static_cast<const WindowDisplayEvent&>(e));
+        break;
+      }
+      case EventType::KeyPressed:
+      {
+        this->on_key_pressed(static_cast<const KeyPressedEvent&>(e));
+        break;
+      }
+      case EventType::KeyReleased:
+      {
+        break;
+      }
+      case EventType::KeyTyped:
+      {
+        break;
+      }
+      case EventType::MouseButtonPressed:
+      {
+        this->on_mouse_button_pressed(static_cast<const MouseButtonPressedEvent&>(e));
+        break;
+      }
+      case EventType::MouseButtonReleased:
+      {
+        this->on_mouse_button_released(static_cast<const MouseButtonReleasedEvent&>(e));
+        break;
+      }
+      case EventType::MouseMoved:
+      {
+        this->on_mouse_moved(static_cast<const MouseMovedEvent&>(e));
+        break;
+      }
+      case EventType::MouseScrolled:
+      {
+        break;
+      }
+    };
+  }
+  
+  //----------------------------------------------------------------------------
 
-  bool on_event(const WindowDisplayEvent &e)
+  bool on_window_display(const WindowDisplayEvent &e)
   {
     this->display(this->get_time());
+    static_cast<Derived*>(this)->on_event(e);
     return true;
   }
   
   //----------------------------------------------------------------------------
 
-  bool on_event(const WindowCloseEvent &)
+  bool on_window_close(const WindowCloseEvent &e)
   {
     m_running = false;
+    static_cast<Derived*>(this)->on_event(e);
     return true;
   }
 
   //----------------------------------------------------------------------------
 
-  bool on_event(const WindowResizeEvent &e)
+  bool on_window_resize(const WindowResizeEvent &e)
   {
     auto width = e.get_width();
     auto height = e.get_height();
@@ -248,18 +314,20 @@ public: // Event handling
     glLoadIdentity();
 
     m_aspect = width / height;
+    std::cout << m_aspect << std::endl;
     gluPerspective(m_fovy, m_aspect, m_z_near, m_z_far);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
     this->update_lights();
+    static_cast<Derived*>(this)->on_event(e);
 
     return true;
   }
 
   //----------------------------------------------------------------------------
 
-  bool on_event(const KeyPressedEvent &e)
+  bool on_key_pressed(const KeyPressedEvent &e)
   {
     auto key = static_cast<unsigned char>(e.get_code());
     switch (key)
@@ -284,13 +352,14 @@ public: // Event handling
     };
 
     static_cast<Derived*>(this)->action(key);
+    static_cast<Derived*>(this)->on_event(e);
 
     return true;
   }
 
   //----------------------------------------------------------------------------
 
-  bool on_event(const MouseButtonPressedEvent &e)
+  bool on_mouse_button_pressed(const MouseButtonPressedEvent &e)
   {
     auto x      = e.get_x();
     auto y      = e.get_y();
@@ -330,7 +399,7 @@ public: // Event handling
 
   //----------------------------------------------------------------------------
 
-  bool on_event(const MouseButtonReleasedEvent &e)
+  bool on_mouse_button_released(const MouseButtonReleasedEvent &e)
   {
     auto x = e.get_x();
     auto y = e.get_y();
@@ -360,7 +429,7 @@ public: // Event handling
 
   //----------------------------------------------------------------------------
 
-  bool on_event(const MouseMovedEvent &e)
+  bool on_mouse_moved(const MouseMovedEvent &e)
   {
     auto x = e.get_x();
     auto y = e.get_y();

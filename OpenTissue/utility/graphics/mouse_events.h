@@ -54,12 +54,17 @@ public:
     return m_passive; 
   }
 
-  constexpr EventType get_event_type()
+  EventCategory get_category_flag() const
+  {
+    return EventCategory::Mouse;
+  }
+
+  EventType get_event_type() const
   {
     return EventType::MouseMoved;
   }
 
-  constexpr const char* get_name()
+  const char* get_name()
   {
     return "MouseMoved";
   }
@@ -86,12 +91,17 @@ public:
     return m_yoffset; 
   }
 
-  constexpr EventType get_event_type()
+  EventCategory get_category_flag() const
+  {
+    return EventCategory::Mouse;
+  }
+
+  EventType get_event_type() const
   {
     return EventType::MouseScrolled;
   }
 
-  constexpr const char* get_name()
+  const char* get_name() const
   {
     return "MouseScrolled";
   }
@@ -123,6 +133,15 @@ public:
     return m_modifier; 
   }
 
+  EventCategory get_category_flag() const
+  {
+    return EventCategory::Mouse;
+  }
+
+  virtual EventType get_event_type() const = 0;
+
+  virtual const char* get_name() const = 0;
+
 protected:
   MouseButtonEvent(const MouseCode button, float x, float y)
     : m_Button(button), m_mousex(x), m_mousey(y) {}
@@ -145,12 +164,12 @@ public:
   MouseButtonPressedEvent(const MouseCode button, const int modifier, float x, float y)
     : MouseButtonEvent(button, modifier, x, y) {}
 
-  constexpr EventType get_event_type()
+  EventType get_event_type() const
   {
     return EventType::MouseButtonPressed;
   }
 
-  constexpr const char* get_name()
+  const char* get_name() const
   {
     return "MouseButtonPressed";
   }
@@ -162,12 +181,12 @@ public:
   MouseButtonReleasedEvent(const MouseCode button, float x, float y)
     : MouseButtonEvent(button, x, y) {}
 
-  constexpr EventType get_event_type()
+  EventType get_event_type() const
   {
     return EventType::MouseButtonReleased;
   }
 
-  constexpr const char* get_name()
+  const char* get_name() const
   {
     return "MouseButtonReleased";
   }

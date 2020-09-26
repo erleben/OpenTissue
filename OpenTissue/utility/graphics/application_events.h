@@ -28,17 +28,17 @@ public:
     return m_height; 
   }
 
-  constexpr EventType get_event_type() const
+  EventType get_event_type() const
   {
     return EventType::WindowResize;
   }
 
-  constexpr EventCategory get_category_flag() const
+  EventCategory get_category_flag() const
   {
     return EventCategory::Application;
   }
 
-  constexpr const char* get_name() const
+  const char* get_name() const
   {
     return "WindowResize";
   }
@@ -52,17 +52,17 @@ class WindowCloseEvent : public Event
 public:
   WindowCloseEvent() = default;
 
-  constexpr EventType get_event_type() const
+  EventType get_event_type() const
   {
     return EventType::WindowClose;
   }
 
-  constexpr EventCategory get_category_flag() const
+  EventCategory get_category_flag() const
   {
     return EventCategory::Application;
   }
 
-  constexpr const char* get_name() const
+  const char* get_name() const
   {
     return "WindowClose";
   }
@@ -73,17 +73,17 @@ class WindowDisplayEvent : public Event
 public:
   WindowDisplayEvent() = default;
 
-  constexpr EventType get_event_type() const
+  EventType get_event_type() const
   {
     return EventType::WindowDisplay;
   }
 
-  constexpr EventCategory get_category_flag() const
+  EventCategory get_category_flag() const
   {
     return EventCategory::Application;
   }
 
-  constexpr const char* get_name() const
+  const char* get_name() const
   {
     return "WindowDisplayEvent";
   }

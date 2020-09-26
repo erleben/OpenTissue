@@ -17,6 +17,7 @@ namespace OpenTissue {
 namespace graphics {
 
 class Event;
+class WindowDisplayEvent;
 
 template<typename T>
 class WindowTraits;
@@ -27,15 +28,10 @@ struct WindowProperties
   uint32_t width;
   uint32_t height;
 
-  int argc;
-  char **argv;
-
   WindowProperties(const std::string& title = "OpenTissue Engine",
                    uint32_t width = 1280,
-                   uint32_t height = 720,
-                   int argc = 0,
-                   char **argv = nullptr)
-    : title(title), width(width), height(height), argc(argc), argv(argv)
+                   uint32_t height = 720)
+    : title(title), width(width), height(height)
   {
   }
 };
@@ -49,6 +45,13 @@ public:
   using WindowTypePtr = typename WindowTraits<Derived>::WindowType;
   using CallBackFnType = std::function<void(const Event&)>;
 
+  template<typename... Args>
+  static Ptr New(Args&&... args)
+  {
+    static auto p = std::make_shared<Derived>(args...);
+    return std::static_pointer_cast<Self>(p);
+  }
+
 public:
   Window(const Window &)            = delete;
   Window operator=(const Window &)  = delete;
@@ -56,13 +59,6 @@ public:
   virtual ~Window()                 = default;
 
   explicit Window(const WindowProperties &properties) : m_properties(properties) {}
-
-  template<typename... Args>
-  static Ptr New(Args&&... args)
-  {
-    static auto p = std::make_shared<Derived>(args...);
-    return std::static_pointer_cast<Self>(p);
-  }
 
   void init()
   {

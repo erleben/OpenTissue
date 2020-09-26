@@ -45,6 +45,21 @@ public:
     return m_handled;
   }
 
+  virtual EventType get_event_type() const
+  {
+    return EventType::None;
+  }
+
+  virtual EventCategory get_category_flag() const
+  {
+    return EventCategory::None;
+  }
+
+  virtual const char* get_name() const
+  {
+    return "None";
+  }
+
 protected:
   bool m_handled = false;
 };

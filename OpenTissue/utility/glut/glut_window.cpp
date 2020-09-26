@@ -6,8 +6,9 @@
 // OTTL is licensed under zlib: http://opensource.org/licenses/zlib-license.php
 //
 
-#include "OpenTissue/utility/gl/gl.h"
 #include "OpenTissue/utility/glut/glut_window.h"
+
+#include "OpenTissue/utility/gl/gl.h"
 #include "OpenTissue/utility/glut/glut_application.h"
 
 namespace OpenTissue {
@@ -29,7 +30,7 @@ void GlutWindow::update()
 void GlutWindow::add_sub_menu(const std::string &name, 
                               const std::unordered_map<unsigned char, const char*> &menu_map)
 {
-  auto menu_dispatcher = [](int k)
+  auto menu_callback = [](int k)
   {
     graphics::KeyPressedEvent e(static_cast<graphics::KeyCode>(k), 0);
     if(GlutWindow::m_event_dispatcher)
@@ -40,10 +41,10 @@ void GlutWindow::add_sub_menu(const std::string &name,
 
   if(m_main_menu < 0)
   {
-    m_main_menu = glutCreateMenu(menu_dispatcher);
+    m_main_menu = glutCreateMenu(menu_callback);
   }
 
-  auto sub_menu = glutCreateMenu(menu_dispatcher);
+  auto sub_menu = glutCreateMenu(menu_callback);
   for (const auto &entry : menu_map)
   {
     glutAddMenuEntry(entry.second, entry.first);
@@ -61,7 +62,7 @@ void GlutWindow::init()
   glutInitWindowPosition(50, 50);
   m_handle = glutCreateWindow(m_properties.title.c_str());
 
-  // Setup menu callback
+  // Setup menu
   {
     std::unordered_map<unsigned char, const char*> menu_map;
     menu_map.insert(std::make_pair('q', "quit                         [q]"));
@@ -185,8 +186,12 @@ void GlutWindow::init()
   }
 }
 
-GlutWindow::CallBackFnType GlutWindow::m_event_dispatcher;
+void GlutWindow::set_event_callback(const GlutWindow::CallBackFnType &fn)
+{
+  GlutWindow::m_event_dispatcher = fn;
+}
 
+GlutWindow::CallBackFnType GlutWindow::m_event_dispatcher;
 }
 }
 

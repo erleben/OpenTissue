@@ -120,6 +120,15 @@ if(OPENTISSUE_ENABLE_UNIT_TESTS)
   add_subdirectory(unit_tests)
 endif()
 
+#-----------------------------------------------------------------------------
+#
+# Option for removing deprecated code from deprecated preprocessor
+#
+option(OPENTISSUE_EXCLUDE_DEPRECATED "Exclude deprecated parts of the library" OFF)
+if(OPENTISSUE_EXCLUDE_DEPRECATED)
+  set(NO_BUILD_DEPRECATED DEFINE_NO_DEPRECATED)
+endif()
+
 #-------------------------------------------------------------------------------
 #
 # Add support for other CMake applications, so it is easier to use OpenTissue.
@@ -127,13 +136,9 @@ endif()
 # Recall, that CMake works with tree terms: source-, build- (ie. binary-) and
 # isntall- configuration/tree.
 #
-# OpenTissue is a header only library, so the build-tree only makes sense for
+# OpenTissue is a header only library (mostly), so the build-tree only makes sense for
 # demo applications and units. Source- and install trees are basically just all
-# the header-files and third-party libraries.
-#
-# As of this writting (May 2007) we only support FindPackage(OpenTissue)
-# ``source-tree'' support. Thus if one decides to install OpenTissue using CMake
-# then one would not have an OpenTissueConfig.cmake in the install-tree.
+# the header-files, third-party libraries and cmake finding scripts.
 #
 include(CMakePackageConfigHelpers)
 include(CPack)

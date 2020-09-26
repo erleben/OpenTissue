@@ -8,6 +8,7 @@
 
 #include "OpenTissue/utility/glut/glut_window.h"
 #include "OpenTissue/utility/glut/glut_application.h"
+#include "OpenTissue/utility/graphics/event.h"
 
 namespace OpenTissue {
 namespace glut {
@@ -17,9 +18,7 @@ GlutApplication::GlutApplication(const std::string &title)
   {
   }
 
-void GlutApplication::init()
-{  
-}
+//-------------------------------------------------------------------------------------------
 
 void GlutApplication::add_sub_menu(const std::string &name,
                                    std::unordered_map<unsigned char, const char*> menu_map)
@@ -30,24 +29,21 @@ void GlutApplication::add_sub_menu(const std::string &name,
   }
 }
 
+//-------------------------------------------------------------------------------------------
+
 void GlutApplication::shutdown()
 {
   exit(0);  
 }
 
-void GlutApplication::action(unsigned char choice)
-{
-}
+//-------------------------------------------------------------------------------------------
 
 float GlutApplication::get_time() const
 {
   return 0.0;
 }
 
-void GlutApplication::update(float timestep)
-{
-  // m_running = false; // do not use default loop
-}
+//-------------------------------------------------------------------------------------------
 
 void GlutApplication::run()
 {
@@ -56,13 +52,10 @@ void GlutApplication::run()
 
 //-------------------------------------------------------------------------------------------
 
-void GlutApplication::idle()
+bool GlutApplication::on_event(const graphics::Event &)
 {
-}
-
-GlutApplication::CameraType &GlutApplication::camera()
-{
-  return m_camera;
+  glutPostRedisplay();
+  return true;
 }
 
 }

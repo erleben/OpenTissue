@@ -159,10 +159,14 @@ public:
     return m_KeyCode; 
   }
 
-  constexpr EventCategory get_category_flags() const
+  EventCategory get_category_flags() const
   {
     return EventCategory::Keyboard;
   }
+  
+  virtual EventType get_event_type() const = 0;
+
+  virtual const char* get_name() const = 0;
 
 protected:
   KeyEvent(const KeyCode keycode)
@@ -179,12 +183,12 @@ public:
 
   uint16_t repeat_count() const { return m_RepeatCount; }
 
-  constexpr EventType get_event_type()
+  EventType get_event_type() const
   {
     return EventType::KeyPressed;
   }
 
-  constexpr const char* get_name()
+  const char* get_name() const
   {
     return "KeyPressed";
   }
@@ -199,12 +203,12 @@ public:
   KeyReleasedEvent(const KeyCode keycode)
     : KeyEvent(keycode) {}
 
-  constexpr EventType get_event_type()
+  EventType get_event_type() const
   {
     return EventType::KeyReleased;
   }
 
-  constexpr const char* get_name()
+  const char* get_name() const
   {
     return "KeyReleased";
   }
@@ -217,12 +221,12 @@ public:
   KeyTypedEvent(const KeyCode keycode)
     : KeyEvent(keycode) {}
 
-  constexpr EventType get_event_type()
+  EventType get_event_type() const
   {
     return EventType::KeyTyped;
   }
 
-  constexpr const char* get_name()
+  const char* get_name() const
   {
     return "KeyTyped";
   }

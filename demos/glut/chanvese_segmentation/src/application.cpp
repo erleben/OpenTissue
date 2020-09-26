@@ -56,6 +56,9 @@ public:
     gl::DrawMesh(m_surface);
   }
 
+  void idle() override
+  {}
+
   void action(unsigned char choice) override
   {
     switch ( choice )
@@ -84,7 +87,7 @@ public:
         OpenTissue::grid::blockify(m_phi);
       }
       break;
-    case 'o':
+    case 'j':
       {
         OpenTissue::grid::ignore_region(m_phi,OpenTissue::grid::outside_region_tag());
         OpenTissue::grid::blockify(m_phi);
@@ -126,7 +129,7 @@ public:
     menu_map.insert(std::make_pair('r', "Reset segmentation       [r]"));
     menu_map.insert(std::make_pair('v', "Compute volume           [v]"));
     menu_map.insert(std::make_pair('i', "ignore inside            [i]"));
-    menu_map.insert(std::make_pair('o', "ignore outside           [o]"));
+    menu_map.insert(std::make_pair('j', "ignore outside           [j]"));
     menu_map.insert(std::make_pair('s', "chan vese step           [s]"));
     menu_map.insert(std::make_pair('m', "Mean curvature flow      [m]"));
 
@@ -144,6 +147,7 @@ public:
     std::fill(m_phi.begin(), m_phi.end(), 0 );
     OpenTissue::grid::blockify(m_phi);
   }
+  
   void load_knee()
   {
     input_type tmp;
