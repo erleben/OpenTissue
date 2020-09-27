@@ -58,7 +58,7 @@ public:
   Window()                          = delete;
   virtual ~Window()                 = default;
 
-  explicit Window(const WindowProperties &properties) : m_properties(properties) {}
+  explicit Window(const WindowProperties &properties);
 
   void init()
   {
@@ -77,7 +77,8 @@ public:
 
   void set_event_callback(const CallBackFnType &fn)
   {
-    static_cast<Derived*>(this)->set_event_callback(fn);
+    // static_cast<Derived*>(this)->set_event_callback(fn);
+    m_data->fn = fn;
   }
 
   WindowTypePtr get_window()
@@ -91,30 +92,41 @@ public:
     static_cast<Derived*>(this)->add_sub_menu(name, menu_map);
   }
 
-  void set_width(const uint32_t width)
-  {
-    m_properties.width = width;
-  }
-
-  void set_height(const uint32_t height)
-  {
-    m_properties.height = height;
-  }
-
   uint32_t get_width() const
   {
-    return m_properties.width;
+    return m_data->width;
   }
 
   uint32_t get_height() const
   {
-    return m_properties.height;
+    return m_data->height;
   }
 
 protected:
   WindowProperties m_properties;
   bool             m_vsync = false; ///< Boolean flag indicating whether vertical syncronization if active.
+
+  struct WindowData;
+  std::shared_ptr<WindowData> m_data;
 };
+
+template<typename WindowType>
+struct Window<WindowType>::WindowData
+{
+  std::string title;
+  uint32_t width, height;
+  Window<WindowType>::CallBackFnType fn;
+};
+
+template<typename WindowType>
+Window<WindowType>::Window(const WindowProperties &properties) 
+  : m_properties(properties), 
+    m_data(std::make_shared<WindowData>()) 
+{
+  m_data->title = properties.title;
+  m_data->width = properties.width;
+  m_data->height = properties.height;
+}
 
 }
 }

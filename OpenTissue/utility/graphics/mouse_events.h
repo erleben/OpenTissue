@@ -8,6 +8,7 @@
 #pragma once
 
 #include "OpenTissue/utility/graphics/event.h"
+#include "OpenTissue/utility/graphics/key_events.h"
 
 namespace OpenTissue {
 namespace graphics {
@@ -78,8 +79,8 @@ private:
 class MouseScrolledEvent : public Event
 {
 public:
-  MouseScrolledEvent(const float xoffset, const float yoffset)
-    : m_xoffset(xoffset), m_yoffset(yoffset) {}
+  MouseScrolledEvent(const float xoffset, const float yoffset, int direction = 1)
+    : m_xoffset(xoffset), m_yoffset(yoffset), m_direction(direction) {}
 
   inline float get_xoffset() const 
   { 
@@ -89,6 +90,11 @@ public:
   inline float get_yoffset() const
   { 
     return m_yoffset; 
+  }
+
+  inline float get_direction() const
+  { 
+    return m_direction; 
   }
 
   EventCategory get_category_flag() const
@@ -107,7 +113,7 @@ public:
   }
 
 private:
-  float m_xoffset, m_yoffset;
+  float m_xoffset, m_yoffset, m_direction;
 };
 
 class MouseButtonEvent : public Event
@@ -128,7 +134,7 @@ public:
     return m_mousey; 
   }
 
-  inline int get_modifier() const 
+  inline KeyCode get_modifier() const 
   { 
     return m_modifier; 
   }
@@ -146,11 +152,11 @@ protected:
   MouseButtonEvent(const MouseCode button, float x, float y)
     : m_Button(button), m_mousex(x), m_mousey(y) {}
 
-  MouseButtonEvent(const MouseCode button, const int modifier, float x, float y)
+  MouseButtonEvent(const MouseCode button, KeyCode modifier, float x, float y)
     : m_Button(button), m_modifier(modifier), m_mousex(x), m_mousey(y) {}
 
   MouseCode m_Button;
-  int   m_modifier;
+  KeyCode   m_modifier;
 
   float m_mousex, m_mousey;
 };
@@ -161,7 +167,7 @@ public:
   MouseButtonPressedEvent(const MouseCode button, float x, float y)
     : MouseButtonEvent(button, x, y) {}
 
-  MouseButtonPressedEvent(const MouseCode button, const int modifier, float x, float y)
+  MouseButtonPressedEvent(const MouseCode button, KeyCode modifier, float x, float y)
     : MouseButtonEvent(button, modifier, x, y) {}
 
   EventType get_event_type() const

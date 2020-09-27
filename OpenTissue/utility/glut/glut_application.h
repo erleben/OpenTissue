@@ -36,7 +36,6 @@ class Event;
 
 }
 
-
 namespace glut {
 
 /**
@@ -55,6 +54,7 @@ class OT_GRAPHICS_DEPRECATED_API GlutApplication : public graphics::Application<
 {
 public: 
   GlutApplication(const std::string &title);
+  virtual ~GlutApplication() = default;
 
 
   void add_sub_menu(const std::string &name,

@@ -267,6 +267,7 @@ public: // Event handling
       }
       case EventType::MouseScrolled:
       {
+        this->on_mouse_scrolled(static_cast<const MouseScrolledEvent&>(e));
         break;
       }
     };
@@ -294,11 +295,8 @@ public: // Event handling
 
   bool on_window_resize(const WindowResizeEvent &e)
   {
-    auto width = e.get_width();
-    auto height = e.get_height();
-
-    m_window->set_width(width);
-    m_window->set_height(height);
+    double width = e.get_width();
+    double height = e.get_height();
 
     if (width == 0 || height == 0)
     {
@@ -314,7 +312,6 @@ public: // Event handling
     glLoadIdentity();
 
     m_aspect = width / height;
-    std::cout << m_aspect << std::endl;
     gluPerspective(m_fovy, m_aspect, m_z_near, m_z_far);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
@@ -349,6 +346,7 @@ public: // Event handling
       case 'y':
         m_screen_capture = true;
         break;
+      
     };
 
     static_cast<Derived*>(this)->action(key);
@@ -368,19 +366,19 @@ public: // Event handling
 
     if(button == MouseCode::ButtonMiddle || 
       (button == MouseCode::ButtonLeft && 
-      mod == KeyCode::LeftAlt))
+       mod == KeyCode::LeftAlt))
     {
       m_zoom_mode = true;
     }
 
-    if (mod & KeyCode::LeftShift && (button == MouseCode::ButtonLeft))
+    if (mod == KeyCode::LeftShift && (button == MouseCode::ButtonLeft))
     {
       m_pan_mode = true;
     }
 
-    if(!(mod & KeyCode::LeftControl) &&  
-       !(mod & KeyCode::LeftAlt) && 
-       !(mod & KeyCode::LeftShift) && 
+    if(!(mod == KeyCode::LeftControl) &&  
+       !(mod == KeyCode::LeftAlt) && 
+       !(mod == KeyCode::LeftShift) && 
        !(button == MouseCode::ButtonMiddle) && 
        !(button == MouseCode::ButtonRight) && 
        button == MouseCode::ButtonLeft) // only left button
@@ -449,6 +447,16 @@ public: // Event handling
     m_begin_x = x;
     m_begin_y = y;
 
+    static_cast<Derived*>(this)->on_event(e);
+
+    return true;
+  }
+
+  //----------------------------------------------------------------------------
+
+  bool on_mouse_scrolled(const MouseScrolledEvent &e)
+  { 
+    m_camera.move(m_zoom_sensitivity * e.get_direction());
     static_cast<Derived*>(this)->on_event(e);
 
     return true;

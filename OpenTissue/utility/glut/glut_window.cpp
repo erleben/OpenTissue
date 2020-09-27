@@ -32,10 +32,11 @@ void GlutWindow::add_sub_menu(const std::string &name,
 {
   auto menu_callback = [](int k)
   {
+		auto data = static_cast<WindowData*>(glutGetWindowData());
     graphics::KeyPressedEvent e(static_cast<graphics::KeyCode>(k), 0);
-    if(GlutWindow::m_event_dispatcher)
+    if(data->fn)
     {
-      GlutWindow::m_event_dispatcher(e);
+      data->fn(e);
     }
   };
 
@@ -76,46 +77,61 @@ void GlutWindow::init()
     glutSetMenu(m_main_menu);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
   }
+
+  glutSetWindowData(m_data.get());
   
   // Setup event callbacks
   {
     glutReshapeFunc([](int width, int height)
     {
+			auto data = static_cast<WindowData*>(glutGetWindowData());
+      data->width = width;
+      data->height = height;
       graphics::WindowResizeEvent e(width, height);
-      if(GlutWindow::m_event_dispatcher)
+      if(data->fn)
       {
-        GlutWindow::m_event_dispatcher(e);
+        data->fn(e);
       }
     });
     
     glutKeyboardFunc([](unsigned char key, int x, int y)
     {
+			auto data = static_cast<WindowData*>(glutGetWindowData());
       auto code = static_cast<graphics::KeyCode>(key);
       graphics::KeyPressedEvent e(code);
-      if(GlutWindow::m_event_dispatcher)
+      if(data->fn)
       {
-        GlutWindow::m_event_dispatcher(e);
+        data->fn(e);
       }
     });
 
     glutMouseFunc([](int button, int state, int x, int y)
     {
+			auto data = static_cast<WindowData*>(glutGetWindowData());
       auto mods = glutGetModifiers();
 
-      int key = 0;
-      if(mods & GLUT_ACTIVE_SHIFT)
+      graphics::KeyCode key;
+      switch(mods)
       {
-        key |= graphics::KeyCode::LeftShift;
-      }
-
-      if(mods & GLUT_ACTIVE_ALT)
-      {
-        key |= graphics::KeyCode::LeftAlt;
-      }
-
-      if(mods & GLUT_ACTIVE_CTRL)
-      {
-        key |= graphics::KeyCode::LeftControl;
+        case GLUT_ACTIVE_SHIFT:
+        {
+          key = graphics::KeyCode::LeftShift;
+          break;
+        }
+        case GLUT_ACTIVE_ALT:
+        {
+          key = graphics::KeyCode::LeftAlt;
+          break;
+        }
+        case GLUT_ACTIVE_CTRL:
+        {
+          key = graphics::KeyCode::LeftControl;
+          break;
+        }
+        default:
+        {
+          key = graphics::KeyCode::None;
+        }
       }
 
       graphics::MouseCode code;
@@ -142,56 +158,62 @@ void GlutWindow::init()
       if(down)
       {
         graphics::MouseButtonPressedEvent e(code, key, x, y);
-        if(GlutWindow::m_event_dispatcher)
+        if(data->fn)
         {
-          GlutWindow::m_event_dispatcher(e);
+          data->fn(e);
         }
       }
       else
       {
         graphics::MouseButtonReleasedEvent e(code, x, y);
-        if(GlutWindow::m_event_dispatcher)
+        if(data->fn)
         {
-          GlutWindow::m_event_dispatcher(e);
+          data->fn(e);
         }
       }
     });
 
     glutPassiveMotionFunc([](int x, int y)
     {
+			auto data = static_cast<WindowData*>(glutGetWindowData());
       graphics::MouseMovedEvent e(x, y);
-      if(GlutWindow::m_event_dispatcher)
+      if(data->fn)
       {
-        GlutWindow::m_event_dispatcher(e);
+        data->fn(e);
       }
     });
 
     glutMotionFunc([](int x, int y)
     {
+			auto data = static_cast<WindowData*>(glutGetWindowData());
       graphics::MouseMovedEvent e(graphics::MouseCode::Button0, x, y);
-      if(GlutWindow::m_event_dispatcher)
+      if(data->fn)
       {
-        GlutWindow::m_event_dispatcher(e);
+        data->fn(e);
       }
     });
 
     glutDisplayFunc([]()
     {
+			auto data = static_cast<WindowData*>(glutGetWindowData());
       graphics::WindowDisplayEvent e;
-      if(GlutWindow::m_event_dispatcher)
+      if(data->fn)
       {
-        GlutWindow::m_event_dispatcher(e);
+        data->fn(e);
+      }
+    });
+
+    glutMouseWheelFunc([](int /*wheel*/, int direction, int /*x*/, int /*y*/)
+    {
+			auto data = static_cast<WindowData*>(glutGetWindowData());
+      graphics::MouseScrolledEvent e(0, 0, direction);
+      if(data->fn)
+      {
+        data->fn(e);
       }
     });
   }
 }
 
-void GlutWindow::set_event_callback(const GlutWindow::CallBackFnType &fn)
-{
-  GlutWindow::m_event_dispatcher = fn;
-}
-
-GlutWindow::CallBackFnType GlutWindow::m_event_dispatcher;
 }
 }
-

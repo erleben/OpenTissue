@@ -60,7 +60,6 @@ public:
 private:
   int m_handle;
   int m_main_menu;
-  static CallBackFnType   m_event_dispatcher;
 };
 
 }
