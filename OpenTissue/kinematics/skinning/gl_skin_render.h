@@ -9,7 +9,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/gl/gl_util.h>
+#include <OpenTissue/graphics/core/gl/gl_util.h>
 #include <OpenTissue/kinematics/skinning/skinning_gpu_vertex.h>
 #include <OpenTissue/kinematics/skinning/sbs/skinning_create_key.h>
 

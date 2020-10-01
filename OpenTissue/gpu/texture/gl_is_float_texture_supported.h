@@ -9,7 +9,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/gl/gl.h>
+#include <OpenTissue/graphics/core/gl/gl.h>
 
 namespace OpenTissue
 {

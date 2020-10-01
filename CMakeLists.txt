@@ -72,7 +72,10 @@ if(OPENTISSUE_ENABLE_DEMOS)
   # End-users that are writting their own applications do not need this GLUT
   # depedency and can ignore it.
   #
-  find_package(GLUT REQUIRED)
+  option(OPENTISSUE_ENABLE_GLUT "Enable deprecated GLUT graphics interface." OFF)
+  if(OPENTISSUE_ENABLE_GLUT)
+    find_package(GLUT REQUIRED)
+  endif()
 
   #-----------------------------------------------------------------------------
   #

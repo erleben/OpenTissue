@@ -9,7 +9,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/gl/gl_util.h>    // 2007-02-01 KE: Design issue: Having member hardwired to openGL is bad. These should be refactored to non-member template functions
+#include <OpenTissue/graphics/core/gl/gl_util.h>    // 2007-02-01 KE: Design issue: Having member hardwired to openGL is bad. These should be refactored to non-member template functions
 #include <OpenTissue/core/math/math_precision.h>
 #include <OpenTissue/core/math/big/big_types.h>
 #include <OpenTissue/core/math/big/big_conjugate_gradient.h>

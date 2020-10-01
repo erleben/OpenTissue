@@ -15,8 +15,6 @@
 #include <OpenTissue/core/math/math_dual_quaternion.h>
 #include <OpenTissue/kinematics/skinning/skinning_traits.h>
 
-#include <OpenTissue/utility/gl/gl_draw_mesh.h>
-
 #include <vector>
 
 /**

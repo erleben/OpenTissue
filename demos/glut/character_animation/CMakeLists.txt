@@ -9,11 +9,12 @@ target_link_libraries(character_animation
     PNG::PNG
     TinyXML
     OpenTissue
+    OpenTissueGraphics
 )
 
-target_include_directories(character_animation
-    PRIVATE
-        ${PROJECT_SOURCE_DIR}/third_party/bundled/
+target_compile_definitions(character_animation 
+  PRIVATE
+   OT_INJECT_MAIN
 )
 
 install(

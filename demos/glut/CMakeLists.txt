@@ -1,5 +1,5 @@
 add_subdirectory(chanvese_segmentation)
-# add_subdirectory(character_animation)
+add_subdirectory(character_animation)
 # add_subdirectory(curvature_mesh_bvh)
 # add_subdirectory(damped_wave_equations)
 # add_subdirectory(elastically_deformable_models)

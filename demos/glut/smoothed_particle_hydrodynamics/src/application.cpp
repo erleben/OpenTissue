@@ -8,7 +8,7 @@
 #include <OpenTissue/configuration.h>
 
 #define DEFINE_GLUT_MAIN
-#include <OpenTissue/utility/glut/glut_perspective_view_application.h>
+#include <OpenTissue/graphics/glut/glut_perspective_view_application.h>
 #undef DEFINE_GLUT_MAIN
 
 
@@ -152,7 +152,7 @@ using namespace OpenTissue::math::detail;
 *                documentation is missing too.
 *                avoid if-directives in code, in particular ``if 0'' stuff
 */
-class Application : public OpenTissue::glut::PerspectiveViewApplication
+class Application : public OpenTissue::graphics::PerspectiveViewApplication
 {
 protected:
 
@@ -952,7 +952,7 @@ public:
     }
     else
     {
-      OpenTissue::glut::PerspectiveViewApplication::mouse_down(cur_x,cur_y,shift, ctrl, alt, left, middle, right);
+      OpenTissue::graphics::PerspectiveViewApplication::mouse_down(cur_x,cur_y,shift, ctrl, alt, left, middle, right);
     }
   }
 
@@ -979,7 +979,7 @@ public:
     }
     else
     {
-      OpenTissue::glut::PerspectiveViewApplication::mouse_move(cur_x,cur_y);
+      OpenTissue::graphics::PerspectiveViewApplication::mouse_move(cur_x,cur_y);
     }
   }
 
@@ -997,15 +997,15 @@ public:
     }
     else
     {
-      OpenTissue::glut::PerspectiveViewApplication::mouse_up(cur_x,cur_y,shift, ctrl, alt, left, middle, right);
+      OpenTissue::graphics::PerspectiveViewApplication::mouse_up(cur_x,cur_y,shift, ctrl, alt, left, middle, right);
     }
   }
 
 };
 
-OpenTissue::glut::instance_pointer init_glut_application(int argc, char **argv)
+OpenTissue::graphics::instance_pointer init_glut_application(int argc, char **argv)
 {
-  OpenTissue::glut::instance_pointer instance;
+  OpenTissue::graphics::instance_pointer instance;
   instance.reset( new Application() );
   return instance;
 }

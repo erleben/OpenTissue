@@ -9,16 +9,10 @@ target_link_libraries(chanvese_segmentation
     PNG::PNG
     OpenTissue
     Boost::headers
-    Graphics
+    OpenTissueGraphics
 )
 
 target_compile_definitions(chanvese_segmentation 
   PRIVATE
    OT_INJECT_MAIN
 )
-
-install(
-  TARGETS chanvese_segmentation
-  RUNTIME DESTINATION  bin/demos/glut/
-  COMPONENT Demos
-  )

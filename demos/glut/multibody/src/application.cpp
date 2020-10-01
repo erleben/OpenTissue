@@ -8,7 +8,7 @@
 #include <OpenTissue/configuration.h>
 
 #define DEFINE_GLUT_MAIN
-#include <OpenTissue/utility/glut/glut_perspective_view_application.h>
+#include <OpenTissue/graphics/glut/glut_perspective_view_application.h>
 #undef DEFINE_GLUT_MAIN
 
 #include "data.h"
@@ -43,7 +43,7 @@
 #include <OpenTissue/dynamics/mbd/util/mbd_draw_contacts.h>
 #include <OpenTissue/dynamics/mbd/util/mbd_draw_joint.h>
 
-class Application : public OpenTissue::glut::PerspectiveViewApplication
+class Application : public OpenTissue::graphics::PerspectiveViewApplication
 {
 protected:
 
@@ -276,7 +276,7 @@ public:
       setup_domino_spiral(m_data);
       reset_timestep();
       break;
-    case '¤':
+    case 'ï¿½':
       m_prefix = "domino_circle";
       setup_domino_circle(m_data);
       reset_timestep();
@@ -411,7 +411,7 @@ public:
     glutAddMenuEntry("roof               [7]", '7');
     glutAddMenuEntry("silo2              [8]", '8');
     glutAddMenuEntry("domino spiral      [#]", '#');
-    glutAddMenuEntry("domino circel      [¤]", '¤');
+    glutAddMenuEntry("domino circel      [ï¿½]", 'ï¿½');
     glutAddMenuEntry("pyramid            [%]", '%');
     glutAddMenuEntry("large mass         [&]", '&');
     glutAddMenuEntry("house              [/]", '/');
@@ -461,9 +461,9 @@ public:
 
 };
 
-OpenTissue::glut::instance_pointer init_glut_application(int argc, char **argv)
+OpenTissue::graphics::instance_pointer init_glut_application(int argc, char **argv)
 {
-  OpenTissue::glut::instance_pointer instance;
+  OpenTissue::graphics::instance_pointer instance;
   instance.reset( new Application() );
   return instance;
 }

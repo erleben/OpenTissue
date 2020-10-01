@@ -15,7 +15,7 @@ One can use this as a basis for creating ones own new demo applications. Simply 
 The glut framework header code is located in the sub-library folder
 
 <pre>
-${OpenTissue}/OpenTissue/utility/glut/
+${OpenTissue}/OpenTissue/graphics/glut/
 </pre>
 
 When one uses the library one basically needs to do two steps
@@ -29,8 +29,8 @@ Below we will go through the details of these two steps. Afterwards we will expl
 
 One creates an application class by inheriting from a base-class in the glut framework. As of this writing (May 2007) there are two base-class available
 
-* OpenTissue::glut::Application
-* OpenTissue::glut::PerspectiveViewApplication
+* OpenTissue::graphics::Application
+* OpenTissue::graphics::PerspectiveViewApplication
 
 The first base-class is pretty raw, it basically does nothing. It is suitable if one wants to create a fundamental different interaction, like a 2D or orthographic visualization. The second base-class have been extended with a lot of connivence functionality. It sets up a perspective projection, it handles trackball interaction, camera, frustum, mouse interaction etc.. Also it provides frame-gapping and movie recording support. One gets all this for free just be creating an inherited class.
 
@@ -44,7 +44,7 @@ Now create a cpp-file for your demo application, for instance my_app.cpp, then t
     #include <OpenTissue/configuration.h>
 
     #define DEFINE_GLUT_MAIN
-    #include <OpenTissue/utility/glut/glut_perspective_view_application.h>
+    #include <OpenTissue/graphics/glut/glut_perspective_view_application.h>
     #undef DEFINE_GLUT_MAIN
 
     ... add all other kind of headers you need here...
@@ -53,7 +53,7 @@ Now create a cpp-file for your demo application, for instance my_app.cpp, then t
 Notice the pre-directive DEFINE_GLUT_MAIN this is needed in order to tell the framework that it should create an application main entry point (ie. a int main(int argc, char ** argv) function). Next you are ready to create the inherited application class. It should at very least look something like
 
 <pre>
-class Application : public OpenTissue::glut::PerspectiveViewApplication
+class Application : public OpenTissue::graphics::PerspectiveViewApplication
 {
 public:
 
@@ -107,9 +107,9 @@ The base class is a pure abstract class so the compile will tell you if you forg
 The next step is to pass an instance of your new application to the glut framework. This is done by implementing the init_glut_application-function. It is very important that you get the name and signature of this function correct, otherwise you get compiler errors. For our example class we should implement the function as follows:
 
 <pre>
-OpenTissue::glut::instance_pointer init_glut_application(int argc, char ** argv)
+OpenTissue::graphics::instance_pointer init_glut_application(int argc, char ** argv)
 {
-  OpenTissue::glut::instance_pointer instance;
+  OpenTissue::graphics::instance_pointer instance;
   instance.reset( new Application() );
   return instance;
 }
@@ -118,7 +118,7 @@ OpenTissue::glut::instance_pointer init_glut_application(int argc, char ** argv)
 
 # Customization
 
-In most cases the default behavior of the OpenTissue::glut::PerspectiveViewApplication base class will fulfill most peoples need for creating simple demo applications. However, we have encountered a few special needs that required some extra tweaking. Below we will walk through some of these extra tweaks.
+In most cases the default behavior of the OpenTissue::graphics::PerspectiveViewApplication base class will fulfill most peoples need for creating simple demo applications. However, we have encountered a few special needs that required some extra tweaking. Below we will walk through some of these extra tweaks.
 
 ## Adding Runtime Arguments
 
@@ -136,9 +136,9 @@ Application(int argc, char ** argv)
 Then when one implements the init_glut_application-function, one simple passes along argument to the specialized constructor like this:
 
 <pre>
-OpenTissue::glut::instance_pointer init_glut_application(int argc, char ** argv)
+OpenTissue::graphics::instance_pointer init_glut_application(int argc, char ** argv)
 {
-  OpenTissue::glut::instance_pointer instance;
+  OpenTissue::graphics::instance_pointer instance;
   instance.reset( new Application(argc,argv) );
   return instance;
 }
@@ -155,7 +155,7 @@ This could be done by adding the following member methods to your application cl
 <pre>
 void mouse_down(double cur_x,double cur_y,bool shift,bool ctrl,bool left,bool middle,bool right)
 {
-  OpenTissue::glut::PerspectiveViewApplication::mouse_down(cur_x,cur_y,shift, ctrl, left, middle, right);
+  OpenTissue::graphics::PerspectiveViewApplication::mouse_down(cur_x,cur_y,shift, ctrl, left, middle, right);
 
   if( middle && ctrl)
   {
@@ -166,7 +166,7 @@ void mouse_down(double cur_x,double cur_y,bool shift,bool ctrl,bool left,bool mi
 
 void mouse_move(double cur_x,double cur_y)
 {
-  OpenTissue::glut::PerspectiveViewApplication::mouse_move(cur_x,cur_y);
+  OpenTissue::graphics::PerspectiveViewApplication::mouse_move(cur_x,cur_y);
   if( m_doing_it)
   {
     ....
@@ -175,7 +175,7 @@ void mouse_move(double cur_x,double cur_y)
 
 void mouse_up(double cur_x,double cur_y,bool shift,bool ctrl,bool left,bool middle,bool right)
 {
-  OpenTissue::glut::PerspectiveViewApplication::mouse_up(cur_x,cur_y,shift, ctrl, left, middle, right);
+  OpenTissue::graphics::PerspectiveViewApplication::mouse_up(cur_x,cur_y,shift, ctrl, left, middle, right);
 
   if( m_doing_it)
   {
@@ -188,7 +188,7 @@ Notice that we invoke the mouse event handlers of the base-class. If this is not
 
 ## Change the Initial Camera Settings
 
-Every application will start of with the default camera settings that is used in the OpenTissue::glut::PerspectiveViewApplication base-class. This is not always desirable. If one wants to change the default window-size, clipping planes, or fovy then this can be done in the constructor of the ones Application. For instance like this
+Every application will start of with the default camera settings that is used in the OpenTissue::graphics::PerspectiveViewApplication base-class. This is not always desirable. If one wants to change the default window-size, clipping planes, or fovy then this can be done in the constructor of the ones Application. For instance like this
 
 <pre>
 Application()

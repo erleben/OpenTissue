@@ -8,7 +8,7 @@
 #include <OpenTissue/configuration.h>
 
 #define DEFINE_GLUT_MAIN
-#include <OpenTissue/utility/glut/glut_perspective_view_application.h>
+#include <OpenTissue/graphics/glut/glut_perspective_view_application.h>
 #undef DEFINE_GLUT_MAIN
 
 #include <OpenTissue/dynamics/mbd/math/mbd_default_math_policy.h>
@@ -21,7 +21,7 @@
 #include <OpenTissue/core/geometry/geometry_compute_sphere_mass_properties.h>
 #include <OpenTissue/core/math/math_random.h>
 
-class Application : public OpenTissue::glut::PerspectiveViewApplication
+class Application : public OpenTissue::graphics::PerspectiveViewApplication
 {
 protected:
 
@@ -1300,9 +1300,9 @@ public:
 
 };
 
-OpenTissue::glut::instance_pointer init_glut_application(int argc, char **argv)
+OpenTissue::graphics::instance_pointer init_glut_application(int argc, char **argv)
 {
-  OpenTissue::glut::instance_pointer instance;
+  OpenTissue::graphics::instance_pointer instance;
   instance.reset( new Application() );
   return instance;
 }

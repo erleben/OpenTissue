@@ -9,7 +9,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/gl/gl_util.h>
+#include <OpenTissue/graphics/core/gl/gl_util.h>
 
 // henrikd - cgGL.h includes windows.h, so we just need to help it a little
 #ifdef WIN32

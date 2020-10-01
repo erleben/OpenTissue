@@ -64,23 +64,6 @@ namespace OpenTissue
         m_shininess = value;
       }
 
-      /*
-      void use()
-      {
-      if ( glIsEnabled( GL_COLOR_MATERIAL ) || !glIsEnabled( GL_LIGHTING ) )
-      {
-      glColor4f( m_diffuse[ 0 ], m_diffuse[ 1 ], m_diffuse[ 2 ], m_diffuse[ 3 ] );
-      }
-      else
-      {
-      glMaterialfv( GL_FRONT_AND_BACK, GL_AMBIENT,   m_ambient    );
-      glMaterialfv( GL_FRONT_AND_BACK, GL_DIFFUSE,   m_diffuse    );
-      glMaterialfv( GL_FRONT_AND_BACK, GL_SPECULAR,  m_specular   );
-      glMaterialfv( GL_FRONT_AND_BACK, GL_SHININESS, &m_shininess );
-      }
-      }
-      */
-
       void set_default()
       {
         m_ambient[ 0 ]  = 0.1f;

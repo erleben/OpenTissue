@@ -8,7 +8,7 @@
 #include <OpenTissue/configuration.h>
 
 #define DEFINE_GLUT_MAIN
-#include <OpenTissue/utility/glut/glut_perspective_view_application.h>
+#include <OpenTissue/graphics/glut/glut_perspective_view_application.h>
 #undef DEFINE_GLUT_MAIN
 
 #include <OpenTissue/dynamics/swe/swe_damped_wave_equation.h>
@@ -18,13 +18,13 @@
 #include <OpenTissue/core/math/math_matrix3x3.h>
 #include <OpenTissue/core/math/math_quaternion.h>
 #include <OpenTissue/core/math/math_coordsys.h>
-#include <OpenTissue/utility/gl/gl_util.h>
+#include <OpenTissue/graphics/core/gl/gl_util.h>
 
 #include <string>
 
 
 
-class Application : public OpenTissue::glut::PerspectiveViewApplication
+class Application : public OpenTissue::graphics::PerspectiveViewApplication
 {
 protected:
 
@@ -347,9 +347,9 @@ public:
 
 };
 
-OpenTissue::glut::instance_pointer init_glut_application(int argc, char **argv)
+OpenTissue::graphics::instance_pointer init_glut_application(int argc, char **argv)
 {
-  OpenTissue::glut::instance_pointer instance;
+  OpenTissue::graphics::instance_pointer instance;
   instance.reset( new Application() );
   return instance;
 }

@@ -7,9 +7,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#define DEFINE_GLUT_MAIN
-#include <OpenTissue/utility/glut/glut_perspective_view_application.h>
-#undef DEFINE_GLUT_MAIN
+#include <OpenTissue/graphics/glut/glut_application.h>
 
 #include <OpenTissue/core/math/math_basic_types.h>
 
@@ -29,7 +27,7 @@
 #include <OpenTissue/kinematics/animation/animation_naive_blend_scheduler.h>
 #include <OpenTissue/kinematics/animation/animation_keyframe_animation.h>
 
-class Application : public OpenTissue::glut::PerspectiveViewApplication
+class Application : public OpenTissue::graphics::GlutApplication
 {
 public:
 
@@ -39,6 +37,7 @@ public:
   typedef math_types::quaternion_type                                  quaternion_type;
   typedef math_types::vector3_type                                     vector3_type;
   typedef OpenTissue::skeleton::Types<math_types>                      skeleton_types;
+  typedef OpenTissue::graphics::GlutApplication                        Base;
 
 //  typedef OpenTissue::skinning::Types< math_types, OpenTissue::skinning::SBSGPU >	 skin_types;
 //  typedef OpenTissue::skinning::Types< math_types, OpenTissue::skinning::SBS >	 skin_types;
@@ -53,6 +52,7 @@ protected:
   typedef skeleton_types::skeleton_type                    skeleton_type;
   typedef skeleton_types::bone_type                        bone_type;
   typedef skin_types::skin_type                            skin_type;
+  typedef skin_type::skin_part_type                        skin_part_type;
   typedef skin_types::skin_render_type                     skin_render_type;
 
   typedef OpenTissue::animation::KeyframeAnimation<skeleton_type>     keyframe_animation_type;
@@ -64,12 +64,12 @@ protected:
   skeleton_type               m_skeleton;         ///< Skeleton (i.e. bones).
   keyframe_animation_type     m_animation[100];   ///< The raw animations.
   naive_blend_scheduler_type  m_blend_scheduler;  ///< The animation blend scheduler (combines raw animations into final animation).
-  real_type                   m_time;             ///< The current animation time.
   real_type                   m_delta_time;       ///< Time inbetween two poses (i.e. 1/fps).
   real_type                   m_duration;         ///< Duration of animation.
   skin_type                   m_skin;             ///< Skin container.
   bool                        m_display_bones;    ///< Boolean flag used to turn on/off rendering of bones.
   bool                        m_display_skin;     ///< Boolean flag used to turn on/off rendering of skin.
+  bool                        m_single_step;      ///< Boolean flag used to turn on/off single stepping.
 
   // Also, a GPU skin uploader/render, by spreak!
   skin_render_type            m_skin_render;
@@ -86,42 +86,53 @@ protected:
 public:
 
 
-  Application()
+  Application() : OpenTissue::graphics::GlutApplication("Character Animation Application")
   {
-    this->z_far() = 5000;
+    this->m_z_far = 5000;
   }
 
-  char const * do_get_title() const { return "Character Animation Application"; }
-
-  void do_display()
+  void update(double time) override
   {
     if(m_display_bones)
     {
-      skeleton_type::bone_iterator begin = m_skeleton.begin();
-      skeleton_type::bone_iterator end = m_skeleton.end();
-      skeleton_type::bone_iterator bone;
-      for(bone=begin;bone!=end;++bone)
+      for(const auto &bone : m_skeleton)
       {
-        OpenTissue::gl::DrawBone(*bone);
-        OpenTissue::gl::DrawFancyBone(*bone);
+        OpenTissue::gl::DrawBone(bone);
+        OpenTissue::gl::DrawFancyBone(bone);
       }
     }
+
     if(m_display_skin)
     {
       m_skin_render.render( m_skin, m_skeleton );
     }
+    
+    if(time < m_duration)
+    {
+      m_blend_scheduler.compute_pose(m_skeleton, m_time);
+      time += m_delta_time;
+    }
+    else
+    {
+      time = 0.0;
+    }
+    m_time = time;
+  
   }
 
-  void do_action(unsigned char choice)
+  void action(unsigned char choice) override
   {
     // Toggle state
     b[choice] = ! b[choice];
     switch ( choice )
     {
-    case 't':   run();                                 break;
-    case 'b':   m_display_bones = !m_display_bones;    break;
-    case 's':   m_display_skin = !m_display_skin;      break;
-    case 'c':   
+      case 't':   
+      {
+        this->update(m_time); break;
+      };
+      case 'b': m_display_bones = !m_display_bones;    break;
+      case 's': m_display_skin = !m_display_skin;      break;
+      case 'c':   
       {
         m_blend_scheduler.clear(); 
         m_duration = 0.0; 
@@ -134,86 +145,87 @@ public:
         b[EIGHT_KEY] = false;
       }
       break;
-    case 'r':   m_time = 0; break;
-    case '1':
-      break;
-    case '2':
-      if(b[TWO_KEY])
-        m_blend_scheduler.add( &m_animation[0] );
-      else
-        m_blend_scheduler.remove( &m_animation[0] );
-      m_duration = m_blend_scheduler.compute_duration();
-      break;
-    case '3':
-      if(b[THREE_KEY])
-        m_blend_scheduler.add( &m_animation[1] );
-      else
-        m_blend_scheduler.remove( &m_animation[1] );
-      m_duration = m_blend_scheduler.compute_duration();
-      break;
-    case '4':
-      if(b[FOUR_KEY])
-        m_blend_scheduler.add( &m_animation[2] );
-      else
-        m_blend_scheduler.remove( &m_animation[2] );
-      m_duration = m_blend_scheduler.compute_duration();
-      break;
-    case '5':
-      if(b[FIVE_KEY])
-        m_blend_scheduler.add( &m_animation[3] );
-      else
-        m_blend_scheduler.remove( &m_animation[3] );
-      m_duration = m_blend_scheduler.compute_duration();
-      break;
-    case '6':
-      if(b[SIX_KEY])
-        m_blend_scheduler.add( &m_animation[4] );
-      else
-        m_blend_scheduler.remove( &m_animation[4] );
-      m_duration = m_blend_scheduler.compute_duration();
-      break;
-    case '7':
-      if(b[SEVEN_KEY])
-        m_blend_scheduler.add( &m_animation[5] );
-      else
-        m_blend_scheduler.remove( &m_animation[5] );
-      m_duration = m_blend_scheduler.compute_duration();
-      break;
-    case '8':
-      if(b[EIGHT_KEY])
-        m_blend_scheduler.add( &m_animation[6] );
-      else
-        m_blend_scheduler.remove( &m_animation[6] );
-      m_duration = m_blend_scheduler.compute_duration();
-      break;
-    default:
-      std::cout << "You pressed " << choice << std::endl;
-      break;
+      case 'r': m_time = 0;  break;
+      case '1':
+        break;
+      case '2':
+        if(b[TWO_KEY])
+          m_blend_scheduler.add( &m_animation[0] );
+        else
+          m_blend_scheduler.remove( &m_animation[0] );
+        m_duration = m_blend_scheduler.compute_duration();
+        break;
+      case '3':
+        if(b[THREE_KEY])
+          m_blend_scheduler.add( &m_animation[1] );
+        else
+          m_blend_scheduler.remove( &m_animation[1] );
+        m_duration = m_blend_scheduler.compute_duration();
+        break;
+      case '4':
+        if(b[FOUR_KEY])
+          m_blend_scheduler.add( &m_animation[2] );
+        else
+          m_blend_scheduler.remove( &m_animation[2] );
+        m_duration = m_blend_scheduler.compute_duration();
+        break;
+      case '5':
+        if(b[FIVE_KEY])
+          m_blend_scheduler.add( &m_animation[3] );
+        else
+          m_blend_scheduler.remove( &m_animation[3] );
+        m_duration = m_blend_scheduler.compute_duration();
+        break;
+      case '6':
+        if(b[SIX_KEY])
+          m_blend_scheduler.add( &m_animation[4] );
+        else
+          m_blend_scheduler.remove( &m_animation[4] );
+        m_duration = m_blend_scheduler.compute_duration();
+        break;
+      case '7':
+        if(b[SEVEN_KEY])
+          m_blend_scheduler.add( &m_animation[5] );
+        else
+          m_blend_scheduler.remove( &m_animation[5] );
+        m_duration = m_blend_scheduler.compute_duration();
+        break;
+      case '8':
+        if(b[EIGHT_KEY])
+          m_blend_scheduler.add( &m_animation[6] );
+        else
+          m_blend_scheduler.remove( &m_animation[6] );
+        m_duration = m_blend_scheduler.compute_duration();
+        break;
+      default:
+        std::cout << "You pressed " << choice << std::endl;
+        break;
     };
   }
 
-  void do_init_right_click_menu(int main_menu, void menu(int entry))
+  void init_right_click_menu()
   {
-    int controls = glutCreateMenu( menu );
-    glutAddMenuEntry("Load Character 1             [1]", '1');
-    glutAddMenuEntry("Toggle idle                  [2]", '2');
-    glutAddMenuEntry("Toggle jog                   [3]", '3');
-    glutAddMenuEntry("Toggle shoot arrow           [4]", '4');
-    glutAddMenuEntry("Toggle strut                 [5]", '5');
-    glutAddMenuEntry("Toggle tornado kick          [6]", '6');
-    glutAddMenuEntry("Toggle walk                  [7]", '7');
-    glutAddMenuEntry("Toggle wave                  [8]", '8');
-    glutAddMenuEntry("Clear all animations         [c]", 'c');
-    glutAddMenuEntry("Single time-step             [t]", 't');
-    glutAddMenuEntry("Toggle display bones         [b]", 'b');
-    glutAddMenuEntry("Toggle display skin          [s]", 's');
-    glutAddMenuEntry("Reset time                   [r]", 'r');
-    glutSetMenu( main_menu );
-    glutAddSubMenu( "animation", controls );
+    std::unordered_map<unsigned char, const char*> menu_map;
+    menu_map.insert(std::make_pair('1', "Load Character 1             [1]"));
+    menu_map.insert(std::make_pair('2', "Toggle idle                  [2]"));
+    menu_map.insert(std::make_pair('3', "Toggle jog                   [3]"));
+    menu_map.insert(std::make_pair('4', "Toggle shoot arrow           [4]"));
+    menu_map.insert(std::make_pair('5', "Toggle strut                 [5]"));
+    menu_map.insert(std::make_pair('6', "Toggle tornado kick          [6]"));
+    menu_map.insert(std::make_pair('7', "Toggle walk                  [7]"));
+    menu_map.insert(std::make_pair('8', "Toggle wave                  [8]"));
+    menu_map.insert(std::make_pair('c', "Clear all animations         [c]"));
+    menu_map.insert(std::make_pair('t', "Single time-step             [t]"));
+    menu_map.insert(std::make_pair('b', "Toggle display bones         [b]"));
+    menu_map.insert(std::make_pair('s', "Toggle display skin          [s]"));
+    menu_map.insert(std::make_pair('r', "Reset time                   [r]"));
+    
+    this->add_sub_menu("animation", menu_map);
   }
 
-  void do_init()
+  void init() override
   {
+    this->init_right_click_menu();
     this->camera().move( -400 );
 
     m_blend_scheduler.clear();
@@ -248,33 +260,46 @@ public:
     m_animation[5].set_weight(1.0);
     m_animation[6].set_weight(5.0);
 
-    for(size_t i=0u; i<m_skin.m_sz; ++i)
+    std::vector<std::string> skin_files = {
+      data_path + "/demos/data/xml/character1_calf_left.xml",
+      data_path + "/demos/data/xml/character1_hand_right.xml",
+      data_path + "/demos/data/xml/character1_ponytail.xml",
+      data_path + "/demos/data/xml/character1_calf_right.xml",
+      data_path + "/demos/data/xml/character1_head.xml",
+      data_path + "/demos/data/xml/character1_thigh_left.xml",
+      data_path + "/demos/data/xml/character1_chest.xml",
+      data_path + "/demos/data/xml/character1_lowerarm_left.xml",
+      data_path + "/demos/data/xml/character1_thigh_right.xml",
+      data_path + "/demos/data/xml/character1_foot_left.xml",
+      data_path + "/demos/data/xml/character1_lowerarm_right.xml",
+      data_path + "/demos/data/xml/character1_upperarm_left.xml",
+      data_path + "/demos/data/xml/character1_foot_right.xml",
+      data_path + "/demos/data/xml/character1_neck.xml",
+      data_path + "/demos/data/xml/character1_upperarm_right.xml",
+      data_path + "/demos/data/xml/character1_hand_left.xml",
+      data_path + "/demos/data/xml/character1_pelvis.xml"
+    };
+
+    size_t i = 0;
+    for(const auto &file : skin_files)
     {
       m_skin.m_skin_parts[i].clear();
-      m_skin.m_material[i].set_default();
+      OpenTissue::skinning::xml_read(file, m_skin.m_skin_parts[i++]);
     }
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_calf_left.xml",m_skin.m_skin_parts[0]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_hand_right.xml",m_skin.m_skin_parts[1]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_ponytail.xml",m_skin.m_skin_parts[2]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_calf_right.xml",m_skin.m_skin_parts[3]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_head.xml",m_skin.m_skin_parts[4]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_thigh_left.xml",m_skin.m_skin_parts[5]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_chest.xml",m_skin.m_skin_parts[6]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_lowerarm_left.xml",m_skin.m_skin_parts[7]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_thigh_right.xml",m_skin.m_skin_parts[8]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_foot_left.xml",m_skin.m_skin_parts[9]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_lowerarm_right.xml",m_skin.m_skin_parts[10]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_upperarm_left.xml",m_skin.m_skin_parts[11]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_foot_right.xml",m_skin.m_skin_parts[12]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_neck.xml",m_skin.m_skin_parts[13]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_upperarm_right.xml",m_skin.m_skin_parts[14]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_hand_left.xml",m_skin.m_skin_parts[15]);
-    OpenTissue::skinning::xml_read(data_path + "/demos/data/xml/character1_pelvis.xml",m_skin.m_skin_parts[16]);
 
-    OpenTissue::skinning::material_xml_read(data_path + "/demos/data/xml/character1_skin_material.xml",m_skin.m_material[0]);
-    OpenTissue::skinning::material_xml_read(data_path + "/demos/data/xml/character1_ponytail_material.xml",m_skin.m_material[1]);
-    OpenTissue::skinning::material_xml_read(data_path + "/demos/data/xml/character1_chest_material.xml",m_skin.m_material[2]);
-    OpenTissue::skinning::material_xml_read(data_path + "/demos/data/xml/character1_pelvis_material.xml",m_skin.m_material[3]);
+    std::vector<std::string> material_files = {
+      data_path + "/demos/data/xml/character1_skin_material.xml",
+      data_path + "/demos/data/xml/character1_ponytail_material.xml",
+      data_path + "/demos/data/xml/character1_chest_material.xml",
+      data_path + "/demos/data/xml/character1_pelvis_material.xml"
+    };
+
+    i = 0;
+    for(const auto &file : material_files)
+    {
+      m_skin.m_material[i].set_default();
+      OpenTissue::skinning::material_xml_read(file, m_skin.m_material[i++]);
+    }
 
     m_time       = 0;
     m_delta_time = 0.02;
@@ -282,7 +307,6 @@ public:
 
     m_display_bones    = false;
     m_display_skin     = true;
-
 
     //skin_type::init_skin_render();
     m_skin.init();
@@ -293,30 +317,19 @@ public:
     //m_skin_render.createGPUBuffers( m_skin );
   }
 
-  void do_run()
-  {
-    if(m_time < m_duration)
-    {
-      m_blend_scheduler.compute_pose(m_skeleton,m_time);
-      m_time += m_delta_time;
-    }
-    else
-      m_time = 0.0; //--- we just loop the animation playback (not the same as making a cycle!)
-  }
-
-  void do_shutdown()
+  void shutdown() override
   {
     //skin_type::cleanup_skin_render();
     m_skin.cleanup();
     m_skin_render.cleanup();
+    Base::shutdown();
   }
 
 };
 
-
-OpenTissue::glut::instance_pointer init_glut_application(int argc, char **argv)
+OpenTissue::graphics::GlutApplication::Ptr createApplication(int argc, char **argv)
 {
-  OpenTissue::glut::instance_pointer instance;
-  instance.reset( new Application() );
-  return instance;
+  glutInit(&argc, argv);
+  auto app = OpenTissue::graphics::GlutApplication::New<Application>();
+  return app;
 }

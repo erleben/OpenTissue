@@ -7,7 +7,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/glut/glut_application.h>
+#include <OpenTissue/graphics/glut/glut_application.h>
 
 #include <OpenTissue/core/containers/grid/io/grid_raw_read.h>
 #include <OpenTissue/utility/utility_get_environment_variable.h>
@@ -23,17 +23,20 @@
 #include <OpenTissue/core/containers/grid/util/grid_redistance.h>
 #include <OpenTissue/core/containers/grid/util/grid_curvature_flow.h>
 
-#include <OpenTissue/utility/gl/gl_draw_mesh.h>
+#include <OpenTissue/graphics/core/gl/gl_draw_mesh.h>
 #include <OpenTissue/core/containers/mesh/trimesh/trimesh.h>
 #include <OpenTissue/core/containers/mesh/common/util/mesh_isosurface.h>
 #include <OpenTissue/core/containers/mesh/common/util/mesh_compute_angle_weighted_vertex_normals.h>
 
 using namespace OpenTissue;
 
-class Application : public OpenTissue::glut::GlutApplication
+class Application : 
+#ifdef OT_USE_GLUT
+public OpenTissue::graphics::GlutApplication
+#endif
 {
 protected:
-  typedef OpenTissue::glut::GlutApplication                      base_type;
+  typedef OpenTissue::graphics::GlutApplication                      base_type;
   typedef OpenTissue::math::BasicMathTypes<double,unsigned int>	 math_types;
   typedef math_types::real_type								                   real_type;
   typedef math_types::vector3_type				                       vector3_type;
@@ -44,9 +47,9 @@ protected:
 
 public:
   Application() 
-    : OpenTissue::glut::GlutApplication("Chan-Vese Segmentation Application") {}
+    : OpenTissue::graphics::GlutApplication("Chan-Vese Segmentation Application") {}
 
-  void update(float) override
+  void update(double) override
   {
     gl::ColorPicker(0.8,0.4,0.8);
     gl::DrawGridAABB(m_volume);
@@ -55,9 +58,6 @@ public:
     gl::ColorPicker(0.1, 0.3, 0.9, 1.0, GL_FRONT);
     gl::DrawMesh(m_surface);
   }
-
-  void idle() override
-  {}
 
   void action(unsigned char choice) override
   {
@@ -180,9 +180,9 @@ private:
   levelset_type m_phi;
 };
 
-OpenTissue::glut::GlutApplication::Ptr createApplication(int argc, char **argv)
+OpenTissue::graphics::GlutApplication::Ptr createApplication(int argc, char **argv)
 {
   glutInit(&argc, argv);
-  auto app = OpenTissue::glut::GlutApplication::New<Application>();
+  auto app = OpenTissue::graphics::GlutApplication::New<Application>();
   return app;
 }

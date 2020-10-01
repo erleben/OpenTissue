@@ -8,18 +8,18 @@
 #include <OpenTissue/configuration.h>
 
 #define DEFINE_GLUT_MAIN
-#include <OpenTissue/utility/glut/glut_perspective_view_application.h>
+#include <OpenTissue/graphics/glut/glut_perspective_view_application.h>
 #undef DEFINE_GLUT_MAIN
 
 #include <OpenTissue/core/containers/grid/grid.h>
-#include <OpenTissue/utility/gl/gl_cross_sections.h>
+#include <OpenTissue/graphics/core/gl/gl_cross_sections.h>
 #include <OpenTissue/core/containers/mesh/mesh.h>
 
 #include <OpenTissue/core/geometry/t4_cpu_scan/t4_cpu_scan.h>
 #include <OpenTissue/utility/utility_timer.h>
 
 
-class Application : public OpenTissue::glut::PerspectiveViewApplication
+class Application : public OpenTissue::graphics::PerspectiveViewApplication
 {
 protected:
 
@@ -295,9 +295,9 @@ public:
 
 };
 
-OpenTissue::glut::instance_pointer init_glut_application(int argc, char **argv)
+OpenTissue::graphics::instance_pointer init_glut_application(int argc, char **argv)
 {
-  OpenTissue::glut::instance_pointer instance;
+  OpenTissue::graphics::instance_pointer instance;
   instance.reset( new Application() );
   return instance;
 }

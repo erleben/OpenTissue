@@ -9,7 +9,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/gl/gl_util.h>
+#include <OpenTissue/graphics/core/gl/gl_util.h>
 
 #include <OpenTissue/collision/sdf/sdf.h>
 #include <OpenTissue/core/geometry/geometry_sphere.h>

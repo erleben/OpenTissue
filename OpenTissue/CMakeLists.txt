@@ -55,4 +55,4 @@ configure_file(
   @ONLY
 )
 
-add_subdirectory(utility)
+add_subdirectory(graphics)

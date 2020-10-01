@@ -9,17 +9,13 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/gl/gl_util.h>
+#include <OpenTissue/graphics/core/gl/gl_util.h>
 #include <OpenTissue/core/containers/mesh/trimesh/trimesh.h>
 #include <OpenTissue/core/containers/mesh/trimesh/util/trimesh_util.h>
 #include <OpenTissue/kinematics/skinning/skinning_traits.h>
-#include <OpenTissue/utility/gl/gl_draw_mesh.h>
 #include <cassert>
 #include <vector>
 
-//2020-07-27 Kenny: Cg no longer supported on osx.
-// // Shader program header includes
-//#include <OpenTissue/gpu/cg/cg_program.h>
 
 namespace OpenTissue
 {
@@ -34,24 +30,18 @@ namespace OpenTissue
       typedef typename character_types::key_type                    key_type;
       typedef typename character_types::math_types::vector3_type	  vector3_type;
 
-      // Comtainiers for rotation center lookup
+      // Comtainers for rotation center lookup
       typedef std::vector<vector3_type>         rc_cached_type;
       typedef std::map<key_type, size_t>        lut_type;
-
-      //2020-07-27 Kenny: Cg no longer supported on osx.
-      //typedef OpenTissue::cg::Program	            cg_program_type;  ///< Shader program
 
     public:
       static const size_t			    m_sz = 20u;			    ///< Number of skin parts.
       skin_part_type		          m_skin_parts[m_sz];	///< Storage of skins.
       OpenTissue::gl::Material    m_material[m_sz];   ///< Storage of skin materials.
-
+      
       bool						            m_uploadBones;		  ///< Flag. Only upload bones to gpu on first skin.
       bool						            m_uploadRc;			    ///< Flag. Only upload r_c to gpu on first skin.
       size_t					            m_num_keys;			    ///< Numer of unique keys for this skin.
-
-      //2020-07-27 Kenny: Cg no longer supported on osx.
-      //cg_program_type		          m_vp;				        ///< Cg vertex program.
 
       rc_cached_type              m_rc_cached;		    ///< Cached rotation centers.
       lut_type                    m_rc_lut;			      ///< Lookup Table for rotation centers.

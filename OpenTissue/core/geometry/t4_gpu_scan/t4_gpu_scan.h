@@ -11,7 +11,7 @@
 
 #include <OpenTissue/core/geometry/t4_gpu_scan/compute_obb_shell.h>
 
-#include <OpenTissue/utility/gl/gl_util.h>
+#include <OpenTissue/graphics/core/gl/gl_util.h>
 #include <OpenTissue/gpu/cg/cg_util.h>
 #include <OpenTissue/gpu/cg/cg_program.h>
 

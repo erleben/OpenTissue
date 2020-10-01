@@ -8,7 +8,7 @@
 #include <OpenTissue/configuration.h>
 
 #define DEFINE_GLUT_MAIN
-#include <OpenTissue/utility/glut/glut_perspective_view_application.h>
+#include <OpenTissue/graphics/glut/glut_perspective_view_application.h>
 #undef DEFINE_GLUT_MAIN
 
 
@@ -164,7 +164,7 @@ private:
 
 
 class Application 
-  : public OpenTissue::glut::PerspectiveViewApplication
+  : public OpenTissue::graphics::PerspectiveViewApplication
 {
 public:
 
@@ -587,7 +587,7 @@ public:
 
   void mouse_down(double cur_x,double cur_y,bool shift,bool ctrl,bool alt,bool left,bool middle,bool right) 
   {
-    OpenTissue::glut::PerspectiveViewApplication::mouse_down(cur_x, cur_y, shift, ctrl, alt, left, middle, right);
+    OpenTissue::graphics::PerspectiveViewApplication::mouse_down(cur_x, cur_y, shift, ctrl, alt, left, middle, right);
     if ( ctrl && left )
     {
       this->fetch( boost::numeric_cast<long>(cur_x), boost::numeric_cast<long>(cur_y) );
@@ -598,7 +598,7 @@ public:
 
   void mouse_up(double cur_x,double cur_y,bool shift,bool ctrl,bool alt,bool left,bool middle,bool right) 
   {
-    OpenTissue::glut::PerspectiveViewApplication::mouse_up(cur_x, cur_y, shift, ctrl, alt, left, middle, right);
+    OpenTissue::graphics::PerspectiveViewApplication::mouse_up(cur_x, cur_y, shift, ctrl, alt, left, middle, right);
     if ( m_playing_god && left )
     {
       this->release();
@@ -608,7 +608,7 @@ public:
 
   void mouse_move(double cur_x,double cur_y) 
   {
-    OpenTissue::glut::PerspectiveViewApplication::mouse_move(cur_x, cur_y);
+    OpenTissue::graphics::PerspectiveViewApplication::mouse_move(cur_x, cur_y);
     if ( m_playing_god )
       this->fetch( boost::numeric_cast<long>(cur_x), boost::numeric_cast<long>(cur_y) );
   }
@@ -785,9 +785,9 @@ public:
 
 };
 
-OpenTissue::glut::instance_pointer init_glut_application(int argc, char **argv)
+OpenTissue::graphics::instance_pointer init_glut_application(int argc, char **argv)
 {
-  OpenTissue::glut::instance_pointer instance;
+  OpenTissue::graphics::instance_pointer instance;
   instance.reset( new Application(argc,argv) );
 
   return instance;
