@@ -10,7 +10,7 @@
 #include <exception>
 
 #include <OpenTissue/configuration.h>
-#include "OpenTissue/graphics/glut/glut_window.h"
+#include "OpenTissue/graphics/glfw/glfw_window.h"
 #include "OpenTissue/graphics/core/application.h"
 
 #include "OpenTissue/graphics/graphics_export.h"
@@ -19,18 +19,18 @@ namespace OpenTissue {
 namespace graphics {
 
 // Forward declarations
-class GlutApplication;
+class GlfwApplication;
 class Event;
 
 template<>
-class ApplicationTraits<GlutApplication>
+class ApplicationTraits<GlfwApplication>
 {
 public:
-  using WindowType = GlutWindow;
+  using WindowType = GlfwWindow;
 };
-//TODO: Update comment
+// TODO: Update comment
 /**
- * A base class for any application based on a GLUT binding.
+ * A base class for any application based on a GLFW.
  *
  * This class defines the basic interface of an application. One uses
  * this base class by making specialized derived types. See for instance
@@ -41,15 +41,14 @@ public:
  * planes and fov).
  *
  */
-class OT_GRAPHICS_DEPRECATED_API GlutApplication : public Application<GlutApplication>
+class OT_GRAPHICS_API GlfwApplication : public Application<GlfwApplication>
 {
 public:
-  GlutApplication(const std::string &title);
-  virtual ~GlutApplication() = default;
+  GlfwApplication(const std::string &title);
+  virtual ~GlfwApplication() = default;
 
   bool on_event(const Event &);
   void idle();
-  void run() override;
 
   virtual void action(unsigned char choice) = 0;
   virtual void update(double timestep) = 0;
@@ -59,7 +58,7 @@ public:
 } // namespace graphics
 } // namespace OpenTissue
 
-OpenTissue::graphics::GlutApplication::Ptr createApplication(int ac, char **av);
+OpenTissue::graphics::GlfwApplication::Ptr createApplication(int ac, char **av);
 
 #ifdef OT_INJECT_MAIN
   #include "OpenTissue/graphics/core/main.h"

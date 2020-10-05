@@ -10,6 +10,9 @@ if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   set(Boost_USE_STATIC_LIBS ON)
 endif()
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 #-----------------------------------------------------------------------------
 #
 # Avoid in-source builds.
@@ -77,6 +80,8 @@ if(OPENTISSUE_ENABLE_DEMOS)
     find_package(GLUT REQUIRED)
   endif()
 
+  set(glfw3_ROOT /usr/local)
+  find_package(glfw3 REQUIRED)
   #-----------------------------------------------------------------------------
   #
   # Try to get GLEW (http://glew.sourceforge.net/). Our demo application

@@ -12,7 +12,7 @@
 namespace OpenTissue {
 namespace graphics {
 
-enum class EventType 
+enum class EventType
 {
   None = 0,
   WindowClose, WindowResize, WindowDisplay,                             // Window events
@@ -37,32 +37,29 @@ public:
   using Ptr  = std::shared_ptr<Self>;
 
 public:
-  Event() = default;
-  virtual ~Event() = default;
+  constexpr Event() = default;
 
-  inline bool handled() const
+  virtual EventType get_event_type() const = 0;
+
+  virtual EventCategory get_category_flag() const = 0;
+
+  virtual const char* get_name() const = 0;
+
+  bool handled() const
   {
     return m_handled;
   }
 
-  virtual EventType get_event_type() const
+  bool handled(bool is_handled)
   {
-    return EventType::None;
-  }
-
-  virtual EventCategory get_category_flag() const
-  {
-    return EventCategory::None;
-  }
-
-  virtual const char* get_name() const
-  {
-    return "None";
+    m_handled = is_handled;
   }
 
 protected:
   bool m_handled = false;
 };
+
+// Observer pattern based dispatcher.
 
 } // namespace graphics
 } // namespace OpenTissue

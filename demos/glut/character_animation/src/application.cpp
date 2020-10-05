@@ -7,7 +7,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/graphics/glut/glut_application.h>
+#include <OpenTissue/graphics/glfw/glfw_application.h>
 
 #include <OpenTissue/core/math/math_basic_types.h>
 
@@ -27,7 +27,7 @@
 #include <OpenTissue/kinematics/animation/animation_naive_blend_scheduler.h>
 #include <OpenTissue/kinematics/animation/animation_keyframe_animation.h>
 
-class Application : public OpenTissue::graphics::GlutApplication
+class Application : public OpenTissue::graphics::GlfwApplication
 {
 public:
 
@@ -37,7 +37,7 @@ public:
   typedef math_types::quaternion_type                                  quaternion_type;
   typedef math_types::vector3_type                                     vector3_type;
   typedef OpenTissue::skeleton::Types<math_types>                      skeleton_types;
-  typedef OpenTissue::graphics::GlutApplication                        Base;
+  typedef OpenTissue::graphics::GlfwApplication                        Base;
 
 //  typedef OpenTissue::skinning::Types< math_types, OpenTissue::skinning::SBSGPU >	 skin_types;
 //  typedef OpenTissue::skinning::Types< math_types, OpenTissue::skinning::SBS >	 skin_types;
@@ -82,13 +82,17 @@ protected:
   static unsigned char const SIX_KEY    = '6';
   static unsigned char const SEVEN_KEY  = '7';
   static unsigned char const EIGHT_KEY  = '8';
-  
+
 public:
 
 
-  Application() : OpenTissue::graphics::GlutApplication("Character Animation Application")
+  Application() : Base("Character Animation Application")
   {
     this->m_z_far = 5000;
+  }
+
+  ~Application()
+  {
   }
 
   void update(double time) override
@@ -106,7 +110,7 @@ public:
     {
       m_skin_render.render( m_skin, m_skeleton );
     }
-    
+
     if(time < m_duration)
     {
       m_blend_scheduler.compute_pose(m_skeleton, m_time);
@@ -117,7 +121,6 @@ public:
       time = 0.0;
     }
     m_time = time;
-  
   }
 
   void action(unsigned char choice) override
@@ -126,16 +129,16 @@ public:
     b[choice] = ! b[choice];
     switch ( choice )
     {
-      case 't':   
+      case 't':
       {
         this->update(m_time); break;
       };
       case 'b': m_display_bones = !m_display_bones;    break;
       case 's': m_display_skin = !m_display_skin;      break;
-      case 'c':   
+      case 'c':
       {
-        m_blend_scheduler.clear(); 
-        m_duration = 0.0; 
+        m_blend_scheduler.clear();
+        m_duration = 0.0;
         b[TWO_KEY] = false;
         b[THREE_KEY] = false;
         b[FOUR_KEY] = false;
@@ -219,8 +222,8 @@ public:
     menu_map.insert(std::make_pair('b', "Toggle display bones         [b]"));
     menu_map.insert(std::make_pair('s', "Toggle display skin          [s]"));
     menu_map.insert(std::make_pair('r', "Reset time                   [r]"));
-    
-    this->add_sub_menu("animation", menu_map);
+
+    // this->add_sub_menu("animation", menu_map);
   }
 
   void init() override
@@ -229,7 +232,7 @@ public:
     this->camera().move( -400 );
 
     m_blend_scheduler.clear();
-    m_duration = 0.0; 
+    m_duration = 0.0;
     b[TWO_KEY] = false;
     b[THREE_KEY] = false;
     b[FOUR_KEY] = false;
@@ -317,19 +320,10 @@ public:
     //m_skin_render.createGPUBuffers( m_skin );
   }
 
-  void shutdown() override
-  {
-    //skin_type::cleanup_skin_render();
-    m_skin.cleanup();
-    m_skin_render.cleanup();
-    Base::shutdown();
-  }
-
 };
 
-OpenTissue::graphics::GlutApplication::Ptr createApplication(int argc, char **argv)
+OpenTissue::graphics::GlfwApplication::Ptr createApplication(int argc, char **argv)
 {
-  glutInit(&argc, argv);
-  auto app = OpenTissue::graphics::GlutApplication::New<Application>();
+  auto app = OpenTissue::graphics::GlfwApplication::New<Application>();
   return app;
 }

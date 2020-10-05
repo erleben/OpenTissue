@@ -9,25 +9,32 @@
 #include "OpenTissue/graphics/glut/glut_window.h"
 
 #include "OpenTissue/graphics/core/gl/gl.h"
-#include "OpenTissue/graphics/glut/glut_application.h"
 
 namespace OpenTissue {
 namespace graphics {
 
-GlutWindow::GlutWindow(const WindowProperties &properties) 
+GlutWindow::GlutWindow(const WindowProperties &properties)
     : Base(properties), m_handle(-1), m_main_menu(-1)
 {}
 
 //-------------------------------------------------------------------------------------------
 
-void GlutWindow::update()
+void GlutWindow::shutdown()
 {
-
+  exit(0);
 }
 
 //-------------------------------------------------------------------------------------------
 
-void GlutWindow::add_sub_menu(const std::string &name, 
+void GlutWindow::update()
+{
+  glFinish();
+  glutSwapBuffers();
+}
+
+//-------------------------------------------------------------------------------------------
+
+void GlutWindow::add_sub_menu(const std::string &name,
                               const std::unordered_map<unsigned char, const char*> &menu_map)
 {
   auto menu_callback = [](int k)
@@ -51,7 +58,7 @@ void GlutWindow::add_sub_menu(const std::string &name,
     glutAddMenuEntry(entry.second, entry.first);
   }
   glutSetMenu(m_main_menu);
-  glutAddSubMenu(name.c_str(), sub_menu );  
+  glutAddSubMenu(name.c_str(), sub_menu );
 }
 
 //-------------------------------------------------------------------------------------------
@@ -59,9 +66,9 @@ void GlutWindow::add_sub_menu(const std::string &name,
 void GlutWindow::init()
 {
   glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
-  glutInitWindowSize(m_properties.width, m_properties.height);
+  glutInitWindowSize(m_data->width, m_data->height);
   glutInitWindowPosition(50, 50);
-  m_handle = glutCreateWindow(m_properties.title.c_str());
+  m_handle = glutCreateWindow(m_data->title.c_str());
 
   // Setup menu
   {
@@ -70,16 +77,16 @@ void GlutWindow::init()
     menu_map.insert(std::make_pair(' ', "toggle idle                  [ ]"));
     menu_map.insert(std::make_pair('o', "toggle camera orbit/rotate   [o]"));
     menu_map.insert(std::make_pair('l', "toggle camera target locked  [l]"));
-    menu_map.insert(std::make_pair('y', "screen capture               [y]")); 
+    menu_map.insert(std::make_pair('y', "screen capture               [y]"));
 
     this->add_sub_menu("controls", menu_map);
-  
+
     glutSetMenu(m_main_menu);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
   }
 
   glutSetWindowData(m_data.get());
-  
+
   // Setup event callbacks
   {
     glutReshapeFunc([](int width, int height)
@@ -93,7 +100,7 @@ void GlutWindow::init()
         data->fn(e);
       }
     });
-    
+
     glutKeyboardFunc([](unsigned char key, int x, int y)
     {
 			auto data = static_cast<WindowData*>(glutGetWindowData());

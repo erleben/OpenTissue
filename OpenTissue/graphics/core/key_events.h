@@ -150,23 +150,21 @@ enum class KeyCode : uint16_t
 
 class KeyEvent : public Event
 {
-public: 
+public:
+  static constexpr EventCategory Category = EventCategory::Keyboard;
+
   virtual ~KeyEvent() = default;
 
 public:
-  KeyCode get_code() const 
-  { 
-    return m_KeyCode; 
+  KeyCode get_code() const
+  {
+    return m_KeyCode;
   }
 
-  EventCategory get_category_flags() const
+  EventCategory get_category_flag() const override
   {
     return EventCategory::Keyboard;
   }
-  
-  virtual EventType get_event_type() const = 0;
-
-  virtual const char* get_name() const = 0;
 
 protected:
   KeyEvent(const KeyCode keycode)
@@ -178,17 +176,20 @@ protected:
 class KeyPressedEvent : public KeyEvent
 {
 public:
+  static constexpr EventType Type = EventType::KeyPressed;
+  static constexpr EventCategory Category = EventCategory::Keyboard;
+
   KeyPressedEvent(const KeyCode keycode, const uint16_t repeatCount = 0)
     : KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
   uint16_t repeat_count() const { return m_RepeatCount; }
 
-  EventType get_event_type() const
+  EventType get_event_type() const override
   {
-    return EventType::KeyPressed;
+    return Type;
   }
 
-  const char* get_name() const
+  const char* get_name() const override
   {
     return "KeyPressed";
   }
@@ -200,15 +201,18 @@ private:
 class KeyReleasedEvent : public KeyEvent
 {
 public:
+  static constexpr EventType Type = EventType::KeyReleased;
+  static constexpr EventCategory Category = EventCategory::Keyboard;
+
   KeyReleasedEvent(const KeyCode keycode)
     : KeyEvent(keycode) {}
 
-  EventType get_event_type() const
+  EventType get_event_type() const override
   {
-    return EventType::KeyReleased;
+    return Type;
   }
 
-  const char* get_name() const
+  const char* get_name() const override
   {
     return "KeyReleased";
   }
@@ -218,15 +222,18 @@ public:
 class KeyTypedEvent : public KeyEvent
 {
 public:
+  static constexpr EventType Type = EventType::KeyTyped;
+  static constexpr EventCategory Category = EventCategory::Keyboard;
+
   KeyTypedEvent(const KeyCode keycode)
     : KeyEvent(keycode) {}
 
-  EventType get_event_type() const
+  EventType get_event_type() const override
   {
-    return EventType::KeyTyped;
+    return Type;
   }
 
-  const char* get_name() const
+  const char* get_name() const override
   {
     return "KeyTyped";
   }

@@ -6,41 +6,29 @@
 // OTTL is licensed under zlib: http://opensource.org/licenses/zlib-license.php
 //
 
-#include "OpenTissue/graphics/glut/glut_application.h"
+#include "OpenTissue/graphics/glfw/glfw_application.h"
 
-#include <GL/freeglut.h>
-
-#include "OpenTissue/graphics/glut/glut_window.h"
+#include "OpenTissue/graphics/glfw/glfw_window.h"
 #include "OpenTissue/graphics/core/event.h"
-
 
 namespace OpenTissue {
 namespace graphics {
 
-GlutApplication::GlutApplication(const std::string &title)
-    : Application<GlutApplication>(title)
+GlfwApplication::GlfwApplication(const std::string &title)
+    : Application<GlfwApplication>(title)
   {
   }
 
 //-------------------------------------------------------------------------------------------
 
-void GlutApplication::idle()
+void GlfwApplication::idle()
 {
-  return;
 }
 
 //-------------------------------------------------------------------------------------------
 
-void GlutApplication::run()
+bool GlfwApplication::on_event(const Event &)
 {
-  glutMainLoop();
-}
-
-//-------------------------------------------------------------------------------------------
-
-bool GlutApplication::on_event(const Event &)
-{
-  glutPostRedisplay();
   return true;
 }
 

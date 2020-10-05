@@ -36,7 +36,7 @@ public:
   GlutWindow() = delete;
   GlutWindow(const WindowProperties &properties);
 
-  void add_sub_menu(const std::string &name, 
+  void add_sub_menu(const std::string &name,
                     const std::unordered_map<unsigned char, const char*> &menu_map);
 
   void init();
@@ -46,6 +46,9 @@ public:
   void set_vsync(bool enabled);
 
   void set_event_callback(const CallBackFnType &fn);
+
+  void shutdown();
+
 
 private:
   int m_handle;

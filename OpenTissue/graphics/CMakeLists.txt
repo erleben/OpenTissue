@@ -1,16 +1,18 @@
 
 if(OPENTISSUE_ENABLE_GLUT)
-  set(GRAPHICS_GLUT_SRCS 
-    glut/glut_window.cpp 
+  set(GRAPHICS_GLUT_SRCS
+    glut/glut_window.cpp
     glut/glut_application.cpp
+    glfw/glfw_window.cpp
+    glfw/glfw_application.cpp
   )
 endif()
 
-add_library(OpenTissueGraphics 
+add_library(OpenTissueGraphics
   ${GRAPHICS_GLUT_SRCS}
 )
 
-target_link_libraries(OpenTissueGraphics 
+target_link_libraries(OpenTissueGraphics
   PRIVATE headers
 )
 

@@ -20,6 +20,7 @@
 #  include <windows.h>
 #  undef WIN32_LEAN_AND_MEAN
 #  undef NOMINMAX
+#  define __PRETTY_FUNCTION__ __FUNCSIG__
 #endif
 
 

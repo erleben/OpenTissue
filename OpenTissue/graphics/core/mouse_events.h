@@ -34,80 +34,86 @@ enum class MouseCode : uint16_t
 class MouseMovedEvent : public Event
 {
 public:
+  static constexpr EventType Type = EventType::MouseMoved;
+  static constexpr EventCategory Category = EventCategory::Mouse;
+
   MouseMovedEvent(const float x, const float y)
     : m_mousex(x), m_mousey(y), m_passive(true) {}
 
   MouseMovedEvent(const MouseCode button, const float x, const float y)
     : m_Button(button), m_mousex(x), m_mousey(y), m_passive(false) {}
 
-  float get_x() const 
-  { 
-    return m_mousex; 
-  }
-
-  float get_y() const 
-  { 
-    return m_mousey; 
-  }
-
-  bool is_passive() const 
-  { 
-    return m_passive; 
-  }
-
-  EventCategory get_category_flag() const
+  float get_x() const
   {
-    return EventCategory::Mouse;
+    return m_mousex;
   }
 
-  EventType get_event_type() const
+  float get_y() const
   {
-    return EventType::MouseMoved;
+    return m_mousey;
   }
 
-  const char* get_name()
+  bool is_passive() const
+  {
+    return m_passive;
+  }
+
+  EventType get_event_type() const override
+  {
+    return Type;
+  }
+
+  EventCategory get_category_flag() const override
+  {
+    return Category;
+  }
+
+  const char* get_name() const override
   {
     return "MouseMoved";
   }
 
 private:
   MouseCode m_Button;
-  bool m_passive = false;
+  bool m_passive;
   float m_mousex, m_mousey;
 };
 
 class MouseScrolledEvent : public Event
 {
 public:
-  MouseScrolledEvent(const float xoffset, const float yoffset, int direction = 1)
+  static constexpr EventType Type = EventType::MouseScrolled;
+  static constexpr EventCategory Category = EventCategory::Mouse;
+
+  MouseScrolledEvent(const float xoffset, const float yoffset, const int direction = 1)
     : m_xoffset(xoffset), m_yoffset(yoffset), m_direction(direction) {}
 
-  inline float get_xoffset() const 
-  { 
-    return m_xoffset; 
+  inline float get_xoffset() const
+  {
+    return m_xoffset;
   }
 
   inline float get_yoffset() const
-  { 
-    return m_yoffset; 
+  {
+    return m_yoffset;
   }
 
   inline float get_direction() const
-  { 
-    return m_direction; 
-  }
-
-  EventCategory get_category_flag() const
   {
-    return EventCategory::Mouse;
+    return m_direction;
   }
 
-  EventType get_event_type() const
+  EventType get_event_type() const override
   {
-    return EventType::MouseScrolled;
+    return Type;
   }
 
-  const char* get_name() const
+  EventCategory get_category_flag() const override
+  {
+    return Category;
+  }
+
+  const char* get_name() const override
   {
     return "MouseScrolled";
   }
@@ -119,40 +125,38 @@ private:
 class MouseButtonEvent : public Event
 {
 public:
-  MouseCode get_mouse_button() const 
-  { 
-    return m_Button; 
+  static constexpr EventCategory Category = EventCategory::Mouse;
+
+  MouseCode get_mouse_button() const
+  {
+    return m_Button;
   }
 
-  inline float get_x() const 
-  { 
+  inline float get_x() const
+  {
     return m_mousex;
   }
 
-  inline float get_y() const 
-  { 
-    return m_mousey; 
-  }
-
-  inline KeyCode get_modifier() const 
-  { 
-    return m_modifier; 
-  }
-
-  EventCategory get_category_flag() const
+  inline float get_y() const
   {
-    return EventCategory::Mouse;
+    return m_mousey;
   }
 
-  virtual EventType get_event_type() const = 0;
+  inline KeyCode get_modifier() const
+  {
+    return m_modifier;
+  }
 
-  virtual const char* get_name() const = 0;
+  EventCategory get_category_flag() const override
+  {
+    return Category;
+  }
 
 protected:
-  MouseButtonEvent(const MouseCode button, float x, float y)
+  MouseButtonEvent(const MouseCode button, const float x, const float y)
     : m_Button(button), m_mousex(x), m_mousey(y) {}
 
-  MouseButtonEvent(const MouseCode button, KeyCode modifier, float x, float y)
+  MouseButtonEvent(const MouseCode button, const KeyCode modifier, const float x, const float y)
     : m_Button(button), m_modifier(modifier), m_mousex(x), m_mousey(y) {}
 
   MouseCode m_Button;
@@ -164,18 +168,21 @@ protected:
 class MouseButtonPressedEvent : public MouseButtonEvent
 {
 public:
-  MouseButtonPressedEvent(const MouseCode button, float x, float y)
+  static constexpr EventType Type = EventType::MouseButtonPressed;
+  static constexpr EventCategory Category = EventCategory::Keyboard;
+
+  MouseButtonPressedEvent(const MouseCode button, const float x = 0.0f, const float y = 0.0f)
     : MouseButtonEvent(button, x, y) {}
 
-  MouseButtonPressedEvent(const MouseCode button, KeyCode modifier, float x, float y)
+  MouseButtonPressedEvent(const MouseCode button, const KeyCode modifier, const float x, const float y)
     : MouseButtonEvent(button, modifier, x, y) {}
 
-  EventType get_event_type() const
+  EventType get_event_type() const override
   {
-    return EventType::MouseButtonPressed;
+    return Type;
   }
 
-  const char* get_name() const
+  const char* get_name() const override
   {
     return "MouseButtonPressed";
   }
@@ -184,15 +191,18 @@ public:
 class MouseButtonReleasedEvent : public MouseButtonEvent
 {
 public:
-  MouseButtonReleasedEvent(const MouseCode button, float x, float y)
+  static constexpr EventType Type = EventType::MouseButtonReleased;
+  static constexpr EventCategory Category = EventCategory::Keyboard;
+
+  MouseButtonReleasedEvent(const MouseCode button, const float x = 0.0f, const float y = 0.0f)
     : MouseButtonEvent(button, x, y) {}
 
-  EventType get_event_type() const
+  EventType get_event_type() const override
   {
-    return EventType::MouseButtonReleased;
+    return Type;
   }
 
-  const char* get_name() const
+  const char* get_name() const override
   {
     return "MouseButtonReleased";
   }

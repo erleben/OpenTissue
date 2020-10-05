@@ -9,6 +9,7 @@
 
 #include <functional>
 #include <memory>
+#include <string>
 #include <unordered_map>
 
 namespace OpenTissue {
@@ -16,23 +17,11 @@ namespace graphics {
 
 class Event;
 class WindowDisplayEvent;
+class WindowProperties;
 
 template<typename T>
 class WindowTraits;
 
-struct WindowProperties
-{
-  std::string title;
-  uint32_t width;
-  uint32_t height;
-
-  WindowProperties(const std::string& title = "OpenTissue Engine",
-                   uint32_t width = 1280,
-                   uint32_t height = 720)
-    : title(title), width(width), height(height)
-  {
-  }
-};
 
 template<typename Derived>
 class Window
@@ -54,9 +43,9 @@ public:
   Window(const Window &)            = delete;
   Window operator=(const Window &)  = delete;
   Window()                          = delete;
-  virtual ~Window()                 = default;
 
   explicit Window(const WindowProperties &properties);
+  virtual ~Window();
 
   void init()
   {
@@ -66,6 +55,11 @@ public:
   void update()
   {
     static_cast<Derived*>(this)->update();
+  }
+
+  void shutdown()
+  {
+    static_cast<Derived*>(this)->shutdown();
   }
 
   void set_vsync(bool enabled)
@@ -80,7 +74,7 @@ public:
 
   WindowTypePtr get_window()
   {
-    return static_cast<Derived*>(this)->get_window();      
+    return static_cast<Derived*>(this)->get_window();
   }
 
   void add_sub_menu(const std::string &name,
@@ -100,12 +94,31 @@ public:
   }
 
 protected:
-  WindowProperties m_properties;
-  bool             m_vsync = false; ///< Boolean flag indicating whether vertical syncronization if active.
-
   struct WindowData;
   std::shared_ptr<WindowData> m_data;
+  bool                        m_vsync = false; ///< Boolean flag indicating whether vertical syncronization if active.
+  static size_t               m_count;
 };
+
+//-------------------------------------------------------------------------------------------------
+
+class WindowProperties
+{
+public:
+  WindowProperties(const std::string& title = "OpenTissue Engine",
+                   uint32_t width = 1280,
+                   uint32_t height = 720)
+    : title(title), width(width), height(height)
+  {
+  }
+
+  std::string title;
+  uint32_t width;
+  uint32_t height;
+
+};
+
+//-------------------------------------------------------------------------------------------------
 
 template<typename WindowType>
 struct Window<WindowType>::WindowData
@@ -115,15 +128,28 @@ struct Window<WindowType>::WindowData
   Window<WindowType>::CallBackFnType fn;
 };
 
+//-------------------------------------------------------------------------------------------------
+
 template<typename WindowType>
-Window<WindowType>::Window(const WindowProperties &properties) 
-  : m_properties(properties), 
-    m_data(std::make_shared<WindowData>()) 
+Window<WindowType>::Window(const WindowProperties &properties)
+  : m_data(std::make_shared<WindowData>())
 {
   m_data->title = properties.title;
   m_data->width = properties.width;
   m_data->height = properties.height;
 }
+
+//-------------------------------------------------------------------------------------------------
+
+template<typename WindowType>
+Window<WindowType>::~Window()
+{
+}
+
+//-------------------------------------------------------------------------------------------------
+
+template<typename WindowType>
+size_t Window<WindowType>::m_count = 0;
 
 } // namespace graphics
 } // namespace OpenTissue
