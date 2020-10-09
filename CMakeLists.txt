@@ -7,7 +7,7 @@ project(OpenTissue VERSION 0.994
 if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   conan_basic_setup(TARGETS NO_OUTPUT_DIRS)
-  set(Boost_USE_STATIC_LIBS ON)
+  # set(Boost_USE_STATIC_LIBS ON)
 endif()
 
 #-----------------------------------------------------------------------------
@@ -99,7 +99,7 @@ find_package(DevIL REQUIRED)
 find_package(TinyXML REQUIRED)
 find_package(TetGen REQUIRED)
 find_package(Triangle REQUIRED)
-
+find_package(PNG REQUIRED)
 
 #-----------------------------------------------------------------------------
 #

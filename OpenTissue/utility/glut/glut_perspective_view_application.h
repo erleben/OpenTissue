@@ -107,7 +107,7 @@ namespace OpenTissue
 
       void special_action(int choice){ this->do_special_action(choice); }
 
-      void action(unsigned char choice) 
+      void action(unsigned char choice)
       {
         switch (choice)
         {
@@ -127,13 +127,14 @@ namespace OpenTissue
           break;
         case 'y':
           m_screen_capture = true;
+          std::cout << "capturing... " << std::endl;
           break;
         default:
           this->do_action(choice);
         };
       }
 
-      void init_right_click_menu(int main_menu, void menu(int entry)) 
+      void init_right_click_menu(int main_menu, void menu(int entry))
       {
         int controls = glutCreateMenu( menu );
         glutAddMenuEntry("quit                    [esc][q]", 'q' );
@@ -147,7 +148,7 @@ namespace OpenTissue
         this->do_init_right_click_menu(main_menu, menu);
       }
 
-      void init() 
+      void init()
       {
         //--- setup UI and time
         m_zoom_mode              = false;
@@ -169,7 +170,7 @@ namespace OpenTissue
         this->do_init();
       }
 
-      virtual void mouse_down(double cur_x,double cur_y,bool shift,bool ctrl,bool alt,bool left,bool middle,bool right) 
+      virtual void mouse_down(double cur_x,double cur_y,bool shift,bool ctrl,bool alt,bool left,bool middle,bool right)
       {
         if (middle || (alt && left))  // 2008-08-13 micky: not all mice have a "normal" middle button!
           m_zoom_mode = true;
@@ -184,7 +185,7 @@ namespace OpenTissue
         m_begin_y = cur_y;
       }
 
-      virtual void mouse_up(double cur_x,double cur_y,bool /*shift*/,bool /*ctrl*/,bool /*alt*/,bool /*left*/,bool /*middle*/,bool /*right*/) 
+      virtual void mouse_up(double cur_x,double cur_y,bool /*shift*/,bool /*ctrl*/,bool /*alt*/,bool /*left*/,bool /*middle*/,bool /*right*/)
       {
         if ( m_zoom_mode )
         {
@@ -205,7 +206,7 @@ namespace OpenTissue
         m_begin_y = cur_y;
       }
 
-      virtual void mouse_move(double cur_x,double cur_y) 
+      virtual void mouse_move(double cur_x,double cur_y)
       {
         if ( m_zoom_mode )
         {
@@ -246,7 +247,6 @@ namespace OpenTissue
           static int cnt = 0;
           filename << "screen_" << std::setw(4) << std::setfill('0') << ++cnt << ".png";
           OpenTissue::image::write( filename.str() , *OpenTissue::image::screen_capture() );
-          m_screen_capture = false;
         }
 
         glFinish();
