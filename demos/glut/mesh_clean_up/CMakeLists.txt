@@ -6,7 +6,7 @@ target_link_libraries(mesh_clean_up
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     OpenTissue
 )
 

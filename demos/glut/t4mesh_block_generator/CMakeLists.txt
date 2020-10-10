@@ -6,7 +6,7 @@ target_link_libraries(t4mesh_block_generator
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     OpenTissue
 )
 

@@ -6,7 +6,7 @@ target_link_libraries(particle_system
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     OpenTissue
 )
 

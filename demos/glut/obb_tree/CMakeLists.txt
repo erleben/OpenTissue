@@ -6,7 +6,7 @@ target_link_libraries(obb_tree
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     Qhull::libqhull
     OpenTissue
 )

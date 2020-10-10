@@ -7,7 +7,7 @@ project(OpenTissue VERSION 0.994
 if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   conan_basic_setup(TARGETS NO_OUTPUT_DIRS)
-  # set(Boost_USE_STATIC_LIBS ON)
+  set(Boost_USE_STATIC_LIBS ON)
 endif()
 
 #-----------------------------------------------------------------------------
@@ -87,14 +87,6 @@ if(OPENTISSUE_ENABLE_DEMOS)
   find_package(GLEW REQUIRED)
 
 endif()
-
-#-----------------------------------------------------------------------------
-#
-# Try to find DevIL (http://openil.sourceforge.net/). The OpenTissue image
-# sublibrary (see OpenTissue/image/) relies on DevIL for its io-functions.
-# Only if these io-routines are used is the DevIL library required.
-#
-find_package(DevIL REQUIRED)
 
 find_package(TinyXML REQUIRED)
 find_package(TetGen REQUIRED)

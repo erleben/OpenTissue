@@ -6,7 +6,7 @@ target_link_libraries(volume_fitting
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     Qhull::libqhull
     OpenTissue
 )

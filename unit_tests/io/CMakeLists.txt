@@ -7,13 +7,13 @@ file(
   SHOW_PROGRESS
 )
 
-add_executable(unit_read_png src/unit_read_png.cpp)
+add_executable(unit_png src/unit_png.cpp)
 
-target_link_libraries(unit_read_png
+target_link_libraries(unit_png
   PRIVATE
     Boost::unit_test_framework
     OpenTissue
     PNG::PNG
 )
 
-ot_add_test(unit_read_png)
+ot_add_test(unit_png)

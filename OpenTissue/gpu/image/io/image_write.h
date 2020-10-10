@@ -7,10 +7,10 @@
 //
 #pragma once
 
-#include <png.h>
-#include <vector>
 #include <iostream>
 #include <string>
+#include <vector>
+#include <png.h>
 
 #include <OpenTissue/configuration.h>
 #include <OpenTissue/gpu/image/image.h>
@@ -97,13 +97,7 @@ bool write(std::string const & filename,
 
   png_write_info(png, info);
 
-  png_bytep pixel = static_cast<png_bytep>(const_cast<void*>(image.get_data()));
-  std::vector<png_bytep> row_pointers(height);
-
-  for (png_uint_32 row = 0; row < height; ++row)
-  {
-    row_pointers[row] = pixel + row * width * channels;
-  }
+  auto row_pointers = image.get_row_pointers();
 
   png_write_image(png, row_pointers.data());
   png_write_end(png, info);

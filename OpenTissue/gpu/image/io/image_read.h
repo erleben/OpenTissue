@@ -7,13 +7,10 @@
 //
 #pragma once
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <png.h>
-
 #include <iostream>
 #include <string>
 #include <vector>
+#include <png.h>
 
 #include <OpenTissue/configuration.h>
 #include <OpenTissue/gpu/image/image.h>
@@ -25,23 +22,18 @@ namespace image {
 *
 * @param   filename
 * @param   image
-* @return               If succesful then the return value is true
-*                       otherwise it is false.
+* @return  If succesful then the return value is true
+*          otherwise it is false.
 */
 bool read(std::string const & filename,
           OpenTissue::image::Image<unsigned char> & image,
           bool show_statistics = true)
 {
-  // If you have enabled a texture before invoking this function
-  // then ilu fucks up textures, so we need to make sure that the
-  // openGL default texture is enabled and not one of yours...
-  // glBindTexture( GL_TEXTURE_2D, 0 );
-
   auto fp = fopen(filename.c_str(), "rb");
   if(!fp)
   {
-      std::cerr << "error: failed to open png file " << filename << "." << std::endl;
-      return false;
+    std::cerr << "error: failed to open png file " << filename << "." << std::endl;
+    return false;
   }
 
   // Read the header
@@ -50,9 +42,9 @@ bool read(std::string const & filename,
 
   if (png_sig_cmp(header, 0, 8))
   {
-      std::cerr << "error: " << filename << " is not a PNG." << std::endl;
-      fclose(fp);
-      return false;
+    std::cerr << "error: " << filename << " is not a PNG." << std::endl;
+    fclose(fp);
+    return false;
   }
 
   png_structp png = png_create_read_struct(PNG_LIBPNG_VER_STRING, nullptr, nullptr, nullptr);
@@ -76,18 +68,18 @@ bool read(std::string const & filename,
   png_infop end_info = png_create_info_struct(png);
   if (!end_info)
   {
-      std::cerr << "error: png_create_info_struct returned 0" << std::endl;
-      png_destroy_read_struct(&png, &info, nullptr);
-      fclose(fp);
-      return false;
+    std::cerr << "error: png_create_info_struct returned 0" << std::endl;
+    png_destroy_read_struct(&png, &info, nullptr);
+    fclose(fp);
+    return false;
   }
 
-
-  if (setjmp(png_jmpbuf(png))) {
-      std::cerr << "error from libpng" << std::endl;
-      png_destroy_read_struct(&png, &info, &end_info);
-      fclose(fp);
-      return false;
+  if (setjmp(png_jmpbuf(png)))
+  {
+    std::cerr << "error from libpng" << std::endl;
+    png_destroy_read_struct(&png, &info, &end_info);
+    fclose(fp);
+    return false;
   }
 
   // Bind io function for the PNG file to the stream
