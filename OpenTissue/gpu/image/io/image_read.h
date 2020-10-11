@@ -1,3 +1,5 @@
+#ifndef OPENTISSUE_GPU_IMAGE_IO_IMAGE_READ_H
+#define OPENTISSUE_GPU_IMAGE_IO_IMAGE_READ_H
 //
 // OpenTissue Template Library
 // - A generic toolbox for physics-based modeling and simulation.
@@ -5,15 +7,14 @@
 //
 // OTTL is licensed under zlib: http://opensource.org/licenses/zlib-license.php
 //
-#pragma once
+#include <OpenTissue/configuration.h>
+#include <OpenTissue/gpu/image/image.h>
+
+#include <png.h>
 
 #include <iostream>
 #include <string>
 #include <vector>
-#include <png.h>
-
-#include <OpenTissue/configuration.h>
-#include <OpenTissue/gpu/image/image.h>
 
 namespace OpenTissue {
 namespace image {
@@ -22,12 +23,12 @@ namespace image {
 *
 * @param   filename
 * @param   image
-* @return  If succesful then the return value is true
+* @return  If successful then the return value is true
 *          otherwise it is false.
 */
-bool read(std::string const & filename,
-          OpenTissue::image::Image<unsigned char> & image,
-          bool show_statistics = true)
+bool read(std::string const & filename
+          , OpenTissue::image::Image<unsigned char> & image
+          , bool show_statistics = true)
 {
   auto fp = fopen(filename.c_str(), "rb");
   if(!fp)
@@ -170,3 +171,6 @@ bool read(std::string const & filename,
 
 } // namespace image
 } // namespace OpenTissue
+
+//OPENTISSUE_GPU_IMAGE_IO_IMAGE_READ_H
+#endif

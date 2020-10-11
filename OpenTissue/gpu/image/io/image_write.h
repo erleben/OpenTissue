@@ -1,3 +1,5 @@
+#ifndef OPENTISSUE_GPU_IMAGE_IO_IMAGE_WRITE_H
+#define OPENTISSUE_GPU_IMAGE_IO_IMAGE_WRITE_H
 //
 // OpenTissue Template Library
 // - A generic toolbox for physics-based modeling and simulation.
@@ -5,15 +7,14 @@
 //
 // OTTL is licensed under zlib: http://opensource.org/licenses/zlib-license.php
 //
-#pragma once
+#include <OpenTissue/configuration.h>
+#include <OpenTissue/gpu/image/image.h>
+
+#include <png.h>
 
 #include <iostream>
 #include <string>
 #include <vector>
-#include <png.h>
-
-#include <OpenTissue/configuration.h>
-#include <OpenTissue/gpu/image/image.h>
 
 namespace OpenTissue {
 namespace image {
@@ -25,8 +26,8 @@ namespace image {
 * @return  If successful then the return value is true
 *          otherwise it is false.
 */
-bool write(std::string const & filename,
-           OpenTissue::image::Image<unsigned char> const & image)
+bool write(std::string const & filename
+           , OpenTissue::image::Image<unsigned char> const & image)
 {
   png_uint_32 width = image.width();
   png_uint_32 height = image.height();
@@ -109,3 +110,6 @@ bool write(std::string const & filename,
 
 } // namespace image
 } // namespace OpenTissue
+
+//OPENTISSUE_GPU_IMAGE_IO_IMAGE_WRITE_H
+#endif
