@@ -38,6 +38,7 @@ namespace OpenTissue
       size_t          m_height;
       size_t          m_channels;
       std::vector<T>  m_data;
+      bool            m_origin_top_left; // Indicates where the origin is on this image (false assumes is bottom-left)
 
     public:
 
@@ -58,6 +59,35 @@ namespace OpenTissue
       void       * get_data()       { return &(m_data[0]); }
       void const * get_data() const { return &(m_data[0]); }
 
+      /**
+       * @brief Convenience function that returns a list of row pointers to the undelying image data.
+       *  This function will flip the list depending on the value of m_origin_top_left.
+       *
+       * @return std::vector<T*> r-value
+       */
+      std::vector<T*> get_row_pointers() const
+      {
+        std::vector<T*> row_pointers(m_height);
+        auto data = const_cast<T*>(m_data.data());
+        if(m_origin_top_left)
+        {
+          for (size_t row = 0; row < m_height; ++row)
+          {
+            row_pointers[row] = data + row * m_width * m_channels;
+          }
+        }
+        else
+        {
+          for (size_t row = 0; row < m_height; ++row)
+          {
+            row_pointers[m_height - 1 - row] = data + row * m_width * m_channels;
+          }
+        }
+
+        // Note that row_pointers will be converted to r-value, so no copy is performed.
+        return row_pointers;
+      }
+
     public:
 
       Image()
@@ -65,27 +95,31 @@ namespace OpenTissue
         ,  m_height(0)
         ,  m_channels(0)
         ,  m_data(0)
+        ,  m_origin_top_left(true)
       {}
 
-      Image( size_t width, size_t height, size_t channels, T const * data)
+      Image( size_t width, size_t height, size_t channels, T const * data, bool origin_top_left = true)
         : m_width(width)
         , m_height(height)
         , m_channels(channels)
         , m_data( data, data+(width*height*channels) )
+        , m_origin_top_left(origin_top_left)
       {}
 
-      Image( size_t width, size_t height, size_t channels,  std::vector<T> const & data )
+      Image( size_t width, size_t height, size_t channels,  std::vector<T> const & data, bool origin_top_left = true )
         : m_width(width)
         , m_height(height)
         , m_channels(channels)
         , m_data(data)
+        , m_origin_top_left(origin_top_left)
       {}
 
-      Image( size_t width, size_t height, size_t channels )
+      Image( size_t width, size_t height, size_t channels, bool origin_top_left = true )
         : m_width(width)
         , m_height(height)
         , m_channels(channels)
         , m_data(width*height*channels)
+        , m_origin_top_left(origin_top_left)
       {}
 
     public:
@@ -105,7 +139,7 @@ namespace OpenTissue
       *                        default is false.
       * @param border          Set border value, default is zero
       */
-      OpenTissue::texture::texture2D_pointer create_texture(  
+      OpenTissue::texture::texture2D_pointer create_texture(
           size_t internal_format
         , bool rectangular=false
         , int border=0

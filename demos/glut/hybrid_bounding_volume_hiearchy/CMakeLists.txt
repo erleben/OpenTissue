@@ -6,7 +6,7 @@ target_link_libraries(hybrid_bounding_volume_hierarchy
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     Qhull::libqhull
     OpenTissue
 )

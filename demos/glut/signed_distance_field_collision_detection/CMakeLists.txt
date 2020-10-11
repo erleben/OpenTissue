@@ -6,7 +6,7 @@ target_link_libraries(signed_distance_field_collision_detection
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     OpenTissue
 )
 

@@ -6,7 +6,7 @@ target_link_libraries(versatile
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     TinyXML
     OpenTissue
 )

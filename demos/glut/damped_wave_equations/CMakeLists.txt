@@ -6,7 +6,7 @@ target_link_libraries(damped_wave_equations
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     OpenTissue
 )
 

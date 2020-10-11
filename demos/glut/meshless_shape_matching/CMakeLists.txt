@@ -6,7 +6,7 @@ target_link_libraries(meshless_shape_matching
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     OpenTissue
 )
 

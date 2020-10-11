@@ -6,7 +6,7 @@ target_link_libraries(vertex_mean_curvature
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     OpenTissue
 )
 

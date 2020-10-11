@@ -6,7 +6,7 @@ target_link_libraries(gui_template
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     OpenTissue
 )
 

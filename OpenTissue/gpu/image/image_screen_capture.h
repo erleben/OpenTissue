@@ -37,7 +37,9 @@ namespace OpenTissue
 
       GLint viewport[4];
       glGetIntegerv(GL_VIEWPORT,viewport);
-      image_pointer image( new OpenTissue::image::Image<unsigned char>( viewport[2], viewport[3], 4 ) );
+
+      bool origin_top_left = false; // glReadPixels image origin is bottom-left
+      image_pointer image( new OpenTissue::image::Image<unsigned char>( viewport[2], viewport[3], 4, origin_top_left ) );
       glReadPixels(viewport[0], viewport[1], viewport[2], viewport[3], GL_RGBA, GL_UNSIGNED_BYTE, image->get_data() );
       return image;
     }
@@ -78,7 +80,9 @@ namespace OpenTissue
 
       // Write the RGBA data
       unsigned char * raw_ptr = static_cast< unsigned char * > (&pixels4[0]);
-      image_pointer image(new OpenTissue::image::Image<unsigned char>(viewport[2], viewport[3], 4, raw_ptr));
+
+      bool origin_top_left = false; // glReadPixels image origin is bottom-left
+      image_pointer image(new OpenTissue::image::Image<unsigned char>(viewport[2], viewport[3], 4, raw_ptr, origin_top_left));
       return image;
     }
 
@@ -88,10 +92,10 @@ namespace OpenTissue
     *
     * @return    A pointer to an image containing the captured screen.
     */
-    boost::shared_ptr<OpenTissue::image::Image<unsigned char> >  screen_capture(  ) 
+    boost::shared_ptr<OpenTissue::image::Image<unsigned char> >  screen_capture(  )
     {
       return screen_capture( keep_transparency() );
-    } 
+    }
 
   } // namespace image
 } // namespace OpenTissue

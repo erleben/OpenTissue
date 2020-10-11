@@ -88,18 +88,10 @@ if(OPENTISSUE_ENABLE_DEMOS)
 
 endif()
 
-#-----------------------------------------------------------------------------
-#
-# Try to find DevIL (http://openil.sourceforge.net/). The OpenTissue image
-# sublibrary (see OpenTissue/image/) relies on DevIL for its io-functions.
-# Only if these io-routines are used is the DevIL library required.
-#
-find_package(DevIL REQUIRED)
-
 find_package(TinyXML REQUIRED)
 find_package(TetGen REQUIRED)
 find_package(Triangle REQUIRED)
-
+find_package(PNG REQUIRED)
 
 #-----------------------------------------------------------------------------
 #

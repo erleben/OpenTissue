@@ -6,7 +6,7 @@ target_link_libraries(smoothed_particle_hydrodynamics
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     OpenTissue
 )
 

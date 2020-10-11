@@ -6,7 +6,7 @@ target_link_libraries(curvature_mesh_bvh
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     OpenTissue
 )
 

@@ -6,7 +6,7 @@ target_link_libraries(t4mesh_bvh
     OpenGL::GLU
     GLUT::GLUT
     GLEW::glew
-    DevIL::DevIL
+    PNG::PNG
     Qhull::libqhull
     TinyXML
     OpenTissue
