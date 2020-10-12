@@ -158,7 +158,7 @@ private:
     this->init_camera();
 
     // bind events
-    m_dispatcher.subscribeListeners(this);
+    m_dispatcher.subscribeListener(this);
 
     static_cast<Derived*>(this)->init();
   }

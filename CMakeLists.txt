@@ -82,6 +82,7 @@ if(OPENTISSUE_ENABLE_DEMOS)
 
   set(glfw3_ROOT /usr/local)
   find_package(glfw3 REQUIRED)
+
   #-----------------------------------------------------------------------------
   #
   # Try to get GLEW (http://glew.sourceforge.net/). Our demo application

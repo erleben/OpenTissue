@@ -5,6 +5,7 @@ TinyXML/1.0@OpenTissue/stable
 Qhull/7.3.2@OpenTissue/stable
 boost/1.69.0
 libpng/1.6.37
+glew/2.1.0
 
 [generators]
 cmake

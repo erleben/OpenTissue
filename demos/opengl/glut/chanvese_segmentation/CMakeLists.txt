@@ -12,7 +12,7 @@ target_link_libraries(chanvese_segmentation
     OpenTissueGraphics
 )
 
-target_compile_definitions(chanvese_segmentation 
+target_compile_definitions(chanvese_segmentation
   PRIVATE
    OT_INJECT_MAIN
 )

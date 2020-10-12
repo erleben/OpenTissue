@@ -19,15 +19,15 @@
 namespace OpenTissue {
 namespace graphics {
 
+/**
+ * @brief Event dispatch structure.
+ *  Subscribe listeners to this class.
+ *
+ */
 class EventDispatcher
 {
 public:
   using CallbackFnType = std::function<void(const Event&)>;
-
-  void subscribe(const EventType& type, CallbackFnType&& fn)
-  {
-    m_observers[type].push_back(fn);
-  }
 
   void post(const Event& e) const
   {
@@ -50,7 +50,7 @@ public:
   }
 
   template<typename ListenerType>
-  void subscribeListeners(ListenerType *listener)
+  void subscribeListener(ListenerType *listener)
   {
     this->subscribe(EventType::WindowClose,
     [listener](const Event &e)
@@ -92,6 +92,12 @@ public:
     {
       listener->on_mouse_scrolled(static_cast<const MouseScrolledEvent&>(e));
     });
+  }
+
+private:
+  void subscribe(const EventType& type, CallbackFnType&& fn)
+  {
+    m_observers[type].push_back(fn);
   }
 
 private:
