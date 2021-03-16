@@ -13,7 +13,7 @@ Free for commercial use, open source under the [Zlib license](http://opensource.
 ## For Developers
   * [Code Standards](documentation/code_standards.md)
   * [Good Practice for Development](documentation/good_practice.md)
-  * [Design Patterns in OpenTissue](documenation/design_patterns.md)
+  * [Design Patterns in OpenTissue](documentation/design_patterns.md)
   * [Unit Testing Guide](documentation/unit_testing.md)
   * [The Code Review Process](documenation/code_review.md)
 
