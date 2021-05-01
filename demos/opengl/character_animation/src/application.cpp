@@ -1,36 +1,29 @@
 //
 // OpenTissue Template Library Demo
 // - A specific demonstration of the flexibility of OTTL.
-// Copyright (C) 2008 Department of Computer Science, University of Copenhagen.
+// Copyright (C) 2021 Department of Computer Science, University of Copenhagen.
 //
 // OTTL and OTTL Demos are licensed under zlib.
 //
 #include <OpenTissue/configuration.h>
-
-#include <OpenTissue/graphics/glfw/glfw_application.h>
-
 #include <OpenTissue/core/math/math_basic_types.h>
-
-#include <OpenTissue/kinematics/skeleton/io/skeleton_xml_read.h>
-#include <OpenTissue/kinematics/skeleton/io/skeleton_cal3d_xml_read.h>
-
-#include <OpenTissue/kinematics/animation/io/animation_keyframe_animation_xml_read.h>
-#include <OpenTissue/kinematics/animation/io/animation_keyframe_animation_cal3d_xml_read.h>
-
-#include <OpenTissue/kinematics/skinning/io/skinning_xml_read.h>
-#include <OpenTissue/kinematics/skinning/io/skinning_cal3d_xml_read.h>
-#include <OpenTissue/kinematics/skinning/io/skinning_material_xml_read.h>
-#include <OpenTissue/kinematics/skinning/io/skinning_material_cal3d_xml_read.h>
-
-#include <OpenTissue/kinematics/skeleton/skeleton_types.h>
-#include <OpenTissue/kinematics/skinning/skinning_types.h>
-#include <OpenTissue/kinematics/animation/animation_naive_blend_scheduler.h>
+#include <OpenTissue/graphics/glfw/glfw_application.h>
 #include <OpenTissue/kinematics/animation/animation_keyframe_animation.h>
+#include <OpenTissue/kinematics/animation/animation_naive_blend_scheduler.h>
+#include <OpenTissue/kinematics/animation/io/animation_keyframe_animation_cal3d_xml_read.h>
+#include <OpenTissue/kinematics/animation/io/animation_keyframe_animation_xml_read.h>
+#include <OpenTissue/kinematics/skeleton/io/skeleton_cal3d_xml_read.h>
+#include <OpenTissue/kinematics/skeleton/io/skeleton_xml_read.h>
+#include <OpenTissue/kinematics/skeleton/skeleton_types.h>
+#include <OpenTissue/kinematics/skinning/io/skinning_cal3d_xml_read.h>
+#include <OpenTissue/kinematics/skinning/io/skinning_material_cal3d_xml_read.h>
+#include <OpenTissue/kinematics/skinning/io/skinning_material_xml_read.h>
+#include <OpenTissue/kinematics/skinning/io/skinning_xml_read.h>
+#include <OpenTissue/kinematics/skinning/skinning_types.h>
 
 class Application : public OpenTissue::graphics::GlfwApplication
 {
 public:
-
   typedef float                                                        real_type;
   typedef OpenTissue::math::default_math_types                         math_types;
   typedef math_types::matrix3x3_type                                   matrix3x3_type;
@@ -46,7 +39,6 @@ public:
   typedef OpenTissue::skinning::Types< math_types, OpenTissue::skinning::DBS >	 skin_types;
 
 protected:
-
   bool b[256];          ///< Boolean array used to keep track of the user actions/selections.
 
   typedef skeleton_types::skeleton_type                    skeleton_type;

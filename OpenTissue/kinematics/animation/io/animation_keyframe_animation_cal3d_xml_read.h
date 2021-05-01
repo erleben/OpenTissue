@@ -11,6 +11,8 @@
 
 #include <TinyXML/tinyxml.h>
 
+#include <sstream>
+
 namespace OpenTissue
 {
   namespace animation

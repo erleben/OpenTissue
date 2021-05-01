@@ -22,7 +22,6 @@ class WindowProperties;
 template<typename T>
 class WindowTraits;
 
-
 template<typename Derived>
 class Window
 {
