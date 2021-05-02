@@ -9,11 +9,11 @@ trigger:
 strategy:
   matrix:
     linux:
-      imageName: "ubuntu-latest"
+      imageName: "ubuntu-18.04"
     mac1014:
       imageName: "macOS-10.14"
     VisualStudio2019:
-      imageName: "windows-latest"
+      imageName: "windows-2019"
 
   maxParallel: 3
 
