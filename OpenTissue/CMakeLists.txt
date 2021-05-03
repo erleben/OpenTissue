@@ -54,3 +54,5 @@ configure_file(
   "${CMAKE_CURRENT_BINARY_DIR}/configuration.h"
   @ONLY
 )
+
+add_subdirectory(graphics)

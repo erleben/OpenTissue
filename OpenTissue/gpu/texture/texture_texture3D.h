@@ -9,7 +9,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/gl/gl_util.h>
+#include <OpenTissue/graphics/core/gl/gl_util.h>
 #include <OpenTissue/core/math/math_power2.h>
 #include <OpenTissue/gpu/texture/texture_types.h>
 

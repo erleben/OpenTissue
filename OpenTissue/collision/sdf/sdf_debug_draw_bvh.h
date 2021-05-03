@@ -9,7 +9,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/gl/gl_util.h>
+#include <OpenTissue/graphics/core/gl/gl_util.h>
 #include <OpenTissue/collision/bvh/bvh_get_nodes_at_depth.h>
 #include <OpenTissue/collision/bvh/bvh_get_nodes_at_height.h>
 

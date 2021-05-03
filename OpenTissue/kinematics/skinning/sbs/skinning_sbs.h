@@ -15,8 +15,6 @@
 #include <OpenTissue/kinematics/skinning/sbs/skinning_center_of_rotation.h>
 #include <OpenTissue/kinematics/skinning/skinning_traits.h>
 
-#include <OpenTissue/utility/gl/gl_draw_mesh.h>
-
 #include <cassert>
 #include <vector>
 

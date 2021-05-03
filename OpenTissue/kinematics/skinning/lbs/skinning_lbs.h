@@ -12,7 +12,6 @@
 #include <OpenTissue/core/containers/mesh/trimesh/trimesh.h>
 #include <OpenTissue/core/containers/mesh/trimesh/util/trimesh_util.h>
 #include <OpenTissue/kinematics/skinning/skinning_traits.h>
-#include <OpenTissue/utility/gl/gl_draw_mesh.h>
 #include <cassert>
 #include <vector>
 

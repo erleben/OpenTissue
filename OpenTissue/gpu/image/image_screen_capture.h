@@ -9,7 +9,7 @@
 //
 #include <OpenTissue/configuration.h>
 
-#include <OpenTissue/utility/gl/gl_util.h>
+#include <OpenTissue/graphics/core/gl/gl_util.h>
 #include <OpenTissue/gpu/image/image.h>
 
 #include <boost/shared_ptr.hpp>

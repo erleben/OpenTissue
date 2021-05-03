@@ -11,7 +11,7 @@
 
 #include <OpenTissue/core/math/math_power2.h>
 #include <OpenTissue/gpu/texture/texture_types.h>
-#include <OpenTissue/utility/gl/gl_check_errors.h>
+#include <OpenTissue/graphics/core/gl/gl_check_errors.h>
 
 #include <boost/shared_ptr.hpp>
 
