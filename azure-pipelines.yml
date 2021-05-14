@@ -6,6 +6,9 @@
 trigger:
 - master
 
+variables:
+- group: Build
+
 strategy:
   matrix:
     linux:
@@ -40,7 +43,8 @@ steps:
 - bash: |
     mkdir build
     pushd build
-    conan remote add ot_deps https://api.bintray.com/conan/opentissue/Deps
+    conan remote add ot_deps $(CONAN_URL)
+    conan user "$(CONAN_USER)" -r ot_deps -p $(CONAN_TOKEN)
     [[ "$OSTYPE" == "darwin"* ]] && CXX_ABI=libc++ || CXX_ABI=libstdc++11
     conan profile new default --detect
     [[ "$OSTYPE" != "msys" ]] && conan profile update settings.compiler.libcxx=${CXX_ABI} default
