@@ -4,89 +4,101 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/c-cpp/gcc
 
 trigger:
-- master
+  - master
 
 variables:
-- group: Build
+  group: Build
+  CONAN_CACHE_FOLDER: $(Pipeline.Workspace)/.conan
 
 strategy:
   matrix:
-    linux:
-      imageName: "ubuntu-18.04"
-    mac1014:
-      imageName: "macOS-10.14"
-    VisualStudio2019:
-      imageName: "windows-2019"
+    ubuntu:
+      imageName: "ubuntu-22.04"
+    macOS:
+      imageName: "macOS-12"
+    VisualStudio:
+      imageName: "windows-2022"
 
   maxParallel: 3
 
 pool:
-  vmImage: '$(imageName)'
+  vmImage: "$(imageName)"
 
 steps:
-- task: UsePythonVersion@0
-  displayName: Get Python for Python tools.
-  inputs:
-    versionSpec: '3.7'
-  name: pyTools
+  - task: UsePythonVersion@0
+    displayName: Get Python for Python tools.
+    inputs:
+      versionSpec: "3.7"
+    name: pyTools
 
-- bash: |
-    python --version
-    python -m pip install --upgrade pip
-    python -m pip install --upgrade jinja2
-    python -m pip install --upgrade setuptools wheel
-    python -m pip install --upgrade conan
-    python -m pip install --upgrade gcovr
-    conan --version
-  displayName: 'Install Python Modules'
+  - bash: |
+      python --version
+      python -m pip install --upgrade pip
+      python -m pip install --upgrade jinja2
+      python -m pip install --upgrade setuptools wheel
+      python -m pip install --upgrade conan
+      python -m pip install --upgrade gcovr
+      conan --version
+    displayName: "Install Python Modules"
 
-- bash: |
-    mkdir build
-    pushd build
-    conan remote add ot_deps $(CONAN_URL)
-    conan user "$(CONAN_USER)" -r ot_deps -p $(CONAN_TOKEN)
-    [[ "$OSTYPE" == "darwin"* ]] && CXX_ABI=libc++ || CXX_ABI=libstdc++11
-    conan profile new default --detect
-    [[ "$OSTYPE" != "msys" ]] && conan profile update settings.compiler.libcxx=${CXX_ABI} default
-    conan install .. -s build_type=Debug -o *:shared=False || exit 1
-    popd
-  displayName: 'Resolve Dependencies'
+  - bash: |
+      mkdir build
+      pushd build
+      conan remote add ot_deps $(CONAN_URL)
+      conan user "$(CONAN_USER)" -r ot_deps -p $(CONAN_TOKEN)
+      [[ "$OSTYPE" == "darwin"* ]] && CXX_ABI=libc++ || CXX_ABI=libstdc++11
+      conan profile new default --detect
+      [[ "$OSTYPE" != "msys" ]] && conan profile update settings.compiler.libcxx=${CXX_ABI} default
+      conan install .. -s build_type=Debug -o *:shared=False || exit 1
+      popd
+    displayName: "Resolve Dependencies"
 
-- bash: |
-    cmake -DOPENTISSUE_ENABLE_CODE_COVERAGE:BOOL=ON -DCMAKE_BUILD_TYPE=Debug -DOPENTISSUE_ENABLE_UNIT_TESTS=ON -S ${PWD} -B ${PWD}/build
-    cmake --build ${PWD}/build $([[ "$OSTYPE" != "msys" ]] && echo "--target all") -j 2
-    [[ "$OSTYPE" != "msys" ]] &&  gcovr --xml -k -r . -o build/Cobertura.xml build/
-    cmake --build ${PWD}/build --target Continuous -j 2
-    pushd build
-    ctest -T Test
-    [[ "$OSTYPE" != "msys" ]] && ctest -T Coverage
-    popd
-  displayName: 'Build and Run Unit Tests'
+  - bash: |
+      cmake -DOPENTISSUE_ENABLE_CODE_COVERAGE:BOOL=ON -DCMAKE_BUILD_TYPE=Debug -DOPENTISSUE_ENABLE_UNIT_TESTS=ON -S ${PWD} -B ${PWD}/build
+      cmake --build ${PWD}/build $([[ "$OSTYPE" != "msys" ]] && echo "--target all") -j 2 || exit 1
+      [[ "$OSTYPE" != "msys" ]] &&  gcovr --xml -k -r . -o build/Cobertura.xml build/
+      cmake --build ${PWD}/build --target Continuous -j 2 || exit 1
+      pushd build
+      ctest -T Test || exit 1
+      [[ "$OSTYPE" != "msys" ]] && ctest -T Coverage || exit 1
+      popd
+    displayName: "Build and Run Unit Tests"
 
-- bash: |
-    cmake -DOPENTISSUE_ENABLE_UNIT_TESTS=OFF -S ${PWD} -B ${PWD}/build
-    cmake --build ${PWD}/build --target package
-  displayName: 'Package'
+  - bash: |
+      cmake -DOPENTISSUE_ENABLE_UNIT_TESTS=OFF -S ${PWD} -B ${PWD}/build
+      cmake --build ${PWD}/build --target package || exit 1
+    displayName: "Package"
 
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: cTest
-    testResultsFiles: build/Testing/*/Test.xml
-    testRunTitle: 'Publish test results'
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: cTest
+      testResultsFiles: build/Testing/*/Test.xml
+      testRunTitle: "Publish test results"
 
-- task: CopyFiles@2
-  inputs:
-    contents: 'build/OpenTissue-*'
-    targetFolder: $(Build.ArtifactStagingDirectory)
+  - task: CopyFiles@2
+    inputs:
+      contents: "build/OpenTissue-*"
+      targetFolder: $(Build.ArtifactStagingDirectory)
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+      ArtifactName: "drop"
+      publishLocation: "Container"
 
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)/build/Cobertura.xml'
-    pathToSources: '$(System.DefaultWorkingDirectory)/OpenTissue'
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: "Cobertura"
+      summaryFileLocation: "$(System.DefaultWorkingDirectory)/build/Cobertura.xml"
+      pathToSources: "$(System.DefaultWorkingDirectory)/OpenTissue"
+
+  # Cache
+  # Cache files between runs
+  - task: Cache@2
+    inputs:
+      key: '"conan" | "$(Agent.OS)"'
+      path: $(CONAN_CACHE_FOLDER)
+      #cacheHitVar: # Optional
+      restoreKeys: conan | "$(Agent.OS)"
+        conan
+    displayName: Cache Conan packages
