@@ -7,8 +7,9 @@ trigger:
   - master
 
 variables:
-  group: Build
-  CONAN_CACHE_FOLDER: $(Pipeline.Workspace)/.conan
+  - group: Build
+  - name: CONAN_CACHE_FOLDER
+    value: $(Pipeline.Workspace)/.conan
 
 strategy:
   matrix:
